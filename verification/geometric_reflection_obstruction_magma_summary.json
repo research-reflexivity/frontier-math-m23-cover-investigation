@@ -1,0 +1,26 @@
+{
+  "engine": "Magma",
+  "version": "V2.29-9",
+  "runner": "University of Sydney Magma Calculator",
+  "input_path": "verification/certify_geometric_reflection_obstruction.m",
+  "input_bytes": 4005,
+  "input_sha256": "b876e09a74f8e2c19698534e0240fffc98cd6bbc320ca4d70a33477678e739c6",
+  "seed": 852977057,
+  "total_time_seconds": 0.060,
+  "total_memory_mb": 32.09,
+  "status": "pass",
+  "output": [
+    "ambient_normalizer_equals_M23=true",
+    "order23_endpoint_classes_equal=[ false, false, false, false, false, false, false ]",
+    "order23_inverse_endpoint_classes_equal=[ true, true, true, true, true, true, true ]",
+    "orientation_reversing_comparison_counts=[ 0, 0, 1, 0, 0, 1, 1 ]",
+    "orientation_reversing_fixed_ids=[3,6,7]",
+    "holomorphic_branch_swap_fixed_ids=[]",
+    "quotient_4A_2A_23_compatible_count=46",
+    "quotient_4A_2A_23_inner_nielsen_classes=2",
+    "quadratic_pullback_order23_classes=same_not_A_B",
+    "elkies_quartic_contains_quadratic_subfield_discriminant=-23",
+    "conclusion=no_algebraic_reflection_fixed_cubic",
+    "PASS_GEOMETRIC_REFLECTION_OBSTRUCTION_MAGMA"
+  ]
+}

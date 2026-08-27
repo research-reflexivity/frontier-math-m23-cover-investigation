@@ -1,0 +1,23 @@
+{
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "date": "2026-08-25",
+  "magma_version": "2.29-9",
+  "execution_surface": "University of Sydney public Magma Calculator",
+  "calculator_url": "https://magma.maths.usyd.edu.au/calc/",
+  "input_file": "verification/verify_optimal_23_4.m",
+  "input_sha256": "cc90b4f3ae7211d44a35395e3ecd32a7c58d906305470cf91606dce9c6465862",
+  "input_bytes": 22765,
+  "seed": 2806249466,
+  "reported_total_time_seconds": 13.279,
+  "reported_total_memory": "32.09MB",
+  "primitive_over_Z": true,
+  "degree_T": 4,
+  "degree_W": 23,
+  "exact_identity_in_QT_mod_Fhat": true,
+  "irreducible_mod_31": true,
+  "output": [
+    "PASS_MAGMA_EXACT_FUNCTION_FIELD_IDENTITY",
+    "PASS_MAGMA_IRREDUCIBLE_MOD_31",
+    "PASS_OPTIMAL_23_4_MAGMA_CERTIFICATE"
+  ]
+}

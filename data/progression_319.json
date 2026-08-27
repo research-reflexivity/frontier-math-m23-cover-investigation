@@ -1,0 +1,19 @@
+{
+  "status": "CERTIFIED_M23_ARITHMETIC_PROGRESSION",
+  "source_polynomial": "data/optimal_23_4_Z.json",
+  "parameter": "T",
+  "residue": 2,
+  "modulus": 319,
+  "parameterization": "t=2+319*n for n in Z",
+  "specialized_polynomial": "f_t(x)=prim_x P(t,x), obtained by dividing P(t,x) by the positive gcd of its coefficients",
+  "witness_primes": [11, 29],
+  "congruence_certificate": "P(2+319*n,x)=P(2,x) in F_p[n,x] for p=11 and p=29",
+  "modular_data_source": "data/specialization_t2_Z.json",
+  "modular_consequences": {
+    "mod_29": "degree 23 and irreducible, hence a 23-cycle",
+    "mod_11": "squarefree irreducible-factor degrees (2,7,14), hence an element of order 14",
+    "content": "the leading coefficient is nonzero at both primes, so the content is a unit modulo both primes"
+  },
+  "group_theoretic_conclusion": "Every specialization group embeds in M23 and contains elements of orders 23 and 14; the ATLAS maximal-subgroup list forces equality with M23.",
+  "theorem": "For every integer t congruent to 2 modulo 319, Gal(prim_x P(t,x)/Q)=M23 in its natural degree-23 action."
+}

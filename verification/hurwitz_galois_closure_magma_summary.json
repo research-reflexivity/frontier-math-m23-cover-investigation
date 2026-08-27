@@ -1,0 +1,18 @@
+{
+  "engine": "Magma",
+  "input_bytes": 1513,
+  "input_path": "verification/verify_hurwitz_galois_closure.m",
+  "input_sha256": "cf2b555a9be8e768720eb73da7b8c02b458bfb5c0a91fe7b36b7ccb76e8ea46c",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_MAGMA_HURWITZ_TRACE_SEXTIC_GALOIS_GROUP_S6",
+    "PASS_MAGMA_HURWITZ_ABSOLUTE_FIELD_IS_TRACE_FIELD_TIMES_Q_SQRT_MINUS_23",
+    "PASS_HURWITZ_GALOIS_CLOSURE_MAGMA_CERTIFICATE"
+  ],
+  "memory_megabytes": 32.09,
+  "run_date": "2026-08-27",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 3759861329,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.10
+}

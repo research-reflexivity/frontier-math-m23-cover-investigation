@@ -1,0 +1,24 @@
+{
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "date": "2026-08-27",
+  "magma_version": "2.29-9",
+  "execution_surface": "University of Sydney public Magma Calculator",
+  "calculator_url": "https://magma.maths.usyd.edu.au/calc/",
+  "input_file": "verification/certify_gauss_prolongation_obstruction.m",
+  "input_sha256": "cde5fcebd15b3dc06f1c029736797e93daa483492775849a84f362db6605d361",
+  "input_bytes": 4462,
+  "seed": 3375135554,
+  "reported_total_time_seconds": 0.050,
+  "reported_total_memory": "32.09MB",
+  "fixed_ids": [3, 6, 7],
+  "decomposition_group_order": 253,
+  "gauss_prolongation_count": 40320,
+  "anchor_gauge_orders": [32, 32, 32],
+  "reflection_pair_count": 20160,
+  "pair_gauge_orbit_counts": [1260, 1260, 1260],
+  "xr_anchors_form_one_simultaneous_conjugacy_orbit": true,
+  "conclusion": "the unpointed Gauss valuation together with x and r does not canonically select one reflection-pair",
+  "output": [
+    "PASS_GAUSS_PROLONGATION_OBSTRUCTION_MAGMA_CERTIFICATE"
+  ]
+}

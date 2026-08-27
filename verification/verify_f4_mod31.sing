@@ -1,0 +1,21 @@
+option(redSB);
+
+ring r = 31,(V,T,W),dp;
+< "../data/F31.inc";
+< "../data/canonical_pencil_mod31.inc";
+< "../data/F4_mod31.inc";
+
+poly R = resultant(f,J0-W*J1,V);
+ideal Q = std(ideal(F4));
+poly remR = reduce(R,Q);
+if (remR != 0) { print("FAIL_F4_DOES_NOT_DIVIDE_RESULTANT"); exit; }
+if (deg(F4,intvec(0,1,0)) != 4) { print("FAIL_T_DEGREE"); exit; }
+if (deg(F4,intvec(0,0,1)) != 23) { print("FAIL_W_DEGREE"); exit; }
+list fac = factorize(F4);
+if (size(fac[1])-1 != 1) { print("FAIL_F4_REDUCIBLE"); exit; }
+print("PASS_F4_MOD31_CERTIFICATE");
+print("degree_T=4");
+print("degree_W=23");
+print("irreducible=1");
+print("divides_resultant=1");
+exit;

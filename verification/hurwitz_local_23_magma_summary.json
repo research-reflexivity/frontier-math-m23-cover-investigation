@@ -1,0 +1,18 @@
+{
+  "engine": "Magma",
+  "input_bytes": 1507,
+  "input_path": "verification/verify_hurwitz_local_23.m",
+  "input_sha256": "0d6d2f0d2a78c66bd18196983f56915a01ffd41e31d4f34b94a33ffbd1045212",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_MAGMA_HURWITZ_LOCAL_PRIME_DATA_1_PLUS_2_PLUS_4",
+    "PASS_MAGMA_HURWITZ_LOCAL_DECOMPOSITION_GROUP_V4",
+    "PASS_HURWITZ_LOCAL_23_MAGMA_CERTIFICATE"
+  ],
+  "memory_megabytes": 32.09,
+  "run_date": "2026-08-27",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 166983448,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.03
+}

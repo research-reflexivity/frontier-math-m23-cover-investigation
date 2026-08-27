@@ -1,0 +1,8 @@
+Singular for arm64-Darwin version 4.4.1 (44105, 64 bit) Nov 11 2025 16:12:34
+                  GP/PARI CALCULATOR Version 2.17.4 (released)
+Magma V2.29-9 (optional certificate; University of Sydney public calculator)
+Python 3.14.6
+Latexmk, John Collins, 27 Dec. 2024. Version 4.86a
+pdfTeX 3.141592653-2.6-1.40.27 (TeX Live 2025)
+SageMath version 10.9, Release Date: 2026-05-04
+GAP 4.14.0 (through SageMath)

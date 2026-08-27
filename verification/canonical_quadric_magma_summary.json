@@ -1,0 +1,20 @@
+{
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "magma_version": "2.29-9",
+  "seed": 751313505,
+  "total_time_seconds": 36.189,
+  "total_memory_mb": 32.09,
+  "input_file": "verification/verify_canonical_quadric.m",
+  "input_bytes": 26445,
+  "input_sha256": "70b60d552f7541ac57a733679fe3a4c527821b4cd099fcd7c70efb3a2f6c8c92",
+  "canonical_quadric_unique": true,
+  "determinant_squarefree_part": 4873,
+  "ruling_field": "Q(sqrt(4873)) = Q(sqrt(11*443))",
+  "branch_orientation_field": "Q(sqrt(-23))",
+  "fields_equal": false,
+  "output": [
+    "PASS_MAGMA_CANONICAL_QUADRIC_IDENTITY_AND_UNIQUENESS",
+    "PASS_MAGMA_RULING_FIELD_Q_SQRT_4873_DIFFERS_FROM_Q_SQRT_MINUS_23",
+    "PASS_CANONICAL_QUADRIC_MAGMA_CERTIFICATE"
+  ]
+}

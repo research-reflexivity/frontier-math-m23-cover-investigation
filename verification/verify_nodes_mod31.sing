@@ -1,0 +1,23 @@
+// Exact finite-field certificate for the 84-node affine singular scheme.
+option(redSB);
+ring r = 31,(V,T),lp;
+< "../data/F31.inc";
+
+ideal jacobian = f,diff(f,T),diff(f,V);
+ideal G = std(jacobian);
+if (size(G) != 2) { print("FAIL_NODE_GRAPH_SIZE"); exit; }
+poly computed_h = G[1];
+poly computed_s = -subst(G[2],V,0);
+< "../data/node_graph_mod31.inc";
+if (computed_h != h84) { print("FAIL_NODE_ELIMINANT"); exit; }
+if (computed_s != s) { print("FAIL_NODE_GRAPH_FUNCTION"); exit; }
+if (deg(h84,intvec(0,1)) != 84) { print("FAIL_NODE_DEGREE"); exit; }
+if (gcd(h84,diff(h84,T)) != 1) { print("FAIL_NODE_SCHEME_NOT_REDUCED"); exit; }
+
+poly Hess = diff(diff(f,T),T)*diff(diff(f,V),V)-diff(diff(f,T),V)^2;
+poly HessNodes = reduce(Hess,G);
+if (gcd(HessNodes,h84) != 1) { print("FAIL_NONORDINARY_SINGULARITY"); exit; }
+
+print("PASS_84_ORDINARY_NODES_MOD31");
+print("degree=84 reduced=1 ordinary=1 graph=1");
+exit;

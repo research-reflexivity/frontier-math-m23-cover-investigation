@@ -1,0 +1,29 @@
+{
+  "certificate": "verification/verify_hurwitz_degree23_third_fiber.sage",
+  "certificate_sha256": "220c426f2bbcb0d7ddd2fc8e78f147480a80c275b9aa461d755ff99c318e2a59",
+  "engine": "SageMath 10.9",
+  "exact_field_degree": 12,
+  "input_sha256": {
+    "data/hurwitz_canonical_models_candidate.json": "f1594e9e85f3b19927938be1fa391afdb8f4ccc5a3db3ea41a2b2ab426a8e2c4",
+    "data/hurwitz_degree23_branch_candidate.json": "cfbce099e3fa867b7c5ba29aa73f02f11d386cf60b00a506d1166d4c65639f62",
+    "data/hurwitz_degree23_maps_candidate.json": "86cdbd314d01a9123aed0b6890fa4316b4303782b1d69563e020b6ede62a6c2a"
+  },
+  "method": "exact plane-sextic fibre resultants over the degree-12 Hurwitz field",
+  "results": {
+    "branch_gcd_degree": 14,
+    "branch_resultant_degree": 42,
+    "common_gcd_degree": 6,
+    "extra_gcd_degree": 8,
+    "extra_gcd_squarefree": true,
+    "generic_gcd_degree": 6,
+    "generic_resultant_degree": 42,
+    "plane_curve_degree": 6,
+    "plane_denominator_degree": 7,
+    "plane_numerator_degree": 7
+  },
+  "status": "passed_exact_characteristic_zero",
+  "timings_seconds": {
+    "branch_resultant_and_gcd": 152.72507691383362,
+    "generic_resultant_and_gcd": 293.6213188171387
+  }
+}

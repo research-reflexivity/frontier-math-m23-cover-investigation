@@ -1,0 +1,29 @@
+{
+  "engine": "Magma",
+  "collision_free_residue_embeddings": [
+    2,
+    3,
+    4,
+    5,
+    9,
+    12
+  ],
+  "input_bytes": 31426,
+  "input_path": "verification/verify_hurwitz_degree23_geometry.m",
+  "input_sha256": "dbf02f96713c897f7990b2c73a4c302b8e321ce491cb683c17478e7d2e246290",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS Magma: critical-fibre length 15 in all 12 embeddings modulo 863153",
+    "PASS Magma: seven base points plus eight residual ramification points",
+    "PASS Magma: collision-free residue embeddings [ 2, 3, 4, 5, 9, 12 ]",
+    "PASS Magma: good reduction excludes characteristic-zero projected-point collisions"
+  ],
+  "memory_megabytes": 32.09,
+  "prime": 863153,
+  "residue_embedding_count": 12,
+  "run_date": "2026-08-27",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 2406092615,
+  "status": "PASS_INDEPENDENT_MAGMA_GEOMETRY_CERTIFICATE",
+  "total_seconds": 0.12
+}

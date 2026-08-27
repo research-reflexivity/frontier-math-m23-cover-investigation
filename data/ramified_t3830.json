@@ -1,0 +1,19 @@
+{
+  "status": "CERTIFIED_CONTROLLED_RAMIFICATION_WITNESS",
+  "source_polynomial": "data/optimal_23_4_Z.json",
+  "specialization": 3830,
+  "progression_condition": "3830 congruent to 2 modulo 319",
+  "ramified_prime": 5,
+  "branch_meeting_condition": "3830 congruent to 5 modulo 25, so v_5(3830)=1",
+  "generic_branch_point": 0,
+  "generic_inertia_class": "2A",
+  "optimal_model_discriminant_factorization": "disc_W(P)=c*T^8*(T^2+23)^22*H_62(T)^2 for c in Q^* and deg(H_62)=62",
+  "modular_transversality": "In the pinned monic model F, at T=0 modulo 5, gcd(F,F_V) has degree 8, is squarefree, and is coprime to F_T",
+  "galois_group": "M23",
+  "root_field_discriminant_valuations": {
+    "t=2 at prime 5": 0,
+    "t=3830 at prime 5": 8
+  },
+  "conclusion": "The t=3830 specialization is ramified at 5 and its M23 splitting field is distinct from the t=2 splitting field.",
+  "general_consequence": "Beckmann's specialization inertia theorem gives 2A inertia for v_q(t)=1 at all but finitely many primes q; CRT with t=2 mod 319 produces infinitely many distinct M23 fields inside the certified progression."
+}

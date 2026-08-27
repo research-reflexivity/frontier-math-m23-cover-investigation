@@ -1,0 +1,25 @@
+// Exact verification in Q(T)[V] that F23_4(T,J0/J1)=0 on F(T,V)=0.
+option(redSB);
+ring r = (0,T),(V),lp;
+< "../data/FQ.inc";
+< "../data/optimal_degree4_pencil.inc";
+< "../data/optimal_23_4_coeffs_T.inc";
+ideal G = std(F);
+
+// Homogeneous Horner evaluation:
+// J1^23 * F23_4(T,J0/J1) = sum_j a_j(T) J0^j J1^(23-j).
+poly N = a23;
+poly J1power = J1;
+int j;
+for (j=22; j>=0; j--)
+{
+  execute("N = reduce(N*J0 + a"+string(j)+"*J1power,G);");
+  if (j > 0) { J1power = reduce(J1power*J1,G); }
+}
+if (N != 0)
+{
+  print("FAIL_EXACT_FUNCTION_FIELD_IDENTITY");
+  exit;
+}
+print("PASS_EXACT_FUNCTION_FIELD_IDENTITY");
+exit;
