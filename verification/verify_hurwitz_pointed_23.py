@@ -12,7 +12,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from sage.all import PowerSeriesRing, PolynomialRing, ProjectiveSpace, QQ, matrix, vector
+from sage.all import (
+    GF,
+    QQ,
+    PowerSeriesRing,
+    PolynomialRing,
+    ProjectiveSpace,
+    matrix,
+    vector,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -454,7 +462,32 @@ def main() -> None:
         }
         b_series = local_series(reduced_b)
         c_series = local_series(reduced_c)
+        ordered_singular_points = sorted(singular_points, key=str)
+        singular_map_parameters = []
+        for point in ordered_singular_points:
+            numerator_value = evaluate(numerator, point)
+            denominator_value = evaluate(denominator, point)
+            assert denominator_value
+            beta_value = numerator_value / denominator_value
+            # On the normalization beta=t^23.  The inverse Frobenius on
+            # F_{23^f} is the (f-1)-st Frobenius power.
+            inverse_frobenius_exponent = 23 ** (
+                residue_field.degree() - 1
+            )
+            t_value = beta_value**inverse_frobenius_exponent
+            singular_map_parameters.append(
+                {
+                    "beta": str(beta_value),
+                    "t": str(t_value),
+                    "t_minpoly_coefficients": [
+                        int(coefficient)
+                        for coefficient in t_value.minpoly()
+                    ],
+                }
+            )
+
         return {
+            "residue_field_modulus": str(residue_field.modulus()),
             "quadric_rank": gram.rank(),
             "integral_over_residue_field": curve_ideal.is_prime(),
             "map_base_scheme_dimension": map_base_ideal.dimension(),
@@ -468,11 +501,12 @@ def main() -> None:
             "affine_singular_point_count": affine_singular_radical.vector_space_dimension(),
             "no_singularities_at_infinity": no_singularities_at_infinity,
             "smooth_patches": smooth_patches,
-            "singular_points": sorted(map(str, singular_points)),
+            "singular_points": list(map(str, ordered_singular_points)),
             "tangent_discriminants": [
                 tangent_discriminant(point)
-                for point in sorted(singular_points, key=str)
+                for point in ordered_singular_points
             ],
+            "singular_map_parameters": singular_map_parameters,
             "marked_points_distinct": reduced_b != reduced_c,
             "marked_points_smooth": all(
                 tuple(point) not in singular_points for point in (reduced_b, reduced_c)
@@ -600,12 +634,84 @@ def main() -> None:
     }
     assert ramified_types == {("A2", 2, 2, 3), ("A6", 6, 6, 7)}
 
+    ramified_parameter_by_type = {
+        invariant["A_type_if_nonzero"]: parameter["t"]
+        for invariant, parameter in zip(
+            results["sextic_e4"]["tangent_discriminants"],
+            results["sextic_e4"]["singular_map_parameters"],
+        )
+    }
+    assert set(ramified_parameter_by_type) == {"A2", "A6"}
+
+    degree_one_e8_parameter = results["degree_one"][
+        "singular_map_parameters"
+    ][0]
+    unramified_e8_parameter = results["sextic_e2"][
+        "singular_map_parameters"
+    ][0]
+    ramified_parameter_record_by_type = {
+        invariant["A_type_if_nonzero"]: parameter
+        for invariant, parameter in zip(
+            results["sextic_e4"]["tangent_discriminants"],
+            results["sextic_e4"]["singular_map_parameters"],
+        )
+    }
+    assert degree_one_e8_parameter["t_minpoly_coefficients"] == [7, 1]
+    assert unramified_e8_parameter["t_minpoly_coefficients"] == [1, 0, 1]
+    assert ramified_parameter_record_by_type["A2"][
+        "t_minpoly_coefficients"
+    ] == [22, 1]
+    assert ramified_parameter_record_by_type["A6"][
+        "t_minpoly_coefficients"
+    ] == [1, 1, 1]
+
+    residual_parameter_ring = PolynomialRing(QQ, "u")
+    u = residual_parameter_ring.gen()
+    singular_position_resolvent = (u - 16) * (u**2 + 1) * (u**2 + u + 1)
+    assert singular_position_resolvent == (
+        u**5 - 15 * u**4 - 14 * u**3 - 31 * u**2 - 15 * u - 16
+    )
+
+    boolean_ring = PolynomialRing(GF(23), "u")
+    u23 = boolean_ring.gen()
+    residual_resolvent = (u23 - 16) * (u23**2 + 1) * (
+        u23**2 + u23 + 1
+    )
+    singular_position_idempotent = (
+        2 * u23**4 + 2 * u23**3 + 4 * u23**2 + 2 * u23 + 3
+    )
+    assert (singular_position_idempotent**2 - singular_position_idempotent).mod(
+        residual_resolvent
+    ) == 0
+    assert singular_position_idempotent.mod(u23 - 16) == 0
+    assert singular_position_idempotent.mod(u23**2 + 1) == 1
+    assert singular_position_idempotent.mod(u23**2 + u23 + 1) == 1
+
     print("PASS all three exact canonical models and map sections are 23-integral")
     print("PASS the degree-one and unramified-degree-2 reductions have one E8 singularity")
     print("PASS the ramified-degree-4 reduction has singularities A2+A6")
     print("PASS each singularity configuration has total delta invariant 4")
     print("PASS each normalization is P1 and the reduced pointed map is Frobenius of degree 23")
     print("PASS the normalized local Hurwitz points have residue degrees 1+2+2")
+    print(
+        "INFO E8 normalization parameters t="
+        f"degree_one:{results['degree_one']['singular_map_parameters'][0]['t']}, "
+        f"unramified_quadratic:{results['sextic_e2']['singular_map_parameters'][0]['t']} "
+        f"over {results['sextic_e2']['residue_field_modulus']}"
+    )
+    print(
+        "INFO A2+A6 normalization parameters t="
+        f"{ramified_parameter_by_type} over "
+        f"{results['sextic_e4']['residue_field_modulus']}"
+    )
+    print(
+        "PASS intrinsic singular-position resolvent="
+        "(u-16)*(u^2+1)*(u^2+u+1) with factor degrees 1+2+2"
+    )
+    print(
+        "PASS singular-position Boolean idempotent="
+        "2*u^4+2*u^3+4*u^2+2*u+3 has values 0,1,1"
+    )
     print("SCOPE the ADE tails still require semistable resolution in a common pointed M23 frame")
 
 

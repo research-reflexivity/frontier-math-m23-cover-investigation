@@ -121,8 +121,12 @@ normalized local Hurwitz scheme has residue degrees `1+2+2`.  Direct
 reduction of the exact pointed maps gives an `E8` source for the degree-one
 point and the unramified-degree-two point, and an `A2+A6` source for the
 ramified-degree-four point.  Each normalization is `P1`, and every reduced
-pointed map is the Frobenius map `t -> t^23`; the separable Mathieu data
-therefore lives in the unresolved ADE tails.  See `HURWITZ_LOCAL_23.md`.
+pointed map is the Frobenius map `t -> t^23`.  The distinguished singular
+positions have resolvent
+`(u-16)*(u^2+1)*(u^2+u+1)` and directly produce the Boolean idempotent
+separating the degree-one and sextic components.  Comparing that intrinsic
+idempotent with the relative-transporter augmentation still requires the
+unresolved pointed Mathieu gluing.  See `HURWITZ_LOCAL_23.md`.
 
 ## Reproduce
 

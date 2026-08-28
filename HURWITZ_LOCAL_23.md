@@ -100,6 +100,38 @@ map is
 beta=t^23.
 ```
 
+The coordinate is unique once this equation is imposed.  It gives an
+intrinsic singular-position coordinate on the reduced local Hurwitz fibre.
+Choose the unique `E8` singularity in the first two rows and the uniquely
+characterized `A6` singularity in the third, and evaluate `t` there.  The
+exact values have minimal polynomials
+
+```text
+degree-one E8:          u-16,
+unramified-degree-2 E8: u^2+1,
+ramified-degree-4 A6:   u^2+u+1.
+```
+
+(The `A2` point in the last row has `t=1`.)  Hence the reduced five-point
+special fibre is recovered from the pointed models by
+
+```text
+R23(u)=(u-16)*(u^2+1)*(u^2+u+1).
+```
+
+In `F_23[u]/(R23)`, the polynomial
+
+```text
+e_sing=2*u^4+2*u^3+4*u^2+2*u+3
+```
+
+is idempotent with factorwise values `(0,1,1)`.  It lifts uniquely through
+the ramified nilpotent thickening and the complete local normalization, and
+its lift is the sextic component idempotent.  This constructs the Boolean
+component morphism directly from the characteristic-23 models, without a
+complex Nielsen labeling or the exact branch-cycle crosswalk.  See
+`notes/SECOND_OPEN_QUESTION_SINGULAR_POSITION_IDEMPOTENT.md`.
+
 This is a useful warning: direct reduction and normalization erase the
 separable Mathieu tail.  The positive genus is concentrated in the ADE
 singularities.  Recovering the stable `M23`-map requires resolving their
@@ -110,19 +142,17 @@ prove the universal pointed parity lemma.
 ## The binary augmentation locally
 
 On the three closed points of the normalized local Hurwitz scheme, let
-`f(P)` be the residue degree.  Under the already certified identification
-of the Hurwitz algebra and the relative-transporter augmentation,
+`f(P)` be the residue degree.  The singular-position idempotent gives
 
 ```text
-epsilon(Theta)(P) = f(P)-1 mod 2,
+e_sing(P) = f(P)-1 mod 2,
 ```
 
 because the two sides have values `(0,1,1)` on residue degrees `(1,2,2)`.
-This gives the binary augmentation a concrete local arithmetic
-interpretation: it is the indicator of the two closed points arising from the
-degree-six component.
-It is not yet an intrinsic construction from the stable maps; establishing
-that comparison is precisely the remaining connector problem.
+Under the already certified Hurwitz-algebra and branch-cycle identification,
+`epsilon(Theta)=e_sing`.  What is still missing is an intrinsic geometric
+proof of that equality: the stable Mathieu incidence cycle has not yet been
+constructed from the singular position and pointed gluing.
 
 Run the exact certificates with
 

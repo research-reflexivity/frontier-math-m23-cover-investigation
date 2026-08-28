@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs,array,longtable,xcolor}
 \usepackage{microtype}
+\usepackage{needspace}
 \usepackage{aliascnt}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
@@ -124,9 +125,11 @@ $[L:K_0]=6$, together with the seven canonical genus-$4$ curves and their
 degree-$23$ maps.  Certified branch cycles show that the maps exhaust the
 seven Nielsen classes and all have monodromy $M_{23}$.  The relative Galois
 closure of $L/K_0$ has group $S_6$, acting naturally on the six conjugate
-maps.  Together these calculations separate the arithmetic intrinsic to the
-chosen branch fibre from the Galois action on the Hurwitz scheme; a conceptual
-explanation of the known fixed Nielsen class remains open.
+maps.  At $23$, the intrinsic position of the distinguished ADE singularity
+has residual equation $(u-16)(u^2+1)(u^2+u+1)=0$ and directly constructs the
+Boolean idempotent separating the degree-one and degree-six components.
+Comparing this geometric idempotent intrinsically with the finite-group
+augmentation remains open.
 
 \smallskip
 Finally, for every integer $t\equiv2\pmod{319}$, the primitive part of
@@ -274,7 +277,8 @@ The argument has three principal stages and one arithmetic application.
   through $W$.
 \item \emph{Finite Hurwitz scheme.}  Exact reconstruction, elimination, and
   certified root continuation recover all seven covers and the full
-  $1+6$ arithmetic decomposition of their moduli scheme.
+  $1+6$ arithmetic decomposition of their moduli scheme; the
+  characteristic-$23$ singular positions recover its component idempotent.
 \item \emph{Arithmetic specialization.}  Moving away from the branch fibre in the
   congruence class $t\equiv2\pmod{319}$ recovers the full group $M_{23}$ for
   every integer specialization.
@@ -1575,8 +1579,8 @@ Consequently, on the normalization,
 \[
  \operatorname{div}(N/D)=23b-23c.
 \]
-After choosing a coordinate $t$ with $b=0$ and $c=\infty$ and rescaling it,
-the pointed direct reduction is
+There is a unique coordinate $t$ on the normalization with $b=0$,
+$c=\infty$, and
 \[
  \overline\beta=t^{23}
 \]
@@ -1596,25 +1600,85 @@ $7$, identifying $A_2$ and $A_6$.  Their delta invariants exhaust the
 arithmetic genus $4$.  The common base ideal has constant Hilbert polynomial
 $7$, and exact local series at $b,c$ give the four displayed orders.  Since
 the residue fields are perfect, the remaining scalar multiplying $t^{23}$
-can be absorbed into $t$.
+can be absorbed into $t$.  The resulting coordinate is unique, since
+$a^{23}=1$ in characteristic $23$ implies $a=1$.
 \end{proof}
 
-This calculation does not yet give the desired stable pointing.  Direct
-normalization retains only the purely inseparable Frobenius map; the genus
-and the separable Mathieu tail are concentrated in the ADE singularities.
-One must resolve their mixed-characteristic deformations while retaining
-the gluing to a common pointed $M_{23}$-frame.
+The direct reductions contain a little more arithmetic than their ADE
+graphs alone.  If $P$ is one of the three closed points, let $\tau_P$ be
+the unique singularity in the $E_8$ cases and the uniquely characterized
+$A_6$ singularity in the third case.  Both are unibranch.  We may therefore
+evaluate the normalization coordinate at the point above $\tau_P$.
 
-It does, however, give the binary augmentation a concrete local arithmetic
-interpretation.  If $P$ is one of the three closed points in
-\cref{prop:hurwitz-local-23} and $f(P)$ is its residue degree, then under the
-already certified Hurwitz-algebra identification,
+\Needspace{.43\textheight}
+\begin{proposition}[Singular-position idempotent]
+\label{prop:singular-position-idempotent}
+Put $u(P)=t(\tau_P)$.  On the reduced special fibre of the normalized local
+Hurwitz scheme, $u$ is a primitive coordinate with equation
 \[
- \epsilon(\Theta)(P)=f(P)-1\pmod2.
+ R_{23}(u)=(u-16)(u^2+1)(u^2+u+1)=0.
 \]
-Indeed, both sides have values $(0,1,1)$ on the residue-degree pattern
-$(1,2,2)$.  This equality uses the identified local Hurwitz algebra; it is
-not yet an intrinsic construction of $\epsilon(\Theta)$ from stable maps.
+The linear factor is the degree-one $E_8$ point, the factor $u^2+1$ is the
+unramified quadratic $E_8$ point, and $u^2+u+1$ is the ramified
+$A_2+A_6$ point.  In
+\[
+ B=\FF_{23}[u]/(R_{23})
+\]
+the polynomial
+\[
+ e_{\mathrm{sing}}(u)=2u^4+2u^3+4u^2+2u+3
+\]
+is idempotent and has values $(0,1,1)$ on these three factors.  Its unique
+lift to the completed local Hurwitz algebra is the sextic component
+idempotent $e_6=(0,1)$.  In particular,
+\[
+ e_{\mathrm{sing}}(P)=f(P)-1\pmod2.
+\]
+\end{proposition}
+
+\begin{proof}
+Exact evaluation on the normalizations gives
+\[
+\begin{array}{c|c|c}
+\text{local point}&u(P)&\text{minimal polynomial over }\FF_{23}\\
+\hline
+\text{degree one, }E_8&16&u-16\\
+\text{unramified degree }2,\ E_8&\sqrt{-1}&u^2+1\\
+\text{ramified degree }4,\ A_6&r&r^2+r+1.
+\end{array}
+\]
+In the last row the $A_2$ point has parameter $t=1$, while Frobenius
+exchanges $r$ and $r^2$.  The constructions of $t$ and $\tau_P$ commute
+with residue-field automorphisms, so the displayed values define an element
+of the coordinate algebra of the reduced special fibre.  The three factors
+are pairwise coprime, and their degrees sum to the five geometric points of
+that fibre, proving the primitive-coordinate assertion.
+
+If $A=(u^2+1)(u^2+u+1)$, then $A(16)=11$ and $11^{-1}=21$ in
+$\FF_{23}$.  Hence
+\[
+ e_{\mathrm{sing}}=1-21A=1+2A,
+\]
+which gives both its displayed formula and its three values.  Idempotents
+lift uniquely through nilpotent thickenings and complete local rings.
+The two quadratic factors are precisely the two local factors of $L$, so
+the lift is $e_6$.
+\end{proof}
+
+Thus the characteristic-$23$ models themselves construct the Boolean
+morphism cutting out the degree-six component; no complex Nielsen labels or
+continued branch cycles enter \cref{prop:singular-position-idempotent}.
+What remains open is the conceptual comparison
+\[
+ \epsilon(\Theta)=e_{\mathrm{sing}}.
+\]
+The exact branch-cycle certificate proves this equality indirectly because
+both sides are $e_6$, but it does not construct the relative-transporter
+augmentation from the stable geometry.  Resolving only the coarse ADE
+source is insufficient: the degree-one and unramified quadratic reductions
+both have geometric type $E_8$.  A proof must retain the arithmetic
+singular position together with the incidence and gluing in a common
+pointed $M_{23}$-frame.
 
 \subsection{Reconstruction and identification of the seven maps}
 
@@ -2149,19 +2213,19 @@ degree-one Hurwitz component.
 \item Classify the $2^4{:}\PSL_3(2)$-extensions of $\QQ$ unramified outside
   $\{2,3,23\}$ with the local groups and constituent fields of
   \cref{thm:ramification}; in particular, decide whether $M$ is unique.
-\item Construct the augmentation $\epsilon(\Theta)$ intrinsically and in a
-  Galois-compatible way from characteristic-$23$ models of the seven covers,
-  and prove that its Boolean morphism cuts out the degree-six component
-  without first using the exact branch cycles.  The richer two-endpoint and
-  cyclic-conjugacy data cannot themselves descend, by
-  \cref{prop:relative-transporter-descent}.  More concretely, resolve the
-  $E_8$ and $A_2+A_6$ deformations of
-  \cref{comp:hurwitz-pointed-23} as pointed stable $M_{23}$-maps and identify
-  the resulting binary cycle with the local residue-degree parity
-  $f(P)-1$.
+\item Compare the intrinsic singular-position idempotent
+  $e_{\mathrm{sing}}$ of \cref{prop:singular-position-idempotent} with the
+  relative-transporter augmentation $\epsilon(\Theta)$ without first using
+  the exact branch cycles.  The characteristic-$23$ models already construct
+  a Galois-compatible Boolean morphism cutting out the degree-six component,
+  while the richer two-endpoint and cyclic-conjugacy data cannot themselves
+  descend, by \cref{prop:relative-transporter-descent}.  More concretely,
+  resolve the $E_8$ and $A_2+A_6$ deformations of
+  \cref{comp:hurwitz-pointed-23} as pointed stable $M_{23}$-maps and construct
+  an incidence-weighted binary cycle whose augmentation is
+  $e_{\mathrm{sing}}(P)=f(P)-1$.
 \end{enumerate}
 
-\clearpage
 \section{Exact data and certificates}
 \label{sec:certificates}
 
@@ -2303,7 +2367,6 @@ septic/octic Frobenius types, the $9{,}889$ transvection primes below
 $10^6$, and the square-class tests at fourteen primes splitting completely
 in $L_0$.
 
-\clearpage
 \section{Scope, provenance, and disclosure}
 \label{sec:scope}
 
@@ -2330,7 +2393,9 @@ The contributions of the present paper fall into four groups.
   its seven canonical curves and degree-$23$ maps, their complete passports,
   and their branch cycles.  We determine the $S_6$ Galois action on the
   degree-six component, its local decomposition and pointed reductions at
-  $23$, and the descent behavior of the relative-transporter invariants.
+  $23$, construct the singular-position idempotent directly from those
+  reductions, and determine the descent behavior of the
+  relative-transporter invariants.
 \item We prove the explicit uniform specialization theorem and controlled
   ramification inside its progression, and construct within that progression
   an infinite mutually independent family.  The abstract existence of such
@@ -2338,11 +2403,14 @@ The contributions of the present paper fall into four groups.
 \end{enumerate}
 
 We do not reprove that the fixed Nielsen class is rational; that is a
-theorem of \cite{HJLPPZ}.  Nor do we give a criterion forcing the degree-one
-component.  The local residue-degree parity agrees with the binary
-augmentation, but we do not construct that agreement intrinsically from
-pointed stable $M_{23}$-maps.  Resolving the $E_8$ and $A_2+A_6$
-deformations in a common Mathieu frame remains open.
+theorem of \cite{HJLPPZ}.  The singular-position idempotent gives an
+intrinsic characteristic-$23$ criterion separating the degree-one and
+degree-six components of the reconstructed algebra.  The local
+residue-degree parity agrees with the binary augmentation, but we do not
+construct that agreement intrinsically from pointed stable $M_{23}$-maps.
+Resolving the $E_8$ and $A_2+A_6$ deformations in a common Mathieu frame and
+identifying the resulting incidence cycle with the singular-position
+idempotent remain open.
 
 The third branch fibre of the six conjugate maps is verified exactly in
 characteristic zero and independently in all twelve residue embeddings of

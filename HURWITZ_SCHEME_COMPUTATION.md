@@ -255,6 +255,8 @@ four group with orbits `2+4`; the two primes of `L/K0` have
 `(e,f)=(1,2),(2,2)`.  Exact reduction of the three local pointed models
 gives singularity configurations `E8`, `E8`, and `A2+A6`.  Their
 normalizations are rational and all three reduced maps are `t -> t^23`.
+The distinguished singular positions have minimal polynomials `u-16`,
+`u^2+1`, and `u^2+u+1`, giving an intrinsic residual component idempotent.
 See `HURWITZ_LOCAL_23.md` and run `make verify-hurwitz-local-23`.
 
 The JSON filename retains `hurwitz_algebra` as a stable data identifier.  In

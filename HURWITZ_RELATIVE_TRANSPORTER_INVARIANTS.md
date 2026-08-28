@@ -28,9 +28,11 @@ Consequently the augmentation has the local arithmetic description
 epsilon(Theta)(P) = residue_degree(P)-1 mod 2.
 ```
 
-This equality uses the already identified Hurwitz algebra.  Comparing it
-intrinsically with the pointed stable reductions is still the missing
-connector; see `HURWITZ_LOCAL_23.md`.
+The pointed characteristic-23 models now construct the same component
+idempotent intrinsically from the singular-position resolvent.  What remains
+is to prove geometrically, without the branch-cycle crosswalk, that the
+relative-transporter augmentation is that idempotent; see
+`HURWITZ_LOCAL_23.md`.
 
 ## Definitions of the finite-group invariants
 
@@ -167,13 +169,13 @@ The four indicator functions therefore descend to morphisms
 `e_6`.  These idempotents separate the two connected components and hence
 give the finest clopen partition of `H_in`.
 
-There is an important logical limitation.  This conclusion uses the already
-certified `1+6` decomposition.  It does not prove that decomposition or
-explain the rational point without the exact maps and their branch cycles.
-An independent explanation would have to construct `epsilon(Theta)` in a
-Galois-compatible characteristic-23 model and prove directly that its
-Boolean morphism cuts out `Spec(L)`, while discarding the richer assignments
-that fail to descend.
+There is an important logical limitation.  This conclusion identifies
+`epsilon(Theta)` with the component idempotent only after the exact
+branch-cycle crosswalk.  The singular-position construction independently
+produces the same Boolean morphism from the characteristic-23 models, but a
+conceptual explanation must still build the pointed Mathieu incidence cycle
+and prove directly that its augmentation is the singular-position
+idempotent, while discarding the richer assignments that fail to descend.
 
 Run the exact checks with
 
