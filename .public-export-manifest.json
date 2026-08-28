@@ -83,7 +83,7 @@
     "data/ramified_t3830.json": "83240821e545f48002c2f883d5aafe15f2f3703e5514ebba8b86884780037af5",
     "data/specialization_t2_Z.gp": "10813a4fad60304434bbca92de4366bef84583f0eac6860e385683b9de9fb45c",
     "data/specialization_t2_Z.json": "f775aa4c004541f25d121fac999fca9c62e493100f99982cc8253fbfa4445862",
-    "paper/main.tex": "fdb66f9d6f5d689cf66a83db4d65abff80604f8c269837ab16e046547a5c775a",
+    "paper/main.tex": "4bdadee9738ec8a95eec01ea09f0e0ab45089ae8f1f781dc10a2a64bea3d87f9",
     "scripts/acb_fft.pyx": "a24b8c1b04a9e00fb4b9b835dda3ab543f08ba9b2c830297a15a4506446f08a6",
     "scripts/analyze_hurwitz_tail_stability.py": "37dd112ac5d90c80ade717824d7bad83e893b6a975639f999b3723168c8a0981",
     "scripts/assemble_hurwitz_monodromy_eliminant.py": "03a506fa636614cdbf3f5bfe1ca52e78928b82c79d944b046db534a98da9346f",
