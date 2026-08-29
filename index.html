@@ -57,14 +57,19 @@
   }
   .site-nav a:hover, .site-nav a:focus-visible { color: #ffffff; }
   .app-context {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 1.25rem 2rem;
-    align-items: center;
     padding: 0.9rem clamp(1rem, 2.5vw, 2.25rem) 1rem;
     border-bottom: 1px solid var(--page-border);
     background: var(--page-panel);
   }
+  .app-context-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem 2rem;
+    align-items: center;
+    width: min(100%, 1120px);
+    margin-inline: auto;
+  }
+  .app-context-copy { min-width: 0; }
   .app-kicker {
     margin: 0 0 0.22rem;
     color: var(--page-accent);
@@ -112,7 +117,7 @@
     border: 0;
   }
   @media (max-width: 1080px) {
-    .app-context { grid-template-columns: minmax(0, 1fr); }
+    .app-context-inner { grid-template-columns: minmax(0, 1fr); }
     .app-links { justify-content: flex-start; }
   }
   @media (max-width: 760px) {
@@ -138,15 +143,17 @@
   </nav>
 </header>
 <section class="app-context" aria-labelledby="app-title">
-  <div>
-    <p class="app-kicker">Interactive proof companion</p>
-    <h1 id="app-title">The Galois-fixed point on an M<sub>23</sub> Hurwitz scheme: pointed characteristic-23 reduction and exact reconstruction</h1>
-    <p class="app-description">This app turns the paper’s characteristic-23 argument into a navigable dependency map. Follow the arrows through the proof, select any node for a plain-language explanation, and open its “101” card for the underlying idea.</p>
+  <div class="app-context-inner">
+    <div class="app-context-copy">
+      <p class="app-kicker">Interactive proof companion</p>
+      <h1 id="app-title">The Galois-fixed point on an M<sub>23</sub> Hurwitz scheme: pointed characteristic-23 reduction and exact reconstruction</h1>
+      <p class="app-description">This app turns the paper’s characteristic-23 argument into a navigable dependency map. Follow the arrows through the proof, select any node for a plain-language explanation, and open its “101” card for the underlying idea.</p>
+    </div>
+    <nav class="app-links" aria-label="Paper resources">
+      <a class="app-link app-link-primary" href="m23-cover-investigation.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
+      <a class="app-link" href="https://github.com/research-reflexivity/frontier-math-m23-cover-investigation" target="_blank" rel="noopener">View the repository ↗</a>
+    </nav>
   </div>
-  <nav class="app-links" aria-label="Paper resources">
-    <a class="app-link app-link-primary" href="m23-cover-investigation.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
-    <a class="app-link" href="https://github.com/research-reflexivity/frontier-math-m23-cover-investigation" target="_blank" rel="noopener">View the repository ↗</a>
-  </nav>
 </section>
 <iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="M23 Hinge Causal Graph" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
