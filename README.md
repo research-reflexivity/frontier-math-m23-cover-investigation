@@ -1,8 +1,8 @@
 # The Galois-fixed point on an M23 Hurwitz scheme
 
 This repository accompanies the paper *The Galois-fixed point on an M23
-Hurwitz scheme: pointed characteristic-23 reduction and exact
-reconstruction*.  Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a
+Hurwitz scheme: exact reconstruction and characteristic-23 geometry*.
+Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a
 regular `M23`-cover from a seven-element Nielsen class and identify one
 class fixed by the relevant arithmetic Galois action.  The central results
 here are:
@@ -12,9 +12,14 @@ here are:
   Nielsen classes;
 - the `S6` Galois action on the six-point component;
 - a characteristic-`23` idempotent defined by a singular-point coordinate
-  and its equality with the relative-transporter augmentation, obtained from
-  pointed stable reduction and specialization of a Lefschetz--Verdier
-  pairing on a Ferrand pushout.
+  and its equality with the relative-transporter augmentation, proved by the
+  exact identification of all seven maps with the seven Nielsen classes.
+
+The paper also constructs a genuine generic cohomological correspondence for
+the transporter augmentation and audits a proposed characteristic-`23`
+specialization.  The simplest Ferrand pinching does not prove that
+specialization: nearby cycles retain the individual sheet labels.  A refined
+relative Bockstein connector is formulated as an open problem.
 
 Here “Galois-fixed” refers to the class identified by Huang et al.  After the
 ordered `23A,23B` data are defined over `K0 = Q(sqrt(-23))`, it is the unique
@@ -24,8 +29,8 @@ cover to `Q` is their theorem.
 Two supporting calculations describe the distinguished cover itself: an
 explicit minimal-degree `(23,4)` equation and the Fano-plane and affine-cube
 arithmetic in the fibre above the rational branch point `T=0`.  These
-structures supply the permutation local systems used in the comparison, but
-the branch fibre alone does not distinguish the fixed Hurwitz point.
+structures motivate the candidate geometric connector, but the branch fibre
+alone does not distinguish the fixed Hurwitz point.
 
 A uniform family of `M23` number-field specializations is a separate
 application of the minimal equation.  Huang et al. already obtain abstractly
@@ -139,10 +144,12 @@ ramified-degree-four point.  Each normalization is `P1`, and every reduced
 pointed map is the Frobenius map `t -> t^23`.  The distinguished singular
 positions have resolvent
 `(u-16)*(u^2+1)*(u^2+u+1)` and directly produce the Boolean idempotent
-separating the degree-one and sextic components.  The normalizer-coset
-classes of the gluing automorphisms and specialization of the
-normalization--conductor pairing identify that idempotent with the
-relative-transporter augmentation.  See `HURWITZ_LOCAL_23.md` and the
+separating the degree-one and sextic components.  Exact branch-cycle
+identification shows that this idempotent and the relative-transporter
+augmentation both equal the sextic-component idempotent.  The accompanying
+connector notes distinguish the proved finite and local identities from the
+still-open relative cohomological comparison.  See `HURWITZ_LOCAL_23.md`,
+`notes/RELATIVE_COHOMOLOGICAL_CORRESPONDENCE_REDERIVATION.md`, and the
 comparison section of the manuscript.
 
 ## Reproduce
@@ -184,8 +191,8 @@ The recorded class-`4` run uses
 256-bit precision.  Run `make certify-degree-one-branch-cycles` for class `6`.
 The exact descent test for the relative-transporter invariants is
 `make verify-hurwitz-relative-transporter`.
-The finite group identities and conductor arithmetic used in the pointed
-characteristic-23 comparison are checked by
+The finite group identities and local arithmetic relevant to the candidate
+characteristic-23 connector are checked by
 `make verify-hurwitz-connector`.
 The focused exact reconstruction of the formal annulus at the ramified `A6`
 node is available separately as `make verify-hurwitz-connector-a6`.

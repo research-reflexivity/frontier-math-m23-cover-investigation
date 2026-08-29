@@ -1,4 +1,5 @@
-/* Independent Magma certificate for the finite pinched-tag identities. */
+/* Independent finite identities for the candidate Bockstein connector.
+   This is not a certificate of a nearby-cycle comparison. */
 
 F := GF(2);
 
@@ -39,6 +40,14 @@ untaggedTotal := 7*singletonPairing+8*twoSetPairing;
 assert [singletonPairing,twoSetPairing,untaggedTotal] eq [2783,253,21505];
 assert untaggedTotal mod 2 eq 1;
 
+assert Dot([1,0],[0,1]) eq 0;
+assert Bucket([1,0],[0,1]) eq 1;
+
+bocksteinPlus := 1078;
+bocksteinMinus := 112;
+assert (bocksteinPlus-bocksteinMinus) mod 2 eq 0;
+assert ((bocksteinPlus-bocksteinMinus) div 2) mod 2 eq 1;
+
 squareNormalized := [1,1,0];
 nonsquareNormalized := [0,1,1];
 squareNode := [(77-8) mod 2,nodeDifference mod 2,
@@ -60,7 +69,9 @@ wildTerms := [(1+q) mod 2 : q in returnBits];
 specialTraces := [(wild+1) mod 2 : wild in wildTerms];
 assert specialTraces eq returnBits;
 
-print "pinched_bucket_identity_checked_for_fiber_sizes=1..6";
+print "finite_bucket_identity_checked_for_fiber_sizes=1..6";
+print "two_label_counterexample=tagged_0_untagged_1";
+print "bockstein=(1078-112)/2=483=1_mod_2";
 print "untagged_total=7*(23*11^2)+8*253=21505";
 print "node_coefficients=[5929,64],difference=5865=1_mod_2";
 print "conductor_bucket_distribution=23x77_and_253x8";
@@ -69,6 +80,6 @@ print "square_fields_tagged_untagged_offdiag=[1,1,0]";
 print "nonsquare_fields_tagged_untagged_offdiag=[0,1,1]";
 print "tree_telescope_checked_through_12_edges=true";
 print "special_trace_table=[0,1,1]";
-print "PASS_PINCHED_TAG_NEARBY_CYCLE";
+print "PASS_PINCHED_TAG_FINITE_IDENTITIES";
 
 quit;

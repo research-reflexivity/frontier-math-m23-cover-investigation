@@ -142,7 +142,9 @@ verify-hurwitz-connector:
 		notes/audit_fano_affine_incidence_bridge.g
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
 		notes/explore_untagged_lifted_trace_pairing.g
-	python3 notes/certify_pinched_tag_nearby_cycle.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/explore_tagged_tame_boundary.g
+	python3 notes/certify_pinched_tag_finite_identities.py
 
 verify-hurwitz-connector-a6:
 	M23_ADE_ONLY_A6=1 DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
@@ -251,7 +253,7 @@ verify-magma: verify-magma-record
 	$(MAGMA) -b verification/verify_hurwitz_galois_closure.m
 	$(MAGMA) -b verification/verify_hurwitz_local_23.m
 	$(MAGMA) -b notes/certify_fano_affine_odd_fixed_point_lemma.m
-	$(MAGMA) -b notes/certify_pinched_tag_nearby_cycle.m
+	$(MAGMA) -b notes/certify_pinched_tag_finite_identities.m
 	$(MAGMA) -b notes/certify_wild_parameter_orientation.m
 
 export-public:

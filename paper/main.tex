@@ -60,7 +60,7 @@
 
 \title[The Galois-fixed point on an $M_{23}$ Hurwitz scheme]
   {The Galois-fixed point on an $M_{23}$ Hurwitz scheme:\\
-   pointed characteristic-$23$ reduction and exact reconstruction}
+   exact reconstruction and characteristic-$23$ geometry}
 \author{François Le Lay}
 \address{Applied Science Team, Reflexivity, 589 5th Avenue, Suite 606A,
 New York, NY 10017}
@@ -72,14 +72,14 @@ License (\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}).}
 \date{}
 
 \hypersetup{
-  pdftitle={The Galois-fixed point on an M23 Hurwitz scheme: pointed characteristic-23 reduction and exact reconstruction},
+  pdftitle={The Galois-fixed point on an M23 Hurwitz scheme: exact reconstruction and characteristic-23 geometry},
   pdfauthor={François Le Lay},
-  pdfsubject={An exact arithmetic reconstruction and characteristic-23 explanation of the Galois-fixed point on an M23 Hurwitz scheme}
+  pdfsubject={Exact arithmetic reconstruction and characteristic-23 geometry of the Galois-fixed point on an M23 Hurwitz scheme}
 }
 
 \subjclass[2020]{Primary 12F12; Secondary 11G32, 14H30, 20B25, 11R32}
 \keywords{Mathieu group $M_{23}$, finite Hurwitz scheme, Galois-fixed
-point, pointed stable reduction, nearby cycles, Fano plane, inverse Galois
+point, characteristic-$23$ reduction, Fano plane, inverse Galois
 problem}
 
 \begin{document}
@@ -113,15 +113,19 @@ parameter of a distinguished singular point has minimal polynomial
 and constructs an idempotent $e_{\mathrm{sing}}$ separating the degree-one
 and degree-six components.  Independently, a relative-transporter
 construction in $M_{23}$ produces an augmentation
-$\epsilon(\Theta)$ with the same two geometric values.  Pointed stable
-reduction, the odd fixed-point identity joining the Fano heptad to the
-affine eight-point torsor, and specialization of a Lefschetz--Verdier pairing
-on an auxiliary Ferrand pushout give the intrinsic comparison
+$\epsilon(\Theta)$ with the same two values on the seven exact covers.
+The certified identification of those covers with the seven Nielsen classes
+therefore proves
 \[
  \epsilon(\Theta)=e_{\mathrm{sing}}.
 \]
-This comparison does not use the identification of the seven exact maps with
-the seven complex Nielsen classes.
+We also construct a generic cohomological correspondence whose mod-$2$
+intersection number is $\epsilon(\Theta)$ and analyze a proposed
+characteristic-$23$ specialization.  A direct nearby-cycle calculation shows
+that the simplest pinching construction retains the sheet labels and does
+not produce the required quotient pairing.  We isolate the resulting
+Bockstein comparison as a precise open problem rather than use it in the
+proof of the equality.
 
 \smallskip
 Two further calculations describe the distinguished cover itself.  We
@@ -130,8 +134,8 @@ were proved by Huang et al., obtaining a primitive bidegree-$(23,4)$
 equation.  In its branch fibre above $T=0$, the seven unramified points form
 a Fano plane, the eight colliding pairs form an affine $\FF_2^3$-torsor,
 and their arithmetic gives a $2^4{:}\PSL_3(2)$ field tower.  These structures
-supply the permutation local systems used in the pointed comparison, but
-the branch fibre alone does not distinguish the fixed Hurwitz point.
+motivate the candidate geometric comparison, but the branch fibre alone does
+not distinguish the fixed Hurwitz point.
 
 \smallskip
 As a separate application, every integer specialization
@@ -189,10 +193,10 @@ then two independent ways to detect its complement.  The finite-group side
 gives the augmentation $\epsilon(\Theta)$ of a relative-transporter element.
 The geometric side evaluates a normalization parameter at a distinguished
 singular point of each pointed characteristic-$23$ reduction and gives an
-idempotent $e_{\mathrm{sing}}$.  The central result identifies them without
-using the complex branch-cycle labeling for the comparison.
+idempotent $e_{\mathrm{sing}}$.  The central result identifies them in the
+exactly reconstructed coordinate algebra.
 
-\begin{theorem}[Pointed characteristic-$23$ explanation of the fixed point]
+\begin{theorem}[Agreement of the two component idempotents]
 \label{thm:connector}
 Let $e_{\mathrm{sing}}$ be the idempotent defined by the singular-point
 coordinate in \cref{prop:singular-position-idempotent}, and let
@@ -202,12 +206,13 @@ relative-transporter augmentation of
 \[
  \epsilon(\Theta)=e_{\mathrm{sing}}
 \]
-in the coordinate algebra of $\mathcal H_{\mathrm{in}}$.  The comparison is
-obtained from the pointed characteristic-$23$ stable maps and does not use
-the certified complex branch cycles of the seven reconstructed maps.
+in the coordinate algebra of $\mathcal H_{\mathrm{in}}$.  Under the
+isomorphism $A_{\mathrm H}=K_0\times L$, both sides equal the primitive
+idempotent $e_6=(0,1)$.
 \end{theorem}
 
-The proof uses a feature visible inside the distinguished cover.  Let
+The characteristic-$23$ geometry behind the second idempotent uses a feature
+visible inside the distinguished cover.  Let
 $X\to\PP^1_T$ be the degree-$23$ cover constructed in \cite{HJLPPZ}.  Its
 splitting field over $\QQ(T)$ is regular with Galois group $M_{23}$, its
 source curve has genus $4$, and its branch points are
@@ -217,15 +222,19 @@ source curve has genus $4$, and its branch points are
 The inertia involution at $T=0$ has cycle shape $1^7 2^8$: seven sheets
 remain fixed and eight pairs collide.  These two sets support respectively
 a Fano plane and an affine $\FF_2^3$-torsor.  Their common odd fixed-point
-identity supplies the finite permutation local systems in the
-normalization--conductor argument used to prove \cref{thm:connector}.
+identity supplies the finite permutation sets in a candidate cohomological
+explanation of \cref{thm:connector}.  We make the generic correspondence
+precise and compute its proposed local specialization.  The nearby-cycle
+stalk keeps the individual labels, however, so the proposed specialization
+does not by itself prove the theorem.  This distinction is recorded
+explicitly in \cref{sec:connector}.
 
 Two distinct seven-element Galois sets must therefore be kept separate.  The
 seven geometric points of $\mathcal H_{\mathrm{in}}$ parametrize seven
 covers.  The seven unramified points above $T=0$ lie inside only the
-distinguished cover.  The second set contributes geometry to the comparison,
-but it is not itself the moduli scheme and does not by itself distinguish the
-fixed point.
+distinguished cover.  The second set contributes geometry to a possible
+conceptual explanation, but it is not itself the moduli scheme and does not
+by itself distinguish the fixed point.
 
 To make the arithmetic within the distinguished cover exact, we also carry
 out the minimal-coordinate construction anticipated by Huang et al.  Write
@@ -297,16 +306,17 @@ The logical spine of the paper is
 \[
  \text{degree-$7$ Hurwitz algebra}
  \longrightarrow
- \text{pointed reduction at }23
+ \text{seven exact maps and certified branch cycles}
  \longrightarrow
  \epsilon(\Theta)=e_{\mathrm{sing}}.
 \]
-\Cref{sec:mechanism} gives a short guide to this mechanism before the
-computational details.  The full Hurwitz reconstruction and the proof of the
-comparison come first.  The minimal projection and branch-fibre arithmetic
-are then recorded as supporting results on the distinguished cover.  The
-specialization theorem comes last as an independent application, so it does
-not interrupt the fixed-point argument.
+The pointed reduction at $23$ independently constructs
+$e_{\mathrm{sing}}$ and suggests a more conceptual explanation of the same
+equality.  \Cref{sec:mechanism} separates the proved comparison from that
+open geometric problem before the computational details.  The minimal
+projection and branch-fibre arithmetic are supporting results on the
+distinguished cover, and the specialization theorem is an independent
+application.
 
 \subsection{Prior work and contributions}
 \label{sec:prior-work}
@@ -336,8 +346,10 @@ specialization behavior \cite{DebesGhazi,Legrand}.
 
 Relative to this prior work, the central contributions are the exact
 $K_0\times L$ Hurwitz algebra, its $S_6$ Galois closure and seven exact maps,
-and the pointed characteristic-$23$ comparison that explains why the
-finite-group and geometric invariants cut out the same component.  Supporting
+the characteristic-$23$ singular-position idempotent, and its exact
+identification with the relative-transporter augmentation.  We additionally
+construct the generic side of a possible cohomological explanation and show
+why a natural pinching shortcut does not supply its special side.  Supporting
 results give the explicit minimal-degree equation and ruling field, the
 arithmetic and obstruction theory of the distinguished branch fibre, and the
 all-members congruence class modulo $319$ with controlled ramification.  The
@@ -347,97 +359,75 @@ detailed attribution, limitations, and data provenance are recorded in
 \section{The fixed-point mechanism}
 \label{sec:mechanism}
 
-The comparison theorem concerns the two primitive idempotents of
+There are two primitive idempotents in
 \[
- A_{\mathrm H}=K_0\times L.
+ A_{\mathrm H}=K_0\times L:
+ \qquad e_1=(1,0),\qquad e_6=(0,1).
 \]
-Write $e_1=(1,0)$ for the idempotent cutting out the degree-one
-open-and-closed subscheme and $e_6=(0,1)$ for its degree-six complement.
-Explaining the fixed point means constructing one of these idempotents from
-intrinsic geometry and identifying it with an invariant already visible in
-the Nielsen-class problem.  Merely relisting the seven branch-cycle triples
-would identify the same point, but would not provide such an explanation.
-
-On the finite-group side, work in the fixed degree-$23$ permutation
-representation of $M_{23}$.  The two wild endpoint normalizers of a
-normalized Nielsen triple give relative transporter elements in the
-centralizer of the finite inertia involution.  Their images form an element
+The theorem of the paper compares two independently defined functions on the
+seven geometric points.  The first is the augmentation
+$\epsilon(\Theta)$ of a relative-transporter element in
+$\FF_2[2^3{:}\PSL_3(2)]$.  Its certified values are $0$ on the distinguished
+Nielsen class and $1$ on the other six.  The second comes from the
+normalization of the integral Hurwitz scheme at the prime above $23$.
+Evaluation at the distinguished singular point has polynomial
 \[
- \Theta\in\FF_2[2^3{:}\PSL_3(2)].
+ (u-16)(u^2+1)(u^2+u+1),
 \]
-Its augmentation is $0$ on the distinguished point and $1$ on each of the
-other six points.  Hence, once the exact $1+6$ arithmetic decomposition is
-known, $\epsilon(\Theta)$ is the idempotent $e_6$.  This is a finite
-calculation, but that calculation alone does not explain why the same
-Boolean function should arise from reduction at $23$.
+and the function taking the values $(0,1,1)$ on these three closed points is
+$e_{\mathrm{sing}}$.
 
-On the geometric side, let $\mathcal H_R$ be the normalization of
-$\operatorname{Spec}\mathcal O_{K_0,\mathfrak q}$ in $A_{\mathrm H}$, where
-$\mathfrak q$ is the prime above $23$.  Its closed fibre has three closed
-points: a rational $E_8$ point, an unramified quadratic $E_8$ point, and a
-ramified $A_2+A_6$ point.  Normalize each reduced source using the uniquely
-marked zero and pole of the degree-$23$ map.  Evaluation of the resulting
-coordinate $u$ at the distinguished singular point satisfies
-\[
- (u-16)(u^2+1)(u^2+u+1)=0.
-\]
-The polynomial $e_{\mathrm{sing}}(u)$ taking the values $(0,1,1)$ on these
-three factors lifts uniquely to $e_6$.  Unlike a label imported from complex
-continuation, this singular position is defined directly on the pointed
-characteristic-$23$ models.
+The exact reconstruction identifies the seven maps with the seven Nielsen
+classes.  It follows that both functions are $e_6$, which proves
+\cref{thm:connector}.  This proof is arithmetic and fully certified.  It is
+important not to describe it as a label-free geometric explanation: the
+certified branch-cycle matching is what places the finite-group values on the
+two factors of $K_0\times L$.
 
-The substantive issue is to compare these two constructions without first
-identifying both of them with $e_6$ through the correspondence between the
-exact maps and the complex Nielsen classes.  After a finite splitting
-extension, the proof chooses one
-labeling of the geometric degree-$23$ fibre and uses it for every component
-of the pointed stable map.  The seven fixed sheets of the finite involution
-form a Fano set $H_x$, while its eight two-sheet orbits form an affine torsor
-$A_x$.  For every $c$ in the inertia centralizer,
+There is nevertheless a concrete route toward such an explanation.  For an
+involution $x\in2A$, its seven fixed sheets form a Fano set $H_x$, and its
+eight two-sheet orbits form an affine $\FF_2^3$-torsor $A_x$.  Every element
+$c\in C_{M_{23}}(x)$ satisfies
 \[
  |\Fix_{H_x}(c)|+|\Fix_{A_x}(c)|\equiv1\pmod2.
 \]
-This identity identifies the generic transporter augmentation with the
-degree modulo $2$ of a finite intersection of correspondences.
+Using this identity, finite incidence correspondences attached to the two
+wild endpoint normalizers realize $\epsilon(\Theta)$ as a genuine generic
+intersection number.  This construction is given in
+\cref{sec:connector}.
 
-At the closed fibre, the normalization keeps the labels separate, whereas
-the conductor subscheme identifies labels having the same image under a
-finite quotient map.  This is realized by a Ferrand pushout.  The
-normalization--conductor distinguished triangle, after applying nearby
-cycles, compares the diagonal pairing on the normalization with the pairing
-obtained by pushforward along that quotient map.  The gluing element at the
-marked wild node defines a character $\chi_{\mathrm{gl}}(n)\in\FF_2$; its
-values are $0$ at the rational $E_8$ point and $1$ at the two points on the
-sextic component.  Compatibility of the Lefschetz--Verdier pairing with
-specialization gives
+The missing step is local.  A tempting Ferrand pushout identifies several
+generic labels at a closed point.  Its nearby stalk at a quotient point
+$q$ is not the one-dimensional constant sheaf: it is the full permutation
+module
 \[
- \epsilon(\Theta)
- =\operatorname{Tr}_{\mathrm{generic}}
- =\operatorname{Tr}_{\mathrm{closed}}
- =\chi_{\mathrm{gl}}(n)
- =e_{\mathrm{sing}}.
+ \FF_2[p^{-1}(q)].
 \]
+Consequently the specialized pairing of the two lifted sections is still the
+coordinate pairing $\sum_e\alpha_e\beta_e$.  The fibre-sum product
+$(\sum_e\alpha_e)(\sum_e\beta_e)$ appears only after an additional
+unit--counit operation and is a different cohomological correspondence.  The
+two pairings already differ on a two-element fibre, so they cannot be
+identified by formal trace compatibility.
 
-The exact branch cycles remain essential for proving that
-$\operatorname{Spec}(K_0\times L)$ is the full Hurwitz scheme.  They are not
-used in the middle equality above.  This separation is the point of the
-argument: exact reconstruction determines the finite \'etale Hurwitz scheme,
-while pointed reduction explains its distinguished component.
+The exact local numbers do point to a more refined possibility.  Before
+reduction modulo $2$, the difference of the two branch coefficients is
+divisible by $2$ but not by $4$.  A relative two-term complex and its
+Bockstein boundary could therefore retain the missing parity.  Constructing
+that complex and proving that its generic and special trace classes agree is
+the precise geometric problem left open here.  The paper records the valid
+generic correspondence, the local calculation, and the obstruction, without
+using the proposed Bockstein connector in any theorem.
 
-The next section gives the full reconstruction and the detailed comparison
-proof.  The two sections after it record explicit arithmetic on the known
-cover and show why the unpointed Fano plane, affine cube, reflection, and
-ruling field are suggestive but insufficient by themselves.
-
-\section{Exact Hurwitz arithmetic and the fixed-point comparison}
+\section{Exact Hurwitz arithmetic and the component comparison}
 \label{sec:hurwitz-scheme}
 
 \subsection{Coordinate algebra and canonical models}
 
-We now turn to the seven-cover moduli problem itself.  The section has three tasks: reconstruct
-and identify the finite Hurwitz scheme, construct its component idempotents
-independently from finite-group and characteristic-$23$ data, and prove their
-intrinsic equality by pointed stable reduction.  The normalized canonical
+We now turn to the seven-cover moduli problem itself.  The section has three
+tasks: reconstruct and identify the finite Hurwitz scheme, construct its
+component idempotents independently from finite-group and characteristic-$23$
+data, and compare them in the exact coordinate algebra.  The normalized canonical
 quadric has the normalization-invariant coefficient
 \[
  J=\frac{q_{13}}{A^2},
@@ -952,13 +942,13 @@ This construction alone does not yet identify the two expressions
  \epsilon(\Theta)=e_{\mathrm{sing}}.
 \]
 The exact branch-cycle certificate proves the equality indirectly because
-both sides are $e_6$.  The intrinsic proof in \S\ref{sec:connector} instead
-constructs the relative-transporter augmentation from the stable geometry.
-Resolving only the coarse ADE source would be insufficient: the degree-one
-and unramified quadratic reductions both have geometric type $E_8$.  The
-proof therefore retains the arithmetic singular position together with the
-incidence and gluing in a common labeling of the degree-$23$ geometric
-fibre.
+both sides are $e_6$; this is the proof used in \cref{thm:connector}.
+\Cref{sec:connector} then asks whether the equality can also be obtained from
+a single specialization argument.  Resolving only the coarse ADE source is
+insufficient: the degree-one and unramified quadratic reductions both have
+geometric type $E_8$.  A successful geometric proof must retain the
+arithmetic singular position together with compatible incidence and gluing
+data.
 
 \subsection{Descent of finite invariants}
 
@@ -1080,28 +1070,27 @@ correspondence between morphisms to the constant two-point scheme and
 idempotents, they are therefore $e_1$ and $e_6$, respectively.
 \end{proof}
 
-This interpretation uses the already certified $1+6$ decomposition; the
-branch-cycle calculation remains the independent identification of the
-Hurwitz scheme.  We now give the promised intrinsic comparison with the
-characteristic-$23$ model.
+This interpretation uses the certified $1+6$ decomposition and the exact
+branch-cycle identification of its seven geometric points.
 
-\subsection{Comparison by pointed characteristic-$23$ reduction}
+\begin{proof}[Proof of \cref{thm:connector}]
+By \cref{prop:singular-position-idempotent}, the singular-position function
+is $e_{\mathrm{sing}}=e_6$.  By
+\cref{prop:relative-transporter-descent}, the augmentation is
+$\epsilon(\Theta)=e_6$.  Hence
+$\epsilon(\Theta)=e_{\mathrm{sing}}$ in $A_{\mathrm H}$.
+\end{proof}
+
+\subsection{A candidate cohomological explanation}
 \label{sec:connector}
 
+We now separate a valid generic construction from the unresolved
+specialization step.  This subsection is not used in the proof above.
 Fix the natural degree-$23$ permutation representation
-$M_{23}\subset S_{23}$.  By a \emph{labeling of the geometric fibre} we
-mean an identification of its sheets with $\{1,\ldots,23\}$.  Changing the
-labeling simultaneously conjugates every permutation in $S_{23}$, and the
-labelings form an $S_{23}$-torsor.  The constructions below are first made
-after a finite extension that trivializes this torsor and are then shown to
-be invariant under simultaneous relabeling.
-
-Let $x\in2A(\M)$, let $H_x=\Fix(x)$, and let $A_x$ be the set of its eight
-two-element sheet orbits.  Thus $H_x$ is the seven-point Fano set and $A_x$
-is an affine torsor under $\FF_2^3$.  Put
-\[
- B_x=H_x\amalg A_x.
-\]
+$M_{23}\subset S_{23}$.  Let $x\in2A(\M)$, let $H_x=\Fix(x)$, and let $A_x$
+be the set of its eight two-element sheet orbits.  Thus $H_x$ is the
+seven-point Fano set and $A_x$ is an affine torsor under $\FF_2^3$.  Put
+$B_x=H_x\amalg A_x$.
 
 \begin{lemma}[Fano--affine odd fixed-point lemma]
 \label{lem:fano-affine-odd}
@@ -1123,284 +1112,140 @@ If $g-1$ is invertible, the dual action fixes no point of $H_x$, while the
 affine equation has exactly one solution.  Both cases give the assertion.
 \end{proof}
 
-After passing to the splitting extension just described, let
-$D_y,D_z\simeq23{:}11$ be the two wild endpoint normalizers in the same
-labeling.  For $D=D_y$ or $D_z$, define the finite correspondence
+After a splitting extension, let $D_y,D_z\simeq23{:}11$ be the two wild
+endpoint normalizers in one labeling.  For $D=D_y$ or $D_z$, define
 \[
-\mathcal L_D=\{(b,x^d,b^d):b\in B_x,\ d\in D\}.
+ \mathcal L_D=\{(b,x^d,b^d):b\in B_x,\ d\in D\}.
 \]
-The action of $D$ on $x^D$ is free, since the stabilizer order divides both
+The action of $D$ on $x^D$ is free because a stabilizer order divides both
 $253$ and $|\Cx|=2688$.  If $w\in x^{D_y}\cap x^{D_z}$, let $d_y(w)$ and
-$d_z(w)$ be the unique transporter elements carrying $x$ to $w$.  Then
-\[
- c_w=d_y(w)d_z(w)^{-1}\in\Cx,
-\]
-and equality of the two lifted orbit labels over $w$ is equivalent to
-$b^{c_w}=b$.  Therefore \cref{lem:fano-affine-odd} gives
+$d_z(w)$ be the unique transporters carrying $x$ to $w$.  Then
+$c_w=d_y(w)d_z(w)^{-1}\in\Cx$, and equality of the lifted labels over $w$
+is equivalent to $b^{c_w}=b$.  The preceding lemma gives
 \begin{equation}
  \deg(\mathcal L_{D_y}\cap\mathcal L_{D_z})\bmod2
  =|x^{D_y}\cap x^{D_z}|\bmod2
- =\epsilon(\Theta).                                  \label{eq:connector-generic}
+ =\epsilon(\Theta).
+\label{eq:connector-generic}
 \end{equation}
-This realizes the generic augmentation as the degree modulo $2$ of a finite
-intersection; the relative transporter is used only to prove that degree is
-odd.
+Equivalently, on the normalized finite branch-orbit scheme $B$ and its
+graph-orbit incidence scheme $I$, take constant $\FF_2$-sheaves and the two
+incidence correspondences $\mathcal L_{D_y}$ and $\mathcal L_{D_z}$ in
+opposite directions.  Their Lefschetz--Verdier pairing on the generic fibre
+is exactly the finite intersection in \eqref{eq:connector-generic}.  This
+names the schemes, sheaves, correspondences, and cohomological maps on the
+generic side.
 
-We next record the normalizer-coset class of the gluing automorphism in each
-of the three local characteristic-$23$ models.  Put $D=23{:}11$ and identify
-\[
- N_{S_{23}}(D)/D=(23{:}22)/(23{:}11)\simeq C_2.
-\]
-Let
-$\chi_{\mathrm{gl}}:N_{S_{23}}(D)/D\xrightarrow{\sim}\FF_2$
-be the resulting character.  For a transition element $n$ at the marked
-wild node, $\chi_{\mathrm{gl}}(n)$ records its normalizer coset.
+\subsubsection{The local nearby-cycle calculation}
 
-\begin{computation}[Normalizer classes of the pointed stable reductions]
-\label{comp:pointed-stable-returns}
-After finite base change, the complete local traits at the three closed
-points carry stable marked $\M$-models compatible with a single labeling of
-the degree-$23$ geometric fibre.  If $n_P$ denotes the transition element at
-the marked wild node, then
-\begin{equation}
-\begin{array}{c|ccc}
-\text{closed point}&\text{rational }E_8&
- E_8,\ (e,f)=(1,2)&A_2+A_6,\ (e,f)=(2,2)\\
-\hline
-\chi_{\mathrm{gl}}(n_P)&0&1&1.
-\end{array}
-\label{eq:pointed-return-bits}
-\end{equation}
-Thus $\chi_{\mathrm{gl}}(n_P)$ has the same three values as
-$e_{\mathrm{sing}}$.
-\end{computation}
-
-\begin{proof}
-Stable reduction for the marked Galois covers extends the deck action and
-the three branch sections after finite base change.  In Wewers's patching
-datum, one group isomorphism $\lambda$ is shared by all tails; changing the
-datum transports $\lambda$ and every tail map simultaneously
-\cite[Section~4.2 and Theorem~4.5]{Wewers}.  Hence the two wild groups and
-the finite inertia are expressed in one labeling up to simultaneous
-conjugacy.
-
-The exact normalized Newton charts compute the square class of the gluing
-scalar: it is a square on the rational $E_8$ branch and a nonsquare on the
-unramified $E_8$ branch.  On the ramified branch, the $A_2$ pole gives the
-trivial class, while the formal annulus corresponding to the unique $A_6$
-node has conductor pair $(11,15)$ and gives the nonsquare class.  For a
-pointed $23{:}11$ node with lower conductor $h=15$, scaling the natural
-degree-$23$ quotient parameter by $\eta$ scales the additive wild line by
-$\lambda^{-h}$, where $\lambda^{11}=\eta$.  Since $11$ and $15$ are odd,
-the two scalars have the same square class.  This gives
-\eqref{eq:pointed-return-bits}.  The
-unibranch $A_6$ normalization and its order-$23$ target intersection make
-this the unique pointed $(11,15)$ node; changing the formal coordinate on
-either branch does not change the normalizer-coset class.
-\end{proof}
-
-It remains to place the generic intersection and the local intersection at
-the node in one geometric object.  We use a Ferrand pushout
-\cite{Ferrand}.  After passing to the labeling torsor, let $\mathcal W$ be
-the set of all involutions in $S_{23}$ of cycle type
-$1^7 2^8$.  For $w\in\mathcal W$, let $B_w$ be its set of sheet orbits, and
-set
-\[
- \mathcal I=\{(w,b'):w\in\mathcal W,\ b'\in B_w\},
- \qquad E_x=B_x\times\mathcal I.
-\]
-The endpoint incidence $\mathcal L_D$ is a subcorrespondence of $E_x$.
-On the conductor subscheme, the gluing morphism is induced by the canonical
-surjection
-\begin{equation}
- p:E_x\longrightarrow Q,\qquad (b,w,b')\longmapsto b'.
-\label{eq:pinch-map}
-\end{equation}
-where $Q$ is the set of one- and two-element sheet subsets.  Thus the
-normalization retains $(b,w,b')$, whereas its image in the conductor retains
-only $b'$.
-
-The local algebra makes this statement precise.  For a finite surjection
-$p:E\to Q$, a DVR $R$ with residue field $k$, and fraction field $K$, form
-the Ferrand pushout
+Let $R$ be a strictly henselian discrete valuation ring with residue field
+$k$ and fraction field $K$, and let $p:E\to Q$ be a finite surjection.  The
+finite Ferrand pushout \cite{Ferrand}
 \[
  \mathcal P_p=
  \operatorname{Spec}(R^E)\amalg_{\operatorname{Spec}(k^E)}
- \operatorname{Spec}(k^Q).
+ \operatorname{Spec}(k^Q)
 \]
-Its coordinate ring is
-\begin{equation}
+has coordinate ring
+\[
  A_p=R^E\mathop{\times}_{k^E}k^Q
  =\{(a_e)\in R^E:\bar a_e\text{ is constant on each fibre of }p\}.
-\label{eq:pinch-algebra}
-\end{equation}
-The $R$-algebra $A_p$ is finite free of rank $|E|$; the normalization of
-$\mathcal P_p$ is $\operatorname{Spec}(R^E)$, the conductor subscheme in the
-normalization is $\operatorname{Spec}(k^E)$, and its image in
-$\mathcal P_p$ is $\operatorname{Spec}(k^Q)$.  The generic fibre has
-coordinate algebra $K^E$, and the reduced closed fibre has coordinate
-algebra $k^Q$.  At $q\in Q$, the nearby stalk with $\Lambda=\FF_2$ is
-$\Lambda[p^{-1}(q)]$, with no higher nearby cohomology.  The specialization
-unit and its dual counit are
+\]
+For $q\in Q$, the strict local geometric generic fibre is the discrete set
+$E_q=p^{-1}(q)$.  Therefore, with $\Lambda=\FF_2$,
 \begin{equation}
- \Lambda\longrightarrow\Lambda[p^{-1}(q)]
-       \longrightarrow\Lambda,\qquad
- 1\longmapsto\sum_{e\mapsto q}[e],\quad
- \sum a_e[e]\longmapsto\sum a_e.
-\label{eq:pinch-unit-counit}
+ (R^0\Psi\Lambda)_q=\Lambda[E_q],\qquad
+ (R^i\Psi\Lambda)_q=0\quad(i>0).
+\label{eq:correct-nearby-stalk}
 \end{equation}
 
-More invariantly, let
-$\nu:\operatorname{Spec}(R^E)\to\mathcal P_p$ be the normalization and let
-$i:\operatorname{Spec}(k^Q)\hookrightarrow\mathcal P_p$ be the conductor
-subscheme.  With $p:\operatorname{Spec}(k^E)\to\operatorname{Spec}(k^Q)$,
-the normalization--conductor (Mayer--Vietoris) triangle is
-\[
- \Lambda_{\mathcal P_p}
- \longrightarrow R\nu_*\Lambda_{\operatorname{Spec}(R^E)}
-       \oplus i_*\Lambda_{\operatorname{Spec}(k^Q)}
- \longrightarrow i_*p_*\Lambda_{\operatorname{Spec}(k^E)}
- \xrightarrow{+1}.
-\]
-Consequently, after pushforward along $p$, endpoint vectors $\alpha,\beta$
-pair at $q$ as
+Let $\alpha,\beta\in\Lambda^E$ select the two endpoint incidences.  The
+generic cohomological maps are the identity on the selected normalization
+sections and zero on the others.  Their generic pairing, and the pairing of
+their nearby-cycle specializations, are both
 \begin{equation}
- \left(\sum_{e\mapsto q}\alpha_e\right)
- \left(\sum_{e\mapsto q}\beta_e\right).
+ \sum_{e\in E_q}\alpha_e\beta_e.
+\label{eq:tagged-pairing}
+\end{equation}
+Indeed, the specialized maps are
+\[
+ \Lambda\longrightarrow\Lambda[E_q],\quad
+ 1\longmapsto\sum_e\alpha_e[e],
+ \qquad
+ \Lambda[E_q]\longrightarrow\Lambda,\quad
+ [e]\longmapsto\beta_e.
+\]
+This is the elementary finite-stalk instance of compatibility of the
+Lefschetz--Verdier pairing with nearby cycles in Lu--Zheng
+\cite[Corollary~3.10]{LuZheng}.
+
+There are also canonical maps
+\[
+ \Lambda\longrightarrow\Lambda[E_q]\longrightarrow\Lambda,
+ \qquad
+ 1\longmapsto\sum_e[e],\quad
+ \sum_e a_e[e]\longmapsto\sum_ea_e.
+\]
+Inserting these maps produces the fibre-sum, or untagged, product
+\begin{equation}
+ \left(\sum_e\alpha_e\right)\left(\sum_e\beta_e\right).
 \label{eq:bucket-pairing}
 \end{equation}
-whereas the normalization carries the diagonal coordinate pairing
-$\sum_e\alpha_e\beta_e$.
+It is a different correspondence, not the specialization of
+\eqref{eq:tagged-pairing}.  For $E_q=\{1,2\}$,
+$\alpha=(1,0)$, and $\beta=(0,1)$, the tagged pairing is $0$ while the
+untagged product is $1$.  Thus a conductor quotient cannot by itself justify
+replacing \eqref{eq:tagged-pairing} by \eqref{eq:bucket-pairing}.
 
-\begin{lemma}[Trace across the normalization--conductor square]
-\label{lem:pinched-tree-trace}
-On a split pointed stable model, let $\Lambda[E]$ be the permutation local
-system obtained by transporting the label set $E$ along the dual graph.
-Apply the two endpoint correspondences $\mathcal L_{D_y}$ and
-$\mathcal L_{D_z}$, and identify the labels on the conductor by $p:E\to Q$.
-After applying nearby cycles, their Lefschetz--Verdier pairing is the
-diagonal coordinate pairing on the normalization and the fibre-sum pairing
-\eqref{eq:bucket-pairing} on the conductor.  Since the dual graph of the
-semistable target is a tree, the total trace is the sum of the normalization
-term at the wild end and the conductor term at the finite end.
-\end{lemma}
+The normalization--conductor triangle does not alter this conclusion.
+After restriction to the generic fibre its conductor-supported terms vanish;
+nearby cycles recover the full permutation module in
+\eqref{eq:correct-nearby-stalk}, not a rank-one quotient.  Applying the
+counit $p_*\Lambda_E\to\Lambda_Q$ is an additional operation and must be
+incorporated into the relative correspondence if it is to be used.
 
-\begin{proof}
-At $q\in Q$ the strict local generic fibre is the discrete set
-$p^{-1}(q)$.  Thus its degree-zero nearby stalk is
-$\Lambda[p^{-1}(q)]$ and its higher cohomology vanishes.  The two arrows in
-\eqref{eq:pinch-unit-counit} give the pairing
-\eqref{eq:bucket-pairing} on the conductor; on the normalization one has the
-diagonal coordinate pairing on the same stalk.  These are the two terms in
-the normalization--conductor distinguished triangle for $\mathcal P_p$.
-The triangle is functorial for the two cohomological correspondences, and
-additivity of categorical traces identifies the total pairing with the sum
-of its normalization and conductor terms.
+\subsubsection{The remaining Bockstein problem}
 
-The stalk complex on the dual graph is
+There is a valid secondary calculation before reduction modulo $2$.  At a
+split tame node, the normalization quotient sends branch coefficients
+$(a_+,a_-)$ to $a_+-a_-$.  When these coefficients agree modulo $2$, their
+first mod-$4$ gluing obstruction is
 \[
- C^0(\Gamma,\Lambda[E])\longrightarrow
- C^1(\Gamma,\Lambda[E]),
+ \kappa(a_+,a_-)=\frac{a_+-a_-}{2}\pmod2.
 \]
-with branch-difference differential.  Trivialize it along the unique paths
-in the tree.  Each internal vertex value then occurs in two adjacent
-branch differences and cancels in characteristic $2$.  Subdividing an edge
-inserts the same value twice, so the conclusion is independent of the
-chosen semistable refinement; only the two stated endpoint terms remain.
-\end{proof}
-
-Thus \eqref{eq:bucket-pairing} is the conductor term in the
-normalization--conductor triangle after applying nearby cycles; it is only
-one term in the specialized pairing.
-
-For $\mathcal L_D$, the fibre of \eqref{eq:pinch-map} has size $77$ over a singleton and
-$8$ over a two-element orbit.  Indeed, double counting the seven fixed
-sheets over the $253$ involutions gives $253\cdot7/23=77$.  On ordered
-distinct pairs the two $D$-orbits are exchanged by reversing a pair, so
-double counting the sixteen moved entries of each involution gives $8$.
-Thus the two endpoint graph sums have coefficients
-\begin{equation}
- 77^2=5929\quad\text{and}\quad8^2=64.
-\label{eq:branch-coefficients}
-\end{equation}
-on the diagonal and transposition branches of the completed tame
-self-fibre product.  Since that product is
+For the augmented Mathieu packet the two exact coefficients are
 \[
- R[[u,v]]/((u-v)(u+v)),
+ a_+=1078,\qquad a_-=112,
+ \qquad \kappa=\frac{1078-112}{2}=483\equiv1\pmod2.
 \]
-the local intersection multiplicity changes by
-\begin{equation}
- 5929-64=5865\equiv1\pmod2.
-\label{eq:node-unit}
-\end{equation}
-The eight moved blocks give the affine eight-point cycle and the ordinary
-diagonal gives the fixed Fano heptad.  The degree-three Fano incidence
-correspondence cancels the heptad against the seven nonorigin affine
-directions over $\FF_2$, leaving one intrinsic finite-node term.  Explicitly,
-after the pointed tail selects an origin $o\in A_x$, write
-$U=O_2(\Cx)/\langle x\rangle$.  Then
-$H_x=\PP(U^*)$ and $A_x-\{o\}$ is indexed by $\PP(U)$.  The incidence
-$\ell(u)=0$ has degree three over either seven-point set, hence degree one
-modulo $2$; its pushforward identifies the heptad with
-$A_x-\{o\}$.  Adding the full affine cycle leaves $[o]$.  The conclusion is
-intrinsic to the pointed tail, which fixes $o$; no point--line bijection is
-chosen.
+This is a genuine Bockstein in the normalization sequence.  It is not the
+ordinary nearby-cycle pairing of \eqref{eq:connector-generic}.
 
-At the wild end of the dual graph, the normalization retains the labels.
-The two fixed-point sets are $x^D$ and $(x^D)^n$: they agree for
-$\chi_{\mathrm{gl}}(n)=0$ and lie in the disjoint $2A$ classes of the two
-adjacent natural Mathieu copies for $\chi_{\mathrm{gl}}(n)=1$.  By
-\cref{lem:fano-affine-odd}, their contribution on the normalization is
-\begin{equation}
- 1+\chi_{\mathrm{gl}}(n).
-\label{eq:returned-normalized}
-\end{equation}
-
-By \cref{lem:pinched-tree-trace}, the closed-fibre trace is the sum of
-\eqref{eq:node-unit} and \eqref{eq:returned-normalized}.  There is no
-additional local term: the different exponent is even at every tamely
-ramified attachment of odd order, and at a wild $23{:}11$ point of the
-natural degree-$23$ quotient it is $22+2h$, which is also even.  Hence the
-closed-fibre trace is
-\begin{equation}
- (1+\chi_{\mathrm{gl}}(n))+1=\chi_{\mathrm{gl}}(n).
-\label{eq:connector-special}
-\end{equation}
-
-\begin{proof}[Proof of \cref{thm:connector}]
-For each closed point $P$ above $23$, let $R$ be the completed local ring of
-the normalized integral Hurwitz scheme at $P$ and put $S=\operatorname{Spec}R$.
-After the finite extension used to obtain the stable marked model, the
-auxiliary Ferrand pushout is separated of finite type over the resulting
-Henselian trait and finite over the proper pointed stable curve.  In
-particular, the support of the fixed-point correspondence is proper over
-$S$.  Take $\Lambda=\FF_2$.  The finite permutation complexes used above
-belong to $D_{c\mathrm{ft}}$, and $2$ is invertible on $S$.
-
-Corollary~3.10 of Lu--Zheng specializes the Lefschetz--Verdier pairing of
-the two cohomological correspondences, while their Proposition~3.12 makes
-this specialization compatible with proper pushforward of the graph
-correspondences \cite[Corollary~3.10 and Proposition~3.12]{LuZheng}.  The
-generic trace is
-\eqref{eq:connector-generic}, while the closed-fibre trace is
-\eqref{eq:connector-special}.  Therefore
+\begin{conjecture}[Relative Bockstein connector]
+\label{conj:bockstein-connector}
+There is a self-dual two-level relative complex, schematically of the form
 \[
- \epsilon(\Theta)=\chi_{\mathrm{gl}}(n).
+ K=[A_{\mathrm{graph}}\longrightarrow B_{\mathrm{quotient}}],
 \]
-By \cref{comp:pointed-stable-returns}, $\chi_{\mathrm{gl}}(n)$ and
-$e_{\mathrm{sing}}$ agree on the three factors of the reduced closed fibre.
-The construction is invariant under the patching-data torsor and under
-simultaneous relabeling, so the equality descends from the splitting
-extension.  Idempotents lift uniquely through the complete local algebra,
-which proves $\epsilon(\Theta)=e_{\mathrm{sing}}$.
-\end{proof}
+with cohomological packet maps whose generic trace is
+$1+\epsilon(\Theta)$ and whose specialized Bockstein trace is the finite
+node class plus the returned wild class.  Under the pointed
+characteristic-$23$ identification, the latter trace is
+$1+e_{\mathrm{sing}}$.
+\end{conjecture}
 
-\smallskip
-The fixed-point argument is now complete.  The next two sections record
-supporting arithmetic on the distinguished cover: first its explicit minimal
-projection, then the Fano and affine arithmetic of its branch fibre.  Neither
-section is needed to identify the $1+6$ Hurwitz algebra, and their unpointed
-data alone do not prove \cref{thm:connector}.
+To prove the conjecture one must construct the two packet maps on $K$, make
+the duality pairing explicit, and verify that nearby cycles carry that same
+pairing to the Bockstein class just computed.  The finite group and local
+algebra certificates verify the displayed ingredients, but they cannot
+supply these missing sheaf-theoretic maps.  In particular, no result of
+Lu--Zheng is invoked here to identify the tagged and untagged pairings.
+
+The component comparison is therefore complete by exact arithmetic, while
+its branch-cycle-free cohomological explanation remains open.  The next two
+sections record supporting arithmetic on the distinguished cover: first its
+explicit minimal projection, then the Fano and affine arithmetic of its
+branch fibre.
 
 \section{Supporting arithmetic: the minimal-degree projection}
 \label{sec:adjoints}
@@ -2305,7 +2150,7 @@ is globally fixed.
 
 To relate the fibre arithmetic to the fixed-class problem, we now separate
 what is already supplied by the branch-fibre structures from the additional
-pointed data used in the comparison of \S\ref{sec:connector}.
+data that a future geometric comparison would require.
 
 \subsection{Why unpointed branch-fibre data do not distinguish the fixed point}
 \label{sec:limits}
@@ -2331,12 +2176,12 @@ The roles of the structures above may be summarized as follows.
 
 \smallskip
 The coordinate comparison preserves all Fano and affine residue data, so the
-comparison of \S\ref{sec:connector} may be formulated entirely in the
-minimal-degree model.
+candidate construction of \S\ref{sec:connector} may be formulated entirely
+in the minimal-degree model.
 The branch fibre by itself does not distinguish the degree-one Hurwitz
-component.  The additional input is a common pointing of the finite and wild
-ends of the characteristic-$23$ stable map; \S\ref{sec:connector} supplies
-that input and constructs the resulting comparison.
+ends of the characteristic-$23$ stable map together with a relative complex
+that transports the Bockstein pairing.  The latter construction remains
+open.
 
 \smallskip
 There is also an exact, entirely group-theoretic limit on what unpointed
@@ -2466,7 +2311,8 @@ and the limits of the arithmetic internal to the distinguished cover.  They
 produce candidate comparison data and precise obstructions, but they do not
 by themselves construct the degree-one component of the seven-cover moduli
 problem.  This is precisely why the comparison in
-\cref{sec:connector} retains a common pointing through stable reduction.
+\cref{sec:connector} is stated as a conjectural Bockstein connector rather
+than as a consequence of the unpointed data.
 
 We now leave the branch fibre for an independent global application of the
 minimal equation.
@@ -2636,12 +2482,16 @@ questions.  The branch fibre reveals the centralizer and residue arithmetic
 after a $2A$ collision; the progression gives smooth arithmetic fibres with
 the full generic group.
 
-\section{A remaining open question}
+\section{Open questions}
 \label{sec:open}
 
-The pointed comparison identifies the idempotent defined by the
-singular-point coordinate with the relative-transporter augmentation.
-One arithmetic classification problem remains: classify the
+The most immediate geometric problem is \cref{conj:bockstein-connector}:
+construct the relative self-dual two-level complex and prove that its generic
+packet pairing specializes to the computed mod-$4$ node class and the
+pointed wild return.  This would replace the exact branch-cycle crosswalk in
+the proof of \cref{thm:connector} by an intrinsic specialization argument.
+
+A separate arithmetic classification problem is to classify the
 $2^4{:}\PSL_3(2)$-extensions of $\QQ$ unramified outside $\{2,3,23\}$ with
 the local groups and constituent fields of \cref{thm:ramification}; in
 particular, decide whether $M$ is unique.
@@ -2702,8 +2552,8 @@ The recorded environment uses SageMath 10.9 \cite{SageMath}, GAP 4.14.0
 The opt-in target \texttt{make verify-hurwitz-third-fiber-exact} recomputes
 the longer characteristic-zero resultant certificate.  The similarly
 opt-in target \texttt{make verify-hurwitz-connector-a6} reconstructs the
-formal annulus at the ramified $A_6$ node used to compute the gluing
-character.  The main targets are:
+formal annulus at the ramified $A_6$ node used in the candidate connector.
+The main targets are:
 
 {\small
 \begin{longtable}{@{}
@@ -2768,14 +2618,15 @@ Galois closure and six-point permutation action &
 Local decomposition group and pointed reductions at $23$ &
 \path{verify_hurwitz_local_23.py},
 \path{verify_hurwitz_pointed_23.py} & SageMath\\
-Gluing characters and specialization of the nearby-cycle pairing &
+Finite and local ingredients for the candidate Bockstein connector &
 \path{notes/certify_ade_gluing_marker.py},
 \path{notes/certify_wild_parameter_orientation.py},
 \path{notes/audit_lifted_trace_fano_affine_incidence.g},
 \path{notes/audit_fano_affine_odd_fixed_point_lemma.g},
 \path{notes/audit_raw_lifted_trace_node_boundary.g},
 \path{notes/audit_returned_normalizer_trace_parity.g},
-\path{notes/certify_pinched_tag_nearby_cycle.py} & GAP, Python\\
+\path{notes/explore_tagged_tame_boundary.g},
+\path{notes/certify_pinched_tag_finite_identities.py} & GAP, Python\\
 \bottomrule
 \end{longtable}
 }
@@ -2817,9 +2668,10 @@ The contributions of the present paper fall into four groups.
 \item We determine the local decomposition and pointed reductions of that
   scheme at $23$, construct the idempotent defined by the singular-point
   coordinate directly from those reductions, determine the descent behavior of the
-  relative-transporter invariants, and compare their component idempotents
-  by pointed stable reduction and specialization of a Lefschetz--Verdier
-  pairing on a Ferrand pushout.
+  relative-transporter invariants, and compare their component idempotents in
+  the exact reconstructed algebra.  We construct the generic side of a
+  possible cohomological explanation and isolate its unresolved relative
+  Bockstein specialization.
 \item On the distinguished cover, we explicitly construct the degree-$4$
   function $W$ whose existence and minimality were established in
   \cite[Remark~3.4]{HJLPPZ}, its bidegree-$(23,4)$ equation, and exact
@@ -2837,11 +2689,12 @@ We do not reprove that the fixed Nielsen class is rational; that is a
 theorem of \cite{HJLPPZ}.  The idempotent defined by the singular-point
 coordinate gives an intrinsic characteristic-$23$ criterion separating the degree-one and
 degree-six components of the reconstructed algebra.  The comparison theorem
-proves its agreement with the relative-transporter augmentation from pointed
-stable $M_{23}$-maps and the normalization--conductor trace.  It uses the
-explicit characteristic-$23$ local equations and the general stable-reduction
-formalism, but not the identification of those local points with the seven
-certified complex Nielsen classes.
+proves its agreement with the relative-transporter augmentation by using the
+exact branch-cycle identification of all seven reconstructed maps.  The
+generic incidence correspondence and the characteristic-$23$ local equations
+suggest a branch-cycle-free explanation, but the nearby-cycle stalk retains
+the sheet labels.  The requisite Bockstein comparison is therefore stated as
+\cref{conj:bockstein-connector}, not claimed as a theorem.
 
 The third branch fibre of the six conjugate maps is verified exactly in
 characteristic zero and independently in all twelve residue embeddings of

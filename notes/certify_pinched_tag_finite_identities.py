@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Exact finite certificate for the pinched-tag nearby-cycle lemma."""
+"""Exact finite identities for diagnosing the candidate Bockstein connector.
+
+This script does not certify a nearby-cycle comparison.  In particular, the
+tagged dot product and untagged bucket product are different pairings.
+"""
 
 from itertools import product
 
@@ -21,8 +25,7 @@ def off_diagonal(alpha: tuple[int, ...], beta: tuple[int, ...]) -> int:
     ) % 2
 
 
-# The conductor decomposition is an identity for every binary pair, not
-# only for the all-ones vectors occurring in the Mathieu trace.
+# This is a bilinear-form identity, not a nearby-cycle theorem.
 for size in range(1, 7):
     vectors = tuple(product((0, 1), repeat=size))
     for alpha in vectors:
@@ -46,6 +49,17 @@ untagged_total = 7 * singleton_pairing + 8 * two_set_pairing
 assert (singleton_pairing, two_set_pairing, untagged_total) == (2783, 253, 21505)
 assert untagged_total % 2 == 1
 
+# Nearby cycles preserve the tagged dot product.  The smallest counterexample
+# to replacing it by the untagged bucket product is already a two-label fibre.
+assert dot((1, 0), (0, 1)) == 0
+assert bucket((1, 0), (0, 1)) == 1
+
+# Secondary integral Bockstein calculation used in the revised manuscript.
+bockstein_plus = 1078
+bockstein_minus = 112
+assert (bockstein_plus - bockstein_minus) % 2 == 0
+assert ((bockstein_plus - bockstein_minus) // 2) % 2 == 1
+
 # Returned normalized and node tables in fields
 # [tagged, untagged, off-diagonal].
 square_normalized = (1, 1, 0)
@@ -68,7 +82,9 @@ finite_term = 1
 special_traces = tuple(wild ^ finite_term for wild in wild_terms)
 assert special_traces == return_bits
 
-print("pinched_bucket_identity_checked_for_fiber_sizes=1..6")
+print("finite_bucket_identity_checked_for_fiber_sizes=1..6")
+print("two_label_counterexample=tagged_0_untagged_1")
+print("bockstein=(1078-112)/2=483=1_mod_2")
 print("untagged_total=7*(23*11^2)+8*253=21505")
 print("node_coefficients=[5929,64],difference=5865=1_mod_2")
 print("conductor_bucket_distribution=23x77_and_253x8")
@@ -77,4 +93,4 @@ print("square_fields_tagged_untagged_offdiag=[1,1,0]")
 print("nonsquare_fields_tagged_untagged_offdiag=[0,1,1]")
 print("tree_telescope_checked_through_12_edges=true")
 print("special_trace_table=[0,1,1]")
-print("PASS_PINCHED_TAG_NEARBY_CYCLE")
+print("PASS_PINCHED_TAG_FINITE_IDENTITIES")
