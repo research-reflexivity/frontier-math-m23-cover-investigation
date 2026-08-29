@@ -1,0 +1,25 @@
+{
+  "engine": "Magma",
+  "input_bytes": 1941,
+  "input_path": "notes/certify_fano_affine_odd_fixed_point_lemma.m",
+  "input_sha256": "129ff15c6e3ee1adf79796dbfe0c3a4b536d3d12a9c9618ff293ad99a327dcb1",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_FANO_AFFINE_ODD_FIXED_POINT_LEMMA_MAGMA"
+  ],
+  "memory_megabytes": 32.09,
+  "output": [
+    "centralizer_order=2688",
+    "fixed_heptad_size=7",
+    "affine_block_count=8",
+    "profile_pairs=[<7,0>,<7,8>,<3,0>,<3,4>,<1,0>,<1,2>,<0,1>]",
+    "profile_counts=[14,2,252,84,784,784,768]",
+    "all_centralizer_elements_have_odd_total_fixed_points=true",
+    "PASS_FANO_AFFINE_ODD_FIXED_POINT_LEMMA_MAGMA"
+  ],
+  "run_date": "2026-08-29",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 3492386448,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.1
+}

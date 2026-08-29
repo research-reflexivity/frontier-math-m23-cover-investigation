@@ -170,7 +170,10 @@ Transcript metadata from the independent public Magma runs is recorded in
 geometry runs are recorded in the corresponding
 `verification/hurwitz_degree23_*_magma_summary.json` files; the Galois and
 local runs are recorded in `verification/hurwitz_galois_closure_magma_summary.json`
-and `verification/hurwitz_local_23_magma_summary.json`.
+and `verification/hurwitz_local_23_magma_summary.json`.  Five independent
+connector runs are recorded in the corresponding Fano--affine, pinched-tag,
+wild-orientation, pointed-Bockstein, and logarithmic-quadratic-line Magma
+summary files in `verification/`.
 
 ```text
 make verify-all

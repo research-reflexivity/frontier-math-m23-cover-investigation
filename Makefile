@@ -244,6 +244,7 @@ verify-magma-record:
 	python3 verification/verify_hurwitz_degree23_geometry_magma_summary.py
 	python3 verification/verify_hurwitz_galois_closure_magma_summary.py
 	python3 verification/verify_hurwitz_local_23_magma_summary.py
+	python3 verification/verify_connector_magma_summaries.py
 
 verify-magma: verify-magma-record
 	$(MAGMA) -b verification/verify_optimal_23_4.m

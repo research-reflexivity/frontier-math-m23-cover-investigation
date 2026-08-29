@@ -1,0 +1,30 @@
+{
+  "engine": "Magma",
+  "input_bytes": 2957,
+  "input_path": "notes/certify_pinched_tag_finite_identities.m",
+  "input_sha256": "10ada36b9203675240f84c202553d8814469edc2eb7babe809085d565d97b24f",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_PINCHED_TAG_FINITE_IDENTITIES"
+  ],
+  "memory_megabytes": 32.09,
+  "output": [
+    "finite_bucket_identity_checked_for_fiber_sizes=1..6",
+    "two_label_counterexample=tagged_0_untagged_1",
+    "bockstein=(1078-112)/2=483=1_mod_2",
+    "untagged_total=7*(23*11^2)+8*253=21505",
+    "node_coefficients=[5929,64],difference=5865=1_mod_2",
+    "conductor_bucket_distribution=23x77_and_253x8",
+    "conductor_pairing_degree=152559",
+    "square_fields_tagged_untagged_offdiag=[1,1,0]",
+    "nonsquare_fields_tagged_untagged_offdiag=[0,1,1]",
+    "tree_telescope_checked_through_12_edges=true",
+    "special_trace_table=[0,1,1]",
+    "PASS_PINCHED_TAG_FINITE_IDENTITIES"
+  ],
+  "run_date": "2026-08-29",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 4278630688,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.36
+}

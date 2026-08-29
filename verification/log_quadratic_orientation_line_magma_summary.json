@@ -1,0 +1,24 @@
+{
+  "engine": "Magma",
+  "input_bytes": 2113,
+  "input_path": "notes/audit_log_quadratic_orientation_line.m",
+  "input_sha256": "78720aec5e359f5e653977566e54c12d179391ecfdf75ea2ad60a9ec95f998d0",
+  "magma_version": "2.29-9",
+  "markers": [
+    "log_quadratic_orientation_line_magma_audit=PASS",
+    "normalization_telescope_audit=PASS"
+  ],
+  "memory_megabytes": 32.09,
+  "output": [
+    "log_quadratic_orientation_line_magma_audit=PASS",
+    "finite_anomaly=1",
+    "packet_return_polarization_cross_term=0,0",
+    "terminal_full_trace_orientation=square:1,nonsquare:0",
+    "normalization_telescope_audit=PASS"
+  ],
+  "run_date": "2026-08-29",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 3442777063,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.12
+}

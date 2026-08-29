@@ -1,0 +1,26 @@
+{
+  "engine": "Magma",
+  "input_bytes": 2840,
+  "input_path": "notes/certify_wild_parameter_orientation.m",
+  "input_sha256": "a4bb076a15f8dec6d7762f7f37c688f3984321512f8f60d6e619591b24b59bca",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_WILD_PARAMETER_ORIENTATION"
+  ],
+  "memory_megabytes": 32.09,
+  "output": [
+    "local_degree23_orientation_identity=eta^(-23)=tau",
+    "unramified_E8_normalized_parameter_transport=target_transport_order8",
+    "A2_normalized_parameter_transport=target_transport_identity",
+    "A6_outer_over_inner_transport_power15=r_of_order3",
+    "A6_outer_and_inner_quadratic_orientations_agree=true",
+    "Hilbert90_square_class_alone_does_not_orient_affine_F23_frame=true",
+    "SCOPE=A6_target_transport_to_pointed_M23_node_realization_still_required",
+    "PASS_WILD_PARAMETER_ORIENTATION"
+  ],
+  "run_date": "2026-08-29",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 4244945673,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 0.03
+}

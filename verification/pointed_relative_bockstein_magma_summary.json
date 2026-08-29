@@ -1,0 +1,34 @@
+{
+  "engine": "Magma",
+  "input_bytes": 5250,
+  "input_path": "notes/audit_pointed_relative_bockstein.m",
+  "input_sha256": "dc6d6e07bd1891728de8d2c7b0413f68c6f07395013271cc47bddcb63eac9a28",
+  "magma_version": "2.29-9",
+  "markers": [
+    "PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT"
+  ],
+  "memory_megabytes": 32.09,
+  "output": [
+    "rho_rho_adjoint_entries_mod_4=0",
+    "canonical_sheet_lifts=full:-I,trace:+I",
+    "packet_sheet_operator=2I_mod_4",
+    "ordinary_mapping_cone_bockstein=zero_by_alternative_lift",
+    "horizontal_log_nearby_coefficient_bockstein=zero",
+    "specialization_unit_divided_defect=1",
+    "half_weight_quadratic_refines_tagged_dot_product=true",
+    "packet_global_half_weight=1",
+    "returned_half_conductor_values=1,0",
+    "relative_trace_half_distance=1+overlap_parity",
+    "returned_trace_half_distance=return_bit",
+    "full_class_returned_trace_half_distance=1+return_bit",
+    "unpointed_path_H1_dimension=0",
+    "two_endpoint_relative_path_H1_dimension=1",
+    "relative_endpoint_formula=finite_value+wild_value",
+    "PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT"
+  ],
+  "run_date": "2026-08-29",
+  "runner": "University of Sydney Magma Calculator",
+  "seed": 3326054480,
+  "status": "PASS_INDEPENDENT_MAGMA_CERTIFICATE",
+  "total_seconds": 1.179
+}

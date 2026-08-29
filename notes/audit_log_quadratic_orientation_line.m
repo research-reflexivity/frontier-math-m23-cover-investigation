@@ -32,9 +32,9 @@ for a0 in [0..4] do
     for a1 in [0..4] do
         for a2 in [0..4] do
             if IsEven(a1-a0) and IsEven(a2-a1) then
-                local := (((a1-a0) div 2)+((a2-a1) div 2)) mod 2;
+                localSum := (((a1-a0) div 2)+((a2-a1) div 2)) mod 2;
                 endpoint := ((a2-a0) div 2) mod 2;
-                assert local eq endpoint;
+                assert localSum eq endpoint;
             end if;
         end for;
     end for;
