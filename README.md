@@ -1,16 +1,31 @@
-# Minimal-degree projection, Fano-plane arithmetic, and the finite Hurwitz scheme of a regular M23-cover
+# The Galois-fixed point on an M23 Hurwitz scheme
 
-This repository contains a combined exact account of three aspects of the
-regular Mathieu `M23`-cover constructed by Huang, Jackson, Lee, Poonen, Pries,
-and Zhang:
+This repository accompanies the paper *The Galois-fixed point on an M23
+Hurwitz scheme: pointed characteristic-23 reduction and exact
+reconstruction*.  Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a
+regular `M23`-cover from a seven-element Nielsen class and identify one
+class fixed by the relevant arithmetic Galois action.  The central results
+here are:
 
-- an explicit minimal-degree `(23,4)` equation and degree-four rational
-  function, realizing the construction proved to exist and to be optimal by
-  Huang et al.;
-- the Fano-plane and affine-cube arithmetic in the fibre above the rational
-  branch point `T=0`;
-- the finite inner Hurwitz scheme, its `1+6` arithmetic decomposition, and
-  exact maps representing all seven Nielsen classes.
+- the finite étale inner Hurwitz scheme of degree `7`, its degree-`1` and
+  degree-`6` connected components, and exact maps representing all seven
+  Nielsen classes;
+- the `S6` Galois action on the six-point component;
+- a characteristic-`23` idempotent defined by a singular-point coordinate
+  and its equality with the relative-transporter augmentation, obtained from
+  pointed stable reduction and specialization of a Lefschetz--Verdier
+  pairing on a Ferrand pushout.
+
+Here “Galois-fixed” refers to the class identified by Huang et al.  After the
+ordered `23A,23B` data are defined over `K0 = Q(sqrt(-23))`, it is the unique
+`K0`-rational point of the inner Hurwitz scheme; the descent of the associated
+cover to `Q` is their theorem.
+
+Two supporting calculations describe the distinguished cover itself: an
+explicit minimal-degree `(23,4)` equation and the Fano-plane and affine-cube
+arithmetic in the fibre above the rational branch point `T=0`.  These
+structures supply the permutation local systems used in the comparison, but
+the branch fibre alone does not distinguish the fixed Hurwitz point.
 
 A uniform family of `M23` number-field specializations is a separate
 application of the minimal equation.  Huang et al. already obtain abstractly
@@ -117,16 +132,18 @@ At the unique prime of `Q(sqrt(-23))` above `23`, the local decomposition
 group on the sextic component is `V4`, with orbit sizes `2+4` and relative
 prime data `(e,f)=(1,2),(2,2)`.  Together with the point on the degree-one
 component, the
-normalized local Hurwitz scheme has residue degrees `1+2+2`.  Direct
-reduction of the exact pointed maps gives an `E8` source for the degree-one
+normalized local integral model of the Hurwitz scheme has residue degrees
+`1+2+2`.  Reduction of the exact pointed maps gives an `E8` source for the degree-one
 point and the unramified-degree-two point, and an `A2+A6` source for the
 ramified-degree-four point.  Each normalization is `P1`, and every reduced
 pointed map is the Frobenius map `t -> t^23`.  The distinguished singular
 positions have resolvent
 `(u-16)*(u^2+1)*(u^2+u+1)` and directly produce the Boolean idempotent
-separating the degree-one and sextic components.  Comparing that intrinsic
-idempotent with the relative-transporter augmentation still requires the
-unresolved pointed Mathieu gluing.  See `HURWITZ_LOCAL_23.md`.
+separating the degree-one and sextic components.  The normalizer-coset
+classes of the gluing automorphisms and specialization of the
+normalization--conductor pairing identify that idempotent with the
+relative-transporter augmentation.  See `HURWITZ_LOCAL_23.md` and the
+comparison section of the manuscript.
 
 ## Reproduce
 
@@ -167,6 +184,11 @@ The recorded class-`4` run uses
 256-bit precision.  Run `make certify-degree-one-branch-cycles` for class `6`.
 The exact descent test for the relative-transporter invariants is
 `make verify-hurwitz-relative-transporter`.
+The finite group identities and conductor arithmetic used in the pointed
+characteristic-23 comparison are checked by
+`make verify-hurwitz-connector`.
+The focused exact reconstruction of the formal annulus at the ramified `A6`
+node is available separately as `make verify-hurwitz-connector-a6`.
 The Galois-closure calculation is checked independently in SageMath and
 PARI/GP by `make verify-hurwitz-galois-closure`; its recorded Magma run is
 hash-bound into `make verify-all`.

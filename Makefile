@@ -8,7 +8,8 @@
 	verify-hurwitz-third-fiber-exact reconstruct-hurwitz-maps \
 	verify-hurwitz-monodromy-eliminant verify-hurwitz-branch-cycles \
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
-	verify-hurwitz-local-23 \
+	verify-hurwitz-local-23 verify-hurwitz-connector \
+	verify-hurwitz-connector-a6 \
 	certify-hurwitz-branch-cycles certify-degree-one-branch-cycles \
 	hurwitz-monodromy-resultant \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry \
@@ -120,6 +121,33 @@ verify-hurwitz-local-23:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_pointed_23.py
 
+verify-hurwitz-connector:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		notes/certify_ade_gluing_marker.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		notes/certify_wild_parameter_orientation.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		notes/certify_e8_tail_isomorphism.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		notes/certify_p23_special_deformation_datum.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/audit_lifted_trace_fano_affine_incidence.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/audit_fano_affine_odd_fixed_point_lemma.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/audit_raw_lifted_trace_node_boundary.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/audit_returned_normalizer_trace_parity.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/audit_fano_affine_incidence_bridge.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
+		notes/explore_untagged_lifted_trace_pairing.g
+	python3 notes/certify_pinched_tag_nearby_cycle.py
+
+verify-hurwitz-connector-a6:
+	M23_ADE_ONLY_A6=1 DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		notes/explore_p23_ade_deformation.py
+
 certify-hurwitz-branch-cycles:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		scripts/certify_hurwitz_branch_cycles.py \
@@ -152,7 +180,7 @@ verify-all: verify-optimal verify-bridge verify-fano verify-hurwitz-candidate \
 	verify-hurwitz-maps-candidate verify-hurwitz-third-fiber-record \
 	verify-hurwitz-monodromy-eliminant verify-hurwitz-branch-cycles \
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
-	verify-hurwitz-local-23 \
+	verify-hurwitz-local-23 verify-hurwitz-connector \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry verify-magma-record
 
 verify-optimal:
@@ -222,6 +250,9 @@ verify-magma: verify-magma-record
 	$(MAGMA) -b verification/verify_hurwitz_degree23_geometry.m
 	$(MAGMA) -b verification/verify_hurwitz_galois_closure.m
 	$(MAGMA) -b verification/verify_hurwitz_local_23.m
+	$(MAGMA) -b notes/certify_fano_affine_odd_fixed_point_lemma.m
+	$(MAGMA) -b notes/certify_pinched_tag_nearby_cycle.m
+	$(MAGMA) -b notes/certify_wild_parameter_orientation.m
 
 export-public:
 	@test -n "$(EXPORT_DIR)" || (echo "Set EXPORT_DIR to the independent public repository."; exit 2)

@@ -150,6 +150,15 @@ assert len(squares) == len(nonsquares) == 11
 assert all(element**11 == 1 for element in squares)
 assert all(element**11 == -1 for element in nonsquares)
 
+# The residues of omega at the 22 poles distinguish the two wild branch
+# classes.  Above z=infinity (a^11=1) the residues are nonsquares; above z=1
+# (a^11=-1) they are squares.  Thus the two characteristic-zero wild branch
+# cycles lie in the two inverse 23-classes, without choosing generators.
+residues_at_z_infinity = {-4 * element**7 for element in squares}
+residues_at_z_one = {-4 * element**7 for element in nonsquares}
+assert residues_at_z_infinity == nonsquares
+assert residues_at_z_one == squares
+
 # tau(z)=z/(z-1) lifts to a |-> -a and reverses omega.
 tau_z = z_of_a / (z_of_a - 1)
 assert z_of_a(-a) == tau_z
@@ -161,8 +170,10 @@ print("omega_is_logarithmic=true")
 print("critical_signature=z0:(11,7),z1:(1,0),zinf:(1,0),z2:(11,15)")
 print("tails=primitive_at_z0,new_at_z2")
 print("branch_exchange=a_to_-a,omega_to_-omega")
+print("wild_residue_classes=zinf:nonsquares,z1:squares")
+print("wild_branch_classes=opposite_23A_23B")
 print("wewers_patching_data_count=2310")
 print("wewers_patching_galois_orbit_length=2310")
 print("numerical_fifteen_color_fiber_size=154")
-print("SCOPE_no_canonical_map_from_patching_data_to_pointing_colors_constructed")
+print("SCOPE=this_datum_alone_has_no_pointing_color_map;connector_uses_common_lambda")
 print("PASS_P23_SPECIAL_DEFORMATION_DATUM")

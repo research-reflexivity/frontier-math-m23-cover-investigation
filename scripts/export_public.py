@@ -15,10 +15,10 @@ ALLOWLIST = ROOT / "PUBLIC_FILES.txt"
 MANIFEST_NAME = ".public-export-manifest.json"
 CHECKSUM_NAME = "CHECKSUMS.sha256"
 FORBIDDEN_PARTS = {
-    ".git", ".env", "private", "secrets", "audit", "notes", "tmp", "temp",
+    ".git", ".env", "private", "secrets", "tmp", "temp",
 }
 FORBIDDEN_FRAGMENTS = {
-    "secret", "credential", "token", "cookie", "session", "private", "audit",
+    "secret", "credential", "token", "cookie", "session", "private",
 }
 
 
