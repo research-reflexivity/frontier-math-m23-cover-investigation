@@ -145,6 +145,8 @@ verify-hurwitz-connector:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -A -q \
 		notes/explore_tagged_tame_boundary.g
 	python3 notes/certify_pinched_tag_finite_identities.py
+	python3 notes/audit_pointed_relative_bockstein.py
+	python3 notes/audit_log_quadratic_orientation_line.py
 
 verify-hurwitz-connector-a6:
 	M23_ADE_ONLY_A6=1 DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
@@ -255,6 +257,8 @@ verify-magma: verify-magma-record
 	$(MAGMA) -b notes/certify_fano_affine_odd_fixed_point_lemma.m
 	$(MAGMA) -b notes/certify_pinched_tag_finite_identities.m
 	$(MAGMA) -b notes/certify_wild_parameter_orientation.m
+	$(MAGMA) -b notes/audit_pointed_relative_bockstein.m
+	$(MAGMA) -b notes/audit_log_quadratic_orientation_line.m
 
 export-public:
 	@test -n "$(EXPORT_DIR)" || (echo "Set EXPORT_DIR to the independent public repository."; exit 2)

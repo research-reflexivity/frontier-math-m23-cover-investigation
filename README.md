@@ -15,11 +15,12 @@ here are:
   and its equality with the relative-transporter augmentation, proved by the
   exact identification of all seven maps with the seven Nielsen classes.
 
-The paper also constructs a genuine generic cohomological correspondence for
-the transporter augmentation and audits a proposed characteristic-`23`
-specialization.  The simplest Ferrand pinching does not prove that
-specialization: nearby cycles retain the individual sheet labels.  A refined
-relative Bockstein connector is formulated as an open problem.
+The paper also constructs an effective logarithmic quadratic-orientation
+line on the graph-normalization complex.  Ordinary nearby-cycle duality and
+the ordinary coefficient Bockstein lose the necessary effective lift, so the
+construction retains the two integral graph cycles as an ordered decoration.
+Its generic and special determinant filtrations give a second,
+branch-cycle-free proof of the fixed-point comparison.
 
 Here “Galois-fixed” refers to the class identified by Huang et al.  After the
 ordered `23A,23B` data are defined over `K0 = Q(sqrt(-23))`, it is the unique
@@ -29,8 +30,9 @@ cover to `Q` is their theorem.
 Two supporting calculations describe the distinguished cover itself: an
 explicit minimal-degree `(23,4)` equation and the Fano-plane and affine-cube
 arithmetic in the fibre above the rational branch point `T=0`.  These
-structures motivate the candidate geometric connector, but the branch fibre
-alone does not distinguish the fixed Hurwitz point.
+structures supply the finite conductor term in the logarithmic orientation
+connector, but the branch fibre alone does not distinguish the fixed Hurwitz
+point.
 
 A uniform family of `M23` number-field specializations is a separate
 application of the minimal equation.  Huang et al. already obtain abstractly
@@ -147,10 +149,12 @@ positions have resolvent
 separating the degree-one and sextic components.  Exact branch-cycle
 identification shows that this idempotent and the relative-transporter
 augmentation both equal the sextic-component idempotent.  The accompanying
-connector notes distinguish the proved finite and local identities from the
-still-open relative cohomological comparison.  See `HURWITZ_LOCAL_23.md`,
-`notes/RELATIVE_COHOMOLOGICAL_CORRESPONDENCE_REDERIVATION.md`, and the
-comparison section of the manuscript.
+connector notes construct the relative half-graded orientation line, prove
+its normalization--gluing lemma, and distinguish it from the vanishing
+ordinary coefficient Bockstein.  See `HURWITZ_LOCAL_23.md`,
+`notes/GENERAL_EFFECTIVE_NORMALIZATION_GLUING_LEMMA.md`,
+`notes/LOG_QUADRATIC_ORIENTATION_LINE.md`, and the comparison section of the
+manuscript.
 
 ## Reproduce
 
@@ -191,7 +195,8 @@ The recorded class-`4` run uses
 256-bit precision.  Run `make certify-degree-one-branch-cycles` for class `6`.
 The exact descent test for the relative-transporter invariants is
 `make verify-hurwitz-relative-transporter`.
-The finite group identities and local arithmetic relevant to the candidate
+The finite group identities, local arithmetic, divided normalization
+telescope, and quadratic-orientation identities relevant to the
 characteristic-23 connector are checked by
 `make verify-hurwitz-connector`.
 The focused exact reconstruction of the formal annulus at the ramified `A6`
