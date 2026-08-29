@@ -4,20 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="description" content="An interactive dependency map for the characteristic-23 argument identifying the Galois-fixed point on an M23 Hurwitz scheme.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#10141c">
 <link rel="canonical" href="https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/">
 <title>M23 Hinge Causal Graph</title>
 <style>
   :root {
-    color-scheme: light dark;
-    --page-bg: light-dark(#ffffff, #181818);
-    --page-text: light-dark(#1a1c1f, #ffffff);
-    --page-muted: light-dark(#68707c, #aab0b9);
-    --page-border: light-dark(rgb(26 28 31 / 10%), rgb(255 255 255 / 11%));
-    --page-panel: light-dark(#f7f8fa, #202226);
-    --page-accent: light-dark(#1769e0, #72b5ff);
+    color-scheme: light;
+    --page-bg: #ffffff;
+    --page-text: #151922;
+    --page-muted: #5f6878;
+    --page-border: #dfe3e9;
+    --page-panel: #f5f7fa;
+    --page-accent: #5c86ee;
+    --page-accent-dark: #416edb;
     background: var(--page-bg);
   }
   * { box-sizing: border-box; }
@@ -32,31 +33,29 @@
   }
   a { color: inherit; }
   .site-bar {
+    width: 100%;
     display: flex;
-    min-height: 46px;
+    min-height: 76px;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 0.55rem clamp(1rem, 2.5vw, 2.25rem);
-    border-bottom: 1px solid var(--page-border);
+    gap: 2rem;
+    padding-inline: max(1.5rem, calc((100% - 1080px) / 2));
+    background: #10141c;
   }
   .brand {
     display: inline-flex;
     align-items: center;
-    font-size: 0.86rem;
-    font-weight: 680;
-    letter-spacing: 0.12em;
     text-decoration: none;
-    text-transform: uppercase;
   }
-  .site-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .brand img { display: block; width: 150px; height: auto; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 1.35rem; }
   .site-nav a {
-    color: var(--page-muted);
-    font-size: 0.78rem;
-    font-weight: 550;
+    color: #cbd2df;
+    font-size: 0.9rem;
+    font-weight: 620;
     text-decoration: none;
   }
-  .site-nav a:hover, .site-nav a:focus-visible { color: var(--page-text); text-decoration: underline; }
+  .site-nav a:hover, .site-nav a:focus-visible { color: #ffffff; }
   .app-context {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -101,24 +100,29 @@
     text-decoration: none;
     white-space: nowrap;
   }
-  .app-link-primary { border-color: var(--page-accent); color: var(--page-accent); }
+  .app-link-primary { border-color: var(--page-accent); background: var(--page-accent); color: #ffffff; }
+  .app-link-primary:hover, .app-link-primary:focus-visible { background: var(--page-accent-dark); }
   .app-link:hover, .app-link:focus-visible { border-color: var(--page-accent); }
   iframe {
     display: block;
     width: 100%;
     min-height: 720px;
     flex: 1 1 auto;
-    margin: 0 auto;
+    margin: clamp(1.5rem, 2.5vw, 2.25rem) auto 0;
     border: 0;
   }
-  @media (max-width: 760px) {
+  @media (max-width: 1080px) {
     .app-context { grid-template-columns: minmax(0, 1fr); }
     .app-links { justify-content: flex-start; }
+  }
+  @media (max-width: 760px) {
+    .site-bar { align-items: flex-start; padding-block: 1.1rem; }
+    .site-nav { justify-content: flex-end; gap: 0.75rem; }
     iframe { min-height: 1080px; }
   }
   @media (max-width: 480px) {
-    .site-bar { align-items: flex-start; }
-    .site-nav { justify-content: flex-end; gap: 0.65rem; }
+    .site-bar { flex-direction: column; gap: 0.7rem; padding-inline: 1rem; }
+    .site-nav { justify-content: flex-start; }
     .app-links { display: grid; grid-template-columns: 1fr 1fr; }
   }
 </style>
@@ -126,11 +130,12 @@
 <body>
 <header class="site-bar">
   <a class="brand" href="https://reflexivity.com/en" aria-label="Reflexivity company homepage">
-    <span>Reflexivity</span>
+    <img src="reflexivity-logotype-light.svg" alt="Reflexivity" width="160" height="32">
   </a>
   <nav class="site-nav" aria-label="Reflexivity links">
     <a href="https://research-reflexivity.github.io/">Research</a>
     <a href="https://reflexivity.com/en">Company</a>
+    <a href="https://github.com/research-reflexivity">GitHub</a>
   </nav>
 </header>
 <section class="app-context" aria-labelledby="app-title">
