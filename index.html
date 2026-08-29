@@ -1,0 +1,2207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>M23 Hinge Causal Graph</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="M23 Hinge Causal Graph" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;M23 Hinge Causal Graph&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;m23-hinge-map&quot;&gt;
+  &lt;h2&gt;How the characteristic-23 hinge identifies the fixed cover&lt;/h2&gt;
+
+  &lt;div class=&quot;viz-controls&quot; aria-label=&quot;Graph controls&quot;&gt;
+    &lt;div class=&quot;viz-row&quot; role=&quot;group&quot; aria-label=&quot;Amount of detail&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-view=&quot;core&quot; aria-pressed=&quot;true&quot;&gt;Core proof&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-view=&quot;full&quot; aria-pressed=&quot;false&quot;&gt;Every dependency&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-view=&quot;stress&quot; aria-pressed=&quot;false&quot;&gt;Stress-test the hinge&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;m23-label-control&quot;&gt;
+      &lt;label class=&quot;m23-label-text&quot; for=&quot;m23-reading-level&quot;&gt;Node labels&lt;/label&gt;
+      &lt;span class=&quot;m23-label-select&quot;&gt;&lt;select id=&quot;m23-reading-level&quot; class=&quot;form-select&quot;&gt;
+        &lt;option value=&quot;plain&quot;&gt;Plain English&lt;/option&gt;
+        &lt;option value=&quot;formal&quot;&gt;Mathematical notation&lt;/option&gt;
+      &lt;/select&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;m23-workspace&quot;&gt;
+    &lt;section class=&quot;m23-graph-pane&quot; aria-label=&quot;Causal graph&quot;&gt;
+      &lt;div class=&quot;m23-legend text-small&quot; aria-label=&quot;Legend&quot;&gt;
+        &lt;span&gt;&lt;i class=&quot;m23-line m23-proof&quot;&gt;&lt;/i&gt; solid: proved implication or construction&lt;/span&gt;
+        &lt;span&gt;&lt;i class=&quot;m23-line m23-compute&quot;&gt;&lt;/i&gt; dashed: exact computation or certificate&lt;/span&gt;
+        &lt;span&gt;&lt;i class=&quot;m23-line m23-gate&quot;&gt;&lt;/i&gt; dotted: hypothesis, compatibility, or descent check&lt;/span&gt;
+        &lt;span&gt;&lt;i class=&quot;m23-line m23-direction&quot;&gt;&lt;/i&gt; arrowhead: premise/input → consequence/output&lt;/span&gt;
+        &lt;span&gt;&lt;i class=&quot;m23-line m23-emphasis&quot;&gt;&lt;/i&gt; thicker: selected or traced, not a stronger claim&lt;/span&gt;
+        &lt;span&gt;&lt;strong&gt;gate&lt;/strong&gt; marks a place where a tempting shortcut would fail&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;m23-graph-wrap&quot;&gt;
+        &lt;svg id=&quot;m23-graph&quot; role=&quot;img&quot; aria-label=&quot;Causal graph for the M23 fixed-point comparison&quot; aria-describedby=&quot;m23-graph-desc&quot;&gt;
+          &lt;desc id=&quot;m23-graph-desc&quot;&gt;A directed graph from the seven-cover Hurwitz problem through the generic trace, Ferrand pushout, nearby-cycle specialization, and closed-fibre trace to epsilon of Theta equals e singular.&lt;/desc&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside class=&quot;m23-sidebar&quot; aria-label=&quot;Selected node explanation and introductory course&quot;&gt;
+      &lt;section class=&quot;card m23-sidebar-panel&quot; id=&quot;m23-detail&quot; aria-live=&quot;polite&quot;&gt;
+        &lt;div class=&quot;m23-hop-nav&quot; role=&quot;group&quot; aria-label=&quot;Walk through the proof&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn&quot; id=&quot;m23-first&quot; aria-label=&quot;Go to first hop&quot; data-tooltip=&quot;First hop&quot;&gt;⏮&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn&quot; id=&quot;m23-prev&quot; aria-label=&quot;Go to previous hop&quot; data-tooltip=&quot;Previous hop&quot;&gt;◀&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; id=&quot;m23-next&quot; aria-label=&quot;Go to next hop&quot; data-tooltip=&quot;Next hop&quot;&gt;▶&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn&quot; id=&quot;m23-last&quot; aria-label=&quot;Go to last hop&quot; data-tooltip=&quot;Last hop&quot;&gt;⏭&lt;/button&gt;
+          &lt;span id=&quot;m23-hop-status&quot; class=&quot;text-small text-muted tabular-nums&quot; aria-live=&quot;polite&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;viz-row&quot;&gt;
+          &lt;span class=&quot;viz-badge&quot; id=&quot;m23-detail-stage&quot;&gt;&lt;/span&gt;
+          &lt;strong id=&quot;m23-detail-title&quot;&gt;&lt;/strong&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;m23-detail-stack&quot;&gt;
+          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;What this says&lt;/span&gt;&lt;div id=&quot;m23-detail-plain&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;Why the next arrow is valid&lt;/span&gt;&lt;div id=&quot;m23-detail-why&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;What anchors it&lt;/span&gt;&lt;div id=&quot;m23-detail-evidence&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;If this failed&lt;/span&gt;&lt;div id=&quot;m23-detail-break&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;card m23-sidebar-panel&quot; id=&quot;m23-course&quot; aria-live=&quot;polite&quot;&gt;
+        &lt;span class=&quot;text-small text-muted&quot;&gt;101 course&lt;/span&gt;
+        &lt;h3 id=&quot;m23-course-title&quot;&gt;&lt;/h3&gt;
+        &lt;p id=&quot;m23-course-idea&quot;&gt;&lt;/p&gt;
+        &lt;div class=&quot;m23-course-block&quot;&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;Three things to remember&lt;/span&gt;
+          &lt;ol id=&quot;m23-course-points&quot;&gt;&lt;/ol&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;m23-course-block&quot;&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;Why it matters here&lt;/span&gt;
+          &lt;p id=&quot;m23-course-context&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/aside&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;tooltip m23-edge-tooltip&quot; id=&quot;m23-edge-tooltip&quot; role=&quot;tooltip&quot; hidden&gt;
+    &lt;strong id=&quot;m23-edge-tooltip-title&quot;&gt;&lt;/strong&gt;
+    &lt;span id=&quot;m23-edge-tooltip-body&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;style&gt;
+  #m23-hinge-map {
+    color: var(--foreground);
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    box-sizing: border-box;
+    position: relative;
+  }
+  #m23-hinge-map h2 { margin-bottom: 0.75rem; }
+  #m23-hinge-map .viz-controls { margin-bottom: 0.65rem; }
+  #m23-hinge-map .m23-label-control {
+    display: grid;
+    grid-template-columns: auto minmax(190px, 230px);
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #m23-hinge-map .m23-label-select { display: block; min-width: 0; }
+  #m23-hinge-map .m23-label-text { margin: 0; }
+  #m23-hinge-map .m23-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(250px, 3fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  #m23-hinge-map .m23-graph-pane { min-width: 0; }
+  #m23-hinge-map .m23-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    color: var(--muted-foreground);
+    margin-bottom: 0.55rem;
+  }
+  #m23-hinge-map .m23-line {
+    display: inline-block;
+    width: 1.8rem;
+    height: 0;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+    border-top: 2px solid var(--border);
+  }
+  #m23-hinge-map .m23-compute { border-top-style: dashed; }
+  #m23-hinge-map .m23-gate { border-top-style: dotted; }
+  #m23-hinge-map .m23-direction { position: relative; }
+  #m23-hinge-map .m23-direction::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    right: -1px;
+    top: -4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 7px solid var(--border);
+  }
+  #m23-hinge-map .m23-emphasis { border-top-width: 4px; }
+  #m23-hinge-map #m23-graph-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    min-height: 520px;
+  }
+  #m23-hinge-map #m23-graph {
+    display: block;
+    width: 100%;
+    overflow: visible;
+  }
+  #m23-hinge-map .m23-layer-label {
+    fill: var(--muted-foreground);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  #m23-hinge-map .m23-layer-rule {
+    stroke: var(--border);
+    stroke-width: 1;
+    opacity: 0.55;
+  }
+  #m23-hinge-map .m23-edge {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 1.35;
+    opacity: 0.52;
+    marker-end: url(#m23-arrow);
+    transition: opacity 140ms ease, stroke-width 140ms ease;
+  }
+  #m23-hinge-map .m23-edge.compute { stroke-dasharray: 5 4; }
+  #m23-hinge-map .m23-edge.gate { stroke-dasharray: 2 4; }
+  #m23-hinge-map .m23-edge.is-active {
+    stroke: var(--primary);
+    stroke-width: 2.15;
+    opacity: 0.95;
+  }
+  #m23-hinge-map .m23-edge-link:hover .m23-edge,
+  #m23-hinge-map .m23-edge-link:focus .m23-edge,
+  #m23-hinge-map .m23-edge.is-edge-selected {
+    stroke: var(--primary);
+    stroke-width: 3;
+    opacity: 1;
+  }
+  #m23-hinge-map .m23-edge.is-dim { opacity: 0.08; }
+  #m23-hinge-map .m23-edge-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 18;
+    pointer-events: stroke;
+  }
+  #m23-hinge-map .m23-edge-link { cursor: help; }
+  #m23-hinge-map .m23-edge-label {
+    fill: var(--foreground);
+    font-size: 11px;
+    paint-order: stroke;
+    stroke: var(--background);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+  #m23-hinge-map .m23-node {
+    cursor: pointer;
+    transition: opacity 140ms ease;
+  }
+  #m23-hinge-map .m23-node .m23-node-surface {
+    stroke: color-mix(in srgb, var(--border) 75%, transparent);
+    stroke-width: 1;
+    rx: 7;
+  }
+  #m23-hinge-map .m23-node[data-group=&quot;question&quot;] .m23-node-surface { fill: color-mix(in srgb, var(--viz-series-1) 14%, var(--background)); }
+  #m23-hinge-map .m23-node[data-group=&quot;generic&quot;] .m23-node-surface { fill: color-mix(in srgb, var(--viz-series-2) 14%, var(--background)); }
+  #m23-hinge-map .m23-node[data-group=&quot;bridge&quot;] .m23-node-surface { fill: color-mix(in srgb, var(--viz-series-3) 14%, var(--background)); }
+  #m23-hinge-map .m23-node[data-group=&quot;special&quot;] .m23-node-surface { fill: color-mix(in srgb, var(--viz-series-4) 14%, var(--background)); }
+  #m23-hinge-map .m23-node[data-group=&quot;result&quot;] .m23-node-surface { fill: color-mix(in srgb, var(--viz-series-5) 15%, var(--background)); }
+  #m23-hinge-map .m23-node text {
+    fill: var(--foreground);
+    font-size: 11.5px;
+    pointer-events: none;
+  }
+  #m23-hinge-map .m23-node .m23-formal {
+    fill: var(--muted-foreground);
+    font-size: 11px;
+  }
+  #m23-hinge-map .m23-node foreignObject { pointer-events: none; overflow: visible; }
+  #m23-hinge-map .m23-node-math {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 0.25rem;
+    color: var(--foreground);
+    text-align: center;
+    overflow: hidden;
+  }
+  #m23-hinge-map .m23-node-math mjx-container,
+  #m23-hinge-map .m23-detail-math mjx-container { margin: 0 !important; }
+  #m23-hinge-map .m23-node-math mjx-container { max-width: 100%; }
+  #m23-hinge-map .m23-node-math mjx-container &gt; svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  #m23-hinge-map .m23-node .m23-gate-label {
+    fill: var(--foreground);
+    font-size: 11px;
+    font-weight: 500;
+  }
+  #m23-hinge-map .m23-node .m23-gate-divider {
+    stroke: var(--orange);
+    stroke-width: 1;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  #m23-hinge-map .m23-node.is-gate .m23-node-surface {
+    stroke: var(--orange);
+    stroke-width: 1.8;
+  }
+  #m23-hinge-map .m23-node .m23-node-aura {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 6;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #m23-hinge-map .m23-node.is-selected .m23-node-aura {
+    opacity: 0.32;
+    filter: drop-shadow(0 0 7px var(--primary));
+  }
+  #m23-hinge-map .m23-node.is-selected .m23-node-surface {
+    stroke: var(--primary);
+    stroke-width: 2.8;
+  }
+  #m23-hinge-map .m23-node.is-related { opacity: 1; }
+  #m23-hinge-map .m23-node.is-dim { opacity: 0.2; }
+  #m23-hinge-map .m23-edge-tooltip {
+    position: absolute;
+    z-index: 10;
+    width: min(320px, calc(100% - 1rem));
+    padding: 0.6rem 0.7rem;
+    box-sizing: border-box;
+    background: var(--popover);
+    color: var(--popover-foreground);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 12%, transparent);
+    pointer-events: none;
+  }
+  #m23-hinge-map .m23-edge-tooltip strong,
+  #m23-hinge-map .m23-edge-tooltip span { display: block; }
+  #m23-hinge-map .m23-edge-tooltip span { margin-top: 0.2rem; }
+  #m23-hinge-map .m23-sidebar {
+    position: sticky;
+    top: 1rem;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.75rem;
+    height: 820px;
+    min-width: 0;
+  }
+  #m23-hinge-map .m23-sidebar-panel {
+    min-height: 0;
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
+  #m23-hinge-map .m23-hop-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  #m23-hinge-map .m23-hop-nav .btn { width: 100%; }
+  #m23-hinge-map #m23-hop-status {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  #m23-hinge-map .m23-detail-stack {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  #m23-hinge-map #m23-detail .text-small { display: block; margin-bottom: 0.15rem; }
+  #m23-hinge-map #m23-course h3 { margin: 0.2rem 0 0.55rem; }
+  #m23-hinge-map #m23-course p { margin: 0; }
+  #m23-hinge-map .m23-course-block { margin-top: 0.75rem; }
+  #m23-hinge-map #m23-course-points { margin: 0.3rem 0 0; padding-left: 1.15rem; }
+  #m23-hinge-map #m23-course-points li + li { margin-top: 0.35rem; }
+  #m23-hinge-map .m23-course-link {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    font-weight: 500;
+  }
+  #m23-hinge-map .m23-course-link[aria-current=&quot;true&quot;] {
+    text-decoration-thickness: 2px;
+  }
+  @media (max-width: 860px) {
+    #m23-hinge-map .m23-legend { gap: 0.35rem 0.7rem; }
+    #m23-hinge-map #m23-graph-wrap { min-height: 760px; }
+  }
+  @media (max-width: 700px) {
+    #m23-hinge-map .m23-workspace { grid-template-columns: minmax(0, 1fr); }
+    #m23-hinge-map .m23-sidebar {
+      position: static;
+      height: auto;
+      grid-template-rows: auto auto;
+    }
+    #m23-hinge-map .m23-sidebar-panel { overflow: visible; }
+  }
+  @media (max-width: 520px) {
+    #m23-hinge-map { padding-inline: 0.5rem; }
+    #m23-hinge-map #m23-graph-wrap { padding-inline: 0; }
+  }
+&lt;/style&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+window.MathJax = {
+  tex: {inlineMath: [[&#x27;\\(&#x27;, &#x27;\\)&#x27;]]},
+  svg: {fontCache: &#x27;local&#x27;},
+  startup: {typeset: false}
+};
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;m23-hinge-map&#x27;);
+  const svg = d3.select(root.querySelector(&#x27;#m23-graph&#x27;));
+  const wrap = root.querySelector(&#x27;#m23-graph-wrap&#x27;);
+
+  const layers = [
+    &#x27;The question&#x27;,
+    &#x27;Arithmetic scaffold&#x27;,
+    &#x27;Generic-fibre trace&#x27;,
+    &#x27;One relative object&#x27;,
+    &#x27;Specialization hinge&#x27;,
+    &#x27;Closed-fibre trace&#x27;,
+    &#x27;Conclusion&#x27;
+  ];
+
+  const nodes = [
+    {id:&#x27;problem&#x27;,layer:0,order:0,group:&#x27;question&#x27;,core:true,title:&#x27;Seven covers, one fixed class&#x27;,formal:&#x27;|H̄| = 7&#x27;,plain:&#x27;The moduli problem has seven geometric covers. Huang et al. identify one class fixed by the relevant arithmetic Galois action.&#x27;,why:&#x27;An explanation must distinguish that point intrinsically, not merely recognize its branch-cycle label.&#x27;,evidence:&#x27;The seven-element inner Nielsen class and the rational class are due to Huang et al.&#x27;,breaks:&#x27;Without the seven-cover moduli problem, there is no fixed-point phenomenon to explain.&#x27;},
+    {id:&#x27;goal&#x27;,layer:0,order:1,group:&#x27;question&#x27;,core:true,gate:true,title:&#x27;The hinge to prove&#x27;,formal:&#x27;ε(Θ) = e_sing&#x27;,plain:&#x27;A finite-group test and a characteristic-23 geometric test should define the same yes/no function on the seven covers.&#x27;,why:&#x27;Equality of these two idempotents turns a numerical observation into an intrinsic explanation.&#x27;,evidence:&#x27;This is Theorem 1.2, not an assumption used in reconstructing the covers.&#x27;,breaks:&#x27;If the two tests differed anywhere, characteristic 23 would not explain the fixed class.&#x27;},
+
+    {id:&#x27;algebra&#x27;,layer:1,order:0,group:&#x27;question&#x27;,core:true,title:&#x27;Exact Hurwitz algebra&#x27;,formal:&#x27;A_H = K₀ × L,  [L:K₀]=6&#x27;,plain:&#x27;The seven geometric covers assemble into one degree-one component and one connected degree-six component.&#x27;,why:&#x27;A product of two fields has exactly two primitive component idempotents.&#x27;,evidence:&#x27;Exact reconstruction plus certified branch cycles identifies the finite étale Hurwitz scheme.&#x27;,breaks:&#x27;A different component decomposition would change what a selector is allowed to detect.&#x27;},
+    {id:&#x27;idempotents&#x27;,layer:1,order:1,group:&#x27;question&#x27;,core:true,title:&#x27;Only two component indicators&#x27;,formal:&#x27;e₁=(1,0),  e₆=(0,1)&#x27;,plain:&#x27;There is one indicator for the rational component and its complementary indicator for the other six covers.&#x27;,why:&#x27;To explain the fixed point, it suffices to construct either indicator without importing the complex labels.&#x27;,evidence:&#x27;Elementary algebra of the product K₀ × L.&#x27;,breaks:&#x27;If L were disconnected, a binary invariant could hide a finer decomposition.&#x27;},
+    {id:&#x27;integral&#x27;,layer:1,order:2,group:&#x27;special&#x27;,core:true,title:&#x27;Integral model at 23&#x27;,formal:&#x27;Norm_{A_H}(O_{K₀,q})&#x27;,plain:&#x27;Extend the finite Hurwitz scheme over the local ring at the prime above 23 and normalize it.&#x27;,why:&#x27;This gives a legitimate closed fibre on which singularities and residue fields can be compared.&#x27;,evidence:&#x27;The normalized local algebra has three closed points with (e,f)=(1,1),(1,2),(2,2).&#x27;,breaks:&#x27;Reducing arbitrary numerical models would not define a function on the arithmetic moduli scheme.&#x27;},
+    {id:&#x27;independence&#x27;,layer:1,order:3,group:&#x27;question&#x27;,gate:true,title:&#x27;No complex-label shortcut&#x27;,formal:&#x27;No branch-cycle cross-identification&#x27;,plain:&#x27;The hinge proof is forbidden from first matching each local reduction with a complex Nielsen label.&#x27;,why:&#x27;Otherwise both sides could be called e₆ by lookup, which would prove equality but explain nothing.&#x27;,evidence:&#x27;The comparison uses the reconstructed algebra but not the seven-map branch-cycle cross-identification.&#x27;,breaks:&#x27;Using the lookup would make the argument circular as an explanation.&#x27;},
+
+    {id:&#x27;labeling&#x27;,layer:2,order:0,group:&#x27;generic&#x27;,core:true,gate:true,title:&#x27;Label the 23 sheets together&#x27;,formal:&#x27;an S₂₃-torsor of labelings&#x27;,plain:&#x27;After a finite splitting extension, choose one numbering of the 23 sheets and use it at both wild ends.&#x27;,why:&#x27;Only a common numbering makes the two transporter calculations comparable.&#x27;,evidence:&#x27;Changing the numbering simultaneously conjugates every permutation.&#x27;,breaks:&#x27;Independent numberings at the two ends would create a fake relative transporter.&#x27;},
+    {id:&#x27;normalizers&#x27;,layer:2,order:1,group:&#x27;generic&#x27;,core:true,title:&#x27;Two order-23 endpoint groups&#x27;,formal:&#x27;D_y,D_z ≅ 23:11&#x27;,plain:&#x27;At the two wild branch points, record the symmetries preserving the corresponding cyclic order-23 inertia groups.&#x27;,why:&#x27;Each group moves the finite inertia involution through a well-defined orbit.&#x27;,evidence:&#x27;These are the two wild endpoint normalizers of a normalized Nielsen triple.&#x27;,breaks:&#x27;Without the marked endpoint groups there is no two-ended comparison.&#x27;},
+    {id:&#x27;omega&#x27;,layer:2,order:2,group:&#x27;generic&#x27;,core:true,title:&#x27;Common transported involutions&#x27;,formal:&#x27;Ω = x^{D_y} ∩ x^{D_z}&#x27;,plain:&#x27;Keep the involutions that can be reached from the finite inertia x from either wild end.&#x27;,why:&#x27;For each common involution, the odd-order normalizer action gives unique transporter elements.&#x27;,evidence:&#x27;The stabilizer order divides both 253 and 2688, hence is trivial.&#x27;,breaks:&#x27;Nonunique transporters would make the relative element depend on a choice.&#x27;},
+    {id:&#x27;relative&#x27;,layer:2,order:3,group:&#x27;generic&#x27;,core:true,title:&#x27;Compare the two transports&#x27;,formal:&#x27;c_w=d_y(w)d_z(w)⁻¹ ∈ C_M₂₃(x)&#x27;,plain:&#x27;Go from x to w by the first route and return by the second. The mismatch centralizes x.&#x27;,why:&#x27;Anything centralizing x acts on both the seven fixed sheets and the eight two-sheet orbits.&#x27;,evidence:&#x27;Direct multiplication shows c_w x = x c_w.&#x27;,breaks:&#x27;If c_w did not centralize x, the two finite orbit sets would not be preserved.&#x27;},
+    {id:&#x27;fanoaffine&#x27;,layer:2,order:4,group:&#x27;generic&#x27;,core:true,title:&#x27;Two complementary finite sets&#x27;,formal:&#x27;H_x ⊔ A_x,  |H_x|=7, |A_x|=8&#x27;,plain:&#x27;The involution x fixes seven sheets forming a Fano point set; its remaining sheets form eight unordered pairs, an affine three-dimensional binary space.&#x27;,why:&#x27;The centralizer acts linearly on the seven-set and affinely on the eight-set.&#x27;,evidence:&#x27;C_M₂₃(x)/⟨x⟩ ≅ 2³:PSL₃(2).&#x27;,breaks:&#x27;Using only the Fano seven-set fails for many centralizer elements.&#x27;},
+    {id:&#x27;oddlemma&#x27;,layer:2,order:5,group:&#x27;generic&#x27;,core:true,title:&#x27;Odd fixed-point identity&#x27;,formal:&#x27;|Fix_H(c)|+|Fix_A(c)| ≡ 1 mod 2&#x27;,plain:&#x27;Every allowed symmetry fixes an odd total number of objects across the Fano and affine sets.&#x27;,why:&#x27;If the linear part has fixed vectors, the Fano count is odd and the affine count even; otherwise the affine map has exactly one fixed point.&#x27;,evidence:&#x27;A short linear-algebra proof and an exhaustive check of all 2,688 centralizer elements.&#x27;,breaks:&#x27;This is the parity engine. Without it, the generic intersection would not reduce to one bit per common involution.&#x27;},
+    {id:&#x27;theta&#x27;,layer:2,order:6,group:&#x27;generic&#x27;,core:true,title:&#x27;Augment the transporter cycle&#x27;,formal:&#x27;ε(Θ)=|Ω| mod 2&#x27;,plain:&#x27;Add the relative transporters with coefficients modulo two, then forget which transporter occurred and keep only the parity.&#x27;,why:&#x27;The standard group-algebra augmentation is invariant under relabeling.&#x27;,evidence:&#x27;Exact GAP computation on all 161 framed Nielsen tuples.&#x27;,breaks:&#x27;A non-invariant statistic could not descend to the Hurwitz scheme.&#x27;},
+    {id:&#x27;generictrace&#x27;,layer:2,order:7,group:&#x27;generic&#x27;,core:true,title:&#x27;Generic trace equals the group bit&#x27;,formal:&#x27;Tr_η = ε(Θ)&#x27;,plain:&#x27;Intersect the two lifted endpoint correspondences. The odd fixed-point identity makes its degree equal to the transporter augmentation.&#x27;,why:&#x27;For each w, equality of lifted labels is exactly the condition that c_w fixes a Fano or affine object.&#x27;,evidence:&#x27;Finite intersection calculation, orbit by orbit; no interpolation from the seven covers.&#x27;,breaks:&#x27;If the lifted intersection encoded a different equality relation, Lu–Zheng would faithfully specialize the wrong trace.&#x27;},
+
+    {id:&#x27;stablemap&#x27;,layer:3,order:0,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;One pointed stable M₂₃-map&#x27;,formal:&#x27;Y → X over a Henselian trait&#x27;,plain:&#x27;After finite base change, stable reduction extends the deck action and all three marked branch sections over the local trait.&#x27;,why:&#x27;It places the generic and closed fibres inside one relative geometric family.&#x27;,evidence:&#x27;Stable reduction and Wewers’s common patching datum.&#x27;,breaks:&#x27;Separate models for the two fibres would provide no canonical specialization map.&#x27;},
+    {id:&#x27;commonlambda&#x27;,layer:3,order:1,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;One patching identification&#x27;,formal:&#x27;one common λ for all tails&#x27;,plain:&#x27;The group identification used to glue the stable tails is shared by every tail, not chosen independently.&#x27;,why:&#x27;All endpoint graph correspondences are transported simultaneously.&#x27;,evidence:&#x27;Wewers, Section 4.2 and Theorem 4.5.&#x27;,breaks:&#x27;Independent tail identifications could alter the gluing character by hand.&#x27;},
+    {id:&#x27;graphs&#x27;,layer:3,order:2,group:&#x27;bridge&#x27;,core:true,title:&#x27;Close the deck graphs relatively&#x27;,formal:&#x27;ℒ_D={(b,x^d,b^d)}&#x27;,plain:&#x27;For every endpoint symmetry, take its graph on the stable cover and restrict to the finite branch-orbit data.&#x27;,why:&#x27;Closed graphs in a proper stable model give genuine relative cohomological correspondences.&#x27;,evidence:&#x27;Deck transformations extend over the stable Galois model; the quotient map is finite.&#x27;,breaks:&#x27;A correspondence defined only on the generic fibre might acquire uncontrolled closure terms.&#x27;},
+    {id:&#x27;ferrand&#x27;,layer:3,order:3,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Ferrand pushout forgets exactly one label&#x27;,formal:&#x27;P_p=Spec(R^E) ⨿_{Spec(k^E)} Spec(k^Q)&#x27;,plain:&#x27;Generically, keep every involution label separate. At the conductor, identify labels that land on the same one- or two-sheet branch.&#x27;,why:&#x27;This is the missing morphism between the generic diagonal pairing and the closed-fibre fibre-sum pairing.&#x27;,evidence:&#x27;The coordinate ring is R^E ×_{k^E} k^Q.&#x27;,breaks:&#x27;Lu–Zheng specializes one specified correspondence; it cannot by itself change “same label” into “same branch.”&#x27;},
+    {id:&#x27;triangle&#x27;,layer:3,order:4,group:&#x27;bridge&#x27;,core:true,title:&#x27;Normalization and conductor triangle&#x27;,formal:&#x27;Λ_P → Rν_*Λ_E ⊕ i_*Λ_Q → i_*p_*Λ_E → +1&#x27;,plain:&#x27;The pushout splits the specialized trace into a contribution on the normalization and a correction on the conductor.&#x27;,why:&#x27;Nearby stalks over q are the vector spaces spanned by the generic branches p⁻¹(q).&#x27;,evidence:&#x27;The Mayer–Vietoris triangle and explicit unit/counit maps.&#x27;,breaks:&#x27;Treating the conductor term as the whole trace would double-count or omit the normalization contribution.&#x27;},
+    {id:&#x27;tree&#x27;,layer:3,order:5,group:&#x27;bridge&#x27;,core:true,title:&#x27;Tree cancellation&#x27;,formal:&#x27;C⁰(Γ,Λ[E]) → C¹(Γ,Λ[E])&#x27;,plain:&#x27;The stable target has a tree-shaped dual graph. Every internal component appears twice and cancels modulo two.&#x27;,why:&#x27;Only the wild endpoint term and the finite conductor term survive.&#x27;,evidence:&#x27;Elementary cochain calculation, unchanged by subdividing an edge.&#x27;,breaks:&#x27;A loop in the dual graph could contribute an additional cohomological term.&#x27;},
+    {id:&#x27;descent&#x27;,layer:3,order:6,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Independent of all temporary labels&#x27;,formal:&#x27;invariant under the labeling and patching torsors&#x27;,plain:&#x27;Simultaneous relabeling transports the normalization labels, quotient map, and graph correspondences together.&#x27;,why:&#x27;The resulting scalar trace descends from the splitting extension to the original local Hurwitz trait.&#x27;,evidence:&#x27;Conjugation invariance of fixed loci and of the Ferrand quotient map.&#x27;,breaks:&#x27;Without descent, the equality would depend on an auxiliary splitting field.&#x27;},
+
+    {id:&#x27;samecorr&#x27;,layer:4,order:0,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;One pairing on both fibres&#x27;,formal:&#x27;(u_y,u_z) and (ψu_y,ψu_z)&#x27;,plain:&#x27;The generic trace and the closed-fibre trace come from one pair of cohomological correspondences, not from two separately chosen counts.&#x27;,why:&#x27;This is the central eligibility condition for the specialization theorem.&#x27;,evidence:&#x27;Relative deck graphs plus the Ferrand normalization–conductor complex.&#x27;,breaks:&#x27;Matching two unrelated numbers after the fact would not be a geometric explanation.&#x27;},
+    {id:&#x27;finiteTor&#x27;,layer:4,order:1,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;Dualizability hypothesis&#x27;,formal:&#x27;Λ-complexes lie in D_cft&#x27;,plain:&#x27;The finite permutation complexes are constructible and have finite Tor-dimension.&#x27;,why:&#x27;Lu–Zheng’s pairing theorem is formulated for dualizable cohomological data.&#x27;,evidence:&#x27;The complexes are finite permutation modules over Λ=F₂.&#x27;,breaks:&#x27;A nondualizable complex would fall outside the cited theorem.&#x27;},
+    {id:&#x27;proper&#x27;,layer:4,order:2,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;Properness hypothesis&#x27;,formal:&#x27;fixed-pairing support proper over S&#x27;,plain:&#x27;The relevant fixed-point locus is finite over the local base, and the graph maps are proper.&#x27;,why:&#x27;This allows the local pairing class to be pushed down to a scalar trace.&#x27;,evidence:&#x27;The pushout is finite over the proper pointed stable curve.&#x27;,breaks:&#x27;A nonproper fixed locus could lose contributions at infinity.&#x27;},
+    {id:&#x27;coefficients&#x27;,layer:4,order:3,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;Coefficient hypothesis&#x27;,formal:&#x27;Λ=F₂ and 2 is invertible at 23&#x27;,plain:&#x27;We count parity using coefficients of characteristic two, while the geometric base has residue characteristic 23.&#x27;,why:&#x27;The torsion coefficient is invertible on the Henselian trait, as required by étale nearby cycles.&#x27;,evidence:&#x27;2 and 23 are coprime.&#x27;,breaks:&#x27;At residue characteristic two, this nearby-cycle formalism would need different hypotheses.&#x27;},
+    {id:&#x27;luzheng&#x27;,layer:4,order:4,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Specialization preserves the pairing&#x27;,formal:&#x27;sp⟨u_y,u_z⟩=⟨ψu_y,ψu_z⟩&#x27;,plain:&#x27;Lu–Zheng guarantee that the trace of this same correspondence is compatible with passage from the generic fibre to the closed fibre.&#x27;,why:&#x27;Their proper-pushforward compatibility also identifies the specialized graphs with the graphs used in the local calculation.&#x27;,evidence:&#x27;Lu–Zheng, Corollary 3.10 and Proposition 3.12.&#x27;,breaks:&#x27;Without this theorem, equal generic and closed traces would still need an independent geometric proof.&#x27;},
+
+    {id:&#x27;closedpoints&#x27;,layer:5,order:0,group:&#x27;special&#x27;,core:true,title:&#x27;Three closed Hurwitz points&#x27;,formal:&#x27;(e,f)=(1,1),(1,2),(2,2)&#x27;,plain:&#x27;The local integral model has one rational closed point and two points on the degree-six component.&#x27;,why:&#x27;A function on these three factors determines which connected component it cuts out.&#x27;,evidence:&#x27;Exact factorization of the local Hurwitz algebra at 23.&#x27;,breaks:&#x27;Missing a closed point could make two candidate idempotents appear equal when they are not.&#x27;},
+    {id:&#x27;frobenius&#x27;,layer:5,order:1,group:&#x27;special&#x27;,core:true,title:&#x27;Normalize each reduced source&#x27;,formal:&#x27;β̄=t²³,  b=0, c=∞&#x27;,plain:&#x27;After normalization, every reduced degree-23 map is the Frobenius map in a uniquely normalized coordinate t.&#x27;,why:&#x27;The coordinate t lets us compare a distinguished singular point across all three reductions.&#x27;,evidence:&#x27;Exact divisor calculation div(β̄)=23b−23c.&#x27;,breaks:&#x27;An unfixed projective coordinate would make the singular position meaningless.&#x27;},
+    {id:&#x27;singcoord&#x27;,layer:5,order:2,group:&#x27;special&#x27;,core:true,title:&#x27;Record the singular-point coordinate&#x27;,formal:&#x27;u(P)=t(τ_P)&#x27;,plain:&#x27;Evaluate t at the unique E₈ singularity, or at the distinguished A₆ singularity in the third reduction.&#x27;,why:&#x27;This construction is intrinsic to the pointed closed fibre and commutes with residue-field automorphisms.&#x27;,evidence:&#x27;Exact normalized local equations for the E₈ and A₂+A₆ fibres.&#x27;,breaks:&#x27;Choosing an arbitrary singular point would not define an arithmetic function.&#x27;},
+    {id:&#x27;esing&#x27;,layer:5,order:3,group:&#x27;special&#x27;,core:true,title:&#x27;The geometric idempotent&#x27;,formal:&#x27;e_sing values = (0,1,1)&#x27;,plain:&#x27;The singular coordinate has one value pattern on the rational component and another on the two factors of the sextic component.&#x27;,why:&#x27;The interpolation polynomial is idempotent and uniquely lifts through the complete local algebra.&#x27;,evidence:&#x27;R₂₃(u)=(u−16)(u²+1)(u²+u+1) and exact Chinese-remainder calculation.&#x27;,breaks:&#x27;If the values were not constant by connected component, this would not lift to e₆.&#x27;},
+    {id:&#x27;gluing&#x27;,layer:5,order:4,group:&#x27;special&#x27;,core:true,title:&#x27;Read the node’s gluing class&#x27;,formal:&#x27;n_P ∈ N_{S₂₃}(D)/D ≅ C₂&#x27;,plain:&#x27;The stable model carries a transition element at the marked wild node. Only its square or nonsquare normalizer coset matters.&#x27;,why:&#x27;Changing formal coordinates does not change this quotient class.&#x27;,evidence:&#x27;Exact Newton charts and the pointed conductor calculation.&#x27;,breaks:&#x27;A coordinate-dependent phase would not define a function on the stable model.&#x27;},
+    {id:&#x27;character&#x27;,layer:5,order:5,group:&#x27;special&#x27;,core:true,title:&#x27;The gluing character&#x27;,formal:&#x27;χ_gl(n_P) = (0,1,1)&#x27;,plain:&#x27;The rational E₈ point has the trivial gluing class; the other E₈ point and the A₂+A₆ point have the nontrivial class.&#x27;,why:&#x27;Its values already match the singular-coordinate idempotent on every closed factor.&#x27;,evidence:&#x27;Certified square-class calculations on all three complete local traits.&#x27;,breaks:&#x27;A mismatched value at one closed point would destroy the final idempotent equality.&#x27;},
+    {id:&#x27;normterm&#x27;,layer:5,order:6,group:&#x27;special&#x27;,core:true,title:&#x27;Normalization contribution&#x27;,formal:&#x27;Tr_norm = 1 + χ_gl(n)&#x27;,plain:&#x27;At the wild end, retaining involution labels gives one parity when the two traces agree and zero when they lie in disjoint adjacent Mathieu copies.&#x27;,why:&#x27;The Fano–affine odd fixed-point lemma supplies one for every common label.&#x27;,evidence:&#x27;Exact normalizer-trace intersection calculation.&#x27;,breaks:&#x27;Forgetting labels here would replace this term by a constant and erase the gluing information.&#x27;},
+    {id:&#x27;conductorterm&#x27;,layer:5,order:7,group:&#x27;special&#x27;,core:true,title:&#x27;Conductor contribution&#x27;,formal:&#x27;5929−64 ≡ 1 mod 2&#x27;,plain:&#x27;At the finite node, singleton branches occur 77 times and two-sheet branches 8 times; their two branch multiplicities differ by an odd number.&#x27;,why:&#x27;The Fano incidence cancels the fixed heptad against seven nonorigin affine directions, leaving one class.&#x27;,evidence:&#x27;77²=5929, 8²=64, plus the exact Fano incidence bridge.&#x27;,breaks:&#x27;If this correction were even, the closed trace would be 1+χ rather than χ.&#x27;},
+    {id:&#x27;noextra&#x27;,layer:5,order:8,group:&#x27;special&#x27;,core:true,gate:true,title:&#x27;No hidden local terms&#x27;,formal:&#x27;all remaining different exponents are even&#x27;,plain:&#x27;Every other tame attachment and wild different contributes zero to the parity trace.&#x27;,why:&#x27;This proves the two displayed endpoint terms exhaust the closed-fibre calculation.&#x27;,evidence:&#x27;Odd tame orders have even different; the wild exponent is 22+2h.&#x27;,breaks:&#x27;An overlooked odd local term would flip the answer.&#x27;},
+    {id:&#x27;closedtrace&#x27;,layer:5,order:9,group:&#x27;special&#x27;,core:true,title:&#x27;Closed trace is the gluing bit&#x27;,formal:&#x27;Tr_s=(1+χ_gl)+1=χ_gl&#x27;,plain:&#x27;Tree cancellation leaves the normalization contribution and conductor contribution, whose sum is exactly the gluing character.&#x27;,why:&#x27;There are no other terms, and all calculations take place in F₂.&#x27;,evidence:&#x27;Normalization–conductor trace lemma on the stable tree.&#x27;,breaks:&#x27;This is the local computation Lu–Zheng does not supply automatically.&#x27;},
+
+    {id:&#x27;traceequal&#x27;,layer:6,order:0,group:&#x27;result&#x27;,core:true,title:&#x27;Generic trace equals closed trace&#x27;,formal:&#x27;Tr_η = Tr_s&#x27;,plain:&#x27;The specialization theorem now equates the two traces because they belong to the same relative correspondence and all hypotheses have been checked.&#x27;,why:&#x27;Substitute the independently computed descriptions of each trace.&#x27;,evidence:&#x27;Lu–Zheng applied to the Ferrand-pushed graph correspondence.&#x27;,breaks:&#x27;This is the formal hinge: a gap here would leave two unrelated parity calculations.&#x27;},
+    {id:&#x27;localequal&#x27;,layer:6,order:1,group:&#x27;result&#x27;,core:true,title:&#x27;The two local tests agree&#x27;,formal:&#x27;χ_gl = e_sing&#x27;,plain:&#x27;Both functions take the values 0,1,1 on the three closed factors, so they define the same idempotent.&#x27;,why:&#x27;Idempotents lift uniquely from the reduced closed fibre to the complete local algebra.&#x27;,evidence:&#x27;Exact local tables and standard lifting of idempotents.&#x27;,breaks:&#x27;Agreement at fewer than all closed factors would be insufficient.&#x27;},
+    {id:&#x27;conclusion&#x27;,layer:6,order:2,group:&#x27;result&#x27;,core:true,title:&#x27;The fixed-point explanation&#x27;,formal:&#x27;ε(Θ)=e_sing=e₆&#x27;,plain:&#x27;The finite-group augmentation and the singular-point geometry cut out the same degree-six component; their complement is the distinguished rational point.&#x27;,why:&#x27;Combine the generic trace identity, specialization, the closed trace identity, descent, and the local idempotent calculation.&#x27;,evidence:&#x27;Theorem 1.2, with every incoming arrow exposed above.&#x27;,breaks:&#x27;Removing any orange gate identifies the exact place where the explanation would become conditional.&#x27;}
+  ];
+
+  const formalTex = {
+    problem:String.raw`\lvert\overline{\mathcal H}\rvert=7`,
+    goal:String.raw`\varepsilon(\Theta)=e_{\mathrm{sing}}`,
+    algebra:String.raw`A_H=K_0\times L,\quad [L:K_0]=6`,
+    idempotents:String.raw`e_1=(1,0),\quad e_6=(0,1)`,
+    integral:String.raw`\operatorname{Norm}_{A_H}(\mathcal O_{K_0,\mathfrak q})`,
+    independence:String.raw`\text{no branch-cycle cross-identification}`,
+    labeling:String.raw`\text{an }S_{23}\text{-torsor of labelings}`,
+    normalizers:String.raw`D_y,D_z\simeq 23{:}11`,
+    omega:String.raw`\Omega=x^{D_y}\cap x^{D_z}`,
+    relative:String.raw`c_w=d_y(w)d_z(w)^{-1}\in C_{M_{23}}(x)`,
+    fanoaffine:String.raw`H_x\sqcup A_x,\quad \lvert H_x\rvert=7,\ \lvert A_x\rvert=8`,
+    oddlemma:String.raw`\lvert\operatorname{Fix}_H(c)\rvert+\lvert\operatorname{Fix}_A(c)\rvert\equiv1\pmod 2`,
+    theta:String.raw`\varepsilon(\Theta)=\lvert\Omega\rvert\pmod 2`,
+    generictrace:String.raw`\operatorname{Tr}_{\eta}=\varepsilon(\Theta)`,
+    stablemap:String.raw`\begin{gathered}Y\longrightarrow X\\ \text{over a Henselian trait}\end{gathered}`,
+    commonlambda:String.raw`\text{one common }\lambda\text{ for all tails}`,
+    graphs:String.raw`\mathcal L_D=\{(b,x^d,b^d)\}`,
+    ferrand:String.raw`P_p=\operatorname{Spec}(R^E)\amalg_{\operatorname{Spec}(k^E)}\operatorname{Spec}(k^Q)`,
+    triangle:String.raw`\begin{gathered}\Lambda_P\to R\nu_*\Lambda_E\oplus i_*\Lambda_Q\\ \to i_*p_*\Lambda_E\to +1\end{gathered}`,
+    tree:String.raw`C^0(\Gamma,\Lambda[E])\longrightarrow C^1(\Gamma,\Lambda[E])`,
+    descent:String.raw`\text{invariant under the labeling and patching torsors}`,
+    samecorr:String.raw`(u_y,u_z)\quad\text{and}\quad(\psi u_y,\psi u_z)`,
+    finiteTor:String.raw`\Lambda\text{-complexes lie in }D_{\mathrm{cft}}`,
+    proper:String.raw`\text{fixed-pairing support proper over }S`,
+    coefficients:String.raw`\Lambda=\mathbf F_2,\quad 2\in\mathcal O_S^{\times}`,
+    luzheng:String.raw`\operatorname{sp}\langle u_y,u_z\rangle=\langle\psi u_y,\psi u_z\rangle`,
+    closedpoints:String.raw`(e,f)=(1,1),(1,2),(2,2)`,
+    frobenius:String.raw`\overline\beta=t^{23},\quad b=0,\ c=\infty`,
+    singcoord:String.raw`u(P)=t(\tau_P)`,
+    esing:String.raw`e_{\mathrm{sing}}=(0,1,1)`,
+    gluing:String.raw`n_P\in N_{S_{23}}(D)/D\simeq C_2`,
+    character:String.raw`\chi_{\mathrm{gl}}(n_P)=(0,1,1)`,
+    normterm:String.raw`\operatorname{Tr}_{\mathrm{norm}}=1+\chi_{\mathrm{gl}}(n)`,
+    conductorterm:String.raw`5929-64\equiv1\pmod 2`,
+    noextra:String.raw`\text{all remaining different exponents are even}`,
+    closedtrace:String.raw`\operatorname{Tr}_s=(1+\chi_{\mathrm{gl}})+1=\chi_{\mathrm{gl}}`,
+    traceequal:String.raw`\operatorname{Tr}_{\eta}=\operatorname{Tr}_s`,
+    localequal:String.raw`\chi_{\mathrm{gl}}=e_{\mathrm{sing}}`,
+    conclusion:String.raw`\varepsilon(\Theta)=e_{\mathrm{sing}}=e_6`
+  };
+
+  const edges = [
+    [&#x27;problem&#x27;,&#x27;algebra&#x27;,&#x27;reconstructs&#x27;,&#x27;compute&#x27;],[&#x27;algebra&#x27;,&#x27;idempotents&#x27;,&#x27;splits&#x27;,&#x27;proof&#x27;],[&#x27;idempotents&#x27;,&#x27;goal&#x27;,&#x27;sets the target&#x27;,&#x27;proof&#x27;],[&#x27;problem&#x27;,&#x27;labeling&#x27;,&#x27;realize sheets&#x27;,&#x27;gate&#x27;],[&#x27;algebra&#x27;,&#x27;integral&#x27;,&#x27;localizes at 23&#x27;,&#x27;proof&#x27;],[&#x27;integral&#x27;,&#x27;closedpoints&#x27;,&#x27;has closed fibre&#x27;,&#x27;compute&#x27;],
+    [&#x27;labeling&#x27;,&#x27;normalizers&#x27;,&#x27;puts together&#x27;,&#x27;gate&#x27;],[&#x27;normalizers&#x27;,&#x27;omega&#x27;,&#x27;intersect orbits&#x27;,&#x27;proof&#x27;],[&#x27;omega&#x27;,&#x27;relative&#x27;,&#x27;gives unique transports&#x27;,&#x27;proof&#x27;],[&#x27;labeling&#x27;,&#x27;fanoaffine&#x27;,&#x27;marks inertia orbits&#x27;,&#x27;proof&#x27;],[&#x27;relative&#x27;,&#x27;oddlemma&#x27;,&#x27;acts on&#x27;,&#x27;proof&#x27;],[&#x27;fanoaffine&#x27;,&#x27;oddlemma&#x27;,&#x27;supplies two sets&#x27;,&#x27;proof&#x27;],[&#x27;omega&#x27;,&#x27;theta&#x27;,&#x27;counts parity&#x27;,&#x27;compute&#x27;],[&#x27;oddlemma&#x27;,&#x27;generictrace&#x27;,&#x27;one per common tag&#x27;,&#x27;proof&#x27;],[&#x27;theta&#x27;,&#x27;generictrace&#x27;,&#x27;same augmentation&#x27;,&#x27;compute&#x27;],
+    [&#x27;integral&#x27;,&#x27;stablemap&#x27;,&#x27;stable reduction&#x27;,&#x27;proof&#x27;],[&#x27;labeling&#x27;,&#x27;stablemap&#x27;,&#x27;common marking&#x27;,&#x27;gate&#x27;],[&#x27;stablemap&#x27;,&#x27;commonlambda&#x27;,&#x27;patching datum&#x27;,&#x27;gate&#x27;],[&#x27;commonlambda&#x27;,&#x27;graphs&#x27;,&#x27;transports together&#x27;,&#x27;gate&#x27;],[&#x27;normalizers&#x27;,&#x27;graphs&#x27;,&#x27;index graph sums&#x27;,&#x27;proof&#x27;],[&#x27;stablemap&#x27;,&#x27;graphs&#x27;,&#x27;closes graphs&#x27;,&#x27;proof&#x27;],[&#x27;graphs&#x27;,&#x27;generictrace&#x27;,&#x27;generic intersection&#x27;,&#x27;proof&#x27;],[&#x27;graphs&#x27;,&#x27;ferrand&#x27;,&#x27;feeds normalization&#x27;,&#x27;proof&#x27;],[&#x27;fanoaffine&#x27;,&#x27;ferrand&#x27;,&#x27;defines quotient branches&#x27;,&#x27;proof&#x27;],[&#x27;ferrand&#x27;,&#x27;triangle&#x27;,&#x27;has conductor square&#x27;,&#x27;proof&#x27;],[&#x27;stablemap&#x27;,&#x27;tree&#x27;,&#x27;dual graph&#x27;,&#x27;proof&#x27;],[&#x27;triangle&#x27;,&#x27;tree&#x27;,&#x27;local system&#x27;,&#x27;proof&#x27;],[&#x27;labeling&#x27;,&#x27;descent&#x27;,&#x27;simultaneous conjugacy&#x27;,&#x27;gate&#x27;],[&#x27;commonlambda&#x27;,&#x27;descent&#x27;,&#x27;simultaneous transport&#x27;,&#x27;gate&#x27;],[&#x27;ferrand&#x27;,&#x27;descent&#x27;,&#x27;quotient is invariant&#x27;,&#x27;gate&#x27;],
+    [&#x27;graphs&#x27;,&#x27;samecorr&#x27;,&#x27;relative graphs&#x27;,&#x27;gate&#x27;],[&#x27;triangle&#x27;,&#x27;samecorr&#x27;,&#x27;one complex&#x27;,&#x27;gate&#x27;],[&#x27;samecorr&#x27;,&#x27;luzheng&#x27;,&#x27;eligible input&#x27;,&#x27;gate&#x27;],[&#x27;finiteTor&#x27;,&#x27;luzheng&#x27;,&#x27;dualizable&#x27;,&#x27;gate&#x27;],[&#x27;proper&#x27;,&#x27;luzheng&#x27;,&#x27;proper pushforward&#x27;,&#x27;gate&#x27;],[&#x27;coefficients&#x27;,&#x27;luzheng&#x27;,&#x27;invertible torsion&#x27;,&#x27;gate&#x27;],[&#x27;stablemap&#x27;,&#x27;finiteTor&#x27;,&#x27;finite complexes&#x27;,&#x27;proof&#x27;],[&#x27;stablemap&#x27;,&#x27;proper&#x27;,&#x27;proper model&#x27;,&#x27;proof&#x27;],
+    [&#x27;closedpoints&#x27;,&#x27;frobenius&#x27;,&#x27;reduce maps&#x27;,&#x27;compute&#x27;],[&#x27;frobenius&#x27;,&#x27;singcoord&#x27;,&#x27;fixes coordinate&#x27;,&#x27;proof&#x27;],[&#x27;singcoord&#x27;,&#x27;esing&#x27;,&#x27;interpolates&#x27;,&#x27;compute&#x27;],[&#x27;stablemap&#x27;,&#x27;gluing&#x27;,&#x27;retains node data&#x27;,&#x27;proof&#x27;],[&#x27;commonlambda&#x27;,&#x27;gluing&#x27;,&#x27;fixes comparison&#x27;,&#x27;gate&#x27;],[&#x27;gluing&#x27;,&#x27;character&#x27;,&#x27;takes quotient class&#x27;,&#x27;compute&#x27;],[&#x27;tree&#x27;,&#x27;normterm&#x27;,&#x27;retains endpoint&#x27;,&#x27;proof&#x27;],[&#x27;character&#x27;,&#x27;normterm&#x27;,&#x27;controls overlap&#x27;,&#x27;compute&#x27;],[&#x27;triangle&#x27;,&#x27;conductorterm&#x27;,&#x27;conductor pairing&#x27;,&#x27;proof&#x27;],[&#x27;fanoaffine&#x27;,&#x27;conductorterm&#x27;,&#x27;Fano bridge&#x27;,&#x27;compute&#x27;],[&#x27;stablemap&#x27;,&#x27;noextra&#x27;,&#x27;local different audit&#x27;,&#x27;compute&#x27;],[&#x27;normterm&#x27;,&#x27;closedtrace&#x27;,&#x27;first summand&#x27;,&#x27;proof&#x27;],[&#x27;conductorterm&#x27;,&#x27;closedtrace&#x27;,&#x27;second summand&#x27;,&#x27;proof&#x27;],[&#x27;noextra&#x27;,&#x27;closedtrace&#x27;,&#x27;exhausts terms&#x27;,&#x27;gate&#x27;],
+    [&#x27;generictrace&#x27;,&#x27;traceequal&#x27;,&#x27;generic side&#x27;,&#x27;proof&#x27;],[&#x27;closedtrace&#x27;,&#x27;traceequal&#x27;,&#x27;closed side&#x27;,&#x27;proof&#x27;],[&#x27;luzheng&#x27;,&#x27;traceequal&#x27;,&#x27;specializes&#x27;,&#x27;proof&#x27;],[&#x27;character&#x27;,&#x27;localequal&#x27;,&#x27;values 0,1,1&#x27;,&#x27;compute&#x27;],[&#x27;esing&#x27;,&#x27;localequal&#x27;,&#x27;values 0,1,1&#x27;,&#x27;compute&#x27;],[&#x27;traceequal&#x27;,&#x27;conclusion&#x27;,&#x27;ε(Θ)=χ&#x27;,&#x27;proof&#x27;],[&#x27;localequal&#x27;,&#x27;conclusion&#x27;,&#x27;χ=e_sing&#x27;,&#x27;proof&#x27;],[&#x27;descent&#x27;,&#x27;conclusion&#x27;,&#x27;removes choices&#x27;,&#x27;gate&#x27;],[&#x27;independence&#x27;,&#x27;conclusion&#x27;,&#x27;prevents circularity&#x27;,&#x27;gate&#x27;],[&#x27;idempotents&#x27;,&#x27;conclusion&#x27;,&#x27;identifies e₆&#x27;,&#x27;proof&#x27;],[&#x27;conclusion&#x27;,&#x27;goal&#x27;,&#x27;proves&#x27;,&#x27;proof&#x27;]
+  ].map((d,i)=&gt;({id:&#x27;e&#x27;+i,source:d[0],target:d[1],label:d[2],kind:d[3]}));
+
+  const nodeById = new Map(nodes.map(d =&gt; [d.id,d]));
+  const edgeById = new Map(edges.map(d =&gt; [d.id,d]));
+  const edgeKinds = {
+    proof: {name:&#x27;Proved implication or construction&#x27;,meaning:&#x27;The target follows from, or is constructed from, the source.&#x27;},
+    compute: {name:&#x27;Exact computation or certificate&#x27;,meaning:&#x27;An exact finite calculation supplies the stated input.&#x27;},
+    gate: {name:&#x27;Hypothesis, compatibility, or descent check&#x27;,meaning:&#x27;This implication is available only after the named proof obligation has been verified.&#x27;}
+  };
+  const courseTopics = {
+    hurwitz: {
+      title:&#x27;Hurwitz spaces and algebras 101&#x27;,
+      aliases:[&#x27;Hurwitz scheme&#x27;,&#x27;Hurwitz algebra&#x27;,&#x27;moduli problem&#x27;],
+      idea:&#x27;A Hurwitz space organizes covers of a curve that have prescribed branching data. A finite Hurwitz algebra is the coordinate ring of a finite collection of such covers.&#x27;,
+      points:[&#x27;A geometric point represents one cover up to the chosen equivalence.&#x27;,&#x27;Connected components record which covers arithmetic can move among one another.&#x27;,&#x27;A product decomposition of the coordinate algebra mirrors the component decomposition.&#x27;],
+      context:&#x27;The seven covers are treated as one arithmetic object, so the distinguished cover must be detected by a function on that object rather than by an external label.&#x27;
+    },
+    nielsen: {
+      title:&#x27;Nielsen classes 101&#x27;,
+      aliases:[&#x27;Nielsen class&#x27;,&#x27;branch-cycle label&#x27;,&#x27;branch-cycle labels&#x27;,&#x27;branch cycles&#x27;],
+      idea:&#x27;A Nielsen class records permutations describing monodromy around branch points. Their product is one, and together they generate the monodromy group.&#x27;,
+      points:[&#x27;Each permutation describes how sheets move around one branch point.&#x27;,&#x27;Simultaneous conjugation merely renumbers the sheets.&#x27;,&#x27;A branch-cycle description is powerful, but its labels are not automatically intrinsic arithmetic data.&#x27;],
+      context:&#x27;The proof may use the cover data, but it must not identify the fixed cover by secretly looking up its complex branch-cycle label.&#x27;
+    },
+    galois: {
+      title:&#x27;Galois action 101&#x27;,
+      aliases:[&#x27;Galois action&#x27;,&#x27;Galois&#x27;],
+      idea:&#x27;Galois automorphisms act on algebraic equations and therefore permute their geometric solutions. A fixed point is a solution preserved by every relevant automorphism.&#x27;,
+      points:[&#x27;Rational points form one-point Galois orbits.&#x27;,&#x27;Conjugate non-rational points form larger orbits.&#x27;,&#x27;An arithmetic function must be constant on each Galois orbit.&#x27;],
+      context:&#x27;Here the seven covers split into a rational orbit of size one and a conjugate orbit of size six.&#x27;
+    },
+    idempotent: {
+      title:&#x27;Idempotents 101&#x27;,
+      aliases:[&#x27;component idempotents&#x27;,&#x27;component indicator&#x27;,&#x27;component indicators&#x27;,&#x27;idempotents&#x27;,&#x27;idempotent&#x27;],
+      idea:&#x27;An idempotent is an element e satisfying e²=e. In a product of fields it behaves like a zero–one indicator for a union of components.&#x27;,
+      points:[&#x27;In K₀ × L, the basic idempotents are (1,0) and (0,1).&#x27;,&#x27;Evaluating an idempotent at a point returns either zero or one.&#x27;,&#x27;Finding the same idempotent in two ways proves that the two tests select the same component.&#x27;],
+      context:&#x27;The hinge identifies the group-theoretic parity test and the characteristic-23 geometric test as the same degree-six component indicator.&#x27;
+    },
+    etale: {
+      title:&#x27;Finite étale schemes 101&#x27;,
+      aliases:[&#x27;finite étale&#x27;,&#x27;finite etale&#x27;],
+      idea:&#x27;A finite étale scheme is the algebraic-geometric analogue of a finite set with arithmetic symmetry: it has finitely many points and no infinitesimal thickening or ramification over the base.&#x27;,
+      points:[&#x27;Over an algebraic closure it becomes an ordinary finite set.&#x27;,&#x27;Over the ground field, Galois action remembers how the points are permuted.&#x27;,&#x27;Its coordinate algebra is a finite product of separable field extensions.&#x27;],
+      context:&#x27;The reconstructed Hurwitz scheme packages all seven covers and their arithmetic action exactly.&#x27;
+    },
+    localmodel: {
+      title:&#x27;Local models and closed fibres 101&#x27;,
+      aliases:[&#x27;complete local algebra&#x27;,&#x27;local ring&#x27;,&#x27;integral model&#x27;,&#x27;closed fibre&#x27;,&#x27;closed factors&#x27;],
+      idea:&#x27;A local model studies a family near one prime. Its generic fibre lives in characteristic zero, while its closed fibre records what remains after reduction modulo that prime.&#x27;,
+      points:[&#x27;The local ring focuses attention at a chosen prime.&#x27;,&#x27;The generic and closed fibres are two faces of one family.&#x27;,&#x27;Special points or singularities in the closed fibre can reveal arithmetic distinctions.&#x27;],
+      context:&#x27;Reduction at 23 turns the seven-cover arithmetic object into three closed points whose local behavior can be compared.&#x27;
+    },
+    normalization: {
+      title:&#x27;Normalization 101&#x27;,
+      aliases:[&#x27;normalized local algebra&#x27;,&#x27;normalization&#x27;,&#x27;normalize&#x27;],
+      idea:&#x27;Normalization replaces a space by the integral closure of its coordinate ring in its function field. Informally, it separates branches that were algebraically glued too tightly.&#x27;,
+      points:[&#x27;It preserves the generic function field.&#x27;,&#x27;It often turns a singular curve into a regular one away from controlled gluing data.&#x27;,&#x27;The conductor records where the original space and its normalization differ.&#x27;],
+      context:&#x27;The normalized local Hurwitz algebra exposes the three closed factors and makes their ramification and residue degrees exact.&#x27;
+    },
+    inertia: {
+      title:&#x27;Inertia groups 101&#x27;,
+      aliases:[&#x27;inertia groups&#x27;,&#x27;inertia group&#x27;,&#x27;inertia involution&#x27;,&#x27;inertia&#x27;,&#x27;wild branch points&#x27;,&#x27;wild branch point&#x27;,&#x27;wild endpoint&#x27;],
+      idea:&#x27;Inertia measures the monodromy visible very close to a branch point. Wild inertia occurs when the residue characteristic divides its order.&#x27;,
+      points:[&#x27;A small loop around a branch point produces an inertia permutation.&#x27;,&#x27;Wild inertia carries information invisible to tame topology alone.&#x27;,&#x27;Its normalizer records symmetries compatible with that local cyclic action.&#x27;],
+      context:&#x27;At characteristic 23, the two wild endpoints supply the two transporter systems that the generic trace compares.&#x27;
+    },
+    torsor: {
+      title:&#x27;Torsors and temporary labels 101&#x27;,
+      aliases:[&#x27;patching torsors&#x27;,&#x27;labeling torsor&#x27;,&#x27;torsor&#x27;,&#x27;relabeling&#x27;],
+      idea:&#x27;A torsor is a space of choices on which a group acts freely and transitively. There is no preferred choice, but any two choices differ by exactly one group element.&#x27;,
+      points:[&#x27;Numbering the 23 sheets is a choice, not intrinsic structure.&#x27;,&#x27;Changing every label together conjugates the permutation data.&#x27;,&#x27;An invariant construction must give the same answer throughout the torsor.&#x27;],
+      context:&#x27;The two endpoint calculations must use one common sheet-labeling torsor, and the final parity must descend from that temporary choice.&#x27;
+    },
+    centralizer: {
+      title:&#x27;Centralizers 101&#x27;,
+      aliases:[&#x27;centralizer elements&#x27;,&#x27;centralizer&#x27;,&#x27;centralizes&#x27;,&#x27;centralizing&#x27;],
+      idea:&#x27;The centralizer of an element x consists of all group elements that commute with x. These symmetries preserve the orbit structure created by x.&#x27;,
+      points:[&#x27;If cx=xc, then c sends x-fixed points to x-fixed points.&#x27;,&#x27;It also permutes the nontrivial x-orbits.&#x27;,&#x27;This lets one compare actions on the seven fixed sheets and eight paired orbits.&#x27;],
+      context:&#x27;Each relative transporter lies in the centralizer of the finite inertia involution, so it acts on both finite sets used by the parity lemma.&#x27;
+    },
+    fano: {
+      title:&#x27;Fano and affine binary geometry 101&#x27;,
+      aliases:[&#x27;Fano point set&#x27;,&#x27;Fano incidence&#x27;,&#x27;Fano seven-set&#x27;,&#x27;Fano&#x27;,&#x27;affine three-dimensional binary space&#x27;,&#x27;affine space&#x27;,&#x27;affine sets&#x27;],
+      idea:&#x27;The Fano plane is the seven-point projective plane over F₂. Affine three-space over F₂ has eight points. They are complementary finite geometries for the same linear group.&#x27;,
+      points:[&#x27;Nonzero vectors of F₂³ give the seven Fano points.&#x27;,&#x27;All vectors of F₂³ give the eight affine points.&#x27;,&#x27;Linear and affine fixed-point counts have complementary parity behavior.&#x27;],
+      context:&#x27;The involution fixes seven sheets and pairs the remaining sixteen into eight objects, producing exactly these two finite geometries.&#x27;
+    },
+    augmentation: {
+      title:&#x27;Group-algebra augmentation 101&#x27;,
+      aliases:[&#x27;group-algebra augmentation&#x27;,&#x27;group algebra augmentation&#x27;,&#x27;augmentation&#x27;],
+      idea:&#x27;A group algebra allows formal sums of group elements. The augmentation forgets which elements occur and adds only their coefficients.&#x27;,
+      points:[&#x27;Over F₂, addition records parity.&#x27;,&#x27;Relabeling permutes group elements but does not change the coefficient sum.&#x27;,&#x27;The output is therefore a canonical zero–one invariant.&#x27;],
+      context:&#x27;Applying augmentation to the transporter sum Θ keeps only whether the set of common transported involutions has odd size.&#x27;
+    },
+    stable: {
+      title:&#x27;Stable reduction 101&#x27;,
+      aliases:[&#x27;stable reduction&#x27;,&#x27;stable model&#x27;,&#x27;stable cover&#x27;,&#x27;stable Galois model&#x27;,&#x27;pointed stable&#x27;],
+      idea:&#x27;Stable reduction replaces a degenerating family by a controlled nodal model after finite base change. The generic and special fibres then live in one proper family.&#x27;,
+      points:[&#x27;Marked points remain visible as sections.&#x27;,&#x27;Nodes record how components meet in the special fibre.&#x27;,&#x27;Deck transformations extend to the stable model.&#x27;],
+      context:&#x27;The hinge needs one relative object carrying both endpoint correspondences so that specialization compares like with like.&#x27;
+    },
+    trait: {
+      title:&#x27;Henselian traits 101&#x27;,
+      aliases:[&#x27;Henselian trait&#x27;,&#x27;local trait&#x27;,&#x27;trait&#x27;],
+      idea:&#x27;A trait is the spectrum of a discrete valuation ring: it has one generic point and one closed point. Henselian means local factorizations lift reliably from the residue field.&#x27;,
+      points:[&#x27;The generic point represents characteristic-zero behavior.&#x27;,&#x27;The closed point represents reduction at the chosen prime.&#x27;,&#x27;Finite covers and idempotents have strong lifting properties over a Henselian base.&#x27;],
+      context:&#x27;It is the natural one-parameter base on which the generic trace can specialize to the characteristic-23 trace.&#x27;
+    },
+    ferrand: {
+      title:&#x27;Ferrand pushouts 101&#x27;,
+      aliases:[&#x27;Ferrand pushout&#x27;,&#x27;Ferrand-pushed&#x27;,&#x27;pushout&#x27;],
+      idea:&#x27;A Ferrand pushout glues a space to a quotient along a finite closed subscheme. On rings it is expressed by a fibre product.&#x27;,
+      points:[&#x27;The normalization keeps branches separate.&#x27;,&#x27;The quotient identifies precisely the branches prescribed at the conductor.&#x27;,&#x27;The fibre-product ring records both pieces and their compatibility.&#x27;],
+      context:&#x27;It changes “same generic label” into “same closed branch” inside one explicit relative correspondence—the crucial connector in the hinge.&#x27;
+    },
+    conductor: {
+      title:&#x27;Conductors 101&#x27;,
+      aliases:[&#x27;conductor term&#x27;,&#x27;conductor square&#x27;,&#x27;conductor&#x27;],
+      idea:&#x27;The conductor is the locus where a space differs from its normalization. It is simultaneously an ideal in both coordinate rings and marks the controlled gluing site.&#x27;,
+      points:[&#x27;Away from the conductor, normalization changes nothing.&#x27;,&#x27;At the conductor, several normalized branches may map to one original point.&#x27;,&#x27;A normalization–conductor triangle separates the two trace contributions.&#x27;],
+      context:&#x27;The finite branch-orbit identification happens exactly at this locus, producing the parity correction needed by the closed trace.&#x27;
+    },
+    nearby: {
+      title:&#x27;Nearby cycles and specialization 101&#x27;,
+      aliases:[&#x27;nearby cycles&#x27;,&#x27;nearby-cycle&#x27;,&#x27;specialization theorem&#x27;,&#x27;Lu–Zheng&#x27;],
+      idea:&#x27;Nearby cycles transport cohomological information from the generic fibre toward the special fibre. A specialization theorem compares traces when one correspondence extends across the family.&#x27;,
+      points:[&#x27;The theorem compares one specified relative correspondence.&#x27;,&#x27;Properness and finiteness hypotheses control pushforward and duality.&#x27;,&#x27;It does not invent a missing identification between different correspondences.&#x27;],
+      context:&#x27;After the Ferrand connector and all hypotheses are supplied, Lu–Zheng equates the generic and closed traces.&#x27;
+    },
+    correspondence: {
+      title:&#x27;Cohomological correspondences 101&#x27;,
+      aliases:[&#x27;cohomological correspondences&#x27;,&#x27;cohomological correspondence&#x27;,&#x27;graph correspondence&#x27;,&#x27;correspondence&#x27;],
+      idea:&#x27;A correspondence relates two copies of a space through a third space mapping to both. It induces operators on cohomology, much like a function induces pullback and pushforward.&#x27;,
+      points:[&#x27;A group element gives a correspondence through its graph.&#x27;,&#x27;Relative closure lets the same graph exist in generic and special fibres.&#x27;,&#x27;Its cohomological trace is a computable numerical invariant.&#x27;],
+      context:&#x27;The proof builds one relative sum of deck graphs whose generic and closed traces encode the two desired tests.&#x27;
+    },
+    frobenius: {
+      title:&#x27;Frobenius 101&#x27;,
+      aliases:[&#x27;Frobenius&#x27;],
+      idea:&#x27;Over a finite field, Frobenius raises coordinates to the size of the field. Its action on points and residue fields is the basic arithmetic symmetry of the closed fibre.&#x27;,
+      points:[&#x27;A rational point is fixed by Frobenius.&#x27;,&#x27;Points over extension fields move in finite Frobenius orbits.&#x27;,&#x27;Frobenius-compatible coordinates define arithmetic functions on the closed fibre.&#x27;],
+      context:&#x27;The characteristic-23 coordinate is checked against Frobenius so its singular-point selector is genuinely arithmetic.&#x27;
+    },
+    trace: {
+      title:&#x27;Trace formulas 101&#x27;,
+      aliases:[&#x27;parity trace&#x27;,&#x27;closed trace&#x27;,&#x27;generic trace&#x27;,&#x27;traces&#x27;,&#x27;trace&#x27;],
+      idea:&#x27;A trace summarizes how an operator acts. In a fixed-point formula it can be computed from local intersections of a correspondence with a diagonal.&#x27;,
+      points:[&#x27;The generic trace is computed from labeled transporter intersections.&#x27;,&#x27;The closed trace splits into normalization and conductor contributions.&#x27;,&#x27;Specialization equates them because they come from one relative correspondence.&#x27;],
+      context:&#x27;This equality is the hinge that turns the group bit into the characteristic-23 geometric bit.&#x27;
+    }
+  };
+  const aliasToCourse = new Map();
+  Object.entries(courseTopics).forEach(([key,course])=&gt;course.aliases.forEach(alias=&gt;aliasToCourse.set(alias.toLowerCase(),key)));
+  const coursePattern = new RegExp(`(${Array.from(aliasToCourse.keys()).sort((a,b)=&gt;b.length-a.length).map(x=&gt;x.replace(/[.*+?^${}()|[\]\\]/g,&#x27;\\$&amp;&#x27;)).join(&#x27;|&#x27;)})`,&#x27;gi&#x27;);
+  const coreOrder = [&#x27;problem&#x27;,&#x27;algebra&#x27;,&#x27;idempotents&#x27;,&#x27;labeling&#x27;,&#x27;normalizers&#x27;,&#x27;omega&#x27;,&#x27;relative&#x27;,&#x27;fanoaffine&#x27;,&#x27;oddlemma&#x27;,&#x27;theta&#x27;,&#x27;generictrace&#x27;,&#x27;integral&#x27;,&#x27;stablemap&#x27;,&#x27;graphs&#x27;,&#x27;ferrand&#x27;,&#x27;triangle&#x27;,&#x27;tree&#x27;,&#x27;samecorr&#x27;,&#x27;luzheng&#x27;,&#x27;closedpoints&#x27;,&#x27;frobenius&#x27;,&#x27;singcoord&#x27;,&#x27;esing&#x27;,&#x27;gluing&#x27;,&#x27;character&#x27;,&#x27;normterm&#x27;,&#x27;conductorterm&#x27;,&#x27;noextra&#x27;,&#x27;closedtrace&#x27;,&#x27;traceequal&#x27;,&#x27;localequal&#x27;,&#x27;descent&#x27;,&#x27;conclusion&#x27;,&#x27;goal&#x27;];
+  let view = &#x27;core&#x27;;
+  let reading = &#x27;plain&#x27;;
+  let selected = &#x27;goal&#x27;;
+  let activeCourse = &#x27;idempotent&#x27;;
+  let activeEdgeId = null;
+  let visibleNodes = [];
+  let mathVersion = 0;
+  let mathQueue = Promise.resolve();
+
+  const incoming = new Map(nodes.map(n=&gt;[n.id,[]]));
+  const outgoing = new Map(nodes.map(n=&gt;[n.id,[]]));
+  edges.forEach(e=&gt;{ outgoing.get(e.source).push(e.target); incoming.get(e.target).push(e.source); });
+
+  function closure(seed, direction) {
+    const seen = new Set([seed]);
+    const stack = [seed];
+    while (stack.length) {
+      const x = stack.pop();
+      for (const y of direction.get(x) || []) if (!seen.has(y)) { seen.add(y); stack.push(y); }
+    }
+    return seen;
+  }
+
+  function visibleSet() {
+    if (view === &#x27;full&#x27;) return new Set(nodes.map(n=&gt;n.id));
+    if (view === &#x27;stress&#x27;) {
+      const ids = new Set(nodes.filter(n=&gt;n.gate).map(n=&gt;n.id));
+      nodes.filter(n=&gt;n.gate).forEach(n=&gt;{
+        (outgoing.get(n.id)||[]).forEach(x=&gt;ids.add(x));
+      });
+      [&#x27;generictrace&#x27;,&#x27;closedtrace&#x27;,&#x27;conclusion&#x27;,&#x27;goal&#x27;].forEach(x=&gt;ids.add(x));
+      return ids;
+    }
+    return new Set(nodes.filter(n=&gt;n.core).map(n=&gt;n.id));
+  }
+
+  function orderedVisible(ids) {
+    const coreRank = new Map(coreOrder.map((id,i)=&gt;[id,i]));
+    return nodes.filter(n=&gt;ids.has(n.id)).sort((a,b)=&gt;{
+      const ar=coreRank.has(a.id)?coreRank.get(a.id):1000+a.layer*20+a.order;
+      const br=coreRank.has(b.id)?coreRank.get(b.id):1000+b.layer*20+b.order;
+      return ar-br;
+    });
+  }
+
+  function wrapWords(text, maxChars, maxLines) {
+    const words = text.split(/\s+/).flatMap(word =&gt; {
+      if (word.length &lt;= maxChars) return [word];
+      const pieces=[];
+      for (let i=0;i&lt;word.length;i+=maxChars) pieces.push(word.slice(i,i+maxChars));
+      return pieces;
+    });
+    const lines=[]; let line=&#x27;&#x27;;
+    words.forEach(w=&gt;{ const trial=line?line+&#x27; &#x27;+w:w; if(trial.length&gt;maxChars &amp;&amp; line){lines.push(line);line=w;}else line=trial; });
+    if(line) lines.push(line); return lines.slice(0,maxLines);
+  }
+
+  function curve(a,b,narrow,nodeW,nodeH) {
+    if (narrow) {
+      const sx=a.x, sy=a.y+nodeH/2, tx=b.x, ty=b.y-nodeH/2;
+      const mid=(sy+ty)/2;
+      return `M${sx},${sy} C${sx},${mid} ${tx},${mid} ${tx},${ty}`;
+    }
+    const sx=a.x+nodeW/2, sy=a.y, tx=b.x-nodeW/2, ty=b.y;
+    const mid=(sx+tx)/2;
+    return `M${sx},${sy} C${mid},${sy} ${mid},${ty} ${tx},${ty}`;
+  }
+
+  function edgeTooltipText(edge) {
+    const source=nodeById.get(edge.source), target=nodeById.get(edge.target), kind=edgeKinds[edge.kind];
+    return {
+      title:`${source.title} → ${target.title}`,
+      body:`${kind.name}. Relation: “${edge.label}.” ${kind.meaning}`
+    };
+  }
+
+  function showEdgeTooltip(edge,event) {
+    const tooltip=root.querySelector(&#x27;#m23-edge-tooltip&#x27;);
+    const copy=edgeTooltipText(edge);
+    root.querySelector(&#x27;#m23-edge-tooltip-title&#x27;).textContent=copy.title;
+    root.querySelector(&#x27;#m23-edge-tooltip-body&#x27;).textContent=copy.body;
+    tooltip.hidden=false;
+    const rootBox=root.getBoundingClientRect();
+    let x,y;
+    if(event &amp;&amp; Number.isFinite(event.clientX)){
+      x=event.clientX-rootBox.left+14;
+      y=event.clientY-rootBox.top+14;
+    }else{
+      const source=nodeById.get(edge.source), target=nodeById.get(edge.target), svgBox=svg.node().getBoundingClientRect();
+      const viewWidth=Number(svg.attr(&#x27;viewBox&#x27;).split(&#x27; &#x27;)[2]) || svgBox.width;
+      const scale=svgBox.width/viewWidth;
+      x=svgBox.left-rootBox.left+(source.x+target.x)*scale/2+14;
+      y=svgBox.top-rootBox.top+(source.y+target.y)*scale/2+14;
+    }
+    const maxX=Math.max(8,root.clientWidth-tooltip.offsetWidth-8);
+    tooltip.style.left=`${Math.max(8,Math.min(x,maxX))}px`;
+    tooltip.style.top=`${Math.max(8,y)}px`;
+  }
+
+  function hideEdgeTooltip() {
+    if(activeEdgeId &amp;&amp; edgeById.has(activeEdgeId)) showEdgeTooltip(edgeById.get(activeEdgeId));
+    else root.querySelector(&#x27;#m23-edge-tooltip&#x27;).hidden=true;
+  }
+
+  function topicsIn(text) {
+    const found=[];
+    coursePattern.lastIndex=0;
+    let match;
+    while((match=coursePattern.exec(text))){
+      const key=aliasToCourse.get(match[0].toLowerCase());
+      if(key &amp;&amp; !found.includes(key)) found.push(key);
+    }
+    return found;
+  }
+
+  function renderLinkedText(element,text) {
+    element.replaceChildren();
+    coursePattern.lastIndex=0;
+    let cursor=0,match;
+    while((match=coursePattern.exec(text))){
+      if(match.index&gt;cursor) element.append(document.createTextNode(text.slice(cursor,match.index)));
+      const key=aliasToCourse.get(match[0].toLowerCase());
+      const link=document.createElement(&#x27;a&#x27;);
+      link.href=&#x27;#m23-course&#x27;;
+      link.className=&#x27;m23-course-link&#x27;;
+      link.dataset.course=key;
+      link.textContent=match[0];
+      link.setAttribute(&#x27;aria-label&#x27;,`${match[0]}: open the 101 course`);
+      if(key===activeCourse) link.setAttribute(&#x27;aria-current&#x27;,&#x27;true&#x27;);
+      element.append(link);
+      cursor=match.index+match[0].length;
+    }
+    if(cursor&lt;text.length) element.append(document.createTextNode(text.slice(cursor)));
+  }
+
+  function renderCourse(key) {
+    const course=courseTopics[key] || courseTopics.hurwitz;
+    activeCourse=courseTopics[key]?key:&#x27;hurwitz&#x27;;
+    root.querySelector(&#x27;#m23-course-title&#x27;).textContent=course.title;
+    root.querySelector(&#x27;#m23-course-idea&#x27;).textContent=course.idea;
+    const points=root.querySelector(&#x27;#m23-course-points&#x27;);
+    points.replaceChildren(...course.points.map(point=&gt;{const li=document.createElement(&#x27;li&#x27;);li.textContent=point;return li;}));
+    root.querySelector(&#x27;#m23-course-context&#x27;).textContent=course.context;
+    root.querySelectorAll(&#x27;.m23-course-link&#x27;).forEach(link=&gt;{
+      if(link.dataset.course===activeCourse) link.setAttribute(&#x27;aria-current&#x27;,&#x27;true&#x27;);
+      else link.removeAttribute(&#x27;aria-current&#x27;);
+    });
+    root.querySelector(&#x27;#m23-course&#x27;).scrollTop=0;
+  }
+
+  function queueMathTypeset() {
+    if(reading!==&#x27;formal&#x27;) return;
+    const version=++mathVersion;
+    const targets=Array.from(root.querySelectorAll(&#x27;.m23-node-math, .m23-detail-math&#x27;));
+    mathQueue=mathQueue.then(()=&gt;window.MathJax.startup.promise).then(()=&gt;{
+      if(version!==mathVersion) return;
+      const connected=targets.filter(target=&gt;target.isConnected);
+      if(connected.length) return window.MathJax.typesetPromise(connected);
+    }).catch(error=&gt;console.error(&#x27;MathJax typesetting failed&#x27;,error));
+  }
+
+  function draw() {
+    reading=root.querySelector(&#x27;#m23-reading-level&#x27;).value;
+    const width=Math.max(320,Math.round(wrap.getBoundingClientRect().width));
+    const narrow=width&lt;860;
+    const ids=visibleSet();
+    visibleNodes=orderedVisible(ids);
+    if(!ids.has(selected)) selected=visibleNodes[0]?.id || &#x27;goal&#x27;;
+    const byLayer=d3.group(visibleNodes,d=&gt;d.layer);
+    let height,nodeW,nodeH=narrow?88:92;
+    if(narrow){
+      const side=18, colGap=12;
+      nodeW=Math.min(260,(width-side*2-colGap)/2);
+      const gridWidth=nodeW*2+colGap, start=(width-gridWidth)/2;
+      let cursor=58;
+      layers.forEach((_,li)=&gt;{ const arr=(byLayer.get(li)||[]).sort((a,b)=&gt;a.order-b.order); arr.forEach((d,i)=&gt;{d.x=start+(i%2)*(nodeW+colGap)+nodeW/2; d.y=cursor+Math.floor(i/2)*(nodeH+18)+nodeH/2;}); cursor+=Math.max(1,Math.ceil(arr.length/2))*(nodeH+18)+44; });
+      height=cursor+8;
+    } else {
+      const side=22, gap=16;
+      nodeW=Math.min(168,(width-side*2-(layers.length-1)*gap)/layers.length);
+      const maxCount=d3.max(Array.from(byLayer.values()),a=&gt;a.length);
+      height=Math.max(760,Math.min(1120,86+maxCount*(nodeH+14)));
+      layers.forEach((_,li)=&gt;{ const arr=(byLayer.get(li)||[]).sort((a,b)=&gt;a.order-b.order); const usable=height-92; arr.forEach((d,i)=&gt;{d.x=side+nodeW/2+li*((width-side*2-nodeW)/(layers.length-1)); d.y=64+(i+0.5)*usable/Math.max(1,arr.length);}); });
+    }
+    svg.attr(&#x27;viewBox&#x27;,`0 0 ${width} ${height}`).attr(&#x27;height&#x27;,height);
+    const sidebar=root.querySelector(&#x27;.m23-sidebar&#x27;);
+    sidebar.style.height=window.matchMedia(&#x27;(max-width: 700px)&#x27;).matches?&#x27;&#x27;:`${Math.max(760,Math.min(900,height))}px`;
+    svg.selectAll(&#x27;*:not(title):not(desc)&#x27;).remove();
+    const defs=svg.append(&#x27;defs&#x27;);
+    defs.append(&#x27;marker&#x27;).attr(&#x27;id&#x27;,&#x27;m23-arrow&#x27;).attr(&#x27;viewBox&#x27;,&#x27;0 -5 10 10&#x27;).attr(&#x27;refX&#x27;,8).attr(&#x27;refY&#x27;,0).attr(&#x27;markerWidth&#x27;,5).attr(&#x27;markerHeight&#x27;,5).attr(&#x27;orient&#x27;,&#x27;auto&#x27;).append(&#x27;path&#x27;).attr(&#x27;d&#x27;,&#x27;M0,-5L10,0L0,5&#x27;).attr(&#x27;fill&#x27;,&#x27;var(--border)&#x27;);
+
+    const layerG=svg.append(&#x27;g&#x27;);
+    if(narrow){
+      layers.forEach((label,li)=&gt;{ const arr=byLayer.get(li)||[]; if(!arr.length)return; const y=d3.min(arr,d=&gt;d.y)-nodeH/2-18; layerG.append(&#x27;text&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-label&#x27;).attr(&#x27;x&#x27;,16).attr(&#x27;y&#x27;,y).text(label); layerG.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-rule&#x27;).attr(&#x27;x1&#x27;,16).attr(&#x27;x2&#x27;,width-16).attr(&#x27;y1&#x27;,y+7).attr(&#x27;y2&#x27;,y+7); });
+    } else {
+      const shortLayers = [&#x27;Question&#x27;,&#x27;Arithmetic&#x27;,&#x27;Generic trace&#x27;,&#x27;Relative geometry&#x27;,&#x27;Specialization&#x27;,&#x27;Closed trace&#x27;,&#x27;Result&#x27;];
+      layers.forEach((label,li)=&gt;{ const arr=byLayer.get(li)||[]; if(!arr.length)return; const x=arr[0].x; layerG.append(&#x27;text&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-label&#x27;).attr(&#x27;text-anchor&#x27;,&#x27;middle&#x27;).attr(&#x27;x&#x27;,x).attr(&#x27;y&#x27;,16).text(shortLayers[li]); layerG.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-rule&#x27;).attr(&#x27;x1&#x27;,x-nodeW/2).attr(&#x27;x2&#x27;,x+nodeW/2).attr(&#x27;y1&#x27;,24).attr(&#x27;y2&#x27;,24); });
+    }
+
+    const relatedUp=closure(selected,incoming), relatedDown=closure(selected,outgoing), related=new Set([...relatedUp,...relatedDown]);
+    const shownEdges=edges.filter(e=&gt;ids.has(e.source)&amp;&amp;ids.has(e.target));
+    if(activeEdgeId &amp;&amp; !shownEdges.some(e=&gt;e.id===activeEdgeId)) activeEdgeId=null;
+    const edgeG=svg.append(&#x27;g&#x27;);
+    const edgeLinks=edgeG.selectAll(&#x27;a&#x27;).data(shownEdges).join(&#x27;a&#x27;)
+      .attr(&#x27;href&#x27;,&#x27;#&#x27;)
+      .attr(&#x27;class&#x27;,&#x27;m23-edge-link&#x27;)
+      .attr(&#x27;aria-describedby&#x27;,&#x27;m23-edge-tooltip&#x27;)
+      .attr(&#x27;aria-label&#x27;,e=&gt;{const copy=edgeTooltipText(e);return `${copy.title}. ${copy.body}`;})
+      .attr(&#x27;aria-current&#x27;,e=&gt;e.id===activeEdgeId?&#x27;true&#x27;:null)
+      .on(&#x27;pointerenter&#x27;,(event,e)=&gt;showEdgeTooltip(e,event))
+      .on(&#x27;pointermove&#x27;,(event,e)=&gt;{if(activeEdgeId!==e.id)showEdgeTooltip(e,event);})
+      .on(&#x27;pointerleave&#x27;,()=&gt;hideEdgeTooltip())
+      .on(&#x27;focus&#x27;,(event,e)=&gt;showEdgeTooltip(e))
+      .on(&#x27;blur&#x27;,()=&gt;hideEdgeTooltip())
+      .on(&#x27;click&#x27;,(event,e)=&gt;{event.preventDefault();activeEdgeId=activeEdgeId===e.id?null:e.id;draw();});
+    edgeLinks.append(&#x27;path&#x27;)
+      .attr(&#x27;class&#x27;,e=&gt;`m23-edge ${e.kind} ${e.id===activeEdgeId?&#x27;is-edge-selected&#x27;:related.has(e.source)&amp;&amp;related.has(e.target)?&#x27;is-active&#x27;:&#x27;is-dim&#x27;}`)
+      .attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
+    edgeLinks.append(&#x27;path&#x27;).attr(&#x27;class&#x27;,&#x27;m23-edge-hit&#x27;).attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
+
+    const nodeG=svg.append(&#x27;g&#x27;).selectAll(&#x27;a&#x27;).data(visibleNodes).join(&#x27;a&#x27;).attr(&#x27;href&#x27;,&#x27;#&#x27;).attr(&#x27;aria-label&#x27;,d=&gt;`${d.title}. ${d.plain}`).attr(&#x27;aria-current&#x27;,d=&gt;d.id===selected?&#x27;true&#x27;:null).on(&#x27;click&#x27;,(event,d)=&gt;{event.preventDefault();selectNode(d.id);});
+    nodeG.attr(&#x27;class&#x27;,d=&gt;`m23-node ${d.gate?&#x27;is-gate&#x27;:&#x27;&#x27;} ${d.id===selected?&#x27;is-selected&#x27;:&#x27;&#x27;} ${related.has(d.id)?&#x27;is-related&#x27;:&#x27;is-dim&#x27;}`).attr(&#x27;data-group&#x27;,d=&gt;d.group).attr(&#x27;transform&#x27;,d=&gt;`translate(${d.x-nodeW/2},${d.y-nodeH/2})`);
+    nodeG.append(&#x27;rect&#x27;).attr(&#x27;class&#x27;,&#x27;m23-node-aura&#x27;).attr(&#x27;x&#x27;,-5).attr(&#x27;y&#x27;,-5).attr(&#x27;width&#x27;,nodeW+10).attr(&#x27;height&#x27;,nodeH+10).attr(&#x27;rx&#x27;,11);
+    nodeG.append(&#x27;rect&#x27;).attr(&#x27;class&#x27;,&#x27;m23-node-surface&#x27;).attr(&#x27;width&#x27;,nodeW).attr(&#x27;height&#x27;,nodeH);
+    nodeG.each(function(d){
+      const g=d3.select(this); const gateBand=d.gate?22:0;
+      if(reading===&#x27;formal&#x27;){
+        g.append(&#x27;foreignObject&#x27;)
+          .attr(&#x27;x&#x27;,4)
+          .attr(&#x27;y&#x27;,gateBand+3)
+          .attr(&#x27;width&#x27;,nodeW-8)
+          .attr(&#x27;height&#x27;,nodeH-gateBand-6)
+          .append(&#x27;xhtml:div&#x27;)
+          .attr(&#x27;class&#x27;,&#x27;m23-node-math&#x27;)
+          .text(`\\(${formalTex[d.id]}\\)`);
+      }else{
+        const maxChars=Math.max(14,Math.floor((nodeW-18)/6.2)); const maxLines=d.gate?4:5; const lines=wrapWords(d.title,maxChars,maxLines); const y0=gateBand+(nodeH-gateBand)/2-(lines.length-1)*7+4;
+        const t=g.append(&#x27;text&#x27;).attr(&#x27;text-anchor&#x27;,&#x27;middle&#x27;).attr(&#x27;x&#x27;,nodeW/2).attr(&#x27;y&#x27;,y0);
+        lines.forEach((line,i)=&gt;t.append(&#x27;tspan&#x27;).attr(&#x27;x&#x27;,nodeW/2).attr(&#x27;dy&#x27;,i?14:0).text(line));
+      }
+      if(d.gate){
+        g.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;m23-gate-divider&#x27;).attr(&#x27;x1&#x27;,1).attr(&#x27;x2&#x27;,nodeW-1).attr(&#x27;y1&#x27;,21).attr(&#x27;y2&#x27;,21);
+        g.append(&#x27;text&#x27;).attr(&#x27;class&#x27;,&#x27;m23-gate-label&#x27;).attr(&#x27;x&#x27;,8).attr(&#x27;y&#x27;,15).text(&#x27;gate&#x27;);
+      }
+    });
+    updateDetail();
+    queueMathTypeset();
+    if(activeEdgeId) showEdgeTooltip(edgeById.get(activeEdgeId));
+    else root.querySelector(&#x27;#m23-edge-tooltip&#x27;).hidden=true;
+  }
+
+  function updateDetail(){
+    const d=nodeById.get(selected); if(!d)return;
+    const detailText=[d.plain,d.why,d.evidence,d.breaks].join(&#x27; &#x27;);
+    const availableCourses=topicsIn(detailText);
+    if(!availableCourses.includes(activeCourse)) activeCourse=availableCourses[0] || &#x27;hurwitz&#x27;;
+    root.querySelector(&#x27;#m23-detail-stage&#x27;).textContent=layers[d.layer];
+    const detailTitle=root.querySelector(&#x27;#m23-detail-title&#x27;);
+    detailTitle.classList.toggle(&#x27;m23-detail-math&#x27;,reading===&#x27;formal&#x27;);
+    detailTitle.textContent=reading===&#x27;plain&#x27;?d.title:`\\(${formalTex[d.id]}\\)`;
+    renderLinkedText(root.querySelector(&#x27;#m23-detail-plain&#x27;),d.plain);
+    renderLinkedText(root.querySelector(&#x27;#m23-detail-why&#x27;),d.why);
+    renderLinkedText(root.querySelector(&#x27;#m23-detail-evidence&#x27;),d.evidence);
+    renderLinkedText(root.querySelector(&#x27;#m23-detail-break&#x27;),d.breaks);
+    renderCourse(activeCourse);
+    const list=visibleNodes.map(n=&gt;n.id); const idx=list.indexOf(selected);
+    root.querySelector(&#x27;#m23-hop-status&#x27;).textContent=`Hop ${Math.max(1,idx+1)} of ${list.length}`;
+    root.querySelector(&#x27;#m23-first&#x27;).disabled=idx&lt;=0;
+    root.querySelector(&#x27;#m23-prev&#x27;).disabled=idx&lt;=0;
+    root.querySelector(&#x27;#m23-next&#x27;).disabled=idx&lt;0||idx&gt;=list.length-1;
+    root.querySelector(&#x27;#m23-last&#x27;).disabled=idx&lt;0||idx&gt;=list.length-1;
+  }
+
+  function selectNode(id){selected=id;draw();}
+  root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(btn=&gt;btn.addEventListener(&#x27;click&#x27;,()=&gt;{
+    view=btn.dataset.view;
+    root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{const on=b===btn;b.setAttribute(&#x27;aria-pressed&#x27;,String(on));b.classList.toggle(&#x27;btn-primary&#x27;,on);});
+    draw();
+  }));
+  const readingControl=root.querySelector(&#x27;#m23-reading-level&#x27;);
+  const updateReading=()=&gt;{if(reading===readingControl.value)return;reading=readingControl.value;draw();};
+  readingControl.addEventListener(&#x27;input&#x27;,updateReading);
+  readingControl.addEventListener(&#x27;change&#x27;,updateReading);
+  root.querySelector(&#x27;#m23-first&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const list=visibleNodes.map(n=&gt;n.id);if(list.length)selectNode(list[0]);});
+  root.querySelector(&#x27;#m23-prev&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const list=visibleNodes.map(n=&gt;n.id),i=list.indexOf(selected);if(i&gt;0)selectNode(list[i-1]);});
+  root.querySelector(&#x27;#m23-next&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const list=visibleNodes.map(n=&gt;n.id),i=list.indexOf(selected);if(i&gt;=0&amp;&amp;i&lt;list.length-1)selectNode(list[i+1]);});
+  root.querySelector(&#x27;#m23-last&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const list=visibleNodes.map(n=&gt;n.id);if(list.length)selectNode(list[list.length-1]);});
+  root.addEventListener(&#x27;click&#x27;,event=&gt;{
+    const link=event.target.closest(&#x27;a[data-course]&#x27;);
+    if(!link || !root.contains(link)) return;
+    event.preventDefault();
+    renderCourse(link.dataset.course);
+  });
+  new ResizeObserver(()=&gt;draw()).observe(wrap);
+  draw();
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
