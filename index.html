@@ -1146,9 +1146,9 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;m23-workspace&quot;&gt;
     &lt;section class=&quot;m23-graph-pane&quot; aria-label=&quot;Causal graph&quot;&gt;
       &lt;div class=&quot;m23-legend text-small&quot; aria-label=&quot;Legend&quot;&gt;
-        &lt;span&gt;&lt;i class=&quot;m23-line m23-proof&quot;&gt;&lt;/i&gt; solid: proved implication or construction&lt;/span&gt;
-        &lt;span&gt;&lt;i class=&quot;m23-line m23-compute&quot;&gt;&lt;/i&gt; dashed: exact computation or certificate&lt;/span&gt;
-        &lt;span&gt;&lt;i class=&quot;m23-line m23-gate&quot;&gt;&lt;/i&gt; dotted: hypothesis, compatibility, or descent check&lt;/span&gt;
+        &lt;button type=&quot;button&quot; class=&quot;m23-legend-filter&quot; data-edge-kind=&quot;proof&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;m23-line m23-filter-arrow m23-proof&quot;&gt;&lt;/i&gt; solid: proved implication or construction&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;m23-legend-filter&quot; data-edge-kind=&quot;compute&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;m23-line m23-filter-arrow m23-compute&quot;&gt;&lt;/i&gt; dashed: exact computation or certificate&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;m23-legend-filter&quot; data-edge-kind=&quot;gate&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;m23-line m23-filter-arrow m23-gate&quot;&gt;&lt;/i&gt; dotted: hypothesis, compatibility, or descent check&lt;/button&gt;
         &lt;span&gt;&lt;i class=&quot;m23-line m23-direction&quot;&gt;&lt;/i&gt; arrowhead: premise/input → consequence/output&lt;/span&gt;
         &lt;span&gt;&lt;i class=&quot;m23-line m23-emphasis&quot;&gt;&lt;/i&gt; thicker: selected or traced, not a stronger claim&lt;/span&gt;
         &lt;span&gt;&lt;strong&gt;several incoming arrows&lt;/strong&gt; mean all displayed inputs are used&lt;/span&gt;
@@ -1259,25 +1259,52 @@ html&gt;body{padding:0}&lt;/style&gt;
     color: var(--muted-foreground);
     margin-bottom: 0.55rem;
   }
+  #m23-hinge-map .m23-legend-filter {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    padding: 0.18rem 0.4rem;
+    border: 1px solid transparent;
+    border-radius: 0.42rem;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  #m23-hinge-map .m23-legend-filter:hover,
+  #m23-hinge-map .m23-legend-filter:focus-visible {
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+    background: color-mix(in srgb, var(--primary) 7%, var(--background));
+    outline: none;
+  }
+  #m23-hinge-map .m23-legend-filter[aria-pressed=&quot;true&quot;] {
+    border-color: var(--primary);
+    color: var(--foreground);
+    background: color-mix(in srgb, var(--primary) 12%, var(--background));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 15%, transparent);
+  }
   #m23-hinge-map .m23-line {
     display: inline-block;
     width: 1.8rem;
     height: 0;
     margin-right: 0.25rem;
     vertical-align: middle;
-    border-top: 2px solid var(--border);
+    border-top: 2px solid var(--primary);
   }
   #m23-hinge-map .m23-compute { border-top-style: dashed; }
   #m23-hinge-map .m23-gate { border-top-style: dotted; }
-  #m23-hinge-map .m23-direction { position: relative; }
-  #m23-hinge-map .m23-direction::after {
+  #m23-hinge-map .m23-direction,
+  #m23-hinge-map .m23-filter-arrow { position: relative; }
+  #m23-hinge-map .m23-direction::after,
+  #m23-hinge-map .m23-filter-arrow::after {
     content: &#x27;&#x27;;
     position: absolute;
     right: -1px;
     top: -4px;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-left: 7px solid var(--border);
+    border-left: 7px solid var(--primary);
   }
   #m23-hinge-map .m23-emphasis { border-top-width: 4px; }
   #m23-hinge-map #m23-graph-wrap {
@@ -1318,6 +1345,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     stroke-width: 2.15;
     opacity: 0.95;
   }
+  #m23-hinge-map .m23-edge.is-kind-active {
+    stroke: var(--primary);
+    stroke-width: 2.15;
+    opacity: 0.95;
+  }
   #m23-hinge-map .m23-edge-link:hover .m23-edge,
   #m23-hinge-map .m23-edge-link:focus .m23-edge,
   #m23-hinge-map .m23-edge.is-edge-selected {
@@ -1338,6 +1370,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     pointer-events: all;
   }
   #m23-hinge-map .m23-edge-link { cursor: help; }
+  #m23-hinge-map .m23-edge-link.is-filtered-out { pointer-events: none; }
   #m23-hinge-map .m23-edge-label {
     fill: var(--foreground);
     font-size: 11px;
@@ -2118,6 +2151,7 @@ window.MathJax = {
   let selected = &#x27;problem&#x27;;
   let activeCourse = &#x27;hurwitz&#x27;;
   let activeEdgeId = null;
+  let activeEdgeKind = null;
   let visibleNodes = [];
   let mathVersion = 0;
   let mathQueue = Promise.resolve();
@@ -2346,7 +2380,7 @@ window.MathJax = {
     sidebar.style.height=window.matchMedia(&#x27;(max-width: 700px)&#x27;).matches?&#x27;&#x27;:`${Math.max(760,Math.min(900,height))}px`;
     svg.selectAll(&#x27;*:not(title):not(desc)&#x27;).remove();
     const defs=svg.append(&#x27;defs&#x27;);
-    defs.append(&#x27;marker&#x27;).attr(&#x27;id&#x27;,&#x27;m23-arrow&#x27;).attr(&#x27;viewBox&#x27;,&#x27;0 -5 10 10&#x27;).attr(&#x27;refX&#x27;,8).attr(&#x27;refY&#x27;,0).attr(&#x27;markerWidth&#x27;,5).attr(&#x27;markerHeight&#x27;,5).attr(&#x27;orient&#x27;,&#x27;auto&#x27;).append(&#x27;path&#x27;).attr(&#x27;d&#x27;,&#x27;M0,-5L10,0L0,5&#x27;).attr(&#x27;fill&#x27;,&#x27;var(--border)&#x27;);
+    defs.append(&#x27;marker&#x27;).attr(&#x27;id&#x27;,&#x27;m23-arrow&#x27;).attr(&#x27;viewBox&#x27;,&#x27;0 -5 10 10&#x27;).attr(&#x27;refX&#x27;,8).attr(&#x27;refY&#x27;,0).attr(&#x27;markerWidth&#x27;,5).attr(&#x27;markerHeight&#x27;,5).attr(&#x27;orient&#x27;,&#x27;auto&#x27;).append(&#x27;path&#x27;).attr(&#x27;d&#x27;,&#x27;M0,-5L10,0L0,5&#x27;).attr(&#x27;fill&#x27;,&#x27;context-stroke&#x27;);
 
     const layerG=svg.append(&#x27;g&#x27;);
     if(narrow){
@@ -2356,15 +2390,18 @@ window.MathJax = {
       layers.forEach((label,li)=&gt;{ const arr=byLayer.get(li)||[]; if(!arr.length)return; const x=arr[0].x; layerG.append(&#x27;text&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-label&#x27;).attr(&#x27;text-anchor&#x27;,&#x27;middle&#x27;).attr(&#x27;x&#x27;,x).attr(&#x27;y&#x27;,16).text(shortLayers[li]); layerG.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;m23-layer-rule&#x27;).attr(&#x27;x1&#x27;,x-nodeW/2).attr(&#x27;x2&#x27;,x+nodeW/2).attr(&#x27;y1&#x27;,24).attr(&#x27;y2&#x27;,24); });
     }
 
-    const relatedUp=closure(selected,incoming), relatedDown=closure(selected,outgoing), related=new Set([...relatedUp,...relatedDown]);
     const shownEdges=edges.filter(e=&gt;ids.has(e.source)&amp;&amp;ids.has(e.target));
+    const kindEdges=activeEdgeKind?shownEdges.filter(e=&gt;e.kind===activeEdgeKind):[];
+    const kindNodes=new Set(kindEdges.flatMap(e=&gt;[e.source,e.target]));
+    const relatedUp=closure(selected,incoming), relatedDown=closure(selected,outgoing);
+    const related=activeEdgeKind?kindNodes:new Set([...relatedUp,...relatedDown]);
     if(activeEdgeId &amp;&amp; !shownEdges.some(e=&gt;e.id===activeEdgeId)) activeEdgeId=null;
     const edgeG=svg.append(&#x27;g&#x27;);
     const edgeLinks=edgeG.selectAll(&#x27;a&#x27;).data(shownEdges).join(&#x27;a&#x27;)
       .attr(&#x27;href&#x27;,&#x27;#&#x27;)
-      .attr(&#x27;class&#x27;,&#x27;m23-edge-link&#x27;)
+      .attr(&#x27;class&#x27;,e=&gt;`m23-edge-link ${activeEdgeKind &amp;&amp; e.kind!==activeEdgeKind?&#x27;is-filtered-out&#x27;:&#x27;&#x27;}`)
       .attr(&#x27;role&#x27;,&#x27;button&#x27;)
-      .attr(&#x27;tabindex&#x27;,0)
+      .attr(&#x27;tabindex&#x27;,e=&gt;activeEdgeKind &amp;&amp; e.kind!==activeEdgeKind?-1:0)
       .attr(&#x27;aria-describedby&#x27;,&#x27;m23-edge-tooltip&#x27;)
       .attr(&#x27;aria-label&#x27;,e=&gt;{const copy=edgeTooltipText(e);return `${copy.title}. ${copy.body}`;})
       .attr(&#x27;aria-current&#x27;,e=&gt;e.id===activeEdgeId?&#x27;true&#x27;:null)
@@ -2381,7 +2418,7 @@ window.MathJax = {
         draw();
       });
     edgeLinks.append(&#x27;path&#x27;)
-      .attr(&#x27;class&#x27;,e=&gt;`m23-edge ${e.kind} ${e.id===activeEdgeId?&#x27;is-edge-selected&#x27;:related.has(e.source)&amp;&amp;related.has(e.target)?&#x27;is-active&#x27;:&#x27;is-dim&#x27;}`)
+      .attr(&#x27;class&#x27;,e=&gt;`m23-edge ${e.kind} ${activeEdgeKind?(e.kind===activeEdgeKind?(e.id===activeEdgeId?&#x27;is-edge-selected&#x27;:&#x27;is-kind-active&#x27;):&#x27;is-dim&#x27;):(e.id===activeEdgeId?&#x27;is-edge-selected&#x27;:related.has(e.source)&amp;&amp;related.has(e.target)?&#x27;is-active&#x27;:&#x27;is-dim&#x27;)}`)
       .attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
     edgeLinks.append(&#x27;path&#x27;).attr(&#x27;class&#x27;,&#x27;m23-edge-hit&#x27;).attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
     edgeLinks.append(&#x27;circle&#x27;)
@@ -2444,6 +2481,12 @@ window.MathJax = {
   }
 
   function selectNode(id){selected=id;draw();}
+  root.querySelectorAll(&#x27;[data-edge-kind]&#x27;).forEach(btn=&gt;btn.addEventListener(&#x27;click&#x27;,()=&gt;{
+    activeEdgeKind=activeEdgeKind===btn.dataset.edgeKind?null:btn.dataset.edgeKind;
+    activeEdgeId=null;
+    root.querySelectorAll(&#x27;[data-edge-kind]&#x27;).forEach(control=&gt;control.setAttribute(&#x27;aria-pressed&#x27;,String(control.dataset.edgeKind===activeEdgeKind)));
+    draw();
+  }));
   root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(btn=&gt;btn.addEventListener(&#x27;click&#x27;,()=&gt;{
     view=btn.dataset.view;
     root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{const on=b===btn;b.setAttribute(&#x27;aria-pressed&#x27;,String(on));b.classList.toggle(&#x27;btn-primary&#x27;,on);});
