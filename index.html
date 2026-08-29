@@ -990,6 +990,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;body&gt;
 &lt;div id=&quot;m23-hinge-map&quot;&gt;
   &lt;h2&gt;How the characteristic-23 hinge identifies the fixed cover&lt;/h2&gt;
+  &lt;p class=&quot;m23-graph-note text-small text-muted&quot;&gt;This is a dependency map, not a chronology: arrows carry a proved input into a consequence. The target equality appears at the start as the question and is reached again only after the proof closes.&lt;/p&gt;
 
   &lt;div class=&quot;viz-controls&quot; aria-label=&quot;Graph controls&quot;&gt;
     &lt;div class=&quot;viz-row&quot; role=&quot;group&quot; aria-label=&quot;Amount of detail&quot;&gt;
@@ -1014,6 +1015,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;span&gt;&lt;i class=&quot;m23-line m23-gate&quot;&gt;&lt;/i&gt; dotted: hypothesis, compatibility, or descent check&lt;/span&gt;
         &lt;span&gt;&lt;i class=&quot;m23-line m23-direction&quot;&gt;&lt;/i&gt; arrowhead: premise/input → consequence/output&lt;/span&gt;
         &lt;span&gt;&lt;i class=&quot;m23-line m23-emphasis&quot;&gt;&lt;/i&gt; thicker: selected or traced, not a stronger claim&lt;/span&gt;
+        &lt;span&gt;&lt;strong&gt;several incoming arrows&lt;/strong&gt; mean all displayed inputs are used&lt;/span&gt;
         &lt;span&gt;&lt;strong&gt;gate&lt;/strong&gt; marks a place where a tempting shortcut would fail&lt;/span&gt;
       &lt;/div&gt;
 
@@ -1039,7 +1041,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;/div&gt;
         &lt;div class=&quot;m23-detail-stack&quot;&gt;
           &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;What this says&lt;/span&gt;&lt;div id=&quot;m23-detail-plain&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;Why the next arrow is valid&lt;/span&gt;&lt;div id=&quot;m23-detail-why&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;Why this step matters&lt;/span&gt;&lt;div id=&quot;m23-detail-why&quot;&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;What anchors it&lt;/span&gt;&lt;div id=&quot;m23-detail-evidence&quot;&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;div&gt;&lt;span class=&quot;text-small text-muted&quot;&gt;If this failed&lt;/span&gt;&lt;div id=&quot;m23-detail-break&quot;&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;/div&gt;
@@ -1049,6 +1051,10 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;span class=&quot;text-small text-muted&quot;&gt;101 course&lt;/span&gt;
         &lt;h3 id=&quot;m23-course-title&quot;&gt;&lt;/h3&gt;
         &lt;p id=&quot;m23-course-idea&quot;&gt;&lt;/p&gt;
+        &lt;div class=&quot;m23-course-block m23-course-example&quot;&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;A concrete picture&lt;/span&gt;
+          &lt;p id=&quot;m23-course-example&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
         &lt;div class=&quot;m23-course-block&quot;&gt;
           &lt;span class=&quot;text-small text-muted&quot;&gt;Three things to remember&lt;/span&gt;
           &lt;ol id=&quot;m23-course-points&quot;&gt;&lt;/ol&gt;
@@ -1056,6 +1062,20 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;m23-course-block&quot;&gt;
           &lt;span class=&quot;text-small text-muted&quot;&gt;Why it matters here&lt;/span&gt;
           &lt;p id=&quot;m23-course-context&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;m23-course-block&quot;&gt;
+          &lt;details id=&quot;m23-course-check&quot;&gt;
+            &lt;summary&gt;&lt;span class=&quot;text-small&quot;&gt;Check your understanding&lt;/span&gt;&lt;span id=&quot;m23-course-question&quot;&gt;&lt;/span&gt;&lt;/summary&gt;
+            &lt;p id=&quot;m23-course-answer&quot;&gt;&lt;/p&gt;
+          &lt;/details&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;m23-course-block&quot; id=&quot;m23-course-related-block&quot;&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;Related 101 cards&lt;/span&gt;
+          &lt;nav id=&quot;m23-course-related&quot; aria-label=&quot;Related introductory concepts&quot;&gt;&lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;m23-course-block&quot; id=&quot;m23-course-links-block&quot;&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;Read further&lt;/span&gt;
+          &lt;ul id=&quot;m23-course-links&quot;&gt;&lt;/ul&gt;
         &lt;/div&gt;
       &lt;/section&gt;
     &lt;/aside&gt;
@@ -1079,6 +1099,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     position: relative;
   }
   #m23-hinge-map h2 { margin-bottom: 0.75rem; }
+  #m23-hinge-map .m23-graph-note { max-width: 74rem; margin: -0.25rem 0 0.8rem; }
   #m23-hinge-map .viz-controls { margin-bottom: 0.65rem; }
   #m23-hinge-map .m23-label-control {
     display: grid;
@@ -1175,6 +1196,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     stroke-width: 18;
     pointer-events: stroke;
   }
+  #m23-hinge-map .m23-edge-handle {
+    fill: transparent;
+    stroke: transparent;
+    pointer-events: all;
+  }
   #m23-hinge-map .m23-edge-link { cursor: help; }
   #m23-hinge-map .m23-edge-label {
     fill: var(--foreground);
@@ -1263,7 +1289,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   #m23-hinge-map .m23-edge-tooltip {
     position: absolute;
     z-index: 10;
-    width: min(320px, calc(100% - 1rem));
+    width: min(390px, calc(100% - 1rem));
     padding: 0.6rem 0.7rem;
     box-sizing: border-box;
     background: var(--popover);
@@ -1311,8 +1337,34 @@ html&gt;body{padding:0}&lt;/style&gt;
   #m23-hinge-map #m23-course h3 { margin: 0.2rem 0 0.55rem; }
   #m23-hinge-map #m23-course p { margin: 0; }
   #m23-hinge-map .m23-course-block { margin-top: 0.75rem; }
+  #m23-hinge-map .m23-course-example {
+    padding: 0.65rem 0.7rem;
+    border-left: 3px solid color-mix(in srgb, var(--blue) 65%, var(--border));
+    background: color-mix(in srgb, var(--blue) 6%, var(--background));
+    border-radius: 0.25rem;
+  }
   #m23-hinge-map #m23-course-points { margin: 0.3rem 0 0; padding-left: 1.15rem; }
   #m23-hinge-map #m23-course-points li + li { margin-top: 0.35rem; }
+  #m23-hinge-map #m23-course-check summary { cursor: pointer; }
+  #m23-hinge-map #m23-course-check summary span { display: block; }
+  #m23-hinge-map #m23-course-question { margin-top: 0.2rem; font-weight: 500; }
+  #m23-hinge-map #m23-course-answer { margin-top: 0.45rem; padding-left: 0.7rem; border-left: 2px solid var(--border); }
+  #m23-hinge-map #m23-course-related { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+  #m23-hinge-map .m23-related-link {
+    display: inline-flex;
+    padding: 0.2rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+  #m23-hinge-map .m23-related-link:hover,
+  #m23-hinge-map .m23-related-link:focus { border-color: var(--blue); text-decoration: underline; }
+  #m23-hinge-map #m23-course-links { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+  #m23-hinge-map #m23-course-links li + li { margin-top: 0.3rem; }
+  #m23-hinge-map #m23-course-links a { color: var(--blue); text-underline-offset: 0.15em; }
   #m23-hinge-map .m23-course-link {
     color: var(--blue);
     text-decoration: underline;
@@ -1361,7 +1413,7 @@ window.MathJax = {
     &#x27;The question&#x27;,
     &#x27;Arithmetic scaffold&#x27;,
     &#x27;Generic-fibre trace&#x27;,
-    &#x27;One relative object&#x27;,
+    &#x27;Relative geometry, point by point&#x27;,
     &#x27;Specialization hinge&#x27;,
     &#x27;Closed-fibre trace&#x27;,
     &#x27;Conclusion&#x27;
@@ -1369,28 +1421,28 @@ window.MathJax = {
 
   const nodes = [
     {id:&#x27;problem&#x27;,layer:0,order:0,group:&#x27;question&#x27;,core:true,title:&#x27;Seven covers, one fixed class&#x27;,formal:&#x27;|H̄| = 7&#x27;,plain:&#x27;The moduli problem has seven geometric covers. Huang et al. identify one class fixed by the relevant arithmetic Galois action.&#x27;,why:&#x27;An explanation must distinguish that point intrinsically, not merely recognize its branch-cycle label.&#x27;,evidence:&#x27;The seven-element inner Nielsen class and the rational class are due to Huang et al.&#x27;,breaks:&#x27;Without the seven-cover moduli problem, there is no fixed-point phenomenon to explain.&#x27;},
-    {id:&#x27;goal&#x27;,layer:0,order:1,group:&#x27;question&#x27;,core:true,gate:true,title:&#x27;The hinge to prove&#x27;,formal:&#x27;ε(Θ) = e_sing&#x27;,plain:&#x27;A finite-group test and a characteristic-23 geometric test should define the same yes/no function on the seven covers.&#x27;,why:&#x27;Equality of these two idempotents turns a numerical observation into an intrinsic explanation.&#x27;,evidence:&#x27;This is Theorem 1.2, not an assumption used in reconstructing the covers.&#x27;,breaks:&#x27;If the two tests differed anywhere, characteristic 23 would not explain the fixed class.&#x27;},
+    {id:&#x27;goal&#x27;,layer:0,order:1,group:&#x27;question&#x27;,core:true,gate:true,title:&#x27;Target equality — not a premise&#x27;,formal:&#x27;ε(Θ) = e_sing&#x27;,plain:&#x27;The question is whether a finite-group test and a characteristic-23 geometric test define the same yes/no function on the seven covers.&#x27;,why:&#x27;Equality of these two idempotents turns a numerical observation into an intrinsic explanation.&#x27;,evidence:&#x27;This is the statement to be proved in Theorem 1.2. No later node is allowed to assume it.&#x27;,breaks:&#x27;If the two tests differed anywhere, characteristic 23 would not explain the fixed class.&#x27;},
 
     {id:&#x27;algebra&#x27;,layer:1,order:0,group:&#x27;question&#x27;,core:true,title:&#x27;Exact Hurwitz algebra&#x27;,formal:&#x27;A_H = K₀ × L,  [L:K₀]=6&#x27;,plain:&#x27;The seven geometric covers assemble into one degree-one component and one connected degree-six component.&#x27;,why:&#x27;A product of two fields has exactly two primitive component idempotents.&#x27;,evidence:&#x27;Exact reconstruction plus certified branch cycles identifies the finite étale Hurwitz scheme.&#x27;,breaks:&#x27;A different component decomposition would change what a selector is allowed to detect.&#x27;},
     {id:&#x27;idempotents&#x27;,layer:1,order:1,group:&#x27;question&#x27;,core:true,title:&#x27;Only two component indicators&#x27;,formal:&#x27;e₁=(1,0),  e₆=(0,1)&#x27;,plain:&#x27;There is one indicator for the rational component and its complementary indicator for the other six covers.&#x27;,why:&#x27;To explain the fixed point, it suffices to construct either indicator without importing the complex labels.&#x27;,evidence:&#x27;Elementary algebra of the product K₀ × L.&#x27;,breaks:&#x27;If L were disconnected, a binary invariant could hide a finer decomposition.&#x27;},
-    {id:&#x27;integral&#x27;,layer:1,order:2,group:&#x27;special&#x27;,core:true,title:&#x27;Integral model at 23&#x27;,formal:&#x27;Norm_{A_H}(O_{K₀,q})&#x27;,plain:&#x27;Extend the finite Hurwitz scheme over the local ring at the prime above 23 and normalize it.&#x27;,why:&#x27;This gives a legitimate closed fibre on which singularities and residue fields can be compared.&#x27;,evidence:&#x27;The normalized local algebra has three closed points with (e,f)=(1,1),(1,2),(2,2).&#x27;,breaks:&#x27;Reducing arbitrary numerical models would not define a function on the arithmetic moduli scheme.&#x27;},
+    {id:&#x27;integral&#x27;,layer:1,order:2,group:&#x27;special&#x27;,core:true,title:&#x27;Integral model at 23&#x27;,formal:&#x27;normalization of Spec(O_{K₀,q}) in A_H&#x27;,plain:&#x27;Take the normalization of the local arithmetic base at the prime above 23 inside the exact Hurwitz algebra.&#x27;,why:&#x27;This gives a legitimate closed fibre on which singularities, ramification indices, and residue degrees can be compared.&#x27;,evidence:&#x27;The normalized local algebra has three closed points with (e,f)=(1,1),(1,2),(2,2).&#x27;,breaks:&#x27;Reducing arbitrary numerical models would not define a function on the arithmetic moduli scheme.&#x27;},
     {id:&#x27;independence&#x27;,layer:1,order:3,group:&#x27;question&#x27;,gate:true,title:&#x27;No complex-label shortcut&#x27;,formal:&#x27;No branch-cycle cross-identification&#x27;,plain:&#x27;The hinge proof is forbidden from first matching each local reduction with a complex Nielsen label.&#x27;,why:&#x27;Otherwise both sides could be called e₆ by lookup, which would prove equality but explain nothing.&#x27;,evidence:&#x27;The comparison uses the reconstructed algebra but not the seven-map branch-cycle cross-identification.&#x27;,breaks:&#x27;Using the lookup would make the argument circular as an explanation.&#x27;},
 
     {id:&#x27;labeling&#x27;,layer:2,order:0,group:&#x27;generic&#x27;,core:true,gate:true,title:&#x27;Label the 23 sheets together&#x27;,formal:&#x27;an S₂₃-torsor of labelings&#x27;,plain:&#x27;After a finite splitting extension, choose one numbering of the 23 sheets and use it at both wild ends.&#x27;,why:&#x27;Only a common numbering makes the two transporter calculations comparable.&#x27;,evidence:&#x27;Changing the numbering simultaneously conjugates every permutation.&#x27;,breaks:&#x27;Independent numberings at the two ends would create a fake relative transporter.&#x27;},
     {id:&#x27;normalizers&#x27;,layer:2,order:1,group:&#x27;generic&#x27;,core:true,title:&#x27;Two order-23 endpoint groups&#x27;,formal:&#x27;D_y,D_z ≅ 23:11&#x27;,plain:&#x27;At the two wild branch points, record the symmetries preserving the corresponding cyclic order-23 inertia groups.&#x27;,why:&#x27;Each group moves the finite inertia involution through a well-defined orbit.&#x27;,evidence:&#x27;These are the two wild endpoint normalizers of a normalized Nielsen triple.&#x27;,breaks:&#x27;Without the marked endpoint groups there is no two-ended comparison.&#x27;},
-    {id:&#x27;omega&#x27;,layer:2,order:2,group:&#x27;generic&#x27;,core:true,title:&#x27;Common transported involutions&#x27;,formal:&#x27;Ω = x^{D_y} ∩ x^{D_z}&#x27;,plain:&#x27;Keep the involutions that can be reached from the finite inertia x from either wild end.&#x27;,why:&#x27;For each common involution, the odd-order normalizer action gives unique transporter elements.&#x27;,evidence:&#x27;The stabilizer order divides both 253 and 2688, hence is trivial.&#x27;,breaks:&#x27;Nonunique transporters would make the relative element depend on a choice.&#x27;},
+    {id:&#x27;omega&#x27;,layer:2,order:2,group:&#x27;generic&#x27;,core:true,title:&#x27;Common transported involutions&#x27;,formal:&#x27;Ω = x^{D_y} ∩ x^{D_z}&#x27;,plain:&#x27;Keep the involutions that can be reached from the finite inertia x from either wild end.&#x27;,why:&#x27;For each common involution, the endpoint action gives unique transporter elements.&#x27;,evidence:&#x27;A stabilizer lies in groups of orders 253=11·23 and 2688=2⁷·3·7. Their greatest common divisor is 1, so the stabilizer is trivial.&#x27;,breaks:&#x27;Nonunique transporters would make the relative element depend on a choice.&#x27;},
     {id:&#x27;relative&#x27;,layer:2,order:3,group:&#x27;generic&#x27;,core:true,title:&#x27;Compare the two transports&#x27;,formal:&#x27;c_w=d_y(w)d_z(w)⁻¹ ∈ C_M₂₃(x)&#x27;,plain:&#x27;Go from x to w by the first route and return by the second. The mismatch centralizes x.&#x27;,why:&#x27;Anything centralizing x acts on both the seven fixed sheets and the eight two-sheet orbits.&#x27;,evidence:&#x27;Direct multiplication shows c_w x = x c_w.&#x27;,breaks:&#x27;If c_w did not centralize x, the two finite orbit sets would not be preserved.&#x27;},
     {id:&#x27;fanoaffine&#x27;,layer:2,order:4,group:&#x27;generic&#x27;,core:true,title:&#x27;Two complementary finite sets&#x27;,formal:&#x27;H_x ⊔ A_x,  |H_x|=7, |A_x|=8&#x27;,plain:&#x27;The involution x fixes seven sheets forming a Fano point set; its remaining sheets form eight unordered pairs, an affine three-dimensional binary space.&#x27;,why:&#x27;The centralizer acts linearly on the seven-set and affinely on the eight-set.&#x27;,evidence:&#x27;C_M₂₃(x)/⟨x⟩ ≅ 2³:PSL₃(2).&#x27;,breaks:&#x27;Using only the Fano seven-set fails for many centralizer elements.&#x27;},
     {id:&#x27;oddlemma&#x27;,layer:2,order:5,group:&#x27;generic&#x27;,core:true,title:&#x27;Odd fixed-point identity&#x27;,formal:&#x27;|Fix_H(c)|+|Fix_A(c)| ≡ 1 mod 2&#x27;,plain:&#x27;Every allowed symmetry fixes an odd total number of objects across the Fano and affine sets.&#x27;,why:&#x27;If the linear part has fixed vectors, the Fano count is odd and the affine count even; otherwise the affine map has exactly one fixed point.&#x27;,evidence:&#x27;A short linear-algebra proof and an exhaustive check of all 2,688 centralizer elements.&#x27;,breaks:&#x27;This is the parity engine. Without it, the generic intersection would not reduce to one bit per common involution.&#x27;},
-    {id:&#x27;theta&#x27;,layer:2,order:6,group:&#x27;generic&#x27;,core:true,title:&#x27;Augment the transporter cycle&#x27;,formal:&#x27;ε(Θ)=|Ω| mod 2&#x27;,plain:&#x27;Add the relative transporters with coefficients modulo two, then forget which transporter occurred and keep only the parity.&#x27;,why:&#x27;The standard group-algebra augmentation is invariant under relabeling.&#x27;,evidence:&#x27;Exact GAP computation on all 161 framed Nielsen tuples.&#x27;,breaks:&#x27;A non-invariant statistic could not descend to the Hurwitz scheme.&#x27;},
+    {id:&#x27;theta&#x27;,layer:2,order:6,group:&#x27;generic&#x27;,core:true,title:&#x27;Augment the transporter cycle&#x27;,formal:&#x27;ε(Θ)=|Ω| mod 2&#x27;,plain:&#x27;Add the relative transporters with coefficients modulo two, then forget which transporter occurred and keep only the parity.&#x27;,why:&#x27;The standard group-algebra augmentation is invariant under relabeling.&#x27;,evidence:&#x27;Exact GAP computation on representatives of all seven Nielsen classes; a separate 161-tuple calculation audits the full framed locus.&#x27;,breaks:&#x27;A non-invariant statistic could not descend to the Hurwitz scheme.&#x27;},
     {id:&#x27;generictrace&#x27;,layer:2,order:7,group:&#x27;generic&#x27;,core:true,title:&#x27;Generic trace equals the group bit&#x27;,formal:&#x27;Tr_η = ε(Θ)&#x27;,plain:&#x27;Intersect the two lifted endpoint correspondences. The odd fixed-point identity makes its degree equal to the transporter augmentation.&#x27;,why:&#x27;For each w, equality of lifted labels is exactly the condition that c_w fixes a Fano or affine object.&#x27;,evidence:&#x27;Finite intersection calculation, orbit by orbit; no interpolation from the seven covers.&#x27;,breaks:&#x27;If the lifted intersection encoded a different equality relation, Lu–Zheng would faithfully specialize the wrong trace.&#x27;},
 
-    {id:&#x27;stablemap&#x27;,layer:3,order:0,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;One pointed stable M₂₃-map&#x27;,formal:&#x27;Y → X over a Henselian trait&#x27;,plain:&#x27;After finite base change, stable reduction extends the deck action and all three marked branch sections over the local trait.&#x27;,why:&#x27;It places the generic and closed fibres inside one relative geometric family.&#x27;,evidence:&#x27;Stable reduction and Wewers’s common patching datum.&#x27;,breaks:&#x27;Separate models for the two fibres would provide no canonical specialization map.&#x27;},
-    {id:&#x27;commonlambda&#x27;,layer:3,order:1,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;One patching identification&#x27;,formal:&#x27;one common λ for all tails&#x27;,plain:&#x27;The group identification used to glue the stable tails is shared by every tail, not chosen independently.&#x27;,why:&#x27;All endpoint graph correspondences are transported simultaneously.&#x27;,evidence:&#x27;Wewers, Section 4.2 and Theorem 4.5.&#x27;,breaks:&#x27;Independent tail identifications could alter the gluing character by hand.&#x27;},
+    {id:&#x27;stablemap&#x27;,layer:3,order:0,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;One stable map on each local trait&#x27;,formal:&#x27;Y → X over a Henselian trait&#x27;,plain:&#x27;For each of the three closed Hurwitz points, after finite base change, stable reduction extends the deck action and all three marked branch sections over that point’s local trait.&#x27;,why:&#x27;Each comparison then places its generic and closed fibres inside one relative geometric family.&#x27;,evidence:&#x27;Stable reduction and Wewers’s common patching datum.&#x27;,breaks:&#x27;Separate models for the two fibres would provide no canonical specialization map.&#x27;},
+    {id:&#x27;commonlambda&#x27;,layer:3,order:1,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;One patching identification&#x27;,formal:&#x27;one common λ for all tails&#x27;,plain:&#x27;Within each local stable map, the group identification used to glue the stable tails is shared by every tail, not chosen independently.&#x27;,why:&#x27;All endpoint graph correspondences are transported simultaneously.&#x27;,evidence:&#x27;Wewers, Section 4.2 and Theorem 4.5.&#x27;,breaks:&#x27;Independent tail identifications could alter the gluing character by hand.&#x27;},
     {id:&#x27;graphs&#x27;,layer:3,order:2,group:&#x27;bridge&#x27;,core:true,title:&#x27;Close the deck graphs relatively&#x27;,formal:&#x27;ℒ_D={(b,x^d,b^d)}&#x27;,plain:&#x27;For every endpoint symmetry, take its graph on the stable cover and restrict to the finite branch-orbit data.&#x27;,why:&#x27;Closed graphs in a proper stable model give genuine relative cohomological correspondences.&#x27;,evidence:&#x27;Deck transformations extend over the stable Galois model; the quotient map is finite.&#x27;,breaks:&#x27;A correspondence defined only on the generic fibre might acquire uncontrolled closure terms.&#x27;},
-    {id:&#x27;ferrand&#x27;,layer:3,order:3,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Ferrand pushout forgets exactly one label&#x27;,formal:&#x27;P_p=Spec(R^E) ⨿_{Spec(k^E)} Spec(k^Q)&#x27;,plain:&#x27;Generically, keep every involution label separate. At the conductor, identify labels that land on the same one- or two-sheet branch.&#x27;,why:&#x27;This is the missing morphism between the generic diagonal pairing and the closed-fibre fibre-sum pairing.&#x27;,evidence:&#x27;The coordinate ring is R^E ×_{k^E} k^Q.&#x27;,breaks:&#x27;Lu–Zheng specializes one specified correspondence; it cannot by itself change “same label” into “same branch.”&#x27;},
+    {id:&#x27;ferrand&#x27;,layer:3,order:3,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Ferrand pushout pinches by branch&#x27;,formal:&#x27;P_p=Spec(R^E) ⨿_{Spec(k^E)} Spec(k^Q)&#x27;,plain:&#x27;Generically, keep every full label in E separate. At the conductor, apply p:E→Q and identify exactly the labels that land on the same one- or two-sheet branch.&#x27;,why:&#x27;This is the missing morphism between the generic diagonal pairing and the closed-fibre fibre-sum pairing.&#x27;,evidence:&#x27;The coordinate ring is R^E ×_{k^E} k^Q; a residue tuple is allowed precisely when it is constant on each fibre of p.&#x27;,breaks:&#x27;Lu–Zheng specializes one specified correspondence; it cannot by itself change “same label” into “same branch.”&#x27;},
     {id:&#x27;triangle&#x27;,layer:3,order:4,group:&#x27;bridge&#x27;,core:true,title:&#x27;Normalization and conductor triangle&#x27;,formal:&#x27;Λ_P → Rν_*Λ_E ⊕ i_*Λ_Q → i_*p_*Λ_E → +1&#x27;,plain:&#x27;The pushout splits the specialized trace into a contribution on the normalization and a correction on the conductor.&#x27;,why:&#x27;Nearby stalks over q are the vector spaces spanned by the generic branches p⁻¹(q).&#x27;,evidence:&#x27;The Mayer–Vietoris triangle and explicit unit/counit maps.&#x27;,breaks:&#x27;Treating the conductor term as the whole trace would double-count or omit the normalization contribution.&#x27;},
-    {id:&#x27;tree&#x27;,layer:3,order:5,group:&#x27;bridge&#x27;,core:true,title:&#x27;Tree cancellation&#x27;,formal:&#x27;C⁰(Γ,Λ[E]) → C¹(Γ,Λ[E])&#x27;,plain:&#x27;The stable target has a tree-shaped dual graph. Every internal component appears twice and cancels modulo two.&#x27;,why:&#x27;Only the wild endpoint term and the finite conductor term survive.&#x27;,evidence:&#x27;Elementary cochain calculation, unchanged by subdividing an edge.&#x27;,breaks:&#x27;A loop in the dual graph could contribute an additional cohomological term.&#x27;},
+    {id:&#x27;tree&#x27;,layer:3,order:5,group:&#x27;bridge&#x27;,core:true,title:&#x27;Tree cancellation&#x27;,formal:&#x27;C⁰(Γ,Λ[E]) → C¹(Γ,Λ[E])&#x27;,plain:&#x27;The stable target has a tree-shaped dual graph. Each internal vertex contribution occurs in two adjacent branch differences and cancels modulo two.&#x27;,why:&#x27;Only the wild endpoint term and the finite conductor term survive.&#x27;,evidence:&#x27;Elementary cochain calculation, unchanged by subdividing an edge.&#x27;,breaks:&#x27;A loop in the dual graph could contribute an additional cohomological term.&#x27;},
     {id:&#x27;descent&#x27;,layer:3,order:6,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Independent of all temporary labels&#x27;,formal:&#x27;invariant under the labeling and patching torsors&#x27;,plain:&#x27;Simultaneous relabeling transports the normalization labels, quotient map, and graph correspondences together.&#x27;,why:&#x27;The resulting scalar trace descends from the splitting extension to the original local Hurwitz trait.&#x27;,evidence:&#x27;Conjugation invariance of fixed loci and of the Ferrand quotient map.&#x27;,breaks:&#x27;Without descent, the equality would depend on an auxiliary splitting field.&#x27;},
 
     {id:&#x27;samecorr&#x27;,layer:4,order:0,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;One pairing on both fibres&#x27;,formal:&#x27;(u_y,u_z) and (ψu_y,ψu_z)&#x27;,plain:&#x27;The generic trace and the closed-fibre trace come from one pair of cohomological correspondences, not from two separately chosen counts.&#x27;,why:&#x27;This is the central eligibility condition for the specialization theorem.&#x27;,evidence:&#x27;Relative deck graphs plus the Ferrand normalization–conductor complex.&#x27;,breaks:&#x27;Matching two unrelated numbers after the fact would not be a geometric explanation.&#x27;},
@@ -1399,10 +1451,10 @@ window.MathJax = {
     {id:&#x27;coefficients&#x27;,layer:4,order:3,group:&#x27;bridge&#x27;,core:false,gate:true,title:&#x27;Coefficient hypothesis&#x27;,formal:&#x27;Λ=F₂ and 2 is invertible at 23&#x27;,plain:&#x27;We count parity using coefficients of characteristic two, while the geometric base has residue characteristic 23.&#x27;,why:&#x27;The torsion coefficient is invertible on the Henselian trait, as required by étale nearby cycles.&#x27;,evidence:&#x27;2 and 23 are coprime.&#x27;,breaks:&#x27;At residue characteristic two, this nearby-cycle formalism would need different hypotheses.&#x27;},
     {id:&#x27;luzheng&#x27;,layer:4,order:4,group:&#x27;bridge&#x27;,core:true,gate:true,title:&#x27;Specialization preserves the pairing&#x27;,formal:&#x27;sp⟨u_y,u_z⟩=⟨ψu_y,ψu_z⟩&#x27;,plain:&#x27;Lu–Zheng guarantee that the trace of this same correspondence is compatible with passage from the generic fibre to the closed fibre.&#x27;,why:&#x27;Their proper-pushforward compatibility also identifies the specialized graphs with the graphs used in the local calculation.&#x27;,evidence:&#x27;Lu–Zheng, Corollary 3.10 and Proposition 3.12.&#x27;,breaks:&#x27;Without this theorem, equal generic and closed traces would still need an independent geometric proof.&#x27;},
 
-    {id:&#x27;closedpoints&#x27;,layer:5,order:0,group:&#x27;special&#x27;,core:true,title:&#x27;Three closed Hurwitz points&#x27;,formal:&#x27;(e,f)=(1,1),(1,2),(2,2)&#x27;,plain:&#x27;The local integral model has one rational closed point and two points on the degree-six component.&#x27;,why:&#x27;A function on these three factors determines which connected component it cuts out.&#x27;,evidence:&#x27;Exact factorization of the local Hurwitz algebra at 23.&#x27;,breaks:&#x27;Missing a closed point could make two candidate idempotents appear equal when they are not.&#x27;},
+    {id:&#x27;closedpoints&#x27;,layer:5,order:0,group:&#x27;special&#x27;,core:true,title:&#x27;Three closed Hurwitz points&#x27;,formal:&#x27;(e,f)=(1,1),(1,2),(2,2)&#x27;,plain:&#x27;The local integral model has one rational closed point and two points on the degree-six component.&#x27;,why:&#x27;An idempotent is determined by its zero–one values on every reduced closed factor, and those values lift uniquely over the Henselian local algebra.&#x27;,evidence:&#x27;Exact factorization of the local Hurwitz algebra at 23.&#x27;,breaks:&#x27;Missing a closed point could make two candidate idempotents appear equal when they are not.&#x27;},
     {id:&#x27;frobenius&#x27;,layer:5,order:1,group:&#x27;special&#x27;,core:true,title:&#x27;Normalize each reduced source&#x27;,formal:&#x27;β̄=t²³,  b=0, c=∞&#x27;,plain:&#x27;After normalization, every reduced degree-23 map is the Frobenius map in a uniquely normalized coordinate t.&#x27;,why:&#x27;The coordinate t lets us compare a distinguished singular point across all three reductions.&#x27;,evidence:&#x27;Exact divisor calculation div(β̄)=23b−23c.&#x27;,breaks:&#x27;An unfixed projective coordinate would make the singular position meaningless.&#x27;},
     {id:&#x27;singcoord&#x27;,layer:5,order:2,group:&#x27;special&#x27;,core:true,title:&#x27;Record the singular-point coordinate&#x27;,formal:&#x27;u(P)=t(τ_P)&#x27;,plain:&#x27;Evaluate t at the unique E₈ singularity, or at the distinguished A₆ singularity in the third reduction.&#x27;,why:&#x27;This construction is intrinsic to the pointed closed fibre and commutes with residue-field automorphisms.&#x27;,evidence:&#x27;Exact normalized local equations for the E₈ and A₂+A₆ fibres.&#x27;,breaks:&#x27;Choosing an arbitrary singular point would not define an arithmetic function.&#x27;},
-    {id:&#x27;esing&#x27;,layer:5,order:3,group:&#x27;special&#x27;,core:true,title:&#x27;The geometric idempotent&#x27;,formal:&#x27;e_sing values = (0,1,1)&#x27;,plain:&#x27;The singular coordinate has one value pattern on the rational component and another on the two factors of the sextic component.&#x27;,why:&#x27;The interpolation polynomial is idempotent and uniquely lifts through the complete local algebra.&#x27;,evidence:&#x27;R₂₃(u)=(u−16)(u²+1)(u²+u+1) and exact Chinese-remainder calculation.&#x27;,breaks:&#x27;If the values were not constant by connected component, this would not lift to e₆.&#x27;},
+    {id:&#x27;esing&#x27;,layer:5,order:3,group:&#x27;special&#x27;,core:true,title:&#x27;The geometric idempotent&#x27;,formal:&#x27;e_sing values = (0,1,1)&#x27;,plain:&#x27;A polynomial in the singular coordinate u evaluates to zero on the rational factor and to one on both closed factors of the sextic component.&#x27;,why:&#x27;This interpolation polynomial is idempotent on the reduced closed algebra and uniquely lifts through the complete local algebra.&#x27;,evidence:&#x27;R₂₃(u)=(u−16)(u²+1)(u²+u+1) and an exact Chinese-remainder calculation.&#x27;,breaks:&#x27;If the values were not constant by connected component, this would not lift to e₆.&#x27;},
     {id:&#x27;gluing&#x27;,layer:5,order:4,group:&#x27;special&#x27;,core:true,title:&#x27;Read the node’s gluing class&#x27;,formal:&#x27;n_P ∈ N_{S₂₃}(D)/D ≅ C₂&#x27;,plain:&#x27;The stable model carries a transition element at the marked wild node. Only its square or nonsquare normalizer coset matters.&#x27;,why:&#x27;Changing formal coordinates does not change this quotient class.&#x27;,evidence:&#x27;Exact Newton charts and the pointed conductor calculation.&#x27;,breaks:&#x27;A coordinate-dependent phase would not define a function on the stable model.&#x27;},
     {id:&#x27;character&#x27;,layer:5,order:5,group:&#x27;special&#x27;,core:true,title:&#x27;The gluing character&#x27;,formal:&#x27;χ_gl(n_P) = (0,1,1)&#x27;,plain:&#x27;The rational E₈ point has the trivial gluing class; the other E₈ point and the A₂+A₆ point have the nontrivial class.&#x27;,why:&#x27;Its values already match the singular-coordinate idempotent on every closed factor.&#x27;,evidence:&#x27;Certified square-class calculations on all three complete local traits.&#x27;,breaks:&#x27;A mismatched value at one closed point would destroy the final idempotent equality.&#x27;},
     {id:&#x27;normterm&#x27;,layer:5,order:6,group:&#x27;special&#x27;,core:true,title:&#x27;Normalization contribution&#x27;,formal:&#x27;Tr_norm = 1 + χ_gl(n)&#x27;,plain:&#x27;At the wild end, retaining involution labels gives one parity when the two traces agree and zero when they lie in disjoint adjacent Mathieu copies.&#x27;,why:&#x27;The Fano–affine odd fixed-point lemma supplies one for every common label.&#x27;,evidence:&#x27;Exact normalizer-trace intersection calculation.&#x27;,breaks:&#x27;Forgetting labels here would replace this term by a constant and erase the gluing information.&#x27;},
@@ -1420,7 +1472,7 @@ window.MathJax = {
     goal:String.raw`\varepsilon(\Theta)=e_{\mathrm{sing}}`,
     algebra:String.raw`A_H=K_0\times L,\quad [L:K_0]=6`,
     idempotents:String.raw`e_1=(1,0),\quad e_6=(0,1)`,
-    integral:String.raw`\operatorname{Norm}_{A_H}(\mathcal O_{K_0,\mathfrak q})`,
+    integral:String.raw`\mathcal H_R=\text{normalization of }\operatorname{Spec}\mathcal O_{K_0,\mathfrak q}\text{ in }A_H`,
     independence:String.raw`\text{no branch-cycle cross-identification}`,
     labeling:String.raw`\text{an }S_{23}\text{-torsor of labelings}`,
     normalizers:String.raw`D_y,D_z\simeq 23{:}11`,
@@ -1613,16 +1665,322 @@ window.MathJax = {
       idea:&#x27;A trace summarizes how an operator acts. In a fixed-point formula it can be computed from local intersections of a correspondence with a diagonal.&#x27;,
       points:[&#x27;The generic trace is computed from labeled transporter intersections.&#x27;,&#x27;The closed trace splits into normalization and conductor contributions.&#x27;,&#x27;Specialization equates them because they come from one relative correspondence.&#x27;],
       context:&#x27;This equality is the hinge that turns the group bit into the characteristic-23 geometric bit.&#x27;
+    },
+    components: {
+      title:&#x27;Product rings and components 101&#x27;,
+      aliases:[&#x27;product of two fields&#x27;,&#x27;product decomposition&#x27;,&#x27;connected components&#x27;,&#x27;connected component&#x27;,&#x27;degree-one component&#x27;,&#x27;degree-six component&#x27;,&#x27;sextic component&#x27;,&#x27;open-and-closed subscheme&#x27;,&#x27;open-and-closed&#x27;],
+      idea:&#x27;A product of rings describes a disjoint union of spaces. Each factor is a separate open-and-closed piece, and an idempotent acts as its indicator.&#x27;,
+      points:[&#x27;Spec(R₁×R₂) is the disjoint union of Spec(R₁) and Spec(R₂).&#x27;,&#x27;A field has no nontrivial idempotents, so its spectrum is connected.&#x27;,&#x27;The elements (1,0) and (0,1) select the two factors.&#x27;],
+      context:&#x27;Because L is a field, the six conjugate covers form one connected arithmetic component rather than six independently selectable pieces.&#x27;
+    },
+    ramification: {
+      title:&#x27;Ramification data (e,f) 101&#x27;,
+      aliases:[&#x27;ramification indices&#x27;,&#x27;ramification index&#x27;,&#x27;residue degrees&#x27;,&#x27;residue degree&#x27;,&#x27;residue fields&#x27;,&#x27;residue field&#x27;,&#x27;(e,f)&#x27;],
+      idea:&#x27;For an extension of discrete valuation rings, e measures how strongly the uniformizer ramifies and f measures the degree of the residue-field extension.&#x27;,
+      points:[&#x27;e=1 means there is no ramification in the valuation.&#x27;,&#x27;f=1 means the closed point is rational over the base residue field.&#x27;,&#x27;The product ef records the local degree when no defect occurs.&#x27;],
+      context:&#x27;The three pairs (1,1), (1,2), and (2,2) distinguish the three closed factors above 23 without naming the complex covers.&#x27;
+    },
+    orbits: {
+      title:&#x27;Orbits, stabilizers, and transporters 101&#x27;,
+      aliases:[&#x27;transporter elements&#x27;,&#x27;transporters&#x27;,&#x27;transporter&#x27;,&#x27;stabilizer&#x27;,&#x27;normalizers&#x27;,&#x27;normalizer&#x27;,&#x27;orbits&#x27;,&#x27;orbit&#x27;],
+      idea:&#x27;A group action moves objects into orbits. A stabilizer fixes one object, while a transporter is an element carrying one chosen object to another.&#x27;,
+      points:[&#x27;Transporters are unique exactly when the relevant stabilizer is trivial.&#x27;,&#x27;Orbit size equals group order divided by stabilizer order.&#x27;,&#x27;A normalizer preserves a subgroup as a set; a centralizer commutes with an element.&#x27;],
+      context:&#x27;The coprime-order argument makes each endpoint transporter unique, so their relative mismatch is a well-defined centralizer element.&#x27;
+    },
+    parity: {
+      title:&#x27;Parity and F₂ 101&#x27;,
+      aliases:[&#x27;modulo two&#x27;,&#x27;modulo 2&#x27;,&#x27;mod 2&#x27;,&#x27;parity&#x27;,&#x27;odd total&#x27;,&#x27;odd number&#x27;,&#x27;odd&#x27;,&#x27;even&#x27;,&#x27;F₂&#x27;],
+      idea:&#x27;Working over F₂ keeps only parity: two equal contributions cancel because 1+1=0.&#x27;,
+      points:[&#x27;An odd count becomes 1 and an even count becomes 0.&#x27;,&#x27;Signs disappear because −1=1 in F₂.&#x27;,&#x27;A cancellation claim must still show that every omitted term occurs an even number of times.&#x27;],
+      context:&#x27;Parity compresses each transporter contribution to one bit, but the tree and different-exponent audits are what justify the cancellations.&#x27;
+    },
+    dualgraph: {
+      title:&#x27;Dual graphs of nodal curves 101&#x27;,
+      aliases:[&#x27;dual graph&#x27;,&#x27;tree-shaped dual graph&#x27;,&#x27;stable tree&#x27;,&#x27;tree cancellation&#x27;],
+      idea:&#x27;A nodal curve has a combinatorial shadow: vertices represent irreducible components and edges represent nodes where components meet.&#x27;,
+      points:[&#x27;A tree is connected and has no loops.&#x27;,&#x27;Between two vertices of a tree there is one path.&#x27;,&#x27;A loop could carry an extra cohomology class that endpoint cancellation would miss.&#x27;],
+      context:&#x27;The special fibre has a tree-shaped dual graph, so internal branch-difference terms cancel and only two endpoint contributions remain.&#x27;
+    },
+    singularities: {
+      title:&#x27;Singularities and normalization coordinates 101&#x27;,
+      aliases:[&#x27;singular-point coordinate&#x27;,&#x27;singular position&#x27;,&#x27;singularities&#x27;,&#x27;singularity&#x27;,&#x27;E₈&#x27;,&#x27;A₂+A₆&#x27;,&#x27;A₆&#x27;,&#x27;A₂&#x27;],
+      idea:&#x27;A singular point is where a curve is not smooth. Normalization separates its branches, and marked zero and pole data can remove coordinate ambiguity.&#x27;,
+      points:[&#x27;The singularity type records the local shape, not merely a drawing.&#x27;,&#x27;Normalization gives a regular parameter on each branch.&#x27;,&#x27;A coordinate value is intrinsic only after its remaining projective freedom is fixed.&#x27;],
+      context:&#x27;The marked zero and pole force the coordinate t, so evaluating t at the distinguished singular point defines arithmetic data rather than a coordinate artifact.&#x27;
+    },
+    duality: {
+      title:&#x27;Properness and dualizable complexes 101&#x27;,
+      aliases:[&#x27;properness&#x27;,&#x27;proper pushforward&#x27;,&#x27;proper model&#x27;,&#x27;proper&#x27;,&#x27;dualizability&#x27;,&#x27;dualizable&#x27;,&#x27;finite Tor-dimension&#x27;,&#x27;finite Tor&#x27;,&#x27;constructible&#x27;],
+      idea:&#x27;A trace theorem needs both geometric control and algebraic finiteness. Properness prevents contributions from escaping; dualizability makes the categorical trace defined.&#x27;,
+      points:[&#x27;Proper means separated, finite type, and universally closed.&#x27;,&#x27;A perfect complex is locally a bounded complex of finite projective modules.&#x27;,&#x27;Finite permutation modules over F₂ satisfy the finiteness condition used here.&#x27;],
+      context:&#x27;These are separate hypotheses of the Lu–Zheng theorem. The theorem does not prove them for the correspondence; the paper checks them before applying it.&#x27;
     }
+  };
+  const courseEnrichment = {
+    hurwitz: {
+      example:&#x27;Imagine a catalogue in which every entry is a branched cover and the catalogue itself is algebraic. A finite Hurwitz scheme is the seven-entry catalogue used here.&#x27;,
+      question:&#x27;Why not study only the already known fixed cover?&#x27;,
+      answer:&#x27;Because the claim is comparative: we must explain why one point is singled out among all seven. The whole moduli scheme is the arena on which a selector can be intrinsic.&#x27;,
+      related:[&#x27;nielsen&#x27;,&#x27;etale&#x27;,&#x27;components&#x27;],
+      links:[[&#x27;Huang et al.: the seven-cover Nielsen-class problem&#x27;,&#x27;https://arxiv.org/abs/2608.08538&#x27;],[&#x27;Repository for the exact arithmetic reconstruction&#x27;,&#x27;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation&#x27;]]
+    },
+    nielsen: {
+      example:&#x27;If three branch loops give permutations g₀, g₁, and g∞, then going around all branch points is contractible, so g₀g₁g∞=1.&#x27;,
+      question:&#x27;Does renumbering the 23 sheets produce a new cover?&#x27;,
+      answer:&#x27;No. It simultaneously conjugates every branch permutation. A Nielsen class therefore remembers the monodromy data modulo this renumbering.&#x27;,
+      related:[&#x27;hurwitz&#x27;,&#x27;torsor&#x27;,&#x27;galois&#x27;],
+      links:[[&#x27;Huang et al.: branch cycles for the M₂₃ problem&#x27;,&#x27;https://arxiv.org/abs/2608.08538&#x27;],[&#x27;ATLAS: the Mathieu group M₂₃&#x27;,&#x27;https://brauer.maths.qmul.ac.uk/Atlas/spor/M23/&#x27;]]
+    },
+    galois: {
+      example:&#x27;The roots of x²−2 form a two-point geometric set. Over Q, Galois swaps them; neither point is rational, but the pair is arithmetic.&#x27;,
+      question:&#x27;What does an orbit of size one mean here?&#x27;,
+      answer:&#x27;It means the corresponding moduli point is defined over the ground field K₀. The other six points are conjugate and form one larger arithmetic orbit.&#x27;,
+      related:[&#x27;etale&#x27;,&#x27;components&#x27;,&#x27;frobenius&#x27;],
+      links:[[&#x27;Stacks Project: finite étale morphisms&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0BL6&#x27;],[&#x27;Stacks Project: étale points over a field&#x27;,&#x27;https://stacks.math.columbia.edu/tag/03PA&#x27;]]
+    },
+    idempotent: {
+      example:&#x27;In K₀×L, multiplying (0,1) by itself returns (0,1). Evaluated on the first factor it is 0; on the second it is 1—exactly an indicator light.&#x27;,
+      question:&#x27;Why is equality at all three closed factors enough?&#x27;,
+      answer:&#x27;The reduced closed fibre determines the idempotent there, and idempotents lift uniquely through the Henselian complete local algebra. Missing even one factor would leave the comparison incomplete.&#x27;,
+      related:[&#x27;components&#x27;,&#x27;localmodel&#x27;,&#x27;trait&#x27;],
+      links:[[&#x27;Stacks Project: idempotents and open-and-closed subsets&#x27;,&#x27;https://stacks.math.columbia.edu/tag/04PN&#x27;],[&#x27;Stacks Project: unique lifting of idempotents&#x27;,&#x27;https://stacks.math.columbia.edu/tag/09XD&#x27;]]
+    },
+    etale: {
+      example:&#x27;Over an algebraic closure, Spec(K₀×L) becomes seven ordinary points. Over K₀, the field factors remember how arithmetic permutes those points.&#x27;,
+      question:&#x27;Why does the degree-six field L give one component?&#x27;,
+      answer:&#x27;Because the spectrum of a field is connected. Its six geometric embeddings are points after base change, but they are not six open-and-closed arithmetic components.&#x27;,
+      related:[&#x27;galois&#x27;,&#x27;components&#x27;,&#x27;hurwitz&#x27;],
+      links:[[&#x27;Stacks Project: finite étale morphisms&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0BL6&#x27;],[&#x27;Stacks Project: connected components of spectra&#x27;,&#x27;https://stacks.math.columbia.edu/tag/00EB&#x27;]]
+    },
+    localmodel: {
+      example:&#x27;A trait is like a two-frame film: the generic frame shows characteristic zero, and the closed frame shows reduction mod 23. The local model is the film connecting them.&#x27;,
+      question:&#x27;Why is reducing a convenient numerical equation not enough?&#x27;,
+      answer:&#x27;Different numerical models may have unrelated integral structures. Normalizing the exact arithmetic Hurwitz algebra produces a model whose closed points genuinely belong to the same moduli object.&#x27;,
+      related:[&#x27;trait&#x27;,&#x27;normalization&#x27;,&#x27;ramification&#x27;],
+      links:[[&#x27;Stacks Project: normalization&#x27;,&#x27;https://stacks.math.columbia.edu/tag/035E&#x27;],[&#x27;Stacks Project: extensions of discrete valuation rings&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0EXQ&#x27;]]
+    },
+    normalization: {
+      example:&#x27;A nodal curve looks like two branches crossing. Its normalization pulls the branches apart while remembering where they must be glued back together.&#x27;,
+      question:&#x27;Does normalization throw away the original gluing?&#x27;,
+      answer:&#x27;It separates the branches, but the conductor records exactly where the normalized space and the original differ. The proof keeps both pieces through a conductor square.&#x27;,
+      related:[&#x27;conductor&#x27;,&#x27;ferrand&#x27;,&#x27;singularities&#x27;],
+      links:[[&#x27;Stacks Project: normalization of schemes&#x27;,&#x27;https://stacks.math.columbia.edu/tag/035E&#x27;],[&#x27;Stacks Project: normalization in dimension one&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0C44&#x27;]]
+    },
+    inertia: {
+      example:&#x27;A tiny loop around a branch point permutes the sheets above it. The subgroup generated by that local motion is inertia.&#x27;,
+      question:&#x27;Why are the endpoints called wild at 23?&#x27;,
+      answer:&#x27;Their inertia contains order 23, equal to the residue characteristic. That makes the reduction sensitive to arithmetic phenomena absent from tame topology.&#x27;,
+      related:[&#x27;orbits&#x27;,&#x27;stable&#x27;,&#x27;centralizer&#x27;],
+      links:[[&#x27;Wewers: Three point covers with bad reduction&#x27;,&#x27;https://arxiv.org/abs/math/0205026&#x27;],[&#x27;ATLAS: the Mathieu group M₂₃&#x27;,&#x27;https://brauer.maths.qmul.ac.uk/Atlas/spor/M23/&#x27;]]
+    },
+    torsor: {
+      example:&#x27;The set of numberings of 23 unlabeled sheets has no preferred numbering, but any numbering can be changed into any other by one permutation. That is a torsor.&#x27;,
+      question:&#x27;What must remain unchanged when the sheet numbering changes?&#x27;,
+      answer:&#x27;The entire construction must move by simultaneous conjugation and its final scalar must stay fixed. Otherwise the answer would depend on a temporary coordinate choice.&#x27;,
+      related:[&#x27;nielsen&#x27;,&#x27;galois&#x27;,&#x27;components&#x27;],
+      links:[[&#x27;Stacks Project: classifying torsors&#x27;,&#x27;https://stacks.math.columbia.edu/tag/036Z&#x27;]]
+    },
+    centralizer: {
+      example:&#x27;If x pairs sixteen sheets and fixes seven, any c satisfying cx=xc must send fixed sheets to fixed sheets and pairs to pairs.&#x27;,
+      question:&#x27;Why does the relative transporter c_w centralize x?&#x27;,
+      answer:&#x27;Both routes carry x to the same involution w. Composing one route with the inverse of the other therefore carries x back to itself, which is exactly the centralizer condition.&#x27;,
+      related:[&#x27;orbits&#x27;,&#x27;fano&#x27;,&#x27;inertia&#x27;],
+      links:[[&#x27;ATLAS: the Mathieu group M₂₃&#x27;,&#x27;https://brauer.maths.qmul.ac.uk/Atlas/spor/M23/&#x27;]]
+    },
+    fano: {
+      example:&#x27;F₂³ has eight vectors. Removing zero leaves seven projective points—the Fano heptad—while keeping all eight gives the affine cube.&#x27;,
+      question:&#x27;Why are both the seven-set and eight-set needed?&#x27;,
+      answer:&#x27;Some centralizer elements have the required odd fixed count on the Fano side, while others contribute the unique fixed point on the affine side. Neither set alone works uniformly.&#x27;,
+      related:[&#x27;parity&#x27;,&#x27;centralizer&#x27;,&#x27;dualgraph&#x27;],
+      links:[[&#x27;Fano plane: an elementary visual introduction&#x27;,&#x27;https://en.wikipedia.org/wiki/Fano_plane&#x27;],[&#x27;ATLAS: the M₂₃ permutation representation&#x27;,&#x27;https://brauer.maths.qmul.ac.uk/Atlas/spor/M23/&#x27;]]
+    },
+    augmentation: {
+      example:&#x27;For Θ=g₁+g₂+g₃ in F₂[G], augmentation sends Θ to 1+1+1=1. It remembers that three terms is odd, not which gᵢ occurred.&#x27;,
+      question:&#x27;Why is augmentation unchanged by relabeling?&#x27;,
+      answer:&#x27;Relabeling permutes or conjugates the group-basis terms but does not change their coefficients or their sum.&#x27;,
+      related:[&#x27;parity&#x27;,&#x27;orbits&#x27;,&#x27;trace&#x27;],
+      links:[[&#x27;GAP manual: group algebras and augmentation&#x27;,&#x27;https://webusers.imj-prg.fr/~jean.michel/gap3/htm/chap115.htm&#x27;]]
+    },
+    stable: {
+      example:&#x27;A smooth curve may break into several components at a bad prime. Stable reduction replaces the uncontrolled break by a nodal curve with marked components and finite automorphisms.&#x27;,
+      question:&#x27;Why insist on one relative stable map?&#x27;,
+      answer:&#x27;Specialization compares generic and closed data only when they are fibres of one object. Two separately chosen models could agree numerically without any geometric reason.&#x27;,
+      related:[&#x27;trait&#x27;,&#x27;dualgraph&#x27;,&#x27;nearby&#x27;],
+      links:[[&#x27;Wewers: Three point covers with bad reduction&#x27;,&#x27;https://arxiv.org/abs/math/0205026&#x27;],[&#x27;Wewers: Stable reduction of three point covers&#x27;,&#x27;https://arxiv.org/abs/math/0401024&#x27;]]
+    },
+    trait: {
+      example:&#x27;Spec(R) for a discrete valuation ring R has a generic point carrying its fraction field and a closed point carrying its residue field.&#x27;,
+      question:&#x27;What does Henselian add?&#x27;,
+      answer:&#x27;It makes finite decompositions and idempotents lift uniquely from the closed fibre, so a zero–one selector found mod 23 extends to the complete local arithmetic object.&#x27;,
+      related:[&#x27;localmodel&#x27;,&#x27;idempotent&#x27;,&#x27;ramification&#x27;],
+      links:[[&#x27;Stacks Project: Henselian pairs&#x27;,&#x27;https://stacks.math.columbia.edu/tag/09XD&#x27;],[&#x27;Stacks Project: lifting over Henselian pairs&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0D49&#x27;]]
+    },
+    ferrand: {
+      example:&#x27;Think of many labeled wires E entering a terminal. The map p:E→Q bundles together exactly the wires ending at the same branch q; the pushout performs that bundling only on the closed fibre.&#x27;,
+      question:&#x27;Why is the pushout the hinge rather than Lu–Zheng alone?&#x27;,
+      answer:&#x27;Lu–Zheng preserves a correspondence that already exists. The Ferrand pushout constructs the single relative object whose generic rule is “same full label” and whose closed rule is “same branch.”&#x27;,
+      related:[&#x27;conductor&#x27;,&#x27;normalization&#x27;,&#x27;nearby&#x27;],
+      links:[[&#x27;Ferrand: Conducteur, descente et pincement&#x27;,&#x27;https://doi.org/10.24033/bsmf.2455&#x27;]]
+    },
+    conductor: {
+      example:&#x27;If normalization separates several branches above one point, the conductor is the marked site where those branches are allowed to meet again.&#x27;,
+      question:&#x27;Why are there two trace terms?&#x27;,
+      answer:&#x27;The normalization contributes the label-by-label diagonal pairing, while the conductor contributes the correction caused by grouping labels into branch fibres. The distinguished triangle records both.&#x27;,
+      related:[&#x27;normalization&#x27;,&#x27;ferrand&#x27;,&#x27;trace&#x27;],
+      links:[[&#x27;Ferrand: conductor and pinching&#x27;,&#x27;https://doi.org/10.24033/bsmf.2455&#x27;],[&#x27;Stacks Project: normalization in dimension one&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0C44&#x27;]]
+    },
+    nearby: {
+      example:&#x27;Nearby cycles remember what a sheaf on the generic fibre looks like as it approaches the special fibre, including several generic branches converging to one closed point.&#x27;,
+      question:&#x27;What does the Lu–Zheng theorem not do?&#x27;,
+      answer:&#x27;It does not build the Ferrand quotient, prove properness, or calculate either trace. It says that one eligible relative pairing specializes compatibly.&#x27;,
+      related:[&#x27;correspondence&#x27;,&#x27;duality&#x27;,&#x27;trace&#x27;],
+      links:[[&#x27;Lu–Zheng: Categorical traces and a relative Lefschetz–Verdier formula&#x27;,&#x27;https://arxiv.org/abs/2005.08522&#x27;],[&#x27;Published article in Forum of Mathematics, Sigma&#x27;,&#x27;https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/categorical-traces-and-a-relative-lefschetzverdier-formula/C849E9CB0FBD6809F4EB0E2F5B6FF71E&#x27;]]
+    },
+    correspondence: {
+      example:&#x27;The graph of a map f is the set of pairs (x,f(x)). Viewed inside X×X, it is a correspondence from one copy of X to the other.&#x27;,
+      question:&#x27;Why close the deck graphs over the trait?&#x27;,
+      answer:&#x27;Their closures provide one correspondence with both generic and closed fibres. A graph defined only generically would not by itself determine its specialization.&#x27;,
+      related:[&#x27;stable&#x27;,&#x27;nearby&#x27;,&#x27;trace&#x27;],
+      links:[[&#x27;Lu–Zheng: relative cohomological correspondences&#x27;,&#x27;https://arxiv.org/abs/2005.08522&#x27;],[&#x27;SGA 5, Exposé III: Lefschetz–Verdier formula&#x27;,&#x27;https://grothendiecksga.com/read/sga5/en/III.html&#x27;]]
+    },
+    frobenius: {
+      example:&#x27;Over F₂₃, the map t↦t²³ fixes every element of F₂₃ but permutes points defined over extension fields.&#x27;,
+      question:&#x27;Why normalize the zero and pole before reading a singular coordinate?&#x27;,
+      answer:&#x27;A projective coordinate is otherwise movable by a fractional linear transformation. Fixing zero and infinity removes the relevant ambiguity so the singular value is comparable across fibres.&#x27;,
+      related:[&#x27;galois&#x27;,&#x27;singularities&#x27;,&#x27;ramification&#x27;],
+      links:[[&#x27;Stacks Project: Frobenii&#x27;,&#x27;https://stacks.math.columbia.edu/tag/03SW&#x27;]]
+    },
+    trace: {
+      example:&#x27;For a permutation of a finite set, the trace of its permutation matrix counts fixed points. Lefschetz–Verdier is a geometric version of this principle.&#x27;,
+      question:&#x27;Why can equal traces explain the fixed point only here?&#x27;,
+      answer:&#x27;Because both traces come from the same relative correspondence, and each side was independently identified with one of the two intrinsic tests. Equality of unrelated counts would not suffice.&#x27;,
+      related:[&#x27;correspondence&#x27;,&#x27;nearby&#x27;,&#x27;parity&#x27;],
+      links:[[&#x27;Lu–Zheng: relative Lefschetz–Verdier formula&#x27;,&#x27;https://arxiv.org/abs/2005.08522&#x27;],[&#x27;SGA 5, Exposé III: the trace formula&#x27;,&#x27;https://grothendiecksga.com/read/sga5/en/III.html&#x27;]]
+    },
+    components: {
+      example:&#x27;Spec(K₀×L) is literally two disjoint pieces: one point over K₀ and one connected degree-six piece. After algebraic closure the second piece splits into six geometric points.&#x27;,
+      question:&#x27;Can an intrinsic arithmetic function select just one of the six conjugate points?&#x27;,
+      answer:&#x27;Not as an open-and-closed function over K₀ while L remains a field. It must be constant on that connected component.&#x27;,
+      related:[&#x27;idempotent&#x27;,&#x27;etale&#x27;,&#x27;galois&#x27;],
+      links:[[&#x27;Stacks Project: products and open-and-closed spectra&#x27;,&#x27;https://stacks.math.columbia.edu/tag/04PN&#x27;],[&#x27;Stacks Project: connected components of spectra&#x27;,&#x27;https://stacks.math.columbia.edu/tag/00EB&#x27;]]
+    },
+    ramification: {
+      example:&#x27;The pair (2,2) says the local parameter ramifies with index 2 and the residue field has degree 2; together they account for local degree 4 in this defect-free setting.&#x27;,
+      question:&#x27;Which closed point is rational over the base residue field?&#x27;,
+      answer:&#x27;The one with f=1, namely (e,f)=(1,1). The two points with f=2 are quadratic on the closed fibre.&#x27;,
+      related:[&#x27;localmodel&#x27;,&#x27;trait&#x27;,&#x27;frobenius&#x27;],
+      links:[[&#x27;Stacks Project: extensions of discrete valuation rings&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0EXQ&#x27;]]
+    },
+    orbits: {
+      example:&#x27;If a group of order 253 acts and the stabilizer of x is trivial, then the orbit of x has 253 elements and exactly one group element carries x to any chosen orbit point.&#x27;,
+      question:&#x27;Why is the stabilizer trivial in the graph?&#x27;,
+      answer:&#x27;Its order must divide both 253=11·23 and 2688=2⁷·3·7. These integers are coprime, so the only possible stabilizer order is 1.&#x27;,
+      related:[&#x27;centralizer&#x27;,&#x27;inertia&#x27;,&#x27;augmentation&#x27;],
+      links:[[&#x27;ATLAS: structural data for M₂₃&#x27;,&#x27;https://brauer.maths.qmul.ac.uk/Atlas/spor/M23/&#x27;],[&#x27;GAP reference manual&#x27;,&#x27;https://docs.gap-system.org/doc/ref/manual.pdf&#x27;]]
+    },
+    parity: {
+      example:&#x27;On a path with three internal appearances, a term counted twice disappears in F₂, while a lone endpoint term survives.&#x27;,
+      question:&#x27;Does a computational parity check prove the geometric cancellation?&#x27;,
+      answer:&#x27;It verifies the finite instances, but the proof also needs the structural reason—the odd fixed-point lemma, the tree cochain calculation, and the audit that all other local terms are even.&#x27;,
+      related:[&#x27;fano&#x27;,&#x27;augmentation&#x27;,&#x27;dualgraph&#x27;],
+      links:[[&#x27;Stacks Project: Frobenius and trace-formula conventions&#x27;,&#x27;https://stacks.math.columbia.edu/tag/03SW&#x27;],[&#x27;GAP manual: augmentation in group algebras&#x27;,&#x27;https://webusers.imj-prg.fr/~jean.michel/gap3/htm/chap115.htm&#x27;]]
+    },
+    dualgraph: {
+      example:&#x27;Two components meeting at one node give two vertices joined by one edge. Adding components in a chain still gives a tree; gluing the ends would create a loop.&#x27;,
+      question:&#x27;What would go wrong if the dual graph had a loop?&#x27;,
+      answer:&#x27;The branch-difference complex could have nonzero first cohomology, producing an additional term not captured by the two endpoints.&#x27;,
+      related:[&#x27;stable&#x27;,&#x27;parity&#x27;,&#x27;conductor&#x27;],
+      links:[[&#x27;Wewers: stable reduction of three point covers&#x27;,&#x27;https://arxiv.org/abs/math/0401024&#x27;]]
+    },
+    singularities: {
+      example:&#x27;A node has two local branches that normalization separates. More complicated E₈ and A₆ singularities likewise have exact local equations and distinguished normalization data.&#x27;,
+      question:&#x27;Why is the chosen singular point not arbitrary?&#x27;,
+      answer:&#x27;The E₈ fibres have a unique E₈ point, and the third reduction uses the distinguished A₆ point selected by the pointed stable structure. The marked map fixes the normalization coordinate.&#x27;,
+      related:[&#x27;normalization&#x27;,&#x27;frobenius&#x27;,&#x27;localmodel&#x27;],
+      links:[[&#x27;Stacks Project: normalization of one-dimensional schemes&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0C44&#x27;],[&#x27;Stacks Project: normal schemes&#x27;,&#x27;https://stacks.math.columbia.edu/tag/033H&#x27;]]
+    },
+    duality: {
+      example:&#x27;A finite permutation module is like a finite-dimensional matrix space: it has a dual and a trace. Proper support ensures the geometric fixed points being counted cannot disappear at infinity.&#x27;,
+      question:&#x27;Are properness and dualizability conclusions of specialization?&#x27;,
+      answer:&#x27;No. They are admission tickets to the theorem and must be checked before applying it. The graph therefore shows them as dotted gate arrows into Lu–Zheng.&#x27;,
+      related:[&#x27;nearby&#x27;,&#x27;correspondence&#x27;,&#x27;trace&#x27;],
+      links:[[&#x27;Stacks Project: proper morphisms&#x27;,&#x27;https://stacks.math.columbia.edu/tag/01W1&#x27;],[&#x27;Stacks Project: perfect complexes&#x27;,&#x27;https://stacks.math.columbia.edu/tag/0656&#x27;]]
+    }
+  };
+  const edgeDetails = {
+    &#x27;problem&gt;algebra&#x27;:&#x27;Exact reconstruction replaces a bare seven-element count by its coordinate algebra and arithmetic Galois action.&#x27;,
+    &#x27;algebra&gt;idempotents&#x27;:&#x27;The product K₀×L has precisely the two primitive factor indicators because both factors are fields.&#x27;,
+    &#x27;idempotents&gt;goal&#x27;:&#x27;Once the two possible component indicators are known, the explanatory task reduces to proving that the two intrinsic tests are the same one.&#x27;,
+    &#x27;problem&gt;labeling&#x27;:&#x27;The natural degree-23 permutation representation realizes all branch data on one sheet set after a splitting extension.&#x27;,
+    &#x27;algebra&gt;integral&#x27;:&#x27;Taking the integral closure of the local base inside the exact algebra produces the arithmetic model being reduced.&#x27;,
+    &#x27;integral&gt;closedpoints&#x27;:&#x27;Factoring the normalized local algebra gives all three reduced closed factors and their (e,f) data.&#x27;,
+    &#x27;labeling&gt;normalizers&#x27;:&#x27;A shared numbering puts both endpoint groups inside the same S₂₃, so their orbits can be intersected.&#x27;,
+    &#x27;labeling&gt;fanoaffine&#x27;:&#x27;The common sheet set lets the inertia involution define the same seven fixed sheets and eight two-sheet orbits throughout the comparison.&#x27;,
+    &#x27;normalizers&gt;omega&#x27;:&#x27;The intersection keeps exactly the involutions reached from both endpoints.&#x27;,
+    &#x27;omega&gt;relative&#x27;:&#x27;Trivial stabilizers make both transporters unique; their quotient is therefore choice-free once the common labeling is fixed.&#x27;,
+    &#x27;relative&gt;oddlemma&#x27;:&#x27;The relative transporter centralizes x, so it acts on both finite sets to which the parity lemma applies.&#x27;,
+    &#x27;fanoaffine&gt;oddlemma&#x27;:&#x27;The lemma needs the union of the seven fixed sheets and eight two-sheet orbits; neither set alone has uniform odd parity.&#x27;,
+    &#x27;omega&gt;theta&#x27;:&#x27;Augmentation of the transporter sum is the number of common involutions modulo two.&#x27;,
+    &#x27;oddlemma&gt;generictrace&#x27;:&#x27;Each common involution contributes one modulo two to the intersection of the lifted endpoint correspondences.&#x27;,
+    &#x27;theta&gt;generictrace&#x27;:&#x27;Summing those one-bit contributions gives exactly ε(Θ), not a statistic inferred from the seven output values.&#x27;,
+    &#x27;integral&gt;stablemap&#x27;:&#x27;The completed local trait at each closed Hurwitz point is the base over which stable reduction connects generic and closed fibres.&#x27;,
+    &#x27;labeling&gt;stablemap&#x27;:&#x27;The same temporary sheet numbering must extend across the relative model; independent endpoint labels would destroy the comparison.&#x27;,
+    &#x27;stablemap&gt;commonlambda&#x27;:&#x27;Wewers’s patching datum supplies one group identification shared by all tails.&#x27;,
+    &#x27;commonlambda&gt;graphs&#x27;:&#x27;Because the same patching identification transports every tail, the deck graphs close as one compatible family.&#x27;,
+    &#x27;normalizers&gt;graphs&#x27;:&#x27;The two endpoint normalizers index the two sums of deck-graph correspondences being compared.&#x27;,
+    &#x27;stablemap&gt;graphs&#x27;:&#x27;Extending the deck action on the proper stable model gives relative closures of the generic graph correspondences.&#x27;,
+    &#x27;graphs&gt;generictrace&#x27;:&#x27;On the generic fibre, intersecting the two graph sums is the lifted-label equality counted in the transporter calculation.&#x27;,
+    &#x27;graphs&gt;ferrand&#x27;:&#x27;The full generic label set E is the normalization data that the pinching map later groups by closed branches.&#x27;,
+    &#x27;fanoaffine&gt;ferrand&#x27;:&#x27;The branch map p:E→Q is defined from the one-sheet and two-sheet inertia orbits.&#x27;,
+    &#x27;ferrand&gt;triangle&#x27;:&#x27;The explicit fibre-product ring has a normalization and conductor square, yielding the Mayer–Vietoris triangle used for the trace.&#x27;,
+    &#x27;stablemap&gt;tree&#x27;:&#x27;The components and nodes of the stable target form the dual graph on which the local-system cancellation is computed.&#x27;,
+    &#x27;triangle&gt;tree&#x27;:&#x27;The triangle supplies the normalization and conductor terms as a local system on the stable dual graph.&#x27;,
+    &#x27;labeling&gt;descent&#x27;:&#x27;A simultaneous change of sheet numbering conjugates the entire construction rather than changing either endpoint independently.&#x27;,
+    &#x27;commonlambda&gt;descent&#x27;:&#x27;Changing the patching datum transports the shared identification and every tail map together.&#x27;,
+    &#x27;ferrand&gt;descent&#x27;:&#x27;The quotient p:E→Q is defined from sheet orbits, so simultaneous relabeling carries the whole pinching diagram to an isomorphic one.&#x27;,
+    &#x27;graphs&gt;samecorr&#x27;:&#x27;The closed relative graphs ensure the generic and closed operators are fibres of one correspondence.&#x27;,
+    &#x27;triangle&gt;samecorr&#x27;:&#x27;The normalization–conductor complex changes the pairing rule inside that one correspondence rather than comparing two counts afterward.&#x27;,
+    &#x27;samecorr&gt;luzheng&#x27;:&#x27;Lu–Zheng applies only after the two traces have been realized as generic and specialized pairings of the same cohomological data.&#x27;,
+    &#x27;finiteTor&gt;luzheng&#x27;:&#x27;Finite Tor-dimension gives the dualizability required to form and specialize the categorical pairing.&#x27;,
+    &#x27;proper&gt;luzheng&#x27;:&#x27;Proper fixed support makes pushforward to a scalar trace legitimate and prevents missing contributions at infinity.&#x27;,
+    &#x27;coefficients&gt;luzheng&#x27;:&#x27;The torsion coefficient 2 is invertible on the residue-characteristic-23 base, as required by the nearby-cycle formalism used here.&#x27;,
+    &#x27;stablemap&gt;finiteTor&#x27;:&#x27;The label sets are finite, so their permutation sheaves are finite free F₂-modules and hence have finite Tor-dimension.&#x27;,
+    &#x27;stablemap&gt;proper&#x27;:&#x27;The auxiliary pushout is finite over the proper pointed stable curve, making the relevant fixed support proper over the trait.&#x27;,
+    &#x27;closedpoints&gt;frobenius&#x27;:&#x27;Each exact closed factor supplies a reduced degree-23 map that can be normalized in its own residue field.&#x27;,
+    &#x27;frobenius&gt;singcoord&#x27;:&#x27;Marking zero and infinity removes the projective coordinate ambiguity before evaluating the singular point.&#x27;,
+    &#x27;singcoord&gt;esing&#x27;:&#x27;The three exact singular values determine the zero–one interpolation function on the reduced closed algebra.&#x27;,
+    &#x27;stablemap&gt;gluing&#x27;:&#x27;The pointed stable model retains the transition automorphism at the wild node, data absent from an unpointed reduction.&#x27;,
+    &#x27;commonlambda&gt;gluing&#x27;:&#x27;Using one patching identification makes the normalizer-coset comparison simultaneous across the tails.&#x27;,
+    &#x27;gluing&gt;character&#x27;:&#x27;Passing to N(D)/D removes coordinate choices and leaves the intrinsic square/nonsquare bit.&#x27;,
+    &#x27;tree&gt;normterm&#x27;:&#x27;Tree cancellation transports the label-retaining normalization contribution to the surviving wild endpoint.&#x27;,
+    &#x27;character&gt;normterm&#x27;:&#x27;The gluing coset decides whether the two endpoint involution classes agree or are disjoint.&#x27;,
+    &#x27;triangle&gt;conductorterm&#x27;:&#x27;The fibre-sum pairing in the conductor term produces the 77² and 8² branch multiplicities.&#x27;,
+    &#x27;fanoaffine&gt;conductorterm&#x27;:&#x27;The Fano incidence correspondence cancels the heptad against the seven nonorigin affine directions, leaving one bit.&#x27;,
+    &#x27;stablemap&gt;noextra&#x27;:&#x27;The exact local stable models expose every attachment and conductor, allowing the parity audit of all remaining different exponents.&#x27;,
+    &#x27;normterm&gt;closedtrace&#x27;:&#x27;This is the first of the two endpoint terms left by the normalization–conductor trace lemma.&#x27;,
+    &#x27;conductorterm&gt;closedtrace&#x27;:&#x27;This is the second surviving endpoint term and contributes the constant 1 modulo two.&#x27;,
+    &#x27;noextra&gt;closedtrace&#x27;:&#x27;The audit proves there is no third odd term capable of flipping the displayed sum.&#x27;,
+    &#x27;generictrace&gt;traceequal&#x27;:&#x27;The independently computed generic pairing is the quantity denoted Trη in the specialization formula.&#x27;,
+    &#x27;closedtrace&gt;traceequal&#x27;:&#x27;The normalization–conductor calculation is the specialized pairing denoted Trs in the same formula.&#x27;,
+    &#x27;luzheng&gt;traceequal&#x27;:&#x27;Specialization and proper-pushforward compatibility identify the generic pairing with the computed closed pairing.&#x27;,
+    &#x27;character&gt;localequal&#x27;:&#x27;The gluing character is evaluated on every one of the three reduced closed factors.&#x27;,
+    &#x27;esing&gt;localequal&#x27;:&#x27;The singular-coordinate idempotent is evaluated on the same three factors, in the same order.&#x27;,
+    &#x27;traceequal&gt;conclusion&#x27;:&#x27;Substituting Trη=ε(Θ) and Trs=χgl turns trace equality into ε(Θ)=χgl.&#x27;,
+    &#x27;localequal&gt;conclusion&#x27;:&#x27;Agreement on all reduced factors and unique idempotent lifting turn χgl=e_sing into an equality in the complete local algebra.&#x27;,
+    &#x27;descent&gt;conclusion&#x27;:&#x27;Invariance under both choice torsors brings the equality back from the splitting extension to the original Hurwitz trait.&#x27;,
+    &#x27;independence&gt;conclusion&#x27;:&#x27;The comparison never identifies local factors with complex Nielsen labels, so the equality is explanatory rather than a lookup.&#x27;,
+    &#x27;idempotents&gt;conclusion&#x27;:&#x27;The common value pattern is the degree-six component idempotent e₆; its complement is the rational fixed point.&#x27;,
+    &#x27;conclusion&gt;goal&#x27;:&#x27;All inputs now prove the equality that appeared initially only as the target statement.&#x27;
   };
   const aliasToCourse = new Map();
   Object.entries(courseTopics).forEach(([key,course])=&gt;course.aliases.forEach(alias=&gt;aliasToCourse.set(alias.toLowerCase(),key)));
   const coursePattern = new RegExp(`(${Array.from(aliasToCourse.keys()).sort((a,b)=&gt;b.length-a.length).map(x=&gt;x.replace(/[.*+?^${}()|[\]\\]/g,&#x27;\\$&amp;&#x27;)).join(&#x27;|&#x27;)})`,&#x27;gi&#x27;);
+  const courseWordCharacter = /[\p{L}\p{N}_]/u;
   const coreOrder = [&#x27;problem&#x27;,&#x27;algebra&#x27;,&#x27;idempotents&#x27;,&#x27;labeling&#x27;,&#x27;normalizers&#x27;,&#x27;omega&#x27;,&#x27;relative&#x27;,&#x27;fanoaffine&#x27;,&#x27;oddlemma&#x27;,&#x27;theta&#x27;,&#x27;generictrace&#x27;,&#x27;integral&#x27;,&#x27;stablemap&#x27;,&#x27;graphs&#x27;,&#x27;ferrand&#x27;,&#x27;triangle&#x27;,&#x27;tree&#x27;,&#x27;samecorr&#x27;,&#x27;luzheng&#x27;,&#x27;closedpoints&#x27;,&#x27;frobenius&#x27;,&#x27;singcoord&#x27;,&#x27;esing&#x27;,&#x27;gluing&#x27;,&#x27;character&#x27;,&#x27;normterm&#x27;,&#x27;conductorterm&#x27;,&#x27;noextra&#x27;,&#x27;closedtrace&#x27;,&#x27;traceequal&#x27;,&#x27;localequal&#x27;,&#x27;descent&#x27;,&#x27;conclusion&#x27;,&#x27;goal&#x27;];
   let view = &#x27;core&#x27;;
   let reading = &#x27;plain&#x27;;
-  let selected = &#x27;goal&#x27;;
-  let activeCourse = &#x27;idempotent&#x27;;
+  let selected = &#x27;problem&#x27;;
+  let activeCourse = &#x27;hurwitz&#x27;;
   let activeEdgeId = null;
   let visibleNodes = [];
   let mathVersion = 0;
@@ -1689,9 +2047,10 @@ window.MathJax = {
 
   function edgeTooltipText(edge) {
     const source=nodeById.get(edge.source), target=nodeById.get(edge.target), kind=edgeKinds[edge.kind];
+    const detail=edgeDetails[`${edge.source}&gt;${edge.target}`] || source.why;
     return {
       title:`${source.title} → ${target.title}`,
-      body:`${kind.name}. Relation: “${edge.label}.” ${kind.meaning}`
+      body:`${kind.name}. Relation: “${edge.label}.” Why this edge: ${detail} Edge semantics: ${kind.meaning}`
     };
   }
 
@@ -1728,6 +2087,7 @@ window.MathJax = {
     coursePattern.lastIndex=0;
     let match;
     while((match=coursePattern.exec(text))){
+      if(!validCourseBoundary(text,match)) continue;
       const key=aliasToCourse.get(match[0].toLowerCase());
       if(key &amp;&amp; !found.includes(key)) found.push(key);
     }
@@ -1739,6 +2099,7 @@ window.MathJax = {
     coursePattern.lastIndex=0;
     let cursor=0,match;
     while((match=coursePattern.exec(text))){
+      if(!validCourseBoundary(text,match)) continue;
       if(match.index&gt;cursor) element.append(document.createTextNode(text.slice(cursor,match.index)));
       const key=aliasToCourse.get(match[0].toLowerCase());
       const link=document.createElement(&#x27;a&#x27;);
@@ -1754,14 +2115,55 @@ window.MathJax = {
     if(cursor&lt;text.length) element.append(document.createTextNode(text.slice(cursor)));
   }
 
+  function validCourseBoundary(text,match) {
+    const value=match[0], start=match.index, end=start+value.length;
+    const startsWithWord=courseWordCharacter.test(value[0]);
+    const endsWithWord=courseWordCharacter.test(value[value.length-1]);
+    if(startsWithWord &amp;&amp; start&gt;0 &amp;&amp; courseWordCharacter.test(text[start-1])) return false;
+    if(endsWithWord &amp;&amp; end&lt;text.length &amp;&amp; courseWordCharacter.test(text[end])) return false;
+    return true;
+  }
+
   function renderCourse(key) {
     const course=courseTopics[key] || courseTopics.hurwitz;
     activeCourse=courseTopics[key]?key:&#x27;hurwitz&#x27;;
+    const enrichment=courseEnrichment[activeCourse] || {};
     root.querySelector(&#x27;#m23-course-title&#x27;).textContent=course.title;
     root.querySelector(&#x27;#m23-course-idea&#x27;).textContent=course.idea;
+    root.querySelector(&#x27;#m23-course-example&#x27;).textContent=enrichment.example || course.points[0];
     const points=root.querySelector(&#x27;#m23-course-points&#x27;);
     points.replaceChildren(...course.points.map(point=&gt;{const li=document.createElement(&#x27;li&#x27;);li.textContent=point;return li;}));
     root.querySelector(&#x27;#m23-course-context&#x27;).textContent=course.context;
+    const check=root.querySelector(&#x27;#m23-course-check&#x27;);
+    check.open=false;
+    root.querySelector(&#x27;#m23-course-question&#x27;).textContent=enrichment.question || &#x27;What role does this concept play in the hinge?&#x27;;
+    root.querySelector(&#x27;#m23-course-answer&#x27;).textContent=enrichment.answer || course.context;
+    const related=(enrichment.related || []).filter(relatedKey=&gt;courseTopics[relatedKey] &amp;&amp; relatedKey!==activeCourse);
+    const relatedNav=root.querySelector(&#x27;#m23-course-related&#x27;);
+    relatedNav.replaceChildren(...related.map(relatedKey=&gt;{
+      const link=document.createElement(&#x27;a&#x27;);
+      link.href=&#x27;#m23-course&#x27;;
+      link.className=&#x27;m23-related-link&#x27;;
+      link.dataset.course=relatedKey;
+      link.textContent=courseTopics[relatedKey].title.replace(/ 101$/,&#x27;&#x27;);
+      link.setAttribute(&#x27;aria-label&#x27;,`Open ${courseTopics[relatedKey].title}`);
+      return link;
+    }));
+    root.querySelector(&#x27;#m23-course-related-block&#x27;).hidden=related.length===0;
+    const links=enrichment.links || [];
+    const linksList=root.querySelector(&#x27;#m23-course-links&#x27;);
+    linksList.replaceChildren(...links.map(([label,href])=&gt;{
+      const item=document.createElement(&#x27;li&#x27;);
+      const link=document.createElement(&#x27;a&#x27;);
+      link.href=href;
+      link.target=&#x27;_blank&#x27;;
+      link.rel=&#x27;noopener noreferrer&#x27;;
+      link.textContent=`${label} ↗`;
+      link.setAttribute(&#x27;aria-label&#x27;,`${label} (opens in a new tab)`);
+      item.append(link);
+      return item;
+    }));
+    root.querySelector(&#x27;#m23-course-links-block&#x27;).hidden=links.length===0;
     root.querySelectorAll(&#x27;.m23-course-link&#x27;).forEach(link=&gt;{
       if(link.dataset.course===activeCourse) link.setAttribute(&#x27;aria-current&#x27;,&#x27;true&#x27;);
       else link.removeAttribute(&#x27;aria-current&#x27;);
@@ -1825,6 +2227,8 @@ window.MathJax = {
     const edgeLinks=edgeG.selectAll(&#x27;a&#x27;).data(shownEdges).join(&#x27;a&#x27;)
       .attr(&#x27;href&#x27;,&#x27;#&#x27;)
       .attr(&#x27;class&#x27;,&#x27;m23-edge-link&#x27;)
+      .attr(&#x27;role&#x27;,&#x27;button&#x27;)
+      .attr(&#x27;tabindex&#x27;,0)
       .attr(&#x27;aria-describedby&#x27;,&#x27;m23-edge-tooltip&#x27;)
       .attr(&#x27;aria-label&#x27;,e=&gt;{const copy=edgeTooltipText(e);return `${copy.title}. ${copy.body}`;})
       .attr(&#x27;aria-current&#x27;,e=&gt;e.id===activeEdgeId?&#x27;true&#x27;:null)
@@ -1833,11 +2237,22 @@ window.MathJax = {
       .on(&#x27;pointerleave&#x27;,()=&gt;hideEdgeTooltip())
       .on(&#x27;focus&#x27;,(event,e)=&gt;showEdgeTooltip(e))
       .on(&#x27;blur&#x27;,()=&gt;hideEdgeTooltip())
-      .on(&#x27;click&#x27;,(event,e)=&gt;{event.preventDefault();activeEdgeId=activeEdgeId===e.id?null:e.id;draw();});
+      .on(&#x27;click&#x27;,(event,e)=&gt;{event.preventDefault();activeEdgeId=activeEdgeId===e.id?null:e.id;draw();})
+      .on(&#x27;keydown&#x27;,(event,e)=&gt;{
+        if(event.key!==&#x27;Enter&#x27; &amp;&amp; event.key!==&#x27; &#x27;) return;
+        event.preventDefault();
+        activeEdgeId=activeEdgeId===e.id?null:e.id;
+        draw();
+      });
     edgeLinks.append(&#x27;path&#x27;)
       .attr(&#x27;class&#x27;,e=&gt;`m23-edge ${e.kind} ${e.id===activeEdgeId?&#x27;is-edge-selected&#x27;:related.has(e.source)&amp;&amp;related.has(e.target)?&#x27;is-active&#x27;:&#x27;is-dim&#x27;}`)
       .attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
     edgeLinks.append(&#x27;path&#x27;).attr(&#x27;class&#x27;,&#x27;m23-edge-hit&#x27;).attr(&#x27;d&#x27;,e=&gt;curve(nodeById.get(e.source),nodeById.get(e.target),narrow,nodeW,nodeH));
+    edgeLinks.append(&#x27;circle&#x27;)
+      .attr(&#x27;class&#x27;,&#x27;m23-edge-handle&#x27;)
+      .attr(&#x27;cx&#x27;,e=&gt;(nodeById.get(e.source).x+nodeById.get(e.target).x)/2)
+      .attr(&#x27;cy&#x27;,e=&gt;(nodeById.get(e.source).y+nodeById.get(e.target).y)/2)
+      .attr(&#x27;r&#x27;,7);
 
     const nodeG=svg.append(&#x27;g&#x27;).selectAll(&#x27;a&#x27;).data(visibleNodes).join(&#x27;a&#x27;).attr(&#x27;href&#x27;,&#x27;#&#x27;).attr(&#x27;aria-label&#x27;,d=&gt;`${d.title}. ${d.plain}`).attr(&#x27;aria-current&#x27;,d=&gt;d.id===selected?&#x27;true&#x27;:null).on(&#x27;click&#x27;,(event,d)=&gt;{event.preventDefault();selectNode(d.id);});
     nodeG.attr(&#x27;class&#x27;,d=&gt;`m23-node ${d.gate?&#x27;is-gate&#x27;:&#x27;&#x27;} ${d.id===selected?&#x27;is-selected&#x27;:&#x27;&#x27;} ${related.has(d.id)?&#x27;is-related&#x27;:&#x27;is-dim&#x27;}`).attr(&#x27;data-group&#x27;,d=&gt;d.group).attr(&#x27;transform&#x27;,d=&gt;`translate(${d.x-nodeW/2},${d.y-nodeH/2})`);
