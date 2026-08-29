@@ -155,7 +155,7 @@
     </nav>
   </div>
 </section>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="M23 Hinge Causal Graph" srcdoc="&lt;!doctype html&gt;
+<iframe sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer" title="M23 Hinge Causal Graph" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -1541,9 +1541,28 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
   #m23-hinge-map #m23-course-points { margin: 0.3rem 0 0; padding-left: 1.15rem; }
   #m23-hinge-map #m23-course-points li + li { margin-top: 0.35rem; }
-  #m23-hinge-map #m23-course-check summary { cursor: pointer; }
-  #m23-hinge-map #m23-course-check summary span { display: block; }
-  #m23-hinge-map #m23-course-question { margin-top: 0.2rem; font-weight: 500; }
+  #m23-hinge-map #m23-course-check summary {
+    display: grid;
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.18rem 0.35rem;
+    align-items: start;
+    cursor: pointer;
+    list-style: none;
+  }
+  #m23-hinge-map #m23-course-check summary::-webkit-details-marker { display: none; }
+  #m23-hinge-map #m23-course-check summary::before {
+    content: &#x27;›&#x27;;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    color: var(--muted-foreground);
+    font-size: 1.15rem;
+    line-height: 1;
+    transform-origin: center;
+    transition: transform 120ms ease;
+  }
+  #m23-hinge-map #m23-course-check[open] summary::before { transform: rotate(90deg); }
+  #m23-hinge-map #m23-course-check summary span { display: block; grid-column: 2; }
+  #m23-hinge-map #m23-course-question { font-weight: 500; }
   #m23-hinge-map #m23-course-answer { margin-top: 0.45rem; padding-left: 0.7rem; border-left: 2px solid var(--border); }
   #m23-hinge-map #m23-course-related { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
   #m23-hinge-map .m23-related-link {
