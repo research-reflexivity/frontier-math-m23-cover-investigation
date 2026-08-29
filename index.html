@@ -1162,7 +1162,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;span&gt;&lt;strong&gt;gate&lt;/strong&gt; marks a place where a tempting shortcut would fail&lt;/span&gt;
       &lt;/div&gt;
 
-      &lt;div id=&quot;m23-graph-wrap&quot;&gt;
+      &lt;div id=&quot;m23-graph-wrap&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Scrollable causal graph; scroll to explore all proof nodes&quot;&gt;
         &lt;svg id=&quot;m23-graph&quot; role=&quot;img&quot; aria-label=&quot;Causal graph for the M23 fixed-point comparison&quot; aria-describedby=&quot;m23-graph-desc&quot;&gt;
           &lt;desc id=&quot;m23-graph-desc&quot;&gt;A directed graph from the seven-cover Hurwitz problem through the generic trace, Ferrand pushout, nearby-cycle specialization, and closed-fibre trace to epsilon of Theta equals e singular.&lt;/desc&gt;
         &lt;/svg&gt;
@@ -1240,6 +1240,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     padding: 0 clamp(0.75rem, 2vw, 1.5rem);
     box-sizing: border-box;
     position: relative;
+    --m23-pane-height: clamp(500px, calc(100vh - 180px), 820px);
   }
   #m23-hinge-map h2 { margin-bottom: 0.75rem; }
   #m23-hinge-map .m23-graph-note { max-width: 74rem; margin: -0.25rem 0 0.8rem; }
@@ -1265,6 +1266,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     gap: 0.45rem 1rem;
     color: var(--muted-foreground);
     margin-bottom: 0.55rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--background);
   }
   #m23-hinge-map .m23-legend-filter {
     display: inline-flex;
@@ -1316,10 +1321,25 @@ html&gt;body{padding:0}&lt;/style&gt;
   #m23-hinge-map .m23-emphasis { border-top-width: 4px; }
   #m23-hinge-map #m23-graph-wrap {
     width: 100%;
+    height: var(--m23-pane-height);
     margin: 0 auto;
     padding: 0 0.5rem;
     box-sizing: border-box;
-    min-height: 520px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-y;
+  }
+  #m23-hinge-map #m23-graph-wrap::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  #m23-hinge-map #m23-graph-wrap:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
   }
   #m23-hinge-map #m23-graph {
     display: block;
@@ -1484,7 +1504,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0.75rem;
-    height: 820px;
+    height: var(--m23-pane-height);
     min-width: 0;
   }
   #m23-hinge-map .m23-sidebar-panel {
@@ -1553,7 +1573,6 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
   @media (max-width: 860px) {
     #m23-hinge-map .m23-legend { gap: 0.35rem 0.7rem; }
-    #m23-hinge-map #m23-graph-wrap { min-height: 760px; }
   }
   @media (max-width: 700px) {
     #m23-hinge-map .m23-workspace { grid-template-columns: minmax(0, 1fr); }
@@ -2384,7 +2403,7 @@ window.MathJax = {
     }
     svg.attr(&#x27;viewBox&#x27;,`0 0 ${width} ${height}`).attr(&#x27;height&#x27;,height);
     const sidebar=root.querySelector(&#x27;.m23-sidebar&#x27;);
-    sidebar.style.height=window.matchMedia(&#x27;(max-width: 700px)&#x27;).matches?&#x27;&#x27;:`${Math.max(760,Math.min(900,height))}px`;
+    sidebar.style.height=window.matchMedia(&#x27;(max-width: 700px)&#x27;).matches?&#x27;&#x27;:&#x27;var(--m23-pane-height)&#x27;;
     svg.selectAll(&#x27;*:not(title):not(desc)&#x27;).remove();
     const defs=svg.append(&#x27;defs&#x27;);
     defs.append(&#x27;marker&#x27;).attr(&#x27;id&#x27;,&#x27;m23-arrow&#x27;).attr(&#x27;viewBox&#x27;,&#x27;0 -5 10 10&#x27;).attr(&#x27;refX&#x27;,8).attr(&#x27;refY&#x27;,0).attr(&#x27;markerWidth&#x27;,5).attr(&#x27;markerHeight&#x27;,5).attr(&#x27;orient&#x27;,&#x27;auto&#x27;).append(&#x27;path&#x27;).attr(&#x27;d&#x27;,&#x27;M0,-5L10,0L0,5&#x27;).attr(&#x27;fill&#x27;,&#x27;context-stroke&#x27;);
@@ -2487,7 +2506,12 @@ window.MathJax = {
     root.querySelector(&#x27;#m23-last&#x27;).disabled=idx&lt;0||idx&gt;=list.length-1;
   }
 
-  function selectNode(id){selected=id;draw();}
+  function revealNode(id,behavior=&#x27;smooth&#x27;){
+    const d=nodeById.get(id); if(!d)return;
+    const top=Math.max(0,Math.min(wrap.scrollHeight-wrap.clientHeight,d.y-wrap.clientHeight/2));
+    wrap.scrollTo({top,behavior});
+  }
+  function selectNode(id){selected=id;draw();revealNode(id);}
   root.querySelectorAll(&#x27;[data-edge-kind]&#x27;).forEach(btn=&gt;btn.addEventListener(&#x27;click&#x27;,()=&gt;{
     activeEdgeKind=activeEdgeKind===btn.dataset.edgeKind?null:btn.dataset.edgeKind;
     activeEdgeId=null;
@@ -2498,6 +2522,7 @@ window.MathJax = {
     view=btn.dataset.view;
     root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{const on=b===btn;b.setAttribute(&#x27;aria-pressed&#x27;,String(on));b.classList.toggle(&#x27;btn-primary&#x27;,on);});
     draw();
+    revealNode(selected,&#x27;auto&#x27;);
   }));
   const readingControl=root.querySelector(&#x27;#m23-reading-level&#x27;);
   const updateReading=()=&gt;{if(reading===readingControl.value)return;reading=readingControl.value;draw();};
