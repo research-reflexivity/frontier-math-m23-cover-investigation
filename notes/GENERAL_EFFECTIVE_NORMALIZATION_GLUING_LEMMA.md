@@ -1,5 +1,13 @@
 # The effective normalization--gluing lemma
 
+> **Status correction, 2026-09-05.** This is an archived proposed argument,
+> not a proved normalization--gluing theorem. The telescope of divided
+> integer differences is valid, but it does not construct a relative
+> quadratic determinant or its asserted generic and special filtrations.
+> The half-rank grading also needs coherence data not supplied here.
+> The manuscript no longer invokes this lemma. See
+> CORRECTNESS_REPAIRS_2026_09_05.md for the proved replacement and limits.
+
 ## Purpose
 
 This note isolates the algebraic statement used by the logarithmic

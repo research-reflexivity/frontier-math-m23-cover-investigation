@@ -1,5 +1,13 @@
 # The effective logarithmic quadratic-orientation line
 
+> **Status correction, 2026-09-05.** The construction claimed below remains
+> unproved. The finite weight identities do not supply a relative
+> geometric object, a symmetric monoidal half-graded determinant, or an
+> identification of its special parity with the singular-position
+> idempotent. In particular, the two alleged filtrations are not established.
+> Retained as research history, not as a proof or a certificate.
+> See CORRECTNESS_REPAIRS_2026_09_05.md.
+
 ## Status
 
 This note constructs the missing orientation object in the category in which

@@ -58,9 +58,9 @@
 \newcommand{\GQ}{\mathfrak G_{\QQ}}
 \newcommand{\Cx}{C_{M_{23}}(x)}
 
-\title[The Galois-fixed point on an $M_{23}$ Hurwitz scheme]
-  {The Galois-fixed point on an $M_{23}$ Hurwitz scheme:\\
-   exact reconstruction and characteristic-$23$ geometry}
+\title[An $M_{23}$ Hurwitz scheme]
+  {An $M_{23}$ Hurwitz scheme:\\
+   exact arithmetic and reduction at $23$}
 \author{François Le Lay}
 \address{Applied Science Team, Reflexivity, 589 5th Avenue, Suite 606A,
 New York, NY 10017}
@@ -72,12 +72,13 @@ License (\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}).}
 \date{}
 
 \hypersetup{
-  pdftitle={The Galois-fixed point on an M23 Hurwitz scheme: exact reconstruction and characteristic-23 geometry},
+  pdftitle={An M23 Hurwitz scheme: exact arithmetic and reduction at 23},
   pdfauthor={François Le Lay},
-  pdfsubject={Exact arithmetic reconstruction and characteristic-23 geometry of the Galois-fixed point on an M23 Hurwitz scheme}
+  pdfsubject={Exact reconstruction, component idempotents, and reduction at 23 of a finite M23 Hurwitz scheme}
 }
 
-\subjclass[2020]{Primary 12F12; Secondary 11G32, 14H30, 20B25, 11R32}
+\subjclass[2020]{Primary 14H30; Secondary 12F12, 11G32, 11R32,
+14D22, 14F20, 20B25}
 \keywords{Mathieu group $M_{23}$, finite Hurwitz scheme, Galois-fixed
 point, characteristic-$23$ reduction, Fano plane, inverse Galois
 problem}
@@ -85,72 +86,28 @@ problem}
 \begin{document}
 
 \begin{abstract}
-Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a regular degree-$23$
-$M_{23}$-cover from a seven-element inner Nielsen class and identify one
-class fixed by the relevant arithmetic Galois action, which yields their
-cover over $\QQ$.  We determine exactly the corresponding finite \'etale
-Hurwitz scheme of degree $7$ and use its characteristic-$23$ geometry to
-distinguish that class from the other six.
-
-\smallskip
-Over $K_0=\QQ(\sqrt{-23})$, the coordinate algebra of the finite inner
-Hurwitz scheme is
-\[
- A_{\mathrm H}=K_0\times L,\qquad [L:K_0]=6.
-\]
-The relative Galois closure of $L/K_0$ has group $S_6$.  Exact canonical
-models and degree-$23$ maps over $A_{\mathrm H}$, together with certified
-branch cycles, recover every Nielsen class and identify the degree-one
-factor with the distinguished cover.
-
-\smallskip
-At the prime above $23$, the normalization of the integral Hurwitz scheme
-has three closed points.  On each pointed closed fibre, the normalization
-parameter of a distinguished singular point has minimal polynomial
-\[
- (u-16)(u^2+1)(u^2+u+1)=0
-\]
-and constructs an idempotent $e_{\mathrm{sing}}$ separating the degree-one
-and degree-six components.  Independently, a finite-group construction with
-transporter elements in $M_{23}$ produces an augmentation
-$\epsilon(\Theta)$ with the same two values on the seven exact covers.
-The certified identification of those covers with the seven Nielsen classes
-therefore proves
-\[
- \epsilon(\Theta)=e_{\mathrm{sing}}.
-\]
-We also construct a cohomological correspondence on the generic fibre whose
-mod-$2$ intersection number is $\epsilon(\Theta)$.  A direct calculation of
-nearby cycles shows that specialization preserves the basis indexed by the
-individual sheets.  A separate mod-$4$ calculation shows that the ordinary
-coefficient Bockstein vanishes after the chosen integral representatives are
-forgotten.  We therefore equip the normalization complex with two integral
-multiplicity vectors on its graph components and form its determinant line,
-together with the induced symmetric form and $\ZZ/2$-grading.  Its generic
-degree is $1+\epsilon(\Theta)$; on the special fibre the degree is the sum of
-a contribution $1$ from the node over the finite branch point and the
-contribution $e_{\mathrm{sing}}$ from the transition between the two marked
-wild branches.  This gives a second proof of the displayed equality,
-independent of the certified identification of the seven characteristic-zero
-branch cycles.  In particular, it does not replace the basiswise nearby-cycle
-pairing by its image under augmentation.
-
-\smallskip
-Two further calculations describe the distinguished cover itself.  We
-explicitly realize the degree-$4$ projection whose existence and minimality
-were proved by Huang et al., obtaining a primitive bidegree-$(23,4)$
-equation.  In its branch fibre above $T=0$, the seven unramified points form
-a Fano plane, the eight colliding pairs form an affine $\FF_2^3$-torsor,
-and their arithmetic gives a $2^4{:}\PSL_3(2)$ field tower.  These structures
-enter the relative determinant calculation, but the branch fibre alone
-does not distinguish the fixed Hurwitz point.
-
-\smallskip
-As a separate application, every integer specialization
-$t\equiv2\pmod{319}$ of the minimal equation has Galois group $M_{23}$, and
-controlled ramification selects an infinite mutually independent subfamily.
-Exact SageMath, Singular, Magma, GAP, Arb, and PARI/GP certificates accompany
-the computations.
+Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed a degree-$23$
+cover with regular Galois closure of group $M_{23}$ and identified a
+Galois-fixed class in its seven-element inner Nielsen class.  We reconstruct
+the associated finite \'etale Hurwitz scheme exactly.  Over
+$K_0=\QQ(\sqrt{-23})$, its coordinate algebra is $K_0\times L$, where
+$[L:K_0]=6$, and the relative Galois closure of $L/K_0$ has group $S_6$.
+Exact canonical models, degree-$23$ maps, and certified branch cycles
+realize all seven classes.  A finite-group invariant and an idempotent
+obtained from pointed reduction at $23$ both select the degree-six
+component; their equality follows from the certified branch-cycle
+matching.  We give a coordinate-independent local interpretation of this
+idempotent: it is the complement of the Frobenius-fixed locus on the
+reduced closed fibre, and it lifts to the splitting locus of an
+unramified quadratic cover of the normalized integral model.
+An independent comparison by relative cohomological correspondences
+remains open.  For the distinguished cover, we construct a minimal
+degree-$4$ projection and a primitive bidegree-$(23,4)$ equation.  The
+Fano plane and affine $\FF_2^3$-torsor in its branch fibre give a
+$2^4{:}\PSL_3(2)$ field tower.  Finally, every integer specialization
+$t\equiv2\pmod{319}$ has Galois group $M_{23}$; controlled ramification
+gives an infinite family for which every finite subfamily is linearly
+disjoint.  Exact data and verification scripts accompany the results.
 \end{abstract}
 
 \maketitle
@@ -161,24 +118,27 @@ the computations.
 
 \section{Introduction}
 
-The construction of Huang et al.\ begins with an inner Nielsen class of
-seven elements in $M_{23}$, with branch-cycle classes $(2A,23A,23B)$.  One
-class is fixed by the arithmetic Galois action considered there and produces
-their regular cover over $\QQ$; here regular means that $\QQ$ is algebraically
-closed in the Galois closure over $\QQ(T)$.  The existence and rationality of
-this class are known.  The question addressed here is why the corresponding point is
-also distinguished by the intrinsic characteristic-$23$ geometry of the
-moduli problem.
+Seven covers with the same branch-cycle classes need not have the same
+arithmetic.  In the construction of Huang et al.\ \cite{HJLPPZ}, the inner
+Nielsen class for $(2A,23A,23B)$ in $M_{23}$ has seven elements.  One class
+is fixed by the arithmetic Galois action considered there and gives their
+cover over $\QQ$.  Its Galois closure over $\QQ(T)$ is regular: $\QQ$ is
+algebraically closed in that function field.  The existence and descent of
+this cover are therefore our starting point, not conclusions of the
+present paper.
 
-Our first main result determines the finite \'etale scheme and its coordinate
-algebra exactly.  Put $K_0=\QQ(\sqrt{-23})$.
+We study the arithmetic of the entire seven-point Hurwitz scheme and its
+reduction at $23$.  The exact reconstruction separates a degree-one
+component from a degree-six component.  A finite-group calculation and a
+pointed reduction calculation then define the same component idempotent.
+We prove this agreement by certified branch-cycle matching and give the
+local idempotent an interpretation in terms of Frobenius and an
+unramified quadratic extension.
 
-To fix the field of definition in the terminology, ``Galois-fixed'' in the
-title refers to the class fixed by the arithmetic action in \cite{HJLPPZ}.
-After the ordered classes $23A,23B$ are defined over $K_0$, the theorem below
-identifies the corresponding moduli point as the unique $K_0$-rational point
-of the inner Hurwitz scheme.  Its descent to a cover over $\QQ$ is the result
-of \cite{HJLPPZ} recalled above.
+Put $K_0=\QQ(\sqrt{-23})$, over which the ordered classes $23A,23B$ are
+defined.  The fixed class of \cite{HJLPPZ} becomes the unique
+$K_0$-rational point of the inner Hurwitz scheme below.  Its further
+descent to a cover over $\QQ$ remains the result of \cite{HJLPPZ}.
 
 \begin{theorem}[Exact arithmetic of the finite inner Hurwitz scheme]
 \label{thm:hurwitz-summary}
@@ -197,14 +157,14 @@ exhaust the seven Nielsen classes, and each map has monodromy $M_{23}$.
 Thus the distinguished geometric point is the unique $K_0$-rational point
 of $\mathcal H_{\mathrm{in}}$; equivalently, it is the degree-one
 open-and-closed subscheme in the canonical $1+6$ decomposition.  There are
-then two independent ways to detect its complement.  The finite-group side
-gives the augmentation $\epsilon(\Theta)$ of an explicitly defined
-group-algebra element.
-The geometric side evaluates a normalization parameter at a distinguished
+then two separately defined ways to detect its complement.  The first
+uses the augmentation $\epsilon(\Theta)$ of a finite group-algebra element.
+The second evaluates a normalization parameter at a distinguished
 singular point of each pointed characteristic-$23$ reduction and gives an
-idempotent $e_{\mathrm{sing}}$.  The central result identifies them in the
+idempotent $e_{\mathrm{sing}}$.  Their comparison takes place in the
 exactly reconstructed coordinate algebra.
 
+\Needspace{9\baselineskip}
 \begin{theorem}[Agreement of the two component idempotents]
 \label{thm:connector}
 Let $e_{\mathrm{sing}}$ be the idempotent defined by the singular-point
@@ -220,8 +180,18 @@ isomorphism $A_{\mathrm H}=K_0\times L$, both sides equal the primitive
 idempotent $e_6=(0,1)$.
 \end{theorem}
 
-The characteristic-$23$ geometry behind the second idempotent uses a feature
-visible inside the distinguished cover.  Let
+Reduction at $23$ gives the second idempotent a simple local
+interpretation.  The normalized integral Hurwitz model has three closed
+points, with residue degrees $1,2,2$ and ramification indices $1,1,2$.
+The $23$-power Frobenius fixes precisely the residue-degree-one component.
+Its complement is also the locus on which the unramified quadratic
+extension splits.  These descriptions are independent of the chosen
+normalization coordinate.  \Cref{thm:frobenius-criterion} gives the general
+local statement, and \cref{cor:frobenius-hurwitz} applies it to this model.
+
+\smallskip
+The finite-group invariant has a complementary interpretation inside the
+distinguished cover.  Let
 $X\to\PP^1_T$ be the degree-$23$ cover constructed in \cite{HJLPPZ}.  Its
 splitting field over $\QQ(T)$ is regular with Galois group $M_{23}$, its
 source curve has genus $4$, and its branch points are
@@ -231,22 +201,16 @@ source curve has genus $4$, and its branch points are
 The inertia involution at $T=0$ has cycle shape $1^7 2^8$: seven sheets
 remain fixed and eight pairs collide.  These two sets support respectively
 a Fano plane and an affine $\FF_2^3$-torsor.  Their common odd fixed-point
-identity is the finite group-theoretic input to a second proof of
-\cref{thm:connector}.  The ordinary nearby-cycle stalk keeps the basis
-indexed by the individual sheets and its coefficient Bockstein vanishes.  In
-\cref{sec:connector} we instead retain integral multiplicities on the
-relevant graph components, construct a determinant line with its induced
-symmetric form and $\ZZ/2$-grading from the normalization--conductor complex
-of the semistable model, and compare its two fibres
-without using the exact identification of the seven branch-cycle triples.
+identity realizes the finite-group invariant as a finite incidence
+intersection.  Extending this interpretation to a relative
+specialization argument remains open; \cref{sec:connector} explains
+why the elementary nearby-cycle calculation is insufficient.
 
-Two distinct seven-element Galois sets must therefore be kept separate.  The
-seven geometric points of $\mathcal H_{\mathrm{in}}$ parametrize seven
-covers.  The seven unramified points above $T=0$ lie inside only the
-distinguished cover.  The second set contributes to the relative determinant
-calculation, but it is not itself the moduli scheme
-and does not by itself distinguish the fixed point.
+The Fano plane contributes through this incidence calculation: it lies in
+the branch fibre of one cover, whereas the Hurwitz scheme parametrizes
+all seven covers.
 
+\smallskip
 To make the arithmetic within the distinguished cover exact, we also carry
 out the minimal-coordinate construction anticipated by Huang et al.  Write
 $F(T,V)\in\ZZ[T,V]$ for their integral source equation.
@@ -271,6 +235,7 @@ over $\QQ$ established in \cite[Remark~3.4]{HJLPPZ}.
 The coordinate change is regular across the structured branch fibre and
 preserves both of its residue fields.
 
+\Needspace{20\baselineskip}
 \begin{theorem}[Transport of the fibre above $T=0$]
 \label{thm:branch-fibre-transport}
 There are primitive irreducible polynomials
@@ -323,8 +288,9 @@ The main argument is organized as follows:
 \]
 The pointed reduction at $23$ independently constructs
 $e_{\mathrm{sing}}$.  \Cref{sec:mechanism} first compares the two idempotents
-and then states the relative determinant construction used for a second
-proof, before turning to the computational details.  The minimal
+and explains the scope of their comparison.  The exact computations are
+followed by the local Frobenius criterion and the remaining obstacle to
+an independent geometric comparison.  The minimal
 projection and branch-fibre arithmetic are supporting results on the
 distinguished cover, and the specialization theorem is an independent
 application.
@@ -360,10 +326,10 @@ $K_0\times L$ Hurwitz algebra, its $S_6$ Galois closure and seven exact maps,
 the characteristic-$23$ idempotent defined by the distinguished singularity,
 and its exact
 identification with the augmentation of $\Theta$.  We additionally
-construct a relative determinant line with a symmetric form and grading,
-giving a comparison
-independent of the branch-cycle identification, after showing why ordinary
-nearby-cycle duality and the Ferrand pushout alone cannot supply it.  Supporting
+interpret the local idempotent by Frobenius and unramified quadratic
+splitting, using standard facts about henselian rings and finite fields.
+This interpretation does not remove the branch-cycle identification from
+the comparison with $\Theta$.  Supporting
 results give the explicit minimal-degree equation and ruling field, the
 arithmetic and obstruction theory of the distinguished branch fibre, and the
 congruence class modulo $319$ in which every specialization has group
@@ -379,7 +345,7 @@ There are two primitive idempotents in
  A_{\mathrm H}=K_0\times L:
  \qquad e_1=(1,0),\qquad e_6=(0,1).
 \]
-The theorem of the paper compares two independently defined functions on the
+The component comparison concerns two separately defined functions on the
 seven geometric points.  The first is the augmentation
 $\epsilon(\Theta)$ of a group-algebra element in
 $\FF_2[2^3{:}\PSL_3(2)]$.  Its certified values are $0$ on the distinguished
@@ -394,54 +360,42 @@ $e_{\mathrm{sing}}$.
 
 The exact reconstruction identifies the seven maps with the seven Nielsen
 classes.  It follows that both functions are $e_6$, which proves
-\cref{thm:connector}.  This proof is arithmetic and fully certified.  It is
-not intrinsic to the pointed characteristic-$23$ model: the certified
-branch-cycle matching is what places the finite-group values on the two
-factors of $K_0\times L$.
+\cref{thm:connector}.  The proof combines exact algebra with computational
+certificates.  Its dependence on the branch-cycle matching is precise:
+that matching places the finite-group values on the two factors of
+$K_0\times L$.
 
-The same equality may also be obtained from the pointed
-characteristic-$23$ model.  For an involution $x\in2A$, its seven fixed
-sheets form a set $H_x$ endowed with the Fano-plane incidence, and its
-eight two-sheet orbits form an affine $\FF_2^3$-torsor $A_x$.  Every element
-$c\in C_{M_{23}}(x)$ satisfies
+The local idempotent has a coordinate-independent description.
+Let $R$ be the completion of the ring of integers of $K_0$ at its prime
+above $23$,
+and normalize $R$ in $A_{\mathrm H}\otimes_{K_0}\operatorname{Frac}R$.
+Its reduced closed fibre has coordinate algebra
 \[
- |\Fix_{H_x}(c)|+|\Fix_{A_x}(c)|\equiv1\pmod2.
+ B\simeq\FF_{23}\times\FF_{23^2}\times\FF_{23^2}.
 \]
-Using this identity, finite incidence correspondences attached to the
-normalizers at the two marked wild branches realize $\epsilon(\Theta)$ as a generic
-intersection number.  This construction is given in
-\cref{sec:connector}.
+The scheme-theoretic fixed locus of $23$-power Frobenius is just the
+first factor.  Its complementary idempotent lifts uniquely to $e_6$.
+Equivalently, the unramified quadratic extension of $R$ splits on
+precisely the other two components.  We prove these assertions, including
+their general local form, in \cref{sec:frobenius-criterion}.
 
-The local issue is subtle.  A Ferrand pushout identifies several generic
-sections at a closed point.  Its nearby stalk at a quotient point
-$q$ is not the one-dimensional constant sheaf: it is the full permutation
-module
-\[
- \FF_2[p^{-1}(q)].
-\]
-Consequently the specialized pairing of the two lifted sections is still the
-coordinate pairing $\sum_e\alpha_e\beta_e$.  The fibre-sum product
-$(\sum_e\alpha_e)(\sum_e\beta_e)$ appears only after an additional
-unit--counit operation and is a different cohomological correspondence.  The
-two pairings already differ on a two-element fibre, so they cannot be
-identified by formal trace compatibility.
+Thus the singular-position calculation detects residue-field arithmetic,
+not merely the geometric type of the source singularity.  The two
+$E_8$ reductions have different residue degrees and are distinguished by
+Frobenius.  This is a local interpretation of the idempotent already
+computed, not a new proof of its agreement with the finite-group
+invariant.
 
-The exact local numbers determine the additional integral structure used
-here.  Before
-reduction modulo $2$, the difference of the two branch coefficients is
-divisible by $2$ but not by $4$.  Its half modulo $2$ is the local value of
-the quadratic function $Q$ defined in \cref{sec:connector}, evaluated on two
-chosen integral sums of graph components.  Such a sum means a sum with
-nonnegative integral coefficients; it is multiplicity data on the
-normalization and not a Chow cycle on the curve.
-The ordinary coefficient Bockstein nevertheless vanishes,
-both in the unrestricted mapping cone of the graph-to-sheet map and in the rank-one horizontal
-logarithmic nearby-cycle stalk.  The construction in
-\cref{thm:quadratic-connector} therefore retains these integral
-multiplicities as a chosen Lagrangian in the normalization--conductor complex
-of the semistable model and uses the determinant line with its induced symmetric form and
-$\ZZ/2$-grading.  The resulting line carries the quadratic refinement
-without changing the ordinary nearby-cycle pairing.
+For that stronger comparison, the Fano--affine odd fixed-point identity
+provides a finite incidence formula for $\epsilon(\Theta)$.
+However, in a finite pinching model the nearby-cycle stalk retains one
+basis vector per generic sheet, and its pairing is
+$\sum_e\alpha_e\beta_e$, not
+$(\sum_e\alpha_e)(\sum_e\beta_e)$.  The integral quadratic identities
+recorded in \cref{sec:connector} do not construct a relative
+correspondence or a determinant line carrying the required extra data.
+A specialization proof identifying the two invariants without the
+certified branch-cycle matching remains an open question.
 
 \section{Exact Hurwitz arithmetic and the component comparison}
 \label{sec:hurwitz-scheme}
@@ -502,7 +456,7 @@ describe.  Put
 Let $E=\QQ[Y]/(g)$ and let $\widetilde E$ be its Galois closure.  Then
 \[
  L=EK_0,\qquad
- \Gal(\widetilde E/\QQ)\cong S_6,qquad
+ \Gal(\widetilde E/\QQ)\cong S_6,\qquad
  \Gal(\widetilde E K_0/K_0)\cong S_6,
 \]
 and
@@ -517,7 +471,7 @@ remaining maps.  In the embedding order of
 \]
 Moreover
 \[
- \disc(E)=2^4\cdot11\cdot23^4,qquad
+ \disc(E)=2^4\cdot11\cdot23^4,\qquad
  \mathfrak d_{L/K_0}=(2^4\cdot11\cdot23).
 \]
 \end{proposition}
@@ -636,8 +590,21 @@ Finally, saturating the ideal generated by the four sections of $B$ away
 from $b$ gives the unit ideal, and the same calculation for $MC'$ away from
 $c$ again gives the unit ideal.  Thus the two linear systems have no base
 points away from $b$ and $c$.  Together with the displayed local orders,
-this shows that $N$ and $D$ have no common zero and proves the divisor
-identity.
+the fixed divisors of these complete linear systems are exactly $23b$
+and $23c$.  Write $G_i=(MC')_i$.  The multiplication identities imply
+$B_i=uG_i$ for one rational function $u=N/D$.  Taking the minimum of the
+orders over $i$ at every point gives
+\[
+ \operatorname{div}(u)=23b-23c.
+\]
+The chosen sections themselves do have a common effective divisor:
+\[
+ \operatorname{div}(N)=23b+E,\qquad
+ \operatorname{div}(D)=23c+E,\qquad \deg E=7.
+\]
+Indeed, a quintic canonical section has degree $5(2g-2)=30$, so the
+common divisor is necessary.  Cancelling it gives the asserted
+degree-$23$ map.
 \end{proof}
 
 It remains to put the third branch point at $1$.  The raw value is
@@ -1105,15 +1072,150 @@ $\epsilon(\Theta)=e_6$.  Hence
 $\epsilon(\Theta)=e_{\mathrm{sing}}$ in $A_{\mathrm H}$.
 \end{proof}
 
-\subsection{A relative determinant calculation}
+\subsection{Frobenius and unramified extensions}
+\label{sec:frobenius-criterion}
+
+We give a coordinate-independent interpretation of the local idempotent.
+The general facts used here are standard properties of finite fields and
+henselian rings; the application identifies what the singular-position
+calculation measures in this particular Hurwitz scheme.
+
+\Needspace{19\baselineskip}
+\begin{theorem}[Local component criterion]
+\label{thm:frobenius-criterion}
+Let $R$ be the ring of integers of a nonarchimedean local field $F$, with
+residue field $k=\FF_q$.  Let $A$ be a finite normal flat $R$-algebra with
+\'etale generic fibre, and write
+\[
+ A=\prod_i O_i,\qquad
+ B=(A/\mathfrak m_R A)_{\mathrm{red}}=\prod_i\FF_{q^{f_i}}.
+\]
+Here $O_i$ is the ring of integers of a field extension of $F$ with
+ramification index $e_i$ and residue degree $f_i$.
+\begin{enumerate}
+\item The scheme-theoretic fixed locus of the $q$-power Frobenius on
+$\operatorname{Spec}B$ is open and closed, consisting precisely of the
+factors with $f_i=1$.  It lifts uniquely to an open-and-closed subscheme
+$Z\subset\operatorname{Spec}A$, finite flat over $R$ of rank
+$\sum_{f_i=1}e_i$.  In particular, $Z\simeq\operatorname{Spec}R$ if and only
+if there is exactly one index with $f_i=1$ and that index has $e_i=1$.
+\item Let $R_m/R$ be the unramified extension of degree $m\geq1$.  On the
+connected component $\operatorname{Spec}O_i$, its pullback is the split
+degree-$m$ cover if and only if $m\mid f_i$.  Thus the union of the
+components on which it splits is canonically open and closed.
+\end{enumerate}
+These constructions are invariant under $R$-algebra isomorphisms of $A$.
+\end{theorem}
+
+\begin{proof}
+The fixed locus is the equalizer of Frobenius and the identity, so its
+coordinate ring is
+\[
+ B/(b^q-b:b\in B).
+\]
+In a field factor $\FF_{q^{f_i}}$ this ideal is zero if $f_i=1$.
+Otherwise there is an element not fixed by $q$-power Frobenius; its
+nonzero difference is a unit, so that factor of the quotient is zero.
+This proves the description of the fixed locus.  Notice that it is a
+quotient algebra, not the invariant subalgebra $B^{\mathrm{Frob}_q}$.
+
+Idempotents lift uniquely through nilpotent ideals and from the closed
+fibre of a finite algebra over a complete local ring
+\cite[Tags 09XD and 04GK]{Stacks}.  This proves existence and uniqueness
+of $Z$.  Each $O_i$ is free over $R$ of rank $e_i f_i$, which gives the
+stated rank.  A factor of rank one has fraction field $F$ and hence is $R$.
+
+The residue algebra of $O_i\otimes_R R_m$ at the maximal ideal of $O_i$ is
+$\FF_{q^{f_i}}\otimes_{\FF_q}\FF_{q^m}$.  As an algebra over
+$\FF_{q^{f_i}}$, this is a product of $\gcd(f_i,m)$ fields, each of degree
+$m/\gcd(f_i,m)$.  It is therefore split exactly when $m\mid f_i$.
+Finite \'etale algebras over the henselian local ring $O_i$ are determined
+by their residue algebras \cite[Tag 04GK]{Stacks}, so the same criterion
+holds over $O_i$.  The descriptions use neither coordinates nor labels of
+the factors, proving the last assertion.
+\end{proof}
+
+The two criteria in the theorem are not equivalent in general.  For
+example, an odd residue degree greater than one gives neither a
+Frobenius-fixed point nor splitting of the unramified quadratic extension.
+They are complementary when every residue degree is either one or two.
+
+\Needspace{12\baselineskip}
+\begin{corollary}[The characteristic-$23$ component]
+\label{cor:frobenius-hurwitz}
+Let $R=\widehat{\mathcal O}_{K_0,\mathfrak q}$, where
+$\mathfrak q$ is the prime above $23$, and let $A$ be the normalization of
+$R$ in $A_{\mathrm H}\otimes_{K_0}\operatorname{Frac}R$.
+The complement of the Frobenius-fixed locus on its reduced closed fibre
+lifts to the component idempotent $e_6$.  Equivalently, $e_6$ is the
+idempotent of the locus on which the finite \'etale double cover
+\[
+ \operatorname{Spec}\bigl(A[z]/(z^2+1)\bigr)
+ \longrightarrow\operatorname{Spec}A
+\]
+splits.  In the singular-position coordinate of
+\cref{prop:singular-position-idempotent}, its reduction is
+\[
+ e_{\mathrm{sing}}=-(u^{23}-u)^{22}
+                 =2u^4+2u^3+4u^2+2u+3
+ \quad\text{in }\FF_{23}[u]/(R_{23}).
+\]
+\end{corollary}
+
+\begin{proof}
+The exact local decomposition has pairs
+$(e_i,f_i)=(1,1),(1,2),(2,2)$.  The first factor comes from $K_0$ and
+the other two from $L$.  Thus \cref{thm:frobenius-criterion} identifies
+the Frobenius-fixed component with the $R$ factor and its complement
+with the localization of $L$.
+
+Since $-1$ is not a square in $\FF_{23}$, $R[z]/(z^2+1)$ is the
+unramified quadratic extension of $R$.  Its discriminant is a unit.
+It is nonsplit on the first factor and split on the other two, by the
+same theorem.
+
+Finally, let $\delta=u^{23}-u$.  It is zero in the linear factor.
+In each quadratic factor $u$ generates the residue field, so $\delta\ne0$
+and $\delta^{23}=-\delta$.  Consequently $\delta^{22}=-1$ there.
+Thus $-\delta^{22}$ has values $(0,1,1)$, as does the displayed polynomial.
+The Chinese remainder theorem proves their equality.
+\end{proof}
+
+This gives an actual finite \'etale cover of the normalized integral
+Hurwitz scheme, not just a list of three matching values.  Its split
+locus is defined without the chosen coordinate $u$.  The singular-position
+polynomial is an explicit presentation of that locus.  Combining
+\cref{cor:frobenius-hurwitz} with the certified branch-cycle matching gives
+\[
+ \epsilon(\Theta)=e_6=e_{\mathrm{sing}}.
+\]
+The construction of the local locus does not use that matching; the
+comparison with $\epsilon(\Theta)$ still does.
+
+There are two essential limitations.  First, the residue field is part of
+the statement: replacing $q$-power Frobenius by $q^d$-power Frobenius fixes
+the factors with $f_i\mid d$, and can change the locus.  Second, a unique
+local rank-one factor need not descend to a rational point over a number
+field.  For example, $X^3-2$ is irreducible over $\QQ$, whereas modulo $5$
+it factors as
+\[
+ (X-3)(X^2+3X+4),
+\]
+with the quadratic factor irreducible and the two factors coprime.
+Its algebra over $\QQ_5$ has one rank-one factor and one unramified
+quadratic factor, but $\operatorname{Spec}\QQ(\sqrt[3]{2})$ has no
+$\QQ$-rational point.  In the present application it is the already proved
+global decomposition $A_{\mathrm H}=K_0\times L$ that supplies descent.
+The local criterion alone is not a theorem giving regular Galois
+realizations.
+
+\subsection{Finite incidence and the unresolved geometric comparison}
 \label{sec:connector}
 
-We first explain why ordinary nearby-cycle duality does not give the desired
-comparison.  We then construct a graded symmetric line from a normalization
-complex with integral multiplicities on its graph components.  Comparing its
-generic and special fibres gives a second proof of \cref{thm:connector},
-independent of the certified identification of the seven reconstructed
-branch-cycle triples used above.
+We retain the following finite identities because they identify the input
+that a proof independent of branch-cycle matching would have to transport.
+They do not construct relative correspondences on a semistable
+$M_{23}$-cover.
 Fix the natural degree-$23$ permutation representation
 $M_{23}\subset S_{23}$.  Let $x\in2A(\M)$, let $H_x=\Fix(x)$, and let $A_x$
 be the set of its eight two-element sheet orbits.  Thus $H_x$, with its
@@ -1237,578 +1339,72 @@ nearby cycles recover the full permutation module in
 counit $p_*\Lambda_E\to\Lambda_Q$ is an additional operation and must be
 incorporated into the relative correspondence if it is to be used.
 
-\subsubsection{The integral quadratic refinement}
+\subsubsection{What the integral multiplicities do and do not prove}
 
-At a split tame node, the normalization quotient sends branch coefficients
-$(a_+,a_-)$ to $a_+-a_-$.  When these coefficients agree modulo $2$, the
-chosen integral representatives determine the divided branch difference
-\[
- \kappa(a_+,a_-)=\frac{a_+-a_-}{2}\pmod2.
-\]
-Put \(\mathcal C=2A(M_{23})\), let \(T_D=x^D\) be a normalizer orbit, and
-let \(P_D=\mathcal C\setminus T_D\).  We regard their characteristic
-functions as integral sums of graph components.  For the image of
-\(P_D\) at the node over the finite branch point, the two exact branch
-coefficients are
-\[
- a_+=1078,\qquad a_-=112,
- \qquad \kappa=\frac{1078-112}{2}=483\equiv1\pmod2.
-\]
-This divided branch difference depends on the chosen integral
-representatives.  It is neither the nearby-cycle pairing in
-\eqref{eq:connector-generic} nor an ordinary coefficient Bockstein after
-those representatives have been forgotten.
-
-For the natural sheet representation \(\rho\), direct counting gives
+Put $\mathcal C=2A(M_{23})$, $T_D=x^D$, and
+$P_D=\mathcal C\setminus T_D$.  At this stage these are finite subsets
+of a permutation group, not effective cycles on a constructed relative
+curve.  For the natural sheet representation $\rho$, exact counting gives
 \[
  \rho(\mathcal C)=120J+1035I,\qquad
- \rho(T_D)=8J+69I,
+ \rho(T_D)=8J+69I,\qquad
+ \rho(P_D)=112J+966I.
 \]
-and hence
+In particular, a diagonal coefficient of the last matrix is $1078$
+and an off-diagonal coefficient is $112$.  Their divided difference is
 \[
- \rho(P_D)=112J+966I\equiv2I\pmod4.
+ (1078-112)/2=483\equiv1\pmod2.
 \]
-The congruent integral representative \(P_D-2\mathcal C\), however, maps to
-\(-128J-1104I\equiv0\pmod4\).  Thus the coefficient Bockstein of the mod-$2$
-class represented by \(P_D\) in the unrestricted graph-to-sheet mapping
-cone is zero.  The class \(\kappa\) is retained only when the integral sums
-\(\mathcal C\) and \(T_D\) are kept separately.
+This is a calculation with specified integral representatives.  The
+congruent representative $P_D-2\mathcal C$ has image
+$-128J-1104I\equiv0\pmod4$.  Hence, in the unrestricted mapping cone of
+the graph-to-sheet map, the mod-$2$ class represented by $P_D$ has a
+mod-$4$ lift and its coefficient Bockstein is zero.
 
-Logarithmic nearby cycles do not remove this obstruction.  At a smooth point
-of a horizontal logarithmic divisor, Nakayama's formula
-\cite[Theorem~3.5]{Nakayama} gives one free coefficient copy in degrees zero
-and one.  Reduction from \(\ZZ/4\) to \(\FF_2\) is surjective in both degrees,
-so the coefficient connecting homomorphisms vanish.  Taking direct sums
-indexed by the graph components does not change this conclusion.
-
-The nonzero invariant has a quadratic description.  On the even-weight
-subspace of a binary permutation module set
+For a binary vector of even weight, the function
 \[
- Q(v)=\frac{\operatorname{wt}(v)}2\pmod2.
+ Q(v)=\operatorname{wt}(v)/2\pmod2
 \]
-Then
+satisfies
 \[
  Q(v+w)=Q(v)+Q(w)+\langle v,w\rangle.
 \]
-In the permutation module on a common finite set containing the two
-\(2A\)-classes considered below, one has
+Indeed, the integer weight of $v+w$ is the sum of the two weights minus
+twice the size of the intersection of their supports.  Each $T_D$ has
+odd size $253$, so $Q$ is not defined on its indicator alone.  Its value
+on the even-weight symmetric difference is obtained directly from
+$|T_{D_y}\mathbin{\triangle}T_{D_z}|=506-2|T_{D_y}\cap T_{D_z}|$.
+Together with $|P_D|=3542$, this gives
 \[
- Q(T_{D_y}+T_{D_z})=1+\epsilon(\Theta),\qquad
- Q(P_D)=1.
+ Q(T_{D_y}+T_{D_z})=1+\epsilon(\Theta),\qquad Q(P_D)=1.
 \]
-On a completed trait of the pointed local Hurwitz model at $23$, transport
-the chosen affine frame from one marked wild branch to the other, and let
-\(n\in N_{S_{23}}(D)=23{:}22\) be the resulting comparison element.  Let
-\(q(n)\in\FF_2\) denote its image in
-\(N_{S_{23}}(D)/D\), where \(D=23{:}11\).  The two orbits \(T_D\) and
-\(T_D^n\) coincide when \(q(n)=0\).  When \(q(n)=1\), they are disjoint
-subsets of \(2A(M_{23})\) and \(2A(M_{23}^n)\), respectively.  Consequently
-\[
- Q(T_D+T_D^n)=q(n),\qquad
- Q(\mathcal C+T_D^n)=1+q(n).
-\]
-The cross-term between \(P_D\) and \(T_D+T_D^n\) is zero in both cases, so
-the last equality is exactly the polarization identity above with the
-contribution \(Q(P_D)=\kappa=1\) from the node over the finite branch point.
-The pointed reduction computations give \(q(n)=0,1,1\) on the three closed
-characteristic-$23$ branches, which are the values of
-\(e_{\mathrm{sing}}\).
+These are finite quadratic identities.  They do not by themselves give a
+quadratic refinement on nearby cycles.
 
-We now express this refinement in the Picard groupoid of graded symmetric
-lines.  Let \(R\) be a ring in which \(2\) is invertible and let \(E\) be a
-finite free permutation module of even rank \(2m\), with its standard
-orthonormal form.  We use the notation
-\begin{equation}
- \operatorname{qdet}(E)
-  =\bigl(\det E,(-1)^m\det\langle\ ,\ \rangle_E,
-          m\bmod2\bigr).
-\label{eq:hdet-definition}
-\end{equation}
-The first entry is the determinant line, the second is the square class of
-its induced symmetric form, and the last is its $\ZZ/2$-degree.  The sign in
-\eqref{eq:hdet-definition} is the usual Clifford-algebra sign:
-if \(e_1,\ldots,e_{2m}\) is an orthonormal basis, then
-\((e_1\cdots e_{2m})^2=(-1)^m\).  It is independent of the ordering and
-extends by alternating tensor product to based virtual perfect complexes of
-even Euler characteristic.
+In particular, the determinant of a perfect complex \cite{KnudsenMumford}
+is not automatically
+a symmetric line with degree equal to half its Euler characteristic.
+Assigning degree $m\bmod2$ to the determinant of a rank-$2m$ module
+does not define a symmetric monoidal functor to ordinary graded lines:
+exchanging two rank-two blocks has determinant sign $+1$, whereas
+exchanging their proposed odd lines has Koszul sign $-1$.
+Additional categorical structure and coherence data would be needed.
 
-For two subsets \(A,B\) of a fixed finite indexing set, let \(e_A,e_B\) be
-their commuting characteristic idempotents.  Then
-\[
- s(A,B)=e_A+e_B-2e_Ae_B
-\]
-is the idempotent of their symmetric difference.  Put
-\begin{equation}
- \mathfrak q(A,B)=\operatorname{qdet}(\operatorname{im}s(A,B)).
-\label{eq:qor-definition}
-\end{equation}
-Its parity is \(Q(A+B)\).  If \(S,R\) are even subsets, the based
-decomposition
-\[
- \ZZ[S]\oplus\ZZ[R]
- \simeq \ZZ[S\mathbin\triangle R]
-       \oplus\ZZ[S\cap R]^{\oplus2}
-\]
-gives the line-valued polarization law
-\begin{align}
- \operatorname{qdet}(\ZZ[S])\otimes\operatorname{qdet}(\ZZ[R])
- &\simeq \operatorname{qdet}(\ZZ[S\mathbin\triangle R])
-       \otimes\mathfrak p(S,R), \notag\\
- \mathfrak p(S,R)
- &=\operatorname{qdet}\bigl(\ZZ[S\cap R]^{\oplus2}\bigr),
- & \deg\mathfrak p(S,R)&=|S\cap R|\pmod2.
-\label{eq:qor-polarization}
-\end{align}
-Thus \(\mathfrak q\) takes values in the Picard groupoid of
-$\ZZ/2$-graded symmetric lines; it is not an ordinary square root of a
-determinant line.
-
-We shall use the following normalization statement.  It is formulated for
-based perfect complexes together with integral multiplicity vectors on the
-normalized graph components, rather than only their reductions modulo $2$.
-The normalization sequence and determinant isomorphisms are classical.  The
-additional assertion is that the divided branch differences determine, in a
-functorial way, the node factors of the determinant line together with its
-symmetric form and grading.
-
-\begin{lemma}[Normalization and determinant gluing with integral multiplicities]
-\label{lem:effective-normalization-gluing}
-Let \(R\) be a ring in which \(2\) is invertible, and let \(X_0\) be a split
-nodal curve whose dual graph \(\Gamma\) is a finite tree with a specified
-set of marked vertices containing every vertex of valence different from
-two.  Fix two marked vertices, denoted \(v_-\) and \(v_+\).  At every
-unmarked vertex assume that the two restriction maps identify the same
-basis and that the multiplicity vectors agree under this identification.  Let
-\(\nu:\widetilde X_0\to X_0\) be the normalization, and let
-\(\mathcal B_{\ZZ}\) be a finite free integral coefficient system with a
-distinguished basis on
-\(\widetilde X_0\), with based identifications of its two branch stalks at
-every node; write \(\mathcal B=R\otimes_{\ZZ}\mathcal B_{\ZZ}\) for its
-scalar extension.  For an integral multiplicity vector \(z\) on each
-branch, put
-\[
- \delta_e(z)=z_{e,+}-z_{e,-}
-\]
-after transporting both restrictions to the common basis at the node
-\(e\).  For an integral multiplicity vector
-\(m=\sum_wn_w[w]\), write
-\[
- R[m]=\sum_wn_wR[w]
-\]
-in the Grothendieck group of finite based free \(R\)-modules; negative
-multiplicities are represented by dual factors.  Thus \(z\) defines a
-virtual based object before any reduction modulo \(2\).  Suppose that every
-coefficient of every \(\delta_e(z)\) is even and that the virtual ranks of
-the factors remaining after cancellation are even, so
-\(\operatorname{qdet}\) is defined for them.
-Then the following assertions hold.
-\begin{enumerate}
-\item The classes
-\[
- \kappa_e(z)=\frac{\delta_e(z)}2\pmod2
- \quad\text{in }\FF_2[W_e]
-\]
-are the components of the branch-difference cochain divided by $2$.  Along the
-unique path from the first marked vertex to the second, they satisfy the
-vector identity
-\begin{equation}
- \sum_e\kappa_e(z)=\frac{z_+-z_-}{2}\pmod2,
-\label{eq:divided-normalization-telescope}
-\end{equation}
-after all bases have been transported to one endpoint.
-Before reduction, the same identity gives, for the oriented path \(P\),
-\begin{equation}
- \operatorname{qdet}\bigl(R[z_+]-R[z_-]\bigr)
- \simeq \bigotimes_{e\in P}\operatorname{qdet}
-       \bigl(R[\delta_e(z)]\bigr),
-\label{eq:normalization-line-transport}
-\end{equation}
-with the tensor factors ordered along \(P\).
-\item The underlying normalization complex
-\begin{equation}
- N_\Gamma^\bullet(\mathcal B)=
- \left[\bigoplus_v B_v\longrightarrow\bigoplus_eB_e\right],
- \qquad
- (db)_e=b_{e,+}-b_{e,-},
-\label{eq:general-effective-normalization-complex}
-\end{equation}
-is a finite based perfect complex.  Apply the integral multiplicity vectors
-to its normalization filtration in the Grothendieck category of based
-perfect complexes.  The determinant isomorphism then factors the determinant
-line, its symmetric form, and its grading into the marked-vertex factors
-and the node factors \(\operatorname{qdet}(\delta_e(z))\).  Every unmarked internal based factor occurs
-once covariantly and once contravariantly and has its canonical evaluation
-trivialization.
-\item This factorization is functorial under simultaneous based
-relabelling, flat base change preserving the split normalization diagram,
-branch exchange, gluing of marked trees, and semistable
-subdivision.  Branch exchange dualizes the corresponding node factor;
-subdivision inserts the based contractible complex
-\([B\xrightarrow{1}B]\).
-\end{enumerate}
-
-For the relative form, let \(R\) be a strictly henselian discrete valuation
-ring with \(2\in R^\times\), let \(A\) be the finite torsion-free
-$R$-algebra obtained from the incidence construction above, with finite
-normalization \(A^\nu\), and let
-\(z_\eta\) be an idempotent on \(A^\nu\otimes_RK\).  Assume that
-the conductor quotients are equipped with the based branch identifications
-of the split system above, that the resulting differences are
-coefficientwise divisible by \(2\), and that the virtual ranks remaining after cancellation are
-even.  Then \(z_\eta\) extends uniquely to \(A^\nu\); its image is finite
-projective over \(R\), and the conclusions above applied to the conductor
-complex are the generic and special factorizations of one relative graded
-symmetric line.
-The statement applies componentwise to a finite ordered family of
-idempotents; the line-valued polarization law then combines their
-factorizations.
-\end{lemma}
-
-\begin{proof}
-At one split node, the normalization sequence with coefficients in the
-integral based module \(B_{\ZZ}\) is
-\begin{equation}
- 0\longrightarrow B_{\ZZ}\longrightarrow B_{\ZZ}\oplus B_{\ZZ}
- \xrightarrow{(b_+,b_-)\mapsto b_+-b_-}B_{\ZZ}\longrightarrow0.
-\label{eq:split-node-coefficient-sequence}
-\end{equation}
-The kernel of \(\ZZ/4\to\FF_2\) is canonically \(2\FF_2\).  Hence, if the
-branch difference of the distinguished integral coefficient is even,
-its reduction modulo \(2\) lies in the kernel of the branch-difference map
-and therefore descends across the node.  Write
-\(z_{e,+}-z_{e,-}=2h_e\).  Then \(h_e\bmod2=\kappa_e(z)\) is precisely the
-cochain measuring the failure of the two branch lifts to agree modulo
-\(4\); equivalently, it is the first obstruction to descending the chosen
-integral lift modulo \(4\).  Thus the local classes are the coefficients of
-the branch-difference cochain divided by $2$.  On an oriented path
-\(v_0,e_1,v_1,\ldots,e_r,v_r\), their integral numerators telescope:
-\[
- (z_1-z_0)+(z_2-z_1)+\cdots+(z_r-z_{r-1})=z_r-z_0.
-\]
-Dividing by \(2\) and reducing modulo \(2\) proves
-\eqref{eq:divided-normalization-telescope} as an equality of coefficient
-vectors, not merely of their augmentations.  Before reduction, the same
-telescoping equality is an equality of virtual based modules.  Applying
-\(\operatorname{qdet}\) in path order proves
-\eqref{eq:normalization-line-transport}.
-
-The local sequences \eqref{eq:split-node-coefficient-sequence} assemble to
-\eqref{eq:general-effective-normalization-complex}.  Cutting \(\Gamma\) at
-the marked vertices decomposes it into chains whose internal vertices are
-all unmarked.  Filter the complex on each chain by successively adjoining
-its vertices and edges.  Each step is a short exact sequence of based
-complexes.  Knudsen--Mumford determinant
-additivity therefore identifies its determinant with the ordered tensor
-product of the determinants of the graded pieces.  These filtrations are
-based split: at every unmarked vertex the transition is a bijection of the
-distinguished bases.  The induced symmetric form on the determinant line is
-multiplicative on such orthogonal based sums, with the doubled-overlap
-contribution recorded by
-\(\mathfrak p\) in \eqref{eq:qor-polarization}.  At an unmarked internal vertex
-the same based module occurs in two consecutive normalization triangles,
-once in each dual cohomological position, so evaluation cancels the two
-factors.  The remaining factors are the marked-vertex terms and the virtual
-branch differences.  Applying the quadratic refinement to these same exact
-sequences gives the asserted graded determinant factorization.
-
-Gluing at marked vertices concatenates the two filtrations.  If the common
-mark is forgotten after gluing and becomes an unmarked valence-two vertex,
-its two factors evaluate against each other; if the mark is retained, so is
-its factor.  Subdivision adds
-\([B\xrightarrow{1}B]\), whose determinant has its canonical unit
-trivialization.  Flat base change preserves
-\eqref{eq:split-node-coefficient-sequence}; a based relabelling is an
-isometry; and exchanging the branches negates the virtual difference and
-therefore dualizes its line.  This proves the functorialities.
-
-For the relative assertion, \(z_\eta\) satisfies the monic equation
-\(X^2-X=0\), so it belongs to the integral closure \(A^\nu\); uniqueness
-follows from the injection into the generic algebra.  Its image is a direct
-summand of the finite torsion-free \(R\)-module \(A^\nu\), hence finite
-projective.  Write \(\mathfrak c\) for the conductor.  The Ferrand square
-\[
- A=A^\nu\times_{A^\nu/\mathfrak c}A/\mathfrak c
-\]
-and its module sequence \cite[Section~2.2]{Ferrand} supply the two branch
-restriction maps to each common based conductor module.  Their difference
-defines the relative complex
-\eqref{eq:general-effective-normalization-complex}; when the difference
-vanishes, its kernel is exactly the descended module, and in general its
-cone records the descent defect.  The normalization terms are finite flat
-over the trait, while the conductor terms are finite over its discrete
-valuation ring and therefore have projective dimension at most one.
-The resulting complex is therefore perfect.  Under a flat base change
-preserving this conductor diagram, derived base change and determinant base
-change identify its two fibre factorizations with those of one filtered
-relative complex and one determinant line.
-\end{proof}
-
-\begin{theorem}[A relative determinant line with symmetric form and grading]
-\label{thm:quadratic-connector}
-Let $S$ be any completed trait of the pointed local Hurwitz model in
-\cref{comp:hurwitz-pointed-23}.  On $S$, the normalization complex, equipped
-with the two integral multiplicity vectors \(\mathcal C\) and \(T_D\), carries
-a relative graded symmetric line
-\(\mathfrak O_{\log}(\mathcal C,T_D)\) with the following properties.
-\begin{enumerate}
-\item It is functorial under simultaneous graph relabelling; under flat
-base changes preserving the normalization and conductor diagrams with their
-marked components, including
-the finite splitting extensions used here; and under
-gluing and semistable subdivision of the marked component tree.
-\item On the generic fibre its \(\ZZ/2\)-degree is
-\[
- \deg\mathfrak O_{\log,\eta}
-   =Q(T_{D_y}+T_{D_z})=1+\epsilon(\Theta).
-\]
-\item The normalization--conductor filtration identifies its special-fibre
-\(\ZZ/2\)-degree with
-\[
- \deg\mathfrak O_{\log,s}
-   =Q(P_D)+Q(T_D+T_D^n)=1+q(n)=1+e_{\mathrm{sing}}.
-\]
-The first summand comes from the node over the finite branch point, and the
-second from the transition between the two marked wild branches.  All factors associated
-with unmarked valence-two vertices occur in dual cohomological degrees and
-cancel.
-\end{enumerate}
-\end{theorem}
-
-\begin{proof}
-Fix one such completed trait \(S\).  Over the \'etale locus of the
-marked Galois cover, its self-fibre product is the disjoint union of the
-deck-transformation graphs.  Its normalized graph algebra is therefore the
-split based algebra
-\[
- \mathcal A^\nu\simeq\prod_{g\in M_{23}}\mathcal O_{\Gamma_g}.
-\]
-The characteristic functions of \(T_{D_y}\), \(T_{D_z}\),
-\(\mathcal C\), and \(T_D\) are integral idempotents in this
-algebra.  Take the closures of the graph components, pull them back to the
-finite scheme $B$ defined above, and only then push along the natural
-degree-\(23\) quotient.  The resulting incidence algebra and its conductor
-are finite over \(S\).  Additivity of this pushforward sends an integral
-graph sum to its branchwise integral multiplicity vector.  Thus the generic
-orbit idempotents and the special coefficients used below are the two
-fibrewise restrictions of one normalization complex equipped with integral
-multiplicities.  No identification by refined intersection theory is used
-here.
-
-After a splitting base change, the graph components give a finite free
-coefficient system on the marked component tree joining the component over
-the finite branch point to the two marked wild components.  Put
-\[
- P_{D_y}=\mathcal C-T_{D_y},\qquad
- P_{D_z}=\mathcal C-T_{D_z}.
-\]
-These are idempotents corresponding to subsets because the normalizer orbits lie in
-\(\mathcal C\), and
-\[
- s(P_{D_y},P_{D_z})=s(T_{D_y},T_{D_z}).
-\]
-We retain the ordered pair \((P_{D_y},P_{D_z})\), rather than pass only to
-the common symmetric-difference idempotent.  Each
-complementary idempotent extends uniquely to the normalization of the finite
-incidence algebra: an idempotent is integral, and the normalization
-separates the generic graph components.  Their image modules are finite
-projective over the splitting trait.
-
-At the node over the finite branch point, the integral multiplicity data retain
-\(\mathcal C\) and \(T_D\) separately, rather than only their common
-reduction.  Concretely, the generic and special presentations of the
-resulting graded symmetric line are
-\[
-\begin{aligned}
- \mathfrak O_{\eta}
-   &=\mathfrak q(P_{D_y},P_{D_z})
-     =\mathfrak q(T_{D_y},T_{D_z}),\\
- \mathfrak O_s
-   &=\operatorname{qdet}(P_D)\otimes
-     \mathfrak q(T_D,T_D^n)
-     \quad\text{up to the polarization line.}
-\end{aligned}
-\]
-These are the two fibrewise filtrations of one object in the relative
-Grothendieck group, not standalone modules of the same rank.  Between the
-marked charts, the identifications of bases on the annuli carry the
-complementary idempotents.  They need
-not descend separately as idempotents of the unnormalized graph algebra;
-their conductor boundary is precisely the additional datum retained by
-the normalization complex with multiplicities.
-
-For a node \(e\), restrict these integral multiplicity vectors separately to
-the two branches of the graph normalization and then push them to the sheet
-correspondence.  Let \(B_{e,+}\) and \(B_{e,-}\) denote the resulting
-integral based incidence coefficients, and use the same notation for their
-associated virtual based modules.  The coefficient vector of their
-difference is divisible by \(2\); no isomorphism between modules of unequal
-ranks is asserted.  Hence
-\[
- \mathcal D_e=B_{e,+}-B_{e,-}
-\]
-has even virtual rank and defines the node factor
-\(\mathfrak a_e=\operatorname{qdet}(\mathcal D_e)\).
-
-The ordered idempotents also specify which graded symmetric line is being
-transported.  In the normalization--conductor filtration, expand the first
-complementary idempotent as \(P_D=\mathcal C-T_{D_y}\) before cancelling the
-two copies of \(\mathcal C\); the remaining finite term is \(P_D\).  The
-second normalizer orbit is transported through the wild annuli and becomes \(T_D^n\)
-at the other marked branch.  Thus the special presentation is the ordered
-pair \((\mathcal C,T_D^n)\).  Since \(\mathcal C=P_D+T_D\) in the binary
-permutation module, the line-valued polarization
-\eqref{eq:qor-polarization} factors its degree into the factor defined by
-\(P_D\) and the factor defined by \(T_D+T_D^n\).  The polarization factor
-has degree
-\[
- \langle P_D,T_D+T_D^n\rangle=0,
-\]
-whether \(q(n)=0\) or \(q(n)=1\).
-
-Ferrand's conductor square supplies the branch restriction maps defining
-the relative normalization complex \(\mathcal N^\bullet\) of the two image
-modules with their integral multiplicity vectors.  Its generic fibre is the
-complex with basis indexed by the selected graph components, and its
-special fibre has the cellular presentation
-\begin{equation}
- N_s^\bullet=
- \left[\bigoplus_{v}B_v\longrightarrow\bigoplus_eB_e\right],
-\label{eq:effective-normalization-complex}
-\end{equation}
-with branch-difference differential and relative boundary conditions at the
-marked vertices.  The hyperbolic completion
-\[
- \mathcal N^\bullet\oplus
- R\!\operatorname{Hom}(\mathcal N^\bullet,R)[1]
-\]
-is \(1\)-shifted self-dual under the evaluation pairing.
-The two ordered image modules in \(\mathcal N^\bullet\), with their integral
-multiplicity vectors, form the chosen Lagrangian in this hyperbolic
-completion.  Define \(\mathfrak O_{\log}\) to be its determinant line with
-the induced symmetric form and grading.
-
-The hypotheses and all the gluing assertions of
-\cref{lem:effective-normalization-gluing} now apply.  It remains only to
-identify the remaining local factors.  On the finite one-node chart
-\(t=u^2\), the completed self-fibre product is
-\[
- A=R[[u,v]]/\bigl((u-v)(u+v)\bigr),
-\]
-with normalization \(R[[u]]\oplus R[[u]]\).  The exact coefficient
-sequence is
-\[
- 0\longrightarrow A\longrightarrow R[[u]]\oplus R[[u]]
- \xrightarrow{(f_+,f_-)\mapsto f_+(0)-f_-(0)}R
- \longrightarrow0.
-\]
-Thus its coefficient complex is the branch-difference complex
-\[
- [\,B_{+}\oplus B_{-}\longrightarrow B_{\mathrm{cond}}\,].
-\]
-Restriction of an integral sum of graph components to the two normalized branches and
-additive quotient pushforward commute, so applying this sequence to
-\(\mathcal C\) and \(T_D\) separately gives
-\(\mathcal D_{\mathrm{fin}}\) without a further comparison theorem.
-
-On every wild annulus, Wewers's patching datum
-\cite[Section~4.2]{Wewers} is a based isomorphism of
-the graph-component modules with their integral multiplicities.  More precisely, one global patching datum is
-\((\lambda;\varphi_j)\), with the same group isomorphism \(\lambda\) for
-every tail.  Since a \(G\)-equivariant \(\varphi_j\) carries
-\(\Gamma_g\) to \(\Gamma_{\lambda(g)}\), every internal annular
-normalization cone is acyclic, with a contraction respecting the chosen
-bases.  The only remaining factor on the wild
-components is the difference between \(T_D\) and \(T_D^n\) at the second
-marked branch.
-
-The gluing lemma and its determinant filtration now identify the generic
-remaining factor with the symmetric-difference module of \(T_{D_y}\) and
-\(T_{D_z}\).  On the special fibre the remaining factors are the factor at
-the node over the finite branch point, obtained from the divided
-branch difference, and the symmetric-difference module of
-\(T_D\) and \(T_D^n\).  Formula \eqref{eq:qor-polarization} combines their
-degrees as the degree of the graded symmetric line attached to
-\((\mathcal C,T_D^n)\); its polarization factor has degree
-zero by the displayed cross-term calculation.  All unmarked transport
-factors, gluing maps, and subdivisions are handled by
-\cref{lem:effective-normalization-gluing}.
-
-At the split node over the finite branch point, the exact branch ranks are
-\[
- \operatorname{rank}B_+=1078,\qquad
- \operatorname{rank}B_-=112.
-\]
-Consequently
-\[
- \deg\mathfrak a_{\mathrm{fin}}
-   =\frac{1078-112}{2}=483\equiv1\pmod2.
-\]
-The complementary subset \(P_D=\mathcal C-T_D\) has
-\(|P_D|/2=3542/2=1771\equiv1\pmod2\), the same parity.  More precisely,
-the divided normalization coefficient consists of the eight simple-node
-coordinates together with a residual class supported on the seven fixed
-sheets.  The degree-three incidence relation in the Fano plane pairs this
-residual class with seven of the eight node coordinates.  Modulo $2$, those
-seven contributions cancel the corresponding coordinates, leaving the
-coordinate of the distinguished node.  This is the remaining finite factor
-in the gluing lemma.  At every
-other internal node,
-the common group isomorphism in Wewers's patching datum gives a based isomorphism
-\(B_{e,+}\simeq B_{e,-}\), so \(\mathcal D_e=0\) as a virtual based module.
-The difference between the two \(D\)-orbits under the comparison element
-\(n\) is retained at the second marked branch, not as an additional factor
-at an internal node.
-
-Both generic normalizer orbits have size \(253\), so
-\[
- \deg\mathfrak q(T_{D_y},T_{D_z})
- =253-|T_{D_y}\cap T_{D_z}|
- =1+\epsilon(\Theta).
-\]
-At the second marked branch the two orbits are equal when \(q(n)=0\).  When
-\(q(n)=1\), they are disjoint, with \(T_D^n\subset2A(M_{23}^n)\).  Their
-symmetric-difference ranks are \(0\) and \(506\), giving degrees \(0\) and
-\(253\equiv1\).  This is \(q(n)\).  The filtered determinant identity now
-gives the two fibre formulas in the statement.  Since the grading of a
-relative graded symmetric line is locally constant on the trait, the two
-displayed degrees are equal.
-
-Finally, a change of splitting or of Wewers patching datum relabels every
-graph by the same group isomorphism.  It is therefore an isometry of the
-entire normalization complex with its integral multiplicities, so the line
-descends from the splitting trait.  The remaining functorialities are
-precisely those of
-\cref{lem:effective-normalization-gluing}.
-\end{proof}
-
-\begin{corollary}[Comparison independent of branch-cycle certification]
-\label{cor:quadratic-connector}
-The line \(\mathfrak O_{\log}(\mathcal C,T_D)\) gives
-\[
- 1+\epsilon(\Theta)=1+e_{\mathrm{sing}},
-\]
-and hence a second proof of
-\(\epsilon(\Theta)=e_{\mathrm{sing}}\) that does not use the certified
-identification of the seven characteristic-zero branch cycles.
-\end{corollary}
-
-Ordinary nearby-cycle duality alone cannot produce this line.  It forgets
-the chosen Lagrangian and identifies \(P_D\) with the congruent lift
-\(P_D-2\mathcal C\); the latter has zero image modulo $4$ in the sheet
-permutation representation.  By contrast, changing the integral lift by
-\(-2\mathcal C\) changes the
-\(\ZZ/2\)-degree by
-\(|\mathcal C|=3795\equiv1\pmod2\).  Thus dependence on the two ordered
-integral multiplicity vectors is necessary, not a choice of presentation.
-No result of Lu--Zheng is used to identify the basiswise pairing with the product after
-augmentation or to turn the divided branch-difference class into a
-coefficient Bockstein.
+A geometric comparison would require a relative model, cohomological
+correspondences extending both finite incidences, and a construction
+retaining the two specified integral multiplicity vectors
+$\mathcal C$ and $T_D$.  It would then have to prove, rather than assume,
+the identification of its generic invariant with $\epsilon(\Theta)$ and
+its special invariant with $e_{\mathrm{sing}}$.  Neither the finite
+pinching calculation above nor ordinary nearby-cycle duality
+\cite{LuZheng} supplies these identifications.  We do not assert such a
+relative construction or a second proof of \cref{thm:connector} here.
 
 The next two sections record supporting arithmetic on the distinguished
 cover: first its explicit minimal projection, then the Fano and affine
 arithmetic of its branch fibre.
 
-\section{Supporting arithmetic: the minimal-degree projection}
+\section{The minimal-degree projection}
 \label{sec:adjoints}
 
 This section makes the distinguished cover explicit in the smallest
@@ -2058,7 +1654,7 @@ ruling is defined over $\QQ$.  Our calculation in
 explicitly.
 \end{proof}
 
-\section{Supporting arithmetic: the distinguished branch fibre}
+\section{Arithmetic of the distinguished branch fibre}
 \label{sec:branch-fibre-arithmetic}
 
 The minimal equation and the original plane equation describe the same
@@ -2255,7 +1851,8 @@ quadratic residue modulo $23$; for the eleven nonsquares it lies in the
 opposite class $23B$.
 \end{proposition}
 
-The two order-$23$ branch points are conjugate over $\QQ(\sqrt{-23})$, the
+The two order-$23$ branch points are conjugate over $\QQ$ and individually
+rational over $\QQ(\sqrt{-23})$; the
 quadratic subfield of $\QQ(\zeta_{23})$ fixed by the squares.  Thus the
 branch swap matches the nonsquare part of the cyclotomic character.  Fried's
 branch-cycle argument sends $(C_1,C_2,C_3)$ under $\sigma$ to
@@ -2544,31 +2141,51 @@ independently of the coordinate labeling the residue points.
 Let $E_8=\QQ[V]/(R_8)$ and $E'_8=E_8(\sqrt{c(v)})$.  The fields
 $\QQ[V]/(H_7)$, $\QQ[Y]/(L_7)$, and $E_8$ have discriminants
 $2^43^623^6$, $2^43^623^6$, and $2^{16}3^623^6$.  The relative
-discriminant of $E'_8/E_8$ has norm $2^83^223^2$.  Thus $M$ is unramified
-outside $\{2,3,23\}$ and $M/L_0$ ramifies above all three primes.  More
-precisely:
-\begin{enumerate}
-\item at $23$, the septic fields are totally ramified with $e=7$.  Residue
-  inertia is a Singer cycle, transitive on points and lines and fixing one
-  affine origin.  The residue decomposition group is $7{:}3$; in $M$,
-  inertia is $C_{14}$ and decomposition is $C_2\times(7{:}3)$;
-\item at $3$, ramification is wild with $e=3$ and lies in the
-  $\PSL_3(2)$ quotient;
-\item at $2$, the septics are tame with $e=3$, while the octic is wild with
-  $e=4$.  The relevant order-$12$ subgroup of $\Cx$ is $A_4$, with Klein
-  four wild part inside $K$ and tame quotient $C_3$.
-\end{enumerate}
+discriminant of $E'_8/E_8$ has norm $2^83^223^2$.  In particular, $M$ is
+unramified outside $\{2,3,23\}$.  The complete lists of pairs $(e,f)$
+in the constituent fields are
+\[
+\begin{array}{c|c|c}
+p&\text{either septic field}&E_8\\ \hline
+23&(7,1)&(1,1),(7,1)\\
+3&(1,1),(3,1),(3,1)&(1,1),(1,1),(3,1),(3,1)\\
+2&(1,1),(3,1),(3,1)&(4,2).
+\end{array}
+\]
+Thus the ramified septic primes at $2$ are tame; the ramified primes at
+$3$ and the octic prime at $2$ are wild.  At $23$, inertia and decomposition
+in $L_0/\QQ$ are $C_7$ and $7{:}3$, respectively; in $M/\QQ$ they are
+$C_{14}$ and $C_2\times(7{:}3)$.
 \end{theorem}
 
 \begin{proof}
-The absolute and relative discriminants are computed from exact maximal
-orders.  At $23$, tame local theory gives
-$\phi\tau\phi^{-1}=\tau^{23}=\tau^2$; since $2$ has order three modulo $7$,
-the residue decomposition group is $7{:}3$.  The quadratic step adjoins $x$
-to inertia.  The assertions at $2$ and $3$ follow from the exact
-factorization and ramification data for $H_7,L_7,R_8$ and the subgroup
-census in the certificates.
+The discriminants and prime decompositions are computed from exact maximal
+orders.  Since $M$ is the normal closure obtained by adjoining the
+conjugates of the local square root defining $E'_8/E_8$, their
+discriminant support gives the asserted bound for $M$.
+
+At $23$ the constituent extensions are tame.  The Galois closure is
+therefore tame, with cyclic inertia acting on the octic roots as one
+$7$-cycle and one fixed point; its inertia is $C_7$.  The normalizer of
+this subgroup in $2^3{:}\PSL_3(2)$ is $7{:}3$.  Tame local theory gives
+$\phi\tau\phi^{-1}=\tau^{23}=\tau^2$; the exponent $2$ has order three
+modulo $7$, so the decomposition group is the full $7{:}3$.
+
+The relative discriminant of $E'_8/E_8$ has exponent one at each of the
+two primes above $23$.  Those quadratic extensions are ramified.
+The ramification index of $L_0/E_8$ at either chosen prolongation is
+either $7$ or $1$, hence odd, so the quadratic ramification persists.
+Thus inertia in $M$ has order $14$ and is cyclic by tameness.
+The decomposition group is a central extension of $7{:}3$ by $C_2$.
+Since $21$ is odd this extension splits, giving $C_2\times(7{:}3)$.
 \end{proof}
+
+The relative discriminant proves ramification of $E'_8/E_8$ at $2$
+and $3$, but does not by itself prove its persistence after base change
+to $L_0$.  We make no assertion here about the full inertia groups in
+$M$ at those two primes.  In particular, a census restricted to
+order-$12$ subgroups cannot establish that the actual inertia at $2$
+has order $12$.
 
 \subsection{Flags selected by complex conjugation and Frobenius}
 \label{sec:flags}
@@ -2711,9 +2328,8 @@ neither establishes such stability nor explains why the distinguished class
 is globally fixed.
 
 To relate the fibre arithmetic to the fixed-class problem, we now separate
-what is supplied by the unpointed branch-fibre structures from the pointed
-semistable data and integral multiplicities used in the relative determinant
-calculation.
+what is supplied by the unpointed branch-fibre structures from the additional
+relative geometric data that a specialization proof would require.
 
 \subsection{Why unpointed branch-fibre data do not distinguish the fixed point}
 \label{sec:limits}
@@ -2739,12 +2355,11 @@ The roles of the structures above may be summarized as follows.
 
 \smallskip
 The coordinate comparison preserves all Fano and affine residue data, so the
-construction of \S\ref{sec:connector} may be formulated entirely in the
-minimal-degree model.  The branch fibre by itself still does not distinguish
-the degree-one Hurwitz point.  The determinant calculation also uses the two
-marked wild components of the characteristic-$23$ stable map and the
-integral multiplicity vectors on the graph components of the normalization
-complex.
+finite incidence calculations of \S\ref{sec:connector} are unchanged by
+passing to the minimal-degree model.  The branch fibre by itself still
+does not distinguish the degree-one Hurwitz point.  A compatible
+construction over the local Hurwitz model, retaining the specified
+integral multiplicities, is not supplied by this coordinate change.
 
 \smallskip
 There is also an exact, entirely group-theoretic limit on what unpointed
@@ -2873,15 +2488,14 @@ field does not provide the required local--global comparison.
 The reflection, inertia, and ruling-field calculations determine the reach
 and the limits of the arithmetic internal to the distinguished cover.  They
 do not by themselves construct the degree-one component of the seven-cover
-moduli problem.  The comparison in \cref{sec:connector} uses, in addition,
-the marked chain of components in the semistable model and two integral
-multiplicity vectors on the graph components; it is not a consequence of
-the unpointed data.
+moduli problem.  The local criterion of \cref{sec:frobenius-criterion}
+uses the normalized integral Hurwitz algebra; it is not a consequence of
+these unpointed branch-fibre data.
 
 We now leave the branch fibre for an independent global application of the
 minimal equation.
 
-\section{A separate application: arithmetic specializations}
+\section{Arithmetic specializations}
 \label{sec:unramified-specializations}
 
 At $T=0$ the specialized polynomial is necessarily reducible and
@@ -3049,18 +2663,29 @@ the full generic group.
 \section{Open questions}
 \label{sec:open}
 
-The line in \cref{thm:quadratic-connector} is constructed from a based
-normalization--conductor complex together with chosen integral multiplicity
-vectors.  A natural foundational question is whether it is the image of a
-canonical class in hermitian $K$-theory or in a Grothendieck--Witt category
-of logarithmic correspondences, so that neither the bases nor the chosen
-normalization presentation enter the definition.  Such a formulation would
-not change the parity calculation, but could make the construction easier to
-apply to other Hurwitz problems.
+The principal open question is to prove
+$\epsilon(\Theta)=e_{\mathrm{sing}}$ by specialization, independently of
+the certified branch-cycle matching.  This requires a relative geometric
+realization of the two finite incidence correspondences, retaining the
+separate integral multiplicities $\mathcal C$ and $T_D$, and a proof that
+the resulting special invariant is the Frobenius or quadratic-splitting
+idempotent of \cref{cor:frobenius-hurwitz}.  A functorial quadratic or
+hermitian construction is a possible approach, not an object constructed
+in this paper.  Ordinary nearby-cycle duality and the finite identities in
+\cref{sec:connector} do not establish that step.
+Approaches via bad reduction of three-point covers \cite{Wewers} or
+logarithmic nearby cycles \cite{Nakayama} would still have to specify
+the relative objects and prove the compatibility of their multiplicities.
+
+The local component criterion applies to any finite normal algebra over
+a local field's ring of integers.  A separate question is when a
+group-theoretic invariant of other Nielsen classes can be proved to
+detect its residue degrees without first matching every exact cover to
+a branch-cycle triple.
 
 A separate arithmetic classification problem is to classify the
 $2^4{:}\PSL_3(2)$-extensions of $\QQ$ unramified outside $\{2,3,23\}$ with
-the local groups and constituent fields of \cref{thm:ramification}; in
+the constituent fields and discriminants of \cref{thm:ramification}; in
 particular, decide whether $M$ is unique.
 
 \section{Exact data and certificates}
@@ -3119,8 +2744,27 @@ The recorded environment uses SageMath 10.9 \cite{SageMath}, GAP 4.14.0
 The opt-in target \texttt{make verify-hurwitz-third-fiber-exact} recomputes
 the longer characteristic-zero resultant certificate.  The similarly
 opt-in target \texttt{make verify-hurwitz-connector-a6} reconstructs the
-formal annulus at the ramified $A_6$ node used in the relative determinant
-calculation.
+formal annulus associated with the ramified $A_6$ calculation.  This local
+calculation does not construct a semistable Galois closure or the missing
+relative incidence correspondences.
+The target \texttt{make verify-hurwitz-frobenius-selector} checks the
+local decomposition and the finite-field identities in
+\cref{cor:frobenius-hurwitz}.
+
+There are different kinds of verification.  The quick map verifier checks
+serialized coefficients and recorded ranks; the producer
+\path{scripts/reconstruct_hurwitz_degree23_maps.py}, run with
+\texttt{--component all --check-basepoints}, recomputes the multiplier
+systems and the residual base-locus saturations used in
+\cref{prop:hurwitz-maps}.  The branch-cycle summary verifier checks
+recorded permutations, their generated groups, Nielsen matching, and
+input hashes.  Replaying the interval continuation requires the separate
+targets \texttt{certify-hurwitz-branch-cycles} and
+\texttt{certify-degree-one-branch-cycles}; a successful summary check is
+not a replay of all interval inequalities.  Finally, finite group audits
+do not certify the relative geometric construction left open in
+\cref{sec:open}.
+
 The main targets are:
 
 {\small
@@ -3186,7 +2830,9 @@ Galois closure and six-point permutation action &
 Local decomposition group and pointed reductions at $23$ &
 \path{verify_hurwitz_local_23.py},
 \path{verify_hurwitz_pointed_23.py} & SageMath\\
-Finite and local ingredients for the relative determinant calculation &
+Frobenius and quadratic-splitting idempotent &
+\path{verify_hurwitz_frobenius_selector.py} & SageMath\\
+Finite identities and local obstructions to a specialization comparison &
 \path{notes/certify_ade_gluing_marker.py},
 \path{notes/certify_wild_parameter_orientation.py},
 \path{notes/audit_lifted_trace_fano_affine_incidence.g},
@@ -3243,11 +2889,11 @@ The contributions of the present paper fall into four groups.
   scheme at $23$, construct the idempotent defined by the singular-point
   coordinate directly from those reductions, determine the descent behavior of the
   finite-group invariants built from transporter elements, and compare their component idempotents in
-  the exact reconstructed algebra.  We also construct a relative determinant
-  line with its symmetric form and $\ZZ/2$-grading and obtain a second
-  comparison by specialization, while proving that ordinary nearby cycles
-  after forgetting the integral multiplicity data do not determine this
-  line.
+  the exact reconstructed algebra.  We interpret the local idempotent as
+  the complement of a Frobenius-fixed locus and as an unramified
+  quadratic-splitting locus.  We prove the local component criterion
+  underlying this interpretation and specify why the finite incidence
+  identities do not yet give a comparison by specialization.
 \item On the distinguished cover, we explicitly construct the degree-$4$
   function $W$ whose existence and minimality were established in
   \cite[Remark~3.4]{HJLPPZ}, its bidegree-$(23,4)$ equation, and exact
@@ -3263,16 +2909,18 @@ The contributions of the present paper fall into four groups.
 
 We do not reprove that the fixed Nielsen class is rational; that is a
 theorem of \cite{HJLPPZ}.  The idempotent defined by the singular-point
-coordinate gives an intrinsic characteristic-$23$ criterion separating the degree-one and
+coordinate gives a characteristic-$23$ criterion on the specified pointed
+models separating the degree-one and
 degree-six components of the reconstructed algebra.  The comparison theorem
 proves its agreement with the augmentation of $\Theta$ by using the
 exact branch-cycle identification of all seven reconstructed maps.  The
-relative determinant line of
-\cref{thm:quadratic-connector,cor:quadratic-connector} gives a second proof
-from the pointed characteristic-$23$ geometry.  It is not an ordinary
-nearby-cycle determinant: the nearby-cycle stalk has a basis indexed by the
-individual sheets, and the coefficient Bockstein vanishes after the integral
-multiplicity data are forgotten.
+Frobenius interpretation in \cref{cor:frobenius-hurwitz} is independent of
+the singular-position coordinate, but it does not remove the matching from
+the comparison with $\Theta$.  No relative quadratic determinant line or
+second specialization proof is asserted.  In particular, the elementary
+nearby-cycle stalk retains the individual sheets, and the unrestricted
+coefficient Bockstein calculation does not recover the integral quadratic
+invariant.
 
 The third branch fibre of the six conjugate maps is verified exactly in
 characteristic zero and independently in all twelve residue embeddings of
@@ -3280,9 +2928,10 @@ a completely split prime.  This distinction matters: numerical and lattice
 reconstruction discover the coefficients, while the subsequent exact
 elimination and branch-cycle certificates identify the covers.
 
-The discovery and drafting process used substantial AI assistance.  Every
-new computational assertion is covered by an exact certificate described in
-\cref{sec:certificates}.
+The discovery and drafting process used substantial AI assistance.
+The computational evidence and the scope of each verification are described
+in \cref{sec:certificates}; these checks do not certify the unresolved
+relative geometric construction.
 
 \subsection*{Acknowledgements}
 
@@ -3299,7 +2948,8 @@ arXiv:2608.08538v1 (2026),
 \url{https://arxiv.org/abs/2608.08538}.
 
 \bibitem{M23data}
-S.~Zhang et al., \emph{m23isgalois}, data repository,
+X.~Huang, B.~Jackson, K.-H.~Lee, B.~Poonen, R.~Pries, and S.~Zhang,
+\emph{m23isgalois}, code and data repository,
 \url{https://github.com/shaowuz/m23isgalois}.
 
 \bibitem{BraidOrbits}
@@ -3350,7 +3000,9 @@ Springer Monographs in Mathematics, Springer, Cham, 2025.
 
 \bibitem{ATLAS}
 J.~H.~Conway, R.~T.~Curtis, S.~P.~Norton, R.~A.~Parker, and R.~A.~Wilson,
-\emph{Atlas of finite groups}, Clarendon Press, Oxford, 1985.
+\emph{Atlas of finite groups: Maximal subgroups and ordinary characters for
+simple groups}, with computational assistance from J.~G.~Thackray,
+Clarendon Press, Oxford, 1985.
 
 \bibitem{ATLASM23}
 The ATLAS of Finite Group Representations,
@@ -3376,13 +3028,19 @@ Israel J. Math. \textbf{214} (2016), no.~2, 621--650.
 \bibitem{LegrandEmbedding}
 F.~Legrand,
 \emph{On finite embedding problems with abelian kernels},
-J. Algebra \textbf{594} (2022), 51--73.
+J. Algebra \textbf{595} (2022), 633--659,
+\url{https://doi.org/10.1016/j.jalgebra.2021.12.026}.
 
 \bibitem{Ferrand}
 D.~Ferrand,
 \emph{Conducteur, descente et pincement},
 Bull. Soc. Math. France \textbf{131} (2003), no.~4, 553--585,
 \url{https://doi.org/10.24033/bsmf.2455}.
+
+\bibitem{Stacks}
+The Stacks Project Authors,
+\emph{The Stacks Project}, Tags 04GK and 09XD,
+\url{https://stacks.math.columbia.edu}.
 
 \bibitem{KnudsenMumford}
 F.~Knudsen and D.~Mumford,

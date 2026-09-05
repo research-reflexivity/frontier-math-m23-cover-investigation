@@ -95,6 +95,7 @@ notes/audit_pointed_relative_bockstein.py
 notes/explore_untagged_lifted_trace_pairing.g
 notes/explore_tagged_tame_boundary.g
 notes/RELATIVE_COHOMOLOGICAL_CORRESPONDENCE_REDERIVATION.md
+notes/CORRECTNESS_REPAIRS_2026_09_05.md
 notes/certify_fano_affine_odd_fixed_point_lemma.m
 notes/certify_ade_gluing_marker.py
 notes/certify_e8_tail_isomorphism.py
@@ -195,6 +196,7 @@ verification/verify_hurwitz_galois_closure.m
 verification/verify_hurwitz_galois_closure.py
 verification/verify_hurwitz_galois_closure_magma_summary.py
 verification/verify_hurwitz_local_23.py
+verification/verify_hurwitz_frobenius_selector.py
 verification/verify_hurwitz_local_23.m
 verification/verify_hurwitz_local_23_magma_summary.py
 verification/verify_hurwitz_pointed_23.py

@@ -9,7 +9,7 @@
 	verify-hurwitz-monodromy-eliminant verify-hurwitz-branch-cycles \
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
 	verify-hurwitz-local-23 verify-hurwitz-connector \
-	verify-hurwitz-connector-a6 \
+	verify-hurwitz-connector-a6 verify-hurwitz-frobenius-selector \
 	certify-hurwitz-branch-cycles certify-degree-one-branch-cycles \
 	hurwitz-monodromy-resultant \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry \
@@ -121,6 +121,12 @@ verify-hurwitz-local-23:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_pointed_23.py
 
+verify-hurwitz-frobenius-selector: verify-hurwitz-local-23
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		verification/verify_hurwitz_frobenius_selector.py
+
+# Finite identities and local calculations, not a certificate of the
+# unresolved relative geometric comparison.  Keep the target name stable.
 verify-hurwitz-connector:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		notes/certify_ade_gluing_marker.py
@@ -184,7 +190,7 @@ verify-all: verify-optimal verify-bridge verify-fano verify-hurwitz-candidate \
 	verify-hurwitz-maps-candidate verify-hurwitz-third-fiber-record \
 	verify-hurwitz-monodromy-eliminant verify-hurwitz-branch-cycles \
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
-	verify-hurwitz-local-23 verify-hurwitz-connector \
+	verify-hurwitz-local-23 verify-hurwitz-frobenius-selector verify-hurwitz-connector \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry verify-magma-record
 
 verify-optimal:

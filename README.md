@@ -1,9 +1,9 @@
-# The Galois-fixed point on an M23 Hurwitz scheme
+# An M23 Hurwitz scheme: exact arithmetic and reduction at 23
 
-This repository accompanies the paper *The Galois-fixed point on an M23
-Hurwitz scheme: exact reconstruction and characteristic-23 geometry*.
-Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a
-regular `M23`-cover from a seven-element Nielsen class and identify one
+This repository accompanies the paper *An M23 Hurwitz scheme:
+exact arithmetic and reduction at 23*.
+Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a degree-23 cover
+with regular Galois closure of group `M23` from a seven-element Nielsen class and identify one
 class fixed by the relevant arithmetic Galois action.  The central results
 here are:
 
@@ -15,12 +15,18 @@ here are:
   and its equality with the relative-transporter augmentation, proved by the
   exact identification of all seven maps with the seven Nielsen classes.
 
-The paper also constructs an effective logarithmic quadratic-orientation
-line on the graph-normalization complex.  Ordinary nearby-cycle duality and
-the ordinary coefficient Bockstein lose the necessary effective lift, so the
-construction retains the two integral graph cycles as an ordered decoration.
-Its generic and special determinant filtrations give a second,
-branch-cycle-free proof of the fixed-point comparison.
+The paper proves a local component criterion using Frobenius and unramified
+extensions.  On the normalized integral Hurwitz model at 23, the
+unramified quadratic extension splits exactly on the degree-six component;
+the complementary component is the unique Frobenius-fixed component of
+the reduced closed fibre.  This gives a coordinate-independent local
+interpretation.  Its agreement with the transporter augmentation still
+uses the certified branch-cycle matching.
+
+The earlier proposed relative quadratic-orientation construction is not a
+proved second comparison.  Its finite identities remain useful, but the
+relative correspondences and their specialization have not been constructed.
+See [the repair record](notes/CORRECTNESS_REPAIRS_2026_09_05.md).
 
 Here “Galois-fixed” refers to the class identified by Huang et al.  After the
 ordered `23A,23B` data are defined over `K0 = Q(sqrt(-23))`, it is the unique
@@ -30,9 +36,8 @@ cover to `Q` is their theorem.
 Two supporting calculations describe the distinguished cover itself: an
 explicit minimal-degree `(23,4)` equation and the Fano-plane and affine-cube
 arithmetic in the fibre above the rational branch point `T=0`.  These
-structures supply the finite conductor term in the logarithmic orientation
-connector, but the branch fibre alone does not distinguish the fixed Hurwitz
-point.
+structures give finite incidence identities, but the branch fibre alone
+does not distinguish the fixed Hurwitz point.
 
 A uniform family of `M23` number-field specializations is a separate
 application of the minimal equation.  Huang et al. already obtain abstractly
@@ -149,12 +154,12 @@ positions have resolvent
 separating the degree-one and sextic components.  Exact branch-cycle
 identification shows that this idempotent and the relative-transporter
 augmentation both equal the sextic-component idempotent.  The accompanying
-connector notes construct the relative half-graded orientation line, prove
-its normalization--gluing lemma, and distinguish it from the vanishing
-ordinary coefficient Bockstein.  See `HURWITZ_LOCAL_23.md`,
-`notes/GENERAL_EFFECTIVE_NORMALIZATION_GLUING_LEMMA.md`,
-`notes/LOG_QUADRATIC_ORIENTATION_LINE.md`, and the comparison section of the
-manuscript.
+older connector notes record a proposed relative orientation construction,
+now explicitly marked unproved.  The revised manuscript instead proves the
+Frobenius and unramified-splitting interpretation, while retaining the
+finite incidence identities and the obstruction from the vanishing ordinary
+coefficient Bockstein.  See [the local calculations](HURWITZ_LOCAL_23.md)
+and [the repair record](notes/CORRECTNESS_REPAIRS_2026_09_05.md).
 
 ## Reproduce
 

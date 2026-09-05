@@ -1,5 +1,12 @@
 # Re-derivation of the relative cohomological connector
 
+> **Status clarification, 2026-09-05.** The finite nearby-cycle calculation
+> and the distinction between the two pairings remain valid. The
+> mod-four calculation mentioned below depends on specified integral lifts;
+> the coefficient Bockstein in the unrestricted mapping cone is zero.
+> No relative specialization comparison follows. See
+> CORRECTNESS_REPAIRS_2026_09_05.md for the current manuscript's scope.
+
 ## Status
 
 This note restarts the proposed characteristic-`23` connector from the

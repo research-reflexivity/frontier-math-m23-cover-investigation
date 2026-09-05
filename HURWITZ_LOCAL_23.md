@@ -1,5 +1,27 @@
 # The local Hurwitz scheme and pointed reductions at 23
 
+## Proved local interpretation (5 September 2026)
+
+The manuscript now proves a local component criterion (Theorem 3.13) and
+its application here (Corollary 3.14). On the reduced closed fibre,
+Frobenius has cycle lengths 1+2+2. The complement of its scheme-theoretic
+fixed locus lifts uniquely to the degree-six component. Equivalently,
+adjoining a square root of -1 gives a finite etale double cover of the
+normalized integral model which splits precisely on that component.
+In the singular-position coordinate its idempotent is
+
+    e_sing = -(u^23-u)^22 = 2*u^4+2*u^3+4*u^2+2*u+3.
+
+This construction is invariant under isomorphisms over the fixed local
+base and does not require the coordinate u. It is not a relative
+incidence construction on a semistable Galois closure. Agreement with
+the finite-group augmentation still uses the certified Nielsen matching.
+A local rank-one factor alone does not imply a globally rational point.
+
+Run: make verify-hurwitz-frobenius-selector.
+
+## Exact local data
+
 Put `K0=Q(sqrt(-23))`, let `q=(sqrt(-23))`, and let
 
 ```text
