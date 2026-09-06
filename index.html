@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="description" content="Exact arithmetic and reduction at 23 of an M23 Hurwitz scheme: a visual guide to the certified component comparison, its Frobenius interpretation, and the open relative geometric question.">
+<meta name="description" content="An interactive guide to the osculating-plane characterization of the known Galois-fixed M23 cover, its exact arithmetic, and reduction at 23. The proposed specialization theorem remains open.">
 <meta name="theme-color" content="#10141c">
 <link rel="canonical" href="https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/">
 <title>An M23 Hurwitz scheme: exact arithmetic and reduction at 23 — interactive argument map</title>
@@ -164,8 +164,8 @@
     <div class="app-context-copy">
       <p class="app-kicker">Interactive argument map</p>
       <h1 id="app-title">An M<sub>23</sub> Hurwitz scheme: exact arithmetic and reduction at 23</h1>
-      <p class="app-author"><span>François Le Lay</span><span class="app-revision">Last revision: 09/05/2026</span></p>
-      <p class="app-description">Explore the paper’s exact arithmetic and characteristic-23 comparison, one dependency at a time. The equality <span aria-label="epsilon of Theta equals e singular">ε(Θ) = e<sub>sing</sub></span> is proved using certified branch-cycle matching. Frobenius and an unramified quadratic cover explain the local indicator; an independent relative geometric proof remains open. Select a node for its justification, limits, and elementary 101 lessons.</p>
+      <p class="app-author"><span>François Le Lay</span><span class="app-revision">Last revision: 09/06/2026</span></p>
+      <p class="app-description">Follow the geometric characterization of the known Galois-fixed cover: exactly one of the seven curves has nonempty osculating incidence. Explore the exact checks, the Galois-invariance argument, and the auxiliary S<sub>4</sub> map. The local harmonic configuration at 23 selects the same component, but a theorem lifting that configuration to global osculation remains open. Select a node for its justification, limits, and elementary 101 lessons.</p>
     </div>
     <nav class="app-links" aria-label="Paper resources">
       <a class="app-link app-link-primary" href="m23-cover-investigation.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
@@ -191,7 +191,7 @@
 &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;
 &amp;lt;meta name=&amp;quot;referrer&amp;quot; content=&amp;quot;no-referrer&amp;quot;&amp;gt;
 &amp;lt;meta http-equiv=&amp;quot;Content-Security-Policy&amp;quot; content=&amp;quot;default-src &amp;#x27;none&amp;#x27;; script-src &amp;#x27;unsafe-inline&amp;#x27; &amp;#x27;unsafe-eval&amp;#x27; &amp;#x27;wasm-unsafe-eval&amp;#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &amp;#x27;unsafe-inline&amp;#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &amp;#x27;none&amp;#x27;; object-src &amp;#x27;none&amp;#x27;; base-uri &amp;#x27;none&amp;#x27;; form-action &amp;#x27;none&amp;#x27;&amp;quot;&amp;gt;
-&amp;lt;title&amp;gt;M23 Hurwitz scheme: arithmetic comparison and open geometric question&amp;lt;/title&amp;gt;
+&amp;lt;title&amp;gt;M23 Hurwitz scheme: osculating incidence, exact arithmetic and reduction&amp;lt;/title&amp;gt;
 &amp;lt;style&amp;gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -1166,7 +1166,7 @@ html&amp;gt;body{padding:0}&amp;lt;/style&amp;gt;
 &amp;lt;div id=&amp;quot;m23-hinge-map&amp;quot;&amp;gt;
   &amp;lt;div class=&amp;quot;viz-controls&amp;quot; aria-label=&amp;quot;Graph controls&amp;quot;&amp;gt;
     &amp;lt;div class=&amp;quot;viz-row&amp;quot; role=&amp;quot;group&amp;quot; aria-label=&amp;quot;Amount of detail&amp;quot;&amp;gt;
-      &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary&amp;quot; data-view=&amp;quot;core&amp;quot; aria-pressed=&amp;quot;true&amp;quot;&amp;gt;Exact comparison&amp;lt;/button&amp;gt;
+      &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary&amp;quot; data-view=&amp;quot;core&amp;quot; aria-pressed=&amp;quot;true&amp;quot;&amp;gt;Main argument&amp;lt;/button&amp;gt;
       &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn&amp;quot; data-view=&amp;quot;full&amp;quot; aria-pressed=&amp;quot;false&amp;quot;&amp;gt;Every dependency&amp;lt;/button&amp;gt;
       &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn&amp;quot; data-view=&amp;quot;stress&amp;quot; aria-pressed=&amp;quot;false&amp;quot;&amp;gt;Limits and open step&amp;lt;/button&amp;gt;
     &amp;lt;/div&amp;gt;
@@ -1193,7 +1193,7 @@ html&amp;gt;body{padding:0}&amp;lt;/style&amp;gt;
 
       &amp;lt;div id=&amp;quot;m23-graph-wrap&amp;quot; tabindex=&amp;quot;0&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Scrollable argument graph; scroll to explore all nodes&amp;quot;&amp;gt;
         &amp;lt;svg id=&amp;quot;m23-graph&amp;quot; role=&amp;quot;img&amp;quot; aria-label=&amp;quot;Causal graph for the M23 fixed-point comparison&amp;quot; aria-describedby=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;
-          &amp;lt;desc id=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;A dependency graph for the certified equality of two component indicators. One route uses exact maps and branch-cycle matching; the local indicator is interpreted by Frobenius and an unramified quadratic cover. The relative geometric comparison is open, with dotted arrows marking unproved steps or non-implications.&amp;lt;/desc&amp;gt;
+          &amp;lt;desc id=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;A dependency map for the global osculating characterization of the known Galois-fixed cover. Exact canonical jets and incidence tests combine with Galois invariance. Local harmonic reduction and finite parity select the same identified component. Dotted arrows mark open specialization steps or non-implications, not proved implications.&amp;lt;/desc&amp;gt;
         &amp;lt;/svg&amp;gt;
       &amp;lt;/div&amp;gt;
     &amp;lt;/section&amp;gt;
@@ -1653,16 +1653,15 @@ window.MathJax = {
   const wrap = root.querySelector(&amp;#x27;#m23-graph-wrap&amp;#x27;);
 
   const layers = [
-  &amp;quot;Starting point&amp;quot;,
-  &amp;quot;Exact global arithmetic&amp;quot;,
-  &amp;quot;Finite and local data&amp;quot;,
-  &amp;quot;Finite identities and Frobenius&amp;quot;,
-  &amp;quot;Lifting, splitting and limitations&amp;quot;,
-  &amp;quot;Component identifications and open step&amp;quot;,
-  &amp;quot;Established comparison&amp;quot;
+  &amp;quot;The question&amp;quot;,
+  &amp;quot;Certified covers and algebra&amp;quot;,
+  &amp;quot;Canonical jets and local data&amp;quot;,
+  &amp;quot;Planes, symmetry and reduction&amp;quot;,
+  &amp;quot;Incidence tests and criteria&amp;quot;,
+  &amp;quot;Global fixedness and comparison&amp;quot;,
+  &amp;quot;Consequences and scope&amp;quot;
 ];
-
-  const nodes = [
+const nodes = [
   {
     &amp;quot;id&amp;quot;: &amp;quot;problem&amp;quot;,
     &amp;quot;layer&amp;quot;: 0,
@@ -1670,12 +1669,12 @@ window.MathJax = {
     &amp;quot;group&amp;quot;: &amp;quot;question&amp;quot;,
     &amp;quot;core&amp;quot;: true,
     &amp;quot;status&amp;quot;: &amp;quot;prior work&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;Seven covers; one fixed class&amp;quot;,
-    &amp;quot;formal&amp;quot;: &amp;quot;7=1+6&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;The Nielsen class has seven elements. Huang et al. identify a Galois-fixed class and construct the distinguished cover over the rational numbers.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;The question is how exact arithmetic and characteristic-23 geometry identify the same component of the Hurwitz scheme.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Prior work: Huang, Jackson, Lee, Poonen, Pries, and Zhang. The paper reconstructs and studies their cover; it does not discover it.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;The current manuscript proves the comparison using certified branch-cycle matching. An independent relative geometric proof remains open.&amp;quot;
+    &amp;quot;title&amp;quot;: &amp;quot;Why this one of seven?&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;|\\mathcal H(\\overline{\\mathbf Q})|=7&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Huang, Jackson, Lee, Poonen, Pries, and Zhang found seven covers and identified one Galois-fixed class. The question here is what intrinsic geometry distinguishes that class.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The new route tests the two osculating planes on every canonical curve. Exactly one cover has a nonempty intersection with their common line.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Prior work supplies the branch-cycle problem and the known cover. Sections 2 and 3 supply the geometric characterization and the exact seven-cover verification.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The fixed point and its rational cover were already known. The new characterization is proved using exact models; a theorem forcing the incidence from the branch datum remains open.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;algebra&amp;quot;,
@@ -1687,9 +1686,9 @@ window.MathJax = {
     &amp;quot;title&amp;quot;: &amp;quot;Exact Hurwitz algebra&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;A_{\\mathrm H}=K_0\\times L&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Over K₀ = Q(√−23), the coordinate algebra is K₀ × L, where L is a field of degree six. Its relative Galois closure has group S₆.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;The global product already distinguishes a degree-one arithmetic component from a degree-six component.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The exact algebra supports computations on all seven covers over two coefficient fields. It also identifies the global components when comparing with local reduction.&amp;quot;,
     &amp;quot;evidence&amp;quot;: &amp;quot;Exact reconstruction, irreducibility and Galois-closure certificates in the manuscript and repository.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;Finding a linear factor after completion at one prime would not, by itself, prove this global decomposition.&amp;quot;
+    &amp;quot;breaks&amp;quot;: &amp;quot;The rational factor is not used as the definition of the osculating property. For global fixedness, the essential facts are a unique geometric incidence and its Galois invariance.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;exactmaps&amp;quot;,
@@ -1698,19 +1697,19 @@ window.MathJax = {
     &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
     &amp;quot;core&amp;quot;: true,
     &amp;quot;status&amp;quot;: &amp;quot;established — certified reconstruction&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;Exact maps and branch cycles&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Seven certified exact covers&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;f_1,\\ldots,f_7&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Exact degree-23 maps represent all seven covers. Certified root continuation matches each map with its Nielsen class.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;This is the indispensable cross-identification between the finite transporter calculation and the arithmetic components.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Exact equations and Arb branch-cycle certificates. The corrected divisor argument cancels a common degree-seven divisor of the quintic numerator and denominator sections.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;The common fixed divisor is not absent: it cancels in their ratio. This release does not claim a fresh run of the expensive continuation.&amp;quot;
+    &amp;quot;why&amp;quot;: &amp;quot;Canonical curves, the degree-23 maps and their two totally ramified points give exact inputs for the osculating test. Branch-cycle certification checks that the seven Nielsen classes really are represented.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 3: exact canonical models, marked points, rational maps and certified branch cycles. The quintic sections have a common divisor of degree seven; cancelling it leaves degree 23.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;An exact incidence calculation on an unverified list would not establish uniqueness among the seven covers. The separate cover and branch-cycle certificates remain necessary.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;idempotents&amp;quot;,
     &amp;quot;layer&amp;quot;: 1,
     &amp;quot;order&amp;quot;: 2,
     &amp;quot;group&amp;quot;: &amp;quot;question&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — elementary algebra&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;Global component indicators&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;e_1=(1,0),\\quad e_6=(0,1)&amp;quot;,
@@ -1738,7 +1737,7 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 2,
     &amp;quot;order&amp;quot;: 0,
     &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — finite certificate&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;Transporter intersection parity&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\epsilon(\\Theta)\\in\\{0,1\\}&amp;quot;,
@@ -1752,7 +1751,7 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 3,
     &amp;quot;order&amp;quot;: 0,
     &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — certified comparison&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;Finite indicator equals e₆&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\epsilon(\\Theta)=e_6&amp;quot;,
@@ -1780,14 +1779,14 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 2,
     &amp;quot;order&amp;quot;: 2,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — explicit closed-fibre coordinates&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;A coordinate for the three closed points&amp;quot;,
-    &amp;quot;formal&amp;quot;: &amp;quot;(u-16)(u^2+1)(u^2+u+1)=0&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;The reduced closed fibre can be written with one coordinate u and three coprime factors: one linear and two irreducible quadratics over F₂₃.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;The characteristic-23 singular-position indicator is 0 on the linear factor and 1 on the two quadratic factors.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The local equations and their exact factorization identify these positions and their global components.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;This polynomial presents the reduced closed fibre, not the full ramified integral algebra and not a new degree-five global Hurwitz algebra.&amp;quot;
+    &amp;quot;title&amp;quot;: &amp;quot;Stored singular coordinates&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;(u-16)(u^2+1)(u^2+u+1)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The stored coordinates present the three singular positions by this polynomial over F₂₃. The value 16 on the first component is not in the same branch normalization as the other two.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;On the first component the third branch value has residue 7. Dividing its target coordinate by that value changes 16 to −1; the other two components already have third branch value 1.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Propositions 4.3–4.4 and the new exact branch-normalization checker. The raw-coordinate indicator remains valid, but its coordinate convention must be stated.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Do not interpret the raw value 16 as a uniformly normalized geometric position. Scaling branch values is different from taking the integral closure of an algebra.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;frobenius&amp;quot;,
@@ -1800,7 +1799,7 @@ window.MathJax = {
     &amp;quot;formal&amp;quot;: &amp;quot;F:a\\longmapsto a^{23}&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Frobenius raises elements to the 23rd power. It is the identity on F₂₃ and is the nontrivial field automorphism on F₂₃².&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;The scheme-theoretic fixed locus keeps the residue-degree-one component and removes the two quadratic components.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 3.13: for residue field Fq, a factor Fqᶠ contributes to the fixed locus of q-power Frobenius exactly when f = 1.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 4.7: for residue field Fq, a factor Fqᶠ contributes to the fixed locus of q-power Frobenius exactly when f = 1.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;The invariant subalgebra is different: every finite-field factor has fixed elements. We need the fixed locus of the scheme, not the ring of fixed elements.&amp;quot;
   },
   {
@@ -1808,8 +1807,8 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 4,
     &amp;quot;order&amp;quot;: 0,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 3.13&amp;quot;,
+    &amp;quot;core&amp;quot;: false,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 4.7&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;The Frobenius fixed locus&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\operatorname{Spec}\\bigl(B/(b^{23}-b:b\\in B)\\bigr)&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Impose the equations b²³ − b = 0 for every element b of B. The resulting quotient is F₂₃, the first factor alone.&amp;quot;,
@@ -1822,13 +1821,13 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 3,
     &amp;quot;order&amp;quot;: 2,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — finite étale construction&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;An unramified quadratic cover&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;A\\longrightarrow A[z]/(z^2+1)&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Since −1 is not a square in F₂₃, R[z]/(z² + 1) is the unramified quadratic extension of R. Pull it back to the normalized integral algebra A.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;This supplies an actual finite étale double cover of the local integral scheme, not just a table of matching values.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The discriminant −4 is a unit. Corollary 3.14 constructs this cover explicitly.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;The discriminant −4 is a unit. Corollary 4.8 constructs this cover explicitly.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;This cover is a local arithmetic construction. It is not the still-missing relative quadratic refinement of the finite incidence correspondences.&amp;quot;
   },
   {
@@ -1836,8 +1835,8 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 4,
     &amp;quot;order&amp;quot;: 1,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 3.13&amp;quot;,
+    &amp;quot;core&amp;quot;: false,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 4.7&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;Where the quadratic cover splits&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\text{split}\\iff 2\\mid f_i&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;On a local factor of residue degree fᵢ, the pulled-back unramified quadratic cover splits into two copies exactly when fᵢ is even.&amp;quot;,
@@ -1850,13 +1849,13 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 4,
     &amp;quot;order&amp;quot;: 2,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — rank criterion&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;The fixed component has rank one&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\operatorname{rank}_R Z=\\sum_{f_i=1}e_i=1&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Lift the Frobenius fixed locus to an open-and-closed part of the normalized integral scheme. Its rank is the sum of eᵢ over factors with fᵢ = 1.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;Here there is one such factor and its ramification degree is one. It is exactly the R factor, not a ramified thickening of higher rank.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 3.13, applied to the certified ramification and residue degrees.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 4.7, applied to the certified ramification and residue degrees.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;One residue-degree-one factor is not enough for rank one if its ramification degree exceeds one. Nor does local rank one alone imply a global rational point.&amp;quot;
   },
   {
@@ -1878,14 +1877,14 @@ window.MathJax = {
     &amp;quot;layer&amp;quot;: 4,
     &amp;quot;order&amp;quot;: 3,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
-    &amp;quot;core&amp;quot;: true,
+    &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;established — exact polynomial identity&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;An explicit Frobenius indicator&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;e_{\\mathrm{sing}}=-(u^{23}-u)^{22}&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;This expression is 0 on the linear factor and 1 on each quadratic factor. In B it equals 2u⁴ + 2u³ + 4u² + 2u + 3.&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;In the stored coordinate u, this expression is 0 on the linear factor and 1 on each quadratic factor. It reduces to 2u⁴ + 2u³ + 4u² + 2u + 3.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;It gives a checkable coordinate formula for the complement of the Frobenius fixed locus.&amp;quot;,
     &amp;quot;evidence&amp;quot;: &amp;quot;If δ = u²³ − u is nonzero in F₂₃², then δ²³ = −δ, so δ²² = −1. The Chinese remainder theorem combines the factors.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;The formula uses a coordinate that generates each quadratic residue field. The underlying split locus does not depend on this coordinate.&amp;quot;
+    &amp;quot;breaks&amp;quot;: &amp;quot;The displayed expanded polynomial is for the stored u, not the uniformly normalized t. The abstract indicator is unchanged by the branch-coordinate correction.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;esing_e6&amp;quot;,
@@ -1893,13 +1892,13 @@ window.MathJax = {
     &amp;quot;order&amp;quot;: 1,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
     &amp;quot;core&amp;quot;: true,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Corollary 3.14&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;Geometric-position indicator equals e₆&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Corollary 4.8&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;The local indicator is e₆&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;e_{\\mathrm{sing}}=e_6&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;After the unique lift and the global component identification, the characteristic-23 singular-position indicator is e₆.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;The Frobenius and quadratic-splitting constructions give a coordinate-free local interpretation of this indicator.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Corollary 3.14 and the explicit polynomial check, using the global K₀ × L decomposition.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;This local construction does not use the branch-cycle matching. Comparing it with the transporter indicator still does.&amp;quot;
+    &amp;quot;evidence&amp;quot;: &amp;quot;Corollary 4.8 and the explicit polynomial check, using the global K₀ × L decomposition.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This is a local-to-global component identification using the exact global algebra. It does not prove that the harmonic position lifts to an osculating incidence.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
@@ -1908,12 +1907,12 @@ window.MathJax = {
     &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
     &amp;quot;core&amp;quot;: true,
     &amp;quot;status&amp;quot;: &amp;quot;established — exact component comparison&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;The two indicators agree&amp;quot;,
-    &amp;quot;formal&amp;quot;: &amp;quot;\\epsilon(\\Theta)=e_6=e_{\\mathrm{sing}}&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;The finite transporter indicator and the characteristic-23 indicator both select the global degree-six component.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;This rigorously connects the finite-group and local arithmetic viewpoints.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The established route combines certified branch-cycle matching, exact global reconstruction, and the local component calculation.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;These are two compatible constructions, not two independent proofs of the equality. An independent relative geometric comparison remains open.&amp;quot;
+    &amp;quot;title&amp;quot;: &amp;quot;Three component descriptions&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;1-e_{\\rm osc}=e_{\\rm sing}=\\epsilon(\\Theta)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The global osculating indicator is e₁ = (1,0). Its complement is e₆ = (0,1), also selected by the local singular-position indicator and the finite transporter parity.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This places the intrinsic global geometry, reduction at 23, and finite branch-cycle data on the same exactly identified components.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.3 and Section 4. Certified models and branch-cycle matching compare the labels; the osculating theorem supplies the new geometric characterization.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Equality on the identified components is proved. A theorem transporting osculating incidence through reduction at 23 is not proved; the finite-parity specialization is also still open.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;target&amp;quot;,
@@ -1922,12 +1921,12 @@ window.MathJax = {
     &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
     &amp;quot;core&amp;quot;: true,
     &amp;quot;status&amp;quot;: &amp;quot;established result; remaining question explicit&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;What is proved — and what is open&amp;quot;,
-    &amp;quot;formal&amp;quot;: &amp;quot;\\epsilon(\\Theta)=e_{\\mathrm{sing}}\\quad\\text{(certified matching)}&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;The paper proves the equality by exact matching and explains the local indicator using Frobenius and an unramified quadratic cover.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;A stronger geometric explanation would transport the finite parity through an actual relative construction, without using that matching.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The corrected manuscript separates the proved local criterion from the finite identities and the unresolved relative comparison.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;Open: construct the relative model, both incidence correspondences, and suitable quadratic data; then prove the generic and special identifications.&amp;quot;
+    &amp;quot;title&amp;quot;: &amp;quot;A global characterization, with limits&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;e_{\\rm osc}=e_1,\\quad1-e_{\\rm osc}=e_6&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Exactly one of the seven covers has nonempty osculating incidence. Because that property is Galois-invariant, its moduli point is globally fixed. Its component agrees with the harmonic reduction and the complement of the finite parity.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This gives an intrinsic geometric description of the known exceptional cover, not just a rational factor in a polynomial. The related Jacobian criterion and degree-four S₄ pencil make the description more concrete.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.1 and Section 2 prove the global characterization with exact computation. Theorem 1.3 compares the component indicators.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Still open: explain why this incidence must occur without reconstructing the seven models, or prove that the harmonic reduction forces it. No unproved specialization arrow is part of the global fixedness argument.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;fanoaffine&amp;quot;,
@@ -2099,7 +2098,7 @@ window.MathJax = {
     &amp;quot;title&amp;quot;: &amp;quot;Local rank one is not global rationality&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;X^3-2\\equiv(X-3)(X^2+3X+4)\\pmod5&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;The cubic X³ − 2 is irreducible over Q, but over Q₅ its algebra splits as a linear factor and an unramified quadratic factor.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;This shows exactly why the global K₀ × L reconstruction must remain an input to the M₂₃ comparison.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This is why the local component comparison uses the exact global algebra. The new osculating route instead proves global fixedness from a globally invariant property with a unique solution.&amp;quot;,
     &amp;quot;evidence&amp;quot;: &amp;quot;Eisenstein at 2 proves global irreducibility. Modulo 5 the displayed coprime factors lift by Hensel’s lemma, and the quadratic is irreducible.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;The local component criterion alone does not produce rational points over number fields or regular Galois realizations.&amp;quot;,
     &amp;quot;gate&amp;quot;: true,
@@ -2112,293 +2111,654 @@ window.MathJax = {
     &amp;quot;group&amp;quot;: &amp;quot;bridge&amp;quot;,
     &amp;quot;core&amp;quot;: false,
     &amp;quot;status&amp;quot;: &amp;quot;open — not constructed&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;The relative geometric comparison&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Fano incidence across reduction?&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\text{relative incidences + quadratic data}\\;?&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;Construct a relative model and both cohomological correspondences extending the split generic incidences. Retain the specified integral representatives C and T_D in suitable quadratic data.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;Then prove that the generic invariant is ε(Θ) and the special invariant is the singular-position indicator. This would give a comparison independent of branch-cycle matching.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The finite pairing, quadratic identities, local arithmetic, and obstruction calculations specify the requirements; they do not fulfill them.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;No such relative construction or second proof is asserted in the corrected paper. The outgoing dotted arrow is a research goal, not a proved implication.&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The split finite Fano–affine incidences are constructed. Extending those particular cohomological correspondences over a relative model, with suitable quadratic data retaining C and T_D, remains open.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This is a separate proposed explanation of the finite parity and the characteristic-23 indicator. It is not the relative osculating incidence, which is now constructed in characteristic zero.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 4.4 supplies the finite pairing and audits the failed specialization shortcuts; Section 8 distinguishes this question from the new osculating approach.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The new relative osculating construction does not repair the older Fano–affine, Bockstein, or half-degree determinant proposals. This dotted route remains a research goal.&amp;quot;,
+    &amp;quot;gate&amp;quot;: true,
+    &amp;quot;badge&amp;quot;: &amp;quot;open&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;canonicaljets&amp;quot;,
+    &amp;quot;layer&amp;quot;: 2,
+    &amp;quot;order&amp;quot;: -2,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;exact computation — 2.2&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Jets at the two marked points&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;a^{K}(A)=a^{K}(B)=(0,1,2,3)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;A genus-four canonical curve has four independent regular differentials. At each total ramification point A and B, the exact jets show that a unique differential, up to scale, vanishes to order at least three.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Taking the first three coefficients of a local expansion gives a 3-by-4 linear map of rank three. Its one-dimensional kernel defines the required plane.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 2.2. The maintained Sage checker recomputes the local expansions on both coefficient fields and repeats the test after an invertible projective change of coordinates.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The sequence (0,1,2,3) is verified here; it must not be assumed for arbitrary marked genus-four curves. The computation is exact, not a plot of a tangent plane.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;osculatingplanes&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -2,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;constructed — Section 2&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Two osculating planes&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\ell=H_A\\cap H_B&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The kernel at A defines its osculating plane H_A; similarly for B. Each plane has contact order three at its own mark, and the two distinct planes meet in a line.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;A common point of their plane sections is exactly a point where that line meets the canonical curve. The intersection includes multiplicities, not just visible points in a drawing.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 2 and Exact computation 2.2. Neither osculating section vanishes at the opposite marked point.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Two planes in projective three-space always meet in a line. It does not follow that this line meets the curve; that is the exceptional condition being tested.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -2,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;exact computation — 2.2&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Only one nonempty incidence&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\deg E_{\\rm osc}=2,0,0,0,0,0,0&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Restrict the canonical quadric and cubic to the line. Their homogeneous greatest common divisor has degree two, with distinct roots, on one cover; it is 1 on the other six.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Thus the first curve has exactly two common points and the six others have none, even over an algebraic closure. A calculation over the sextic field tests all six embeddings at once.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 2.2 and verify_hurwitz_osculating.py. The homogeneous calculation includes points at infinity and is repeated after changing projective coordinates.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This proves existence and uniqueness on the certified seven-cover list. It does not yet explain why the branching rules force such an incidence before the equations are known.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;functorial&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -1,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Proposition 2.3&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;A Galois-invariant property&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\sigma(E_{\\rm osc}(X))=E_{\\rm osc}(\\sigma X)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Galois conjugation changes algebraic coefficients but respects canonical differentials, jets and intersections. It preserves the unordered pair {A,B}; exchanging the marks only exchanges the two planes.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Therefore the property “the two osculating planes have a common point on the curve” is preserved by the full global Galois action of the original rational branch datum.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 2.3: restriction to 3A and 3B and their kernel subspaces commute with field extension and with isomorphisms of the marked curves.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The unordered pair matters: the original branch datum can exchange the two order-23 marks. Invariance only under a local decomposition group would not prove global fixedness.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;relativeosc&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -3,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;constructed — Proposition 2.3&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;A relative incidence in characteristic zero&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\mathcal Z\\longrightarrow\\mathcal H_{\\rm in}&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;On the family of canonical curves over the finite Hurwitz scheme, take the common zero scheme of the two jet-kernel sections. This is an actual algebraic incidence family, not an analogy.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The jet kernels are line bundles. The common zero scheme is proper with finite fibres, hence finite, and its image is exactly the component where the fibre is nonempty.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 2.3. Its geometric fibres have lengths 2,0,0,0,0,0,0; over the finite product-of-fields base it has the stated scheme-theoretic image.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This relative construction is in characteristic zero. It supplies neither an integral extension across 23 nor the separate proposed relative Fano–affine correspondences.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;globalfixed&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -2,
+    &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Theorem 1.1&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Uniqueness forces global fixedness&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\sigma(x_*)=x_*\\quad(\\sigma\\in G_{\\mathbf Q})&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;There is exactly one cover with the incidence property. Any Galois automorphism must send it to another cover with that property. There is no second choice, so the moduli point is fixed.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This uses a property defined intrinsically on each cover, rather than defining the point to be the already known rational factor. Over the original rational branch datum its one-point image is Q-rational.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;The exact seven-cover test supplies uniqueness; Proposition 2.3 supplies global invariance and the reduced one-point scheme image.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The conclusion concerns a moduli point first. Descent of the cover itself needs a further argument about its automorphisms. Also, uniqueness was proved with exact equations.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;descent&amp;quot;,
+    &amp;quot;layer&amp;quot;: 6,
+    &amp;quot;order&amp;quot;: -3,
+    &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
+    &amp;quot;core&amp;quot;: false,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Section 2.3&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;The cover descends to Q&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;C_{S_{23}}(M_{23})=1&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;A deck automorphism commutes with the permutations of the 23 sheets. Here that centralizer is trivial, so isomorphisms with Galois conjugates are unique and automatically satisfy the descent cocycle condition.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This turns the rational moduli point into an actual cover over Q. The normalizer identity N in S₂₃ of M₂₃ equals M₂₃ then makes its Galois closure regular.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 2.3 uses 2-transitivity to prove the trivial centralizer, effective descent, and the normalizer identity. It recovers the known conclusion of Huang et al.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;A rational moduli point does not always give an object over Q when automorphisms obstruct descent. No new regular realization of M₂₃ is being claimed.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;jacobian&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -1,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Lemma 2.1&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;An equivalent Jacobian condition&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;[C-D]=3[A-B]&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The class ξ = [A−B] has exact order 23 in the Jacobian. Exactly on the exceptional cover, three times ξ is the difference [C−D] of a unique pair of additional points.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Removing the common degree-two divisor from the osculating sections leaves 3A+D and 3B+C. Their linear equivalence gives the displayed identity. Conversely, Riemann–Roch recovers the common divisor.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Lemma 2.1, under the verified genus-four, nonhyperelliptic, jet and opposite-mark hypotheses. The residual points are also checked exactly.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This is not a claim that every order-23 Jacobian class is a difference of two points after multiplication by three. The verified hypotheses and the exceptional incidence are essential.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;quartic&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: 0,
+    &amp;quot;group&amp;quot;: &amp;quot;generic&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Section 2.4&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Cancelling gives a four-sheeted map&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\deg(h_B/h_A)=6-2=4&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;A canonical plane section has degree six. On the exceptional curve, the common divisor has degree two, leaving a base-point-free pencil of degree four after cancellation.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The marked points give ramification index three in this new map. On the other six curves there is no common divisor to cancel, so the corresponding osculating map has degree six.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 2.4 and the exact residual-divisor calculation. The two-dimensional space of sections is Galois-stable and its pencil descends to Q.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This is not the earlier degree-four pencil |K−A−B| used for the minimal (23,4) equation. Its base divisor avoids A and B, so the two constructions are distinct.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;s4&amp;quot;,
+    &amp;quot;layer&amp;quot;: 6,
+    &amp;quot;order&amp;quot;: -2,
+    &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Proposition 2.4&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;An auxiliary S₄ cover&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;G_{\\rm geom}(h_B/h_A)=S_4&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;A connected four-sheeted map with a branch 3-cycle has transitive monodromy A₄ or S₄. The exact quartic discriminant is not a square over the algebraically closed constant field, ruling out A₄.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The exceptional M₂₃ cover thus carries a natural auxiliary map with geometric monodromy S₄. This is a concrete structure involving another group, obtained from the osculating incidence.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 2.4. Exact elimination and substitution certify the quartic; discriminant squarefree factors have degree/multiplicity pairs (10,1) and (5,2).&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;M₂₃ is still the monodromy of the original degree-23 map. S₄ belongs to a different map on the same curve, and is neither a new group nor a new inverse Galois realization.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;harmonic&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: 2,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Proposition 4.4&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;A uniformly harmonic position&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;(t+1)(t^2+1)(t^2+t+1)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Normalize the three branch values to 0, ∞ and 1 on every component. On the degree-one component the stored singular value becomes 16/7 = −1 in F₂₃. The other two singular positions satisfy the displayed quadratics.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The position −1 is harmonic relative to 0, ∞ and 1: with the paper’s cross-ratio convention, (0,∞;1,−1) = −1. This distinguishes the same component locally.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 4.4 and verify_hurwitz_degree_one_branch_normalization.py. The exact third branch value is a unit with residue 7; the other two maps are already normalized.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Harmonic position is a proved local description. It is not yet a reason that the global osculating planes have common points. “Normalize branch values” here means a target-coordinate change, not integral closure.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;specialization&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: 4,
+    &amp;quot;group&amp;quot;: &amp;quot;bridge&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;open — Section 8&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Does harmonic reduction force incidence?&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;t=-1\\ \\stackrel{?}{\\Longrightarrow}\\ E_{\\rm osc}\\ne0&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;We know the harmonic reduction and the global osculating incidence select the same component. The missing theorem would explain why the local configuration forces that global incidence.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Two sections can acquire a common zero only after reduction. One must control the canonical jet kernels and the intersection in an integral model, and prove a suitable lifting or flatness statement.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 8 separates this new specialization question from the older finite-parity comparison. Exact component matching alone is not such a lifting theorem.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;No implication from the harmonic position to the generic incidence is asserted. For example, x and x−23 have no common zero in characteristic zero but coincide modulo 23.&amp;quot;,
     &amp;quot;gate&amp;quot;: true,
     &amp;quot;badge&amp;quot;: &amp;quot;open&amp;quot;
   }
 ];
-
-  const formalTex = Object.fromEntries(nodes.map(n =&amp;gt; [n.id, n.formal]));
-  const edges = [
-  [
-    &amp;quot;problem&amp;quot;,
-    &amp;quot;algebra&amp;quot;,
-    &amp;quot;reconstructs the moduli scheme&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;algebra&amp;quot;,
-    &amp;quot;exactmaps&amp;quot;,
-    &amp;quot;realizes and labels the seven points&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;algebra&amp;quot;,
-    &amp;quot;idempotents&amp;quot;,
-    &amp;quot;gives two global components&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;algebra&amp;quot;,
-    &amp;quot;localmodel&amp;quot;,
-    &amp;quot;normalizes after completion&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;exactmaps&amp;quot;,
-    &amp;quot;transporter&amp;quot;,
-    &amp;quot;matches the finite values to the maps&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;transporter&amp;quot;,
-    &amp;quot;epsilon_e6&amp;quot;,
-    &amp;quot;supplies values 0 and 1&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;idempotents&amp;quot;,
-    &amp;quot;epsilon_e6&amp;quot;,
-    &amp;quot;interprets those values as e₆&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;localmodel&amp;quot;,
-    &amp;quot;residue&amp;quot;,
-    &amp;quot;reduces and removes nilpotents&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;localmodel&amp;quot;,
-    &amp;quot;singcoord&amp;quot;,
-    &amp;quot;computes the singular positions&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;residue&amp;quot;,
-    &amp;quot;frobenius&amp;quot;,
-    &amp;quot;applies 23-power Frobenius&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;frobenius&amp;quot;,
-    &amp;quot;fixedlocus&amp;quot;,
-    &amp;quot;takes the scheme-theoretic equalizer&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;localmodel&amp;quot;,
-    &amp;quot;quadext&amp;quot;,
-    &amp;quot;pulls back the unramified double cover&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;quadext&amp;quot;,
-    &amp;quot;split&amp;quot;,
-    &amp;quot;asks where the pullback is split&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;residue&amp;quot;,
-    &amp;quot;split&amp;quot;,
-    &amp;quot;tests divisibility of the residue degrees&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;fixedlocus&amp;quot;,
-    &amp;quot;localrank&amp;quot;,
-    &amp;quot;lifts the selected closed component&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;localmodel&amp;quot;,
-    &amp;quot;localrank&amp;quot;,
-    &amp;quot;supplies the ramification indices&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;localrank&amp;quot;,
-    &amp;quot;idempotentlift&amp;quot;,
-    &amp;quot;takes the complementary lift&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;split&amp;quot;,
-    &amp;quot;idempotentlift&amp;quot;,
-    &amp;quot;gives the same complementary lift&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;idempotents&amp;quot;,
-    &amp;quot;idempotentlift&amp;quot;,
-    &amp;quot;identifies the global origin&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;singcoord&amp;quot;,
-    &amp;quot;explicitformula&amp;quot;,
-    &amp;quot;presents the indicator in u&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;frobenius&amp;quot;,
-    &amp;quot;explicitformula&amp;quot;,
-    &amp;quot;proves the power formula&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;explicitformula&amp;quot;,
-    &amp;quot;esing_e6&amp;quot;,
-    &amp;quot;matches the singular-position values&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;idempotentlift&amp;quot;,
-    &amp;quot;esing_e6&amp;quot;,
-    &amp;quot;identifies the unique lift with e₆&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;epsilon_e6&amp;quot;,
-    &amp;quot;exactcomparison&amp;quot;,
-    &amp;quot;supplies the finite-group identification&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;esing_e6&amp;quot;,
-    &amp;quot;exactcomparison&amp;quot;,
-    &amp;quot;supplies the characteristic-23 identification&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;exactcomparison&amp;quot;,
-    &amp;quot;target&amp;quot;,
-    &amp;quot;establishes the stated comparison&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;problem&amp;quot;,
-    &amp;quot;fanoaffine&amp;quot;,
-    &amp;quot;uses the involution in the branch data&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;fanoaffine&amp;quot;,
-    &amp;quot;oddlemma&amp;quot;,
-    &amp;quot;compares linear and affine fixed points&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;oddlemma&amp;quot;,
-    &amp;quot;genericcorr&amp;quot;,
-    &amp;quot;makes each common target contribute one mod two&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;transporter&amp;quot;,
-    &amp;quot;genericcorr&amp;quot;,
-    &amp;quot;specifies the common transporter targets&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;effectivecycles&amp;quot;,
-    &amp;quot;quadraticq&amp;quot;,
-    &amp;quot;retains data before reducing coefficients&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;quadraticq&amp;quot;,
-    &amp;quot;genericparity&amp;quot;,
-    &amp;quot;applies the symmetric-difference weight identity&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;transporter&amp;quot;,
-    &amp;quot;genericparity&amp;quot;,
-    &amp;quot;supplies the intersection parity&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;pinch&amp;quot;,
-    &amp;quot;nearby&amp;quot;,
-    &amp;quot;computes the discrete generic fibre&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;nearby&amp;quot;,
-    &amp;quot;shortcut&amp;quot;,
-    &amp;quot;shows why augmentation is not specialization&amp;quot;,
-    &amp;quot;proof&amp;quot;
-  ],
-  [
-    &amp;quot;effectivecycles&amp;quot;,
-    &amp;quot;bocksteinzero&amp;quot;,
-    &amp;quot;finds a mod-four lift&amp;quot;,
-    &amp;quot;compute&amp;quot;
-  ],
-  [
-    &amp;quot;quadraticq&amp;quot;,
-    &amp;quot;coherence&amp;quot;,
-    &amp;quot;does not define a determinant functor&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;localrank&amp;quot;,
-    &amp;quot;localglobal&amp;quot;,
-    &amp;quot;does not imply global rationality&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;genericcorr&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;still needs a relative extension&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;genericparity&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;specifies the invariant to transport&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;esing_e6&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;specifies the required special invariant&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;shortcut&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;rules out the augmentation shortcut&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;bocksteinzero&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;rules out the unrestricted Bockstein&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;coherence&amp;quot;,
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;requires additional quadratic coherence&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ],
-  [
-    &amp;quot;relativeopen&amp;quot;,
-    &amp;quot;target&amp;quot;,
-    &amp;quot;would supply an independent geometric argument&amp;quot;,
-    &amp;quot;gate&amp;quot;
-  ]
-].map((d,i)=&amp;gt;({id:&amp;#x27;e&amp;#x27;+i,source:d[0],target:d[1],label:d[2],kind:d[3]}));
-  const nodeById = new Map(nodes.map(n=&amp;gt;[n.id,n]));
-  const edgeById = new Map(edges.map(e=&amp;gt;[e.id,e]));
-  const edgeKinds = {
+const edges = [
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e0&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;problem&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;algebra&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;reconstructs the moduli scheme&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e1&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;algebra&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;idempotents&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;gives two global components&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e2&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;algebra&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;normalizes after completion&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e3&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;exactmaps&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;transporter&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;matches the finite values to the maps&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e4&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;transporter&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;epsilon_e6&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies values 0 and 1&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e5&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;idempotents&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;epsilon_e6&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;interprets those values as e₆&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e6&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;residue&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;reduces and removes nilpotents&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e7&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;singcoord&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;computes the singular positions&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e8&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;residue&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;frobenius&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;applies 23-power Frobenius&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e9&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;frobenius&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;fixedlocus&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;takes the scheme-theoretic equalizer&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e10&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;quadext&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;pulls back the unramified double cover&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e11&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;quadext&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;split&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;asks where the pullback is split&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e12&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;residue&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;split&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;tests divisibility of the residue degrees&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e13&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;fixedlocus&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;localrank&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;lifts the selected closed component&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e14&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;localrank&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the ramification indices&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e15&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localrank&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;idempotentlift&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;takes the complementary lift&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e16&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;split&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;idempotentlift&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;gives the same complementary lift&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e17&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;idempotents&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;idempotentlift&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;identifies the global origin&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e18&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;singcoord&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;explicitformula&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;presents the indicator in u&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e19&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;frobenius&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;explicitformula&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;proves the power formula&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e20&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;explicitformula&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;esing_e6&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;matches the singular-position values&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e21&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;idempotentlift&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;esing_e6&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;identifies the unique lift with e₆&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e22&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;epsilon_e6&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the finite-group identification&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e23&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;esing_e6&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the characteristic-23 identification&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e24&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;problem&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;fanoaffine&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;uses the involution in the branch data&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e25&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;fanoaffine&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;oddlemma&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;compares linear and affine fixed points&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e26&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;oddlemma&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;genericcorr&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;makes each common target contribute one mod two&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e27&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;transporter&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;genericcorr&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;specifies the common transporter targets&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e28&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;effectivecycles&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;quadraticq&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;retains data before reducing coefficients&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e29&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;quadraticq&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;genericparity&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;applies the symmetric-difference weight identity&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e30&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;transporter&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;genericparity&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the intersection parity&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e31&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;pinch&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;nearby&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;computes the discrete generic fibre&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e32&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;nearby&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;shortcut&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;shows why augmentation is not specialization&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e33&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;effectivecycles&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;bocksteinzero&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;finds a mod-four lift&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e34&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;quadraticq&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;coherence&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;does not define a determinant functor&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e35&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;localrank&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;localglobal&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;does not imply global rationality&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e36&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;genericcorr&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;still needs a relative extension&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e37&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;genericparity&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;specifies the invariant to transport&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e38&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;esing_e6&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;specifies the required special invariant&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e39&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;shortcut&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;rules out the augmentation shortcut&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e40&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;bocksteinzero&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;rules out the unrestricted Bockstein&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e41&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;coherence&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;requires additional quadratic coherence&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;e42&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;relativeopen&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;would supply an independent geometric argument&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;problem&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;exactmaps&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;realizes all seven classes&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e43&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;frobenius&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;idempotentlift&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;lifts the complementary locus&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e44&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;exactmaps&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;canonicaljets&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;computes both marked jet maps&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e45&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;canonicaljets&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;osculatingplanes&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;takes the one-dimensional kernels&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e46&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;canonicaljets&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;functorial&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;uses intrinsic canonical data&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e47&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osculatingplanes&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;checks the common line on every curve&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e48&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osculatingplanes&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeosc&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;forms the relative common zero scheme&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e49&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;relativeosc&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;identifies its scheme-theoretic image&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e50&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;globalfixed&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies a unique geometric solution&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e51&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;functorial&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;globalfixed&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;makes the unique solution Galois-stable&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e52&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;globalfixed&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;descent&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;gives the rational moduli point&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e53&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;jacobian&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;applies the residual-divisor equivalence&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e54&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;osctest&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;quartic&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;cancels exactly two common zeros&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e55&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;quartic&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;s4&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;certifies the monodromy&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e56&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;relativeosc&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;defines the osculating indicator&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e57&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;globalfixed&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;gives the intrinsic global characterization&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e58&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;s4&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;adds an auxiliary geometric consequence&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e59&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;identifies the local and finite descriptions&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e60&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;localmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;harmonic&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;compares correctly normalized branch values&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e61&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;singcoord&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;harmonic&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;rescales the first stored coordinate&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e62&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;harmonic&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;distinguishes the same local component&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e63&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;harmonic&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;specialization&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;suggests a lifting question&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e64&amp;quot;
+  },
+  {
+    &amp;quot;source&amp;quot;: &amp;quot;specialization&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;would explain the incidence from reduction&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;,
+    &amp;quot;id&amp;quot;: &amp;quot;e65&amp;quot;
+  }
+];
+const formalTex = Object.fromEntries(nodes.map(n=&amp;gt;[n.id,n.formal]));
+const nodeById = new Map(nodes.map(n=&amp;gt;[n.id,n]));
+const edgeById = new Map(edges.map(e=&amp;gt;[e.id,e]));
+const edgeKinds = {
   &amp;quot;proof&amp;quot;: {
     &amp;quot;name&amp;quot;: &amp;quot;Established implication or construction&amp;quot;,
     &amp;quot;meaning&amp;quot;: &amp;quot;The source supplies an established input to the target. The other required inputs are shown separately.&amp;quot;
@@ -2412,7 +2772,7 @@ window.MathJax = {
     &amp;quot;meaning&amp;quot;: &amp;quot;This dotted arrow is NOT a proved implication. It marks an unresolved construction, a limitation, or an excluded shortcut.&amp;quot;
   }
 };
-  const courseTopics = {
+const courseTopics = {
   &amp;quot;hurwitz&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;A parameter space for covers 101&amp;quot;,
     &amp;quot;aliases&amp;quot;: [
@@ -2427,7 +2787,7 @@ window.MathJax = {
       &amp;quot;In this example only seven possibilities remain over an algebraic closure.&amp;quot;,
       &amp;quot;The coordinate algebra remembers how those points are related over the base field, not just how many there are.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The main exact result identifies this finite algebra as K₀ × L. That is more information than a list of seven numerical approximations.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The exact algebra K₀ × L organizes all seven covers. The osculating incidence gives an intrinsic property selecting its degree-one component; global invariance proves fixedness over the original rational branch datum.&amp;quot;
   },
   &amp;quot;nielsen&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;Permutations that describe branching 101&amp;quot;,
@@ -2498,13 +2858,12 @@ window.MathJax = {
       &amp;quot;A product algebra allows the choice separately on each factor.&amp;quot;,
       &amp;quot;Multiplication by e keeps the chosen factors and kills the others.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;e₆ = (0,1) marks the six-point component. The final comparison proves that two separately defined indicators give this same element.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;e_osc=e₁ marks the exceptional cover. Its complement e₆ is also the finite transporter and local singular-position indicator.&amp;quot;
   },
   &amp;quot;normalization&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;Normalization and local models 101&amp;quot;,
     &amp;quot;aliases&amp;quot;: [
       &amp;quot;normalization&amp;quot;,
-      &amp;quot;normalized&amp;quot;,
       &amp;quot;integral model&amp;quot;,
       &amp;quot;local model&amp;quot;,
       &amp;quot;local algebra&amp;quot;
@@ -2690,7 +3049,7 @@ window.MathJax = {
       &amp;quot;A global field extension can split into several factors over a completion.&amp;quot;,
       &amp;quot;A distinguished local factor need not come from a distinguished global component.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The proof needs the already established global decomposition K₀ × L. The local Frobenius criterion cannot replace it.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The local comparison uses the exact global decomposition. The separate osculating argument proves global fixedness by global Galois invariance and uniqueness, not by a local rational point alone.&amp;quot;
   },
   &amp;quot;transporters&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;Transporters and augmentation 101&amp;quot;,
@@ -2789,7 +3148,7 @@ window.MathJax = {
       &amp;quot;Composing two correspondences multiplies their matrices and sums over intermediate points.&amp;quot;,
       &amp;quot;For finite étale schemes with constant coefficients, these matrices give actual maps on degree-zero cohomology.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The paper constructs the split generic finite incidences and computes their intersection parity. Extending them over a relative geometric model is another task.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The split finite Fano–affine correspondences are constructed, but their extension across reduction is open. The new relative osculating incidence is a different constructed object in characteristic zero.&amp;quot;
   },
   &amp;quot;pinching&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;Gluing closed points in a finite model 101&amp;quot;,
@@ -2931,28 +3290,185 @@ window.MathJax = {
       &amp;quot;Rigorous interval continuation can certify the permutations obtained by following roots.&amp;quot;,
       &amp;quot;Rechecking a stored result is distinct from rerunning its full expensive producer.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The new local checker verifies the finite-field formula and the local criterion’s concrete hypotheses. It does not certify the missing relative geometry.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The new exact checks prove the jets, common-zero lengths, residual relation and S₄ monodromy on the certified models. They do not prove an integral lifting theorem from the harmonic reduction.&amp;quot;
   },
   &amp;quot;open&amp;quot;: {
-    &amp;quot;title&amp;quot;: &amp;quot;The remaining relative comparison 101&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;The separate Fano–affine specialization question 101&amp;quot;,
     &amp;quot;aliases&amp;quot;: [
-      &amp;quot;relative geometric&amp;quot;,
-      &amp;quot;relative construction&amp;quot;,
-      &amp;quot;relative model&amp;quot;,
-      &amp;quot;specialization argument&amp;quot;,
-      &amp;quot;open question&amp;quot;,
-      &amp;quot;independent geometric&amp;quot;
+      &amp;quot;relative Fano&amp;quot;,
+      &amp;quot;relative Fano–affine&amp;quot;,
+      &amp;quot;finite-parity specialization&amp;quot;,
+      &amp;quot;quadratic data&amp;quot;
     ],
-    &amp;quot;idea&amp;quot;: &amp;quot;The open question is to construct geometry that carries the finite parity to the characteristic-23 indicator, rather than compare the two using already matched labels.&amp;quot;,
+    &amp;quot;idea&amp;quot;: &amp;quot;This older proposed comparison asks for a relative geometric construction carrying finite Fano–affine parity to the characteristic-23 indicator. It is distinct from the now constructed osculating incidence.&amp;quot;,
     &amp;quot;points&amp;quot;: [
       &amp;quot;First build a relative model and extend both generic finite incidence correspondences.&amp;quot;,
       &amp;quot;Then supply quadratic data retaining the specified integral multiplicities, with correct coherence.&amp;quot;,
       &amp;quot;Finally prove the generic and special identifications and compatibility under specialization.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The paper proves the exact equality through certified matching. It does not currently provide this second, independent geometric route.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The exact equality of the indicators is proved. A specialization theorem for these particular finite incidences and quadratic data is still not supplied.&amp;quot;
+  },
+  &amp;quot;canonical&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Canonical curves and plane sections 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;canonical curve&amp;quot;,
+      &amp;quot;canonical curves&amp;quot;,
+      &amp;quot;canonical differentials&amp;quot;,
+      &amp;quot;regular differentials&amp;quot;,
+      &amp;quot;canonical section&amp;quot;,
+      &amp;quot;canonical divisor&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A regular differential is an algebraic analogue of f(z) dz with no poles. A genus-four curve has a four-dimensional space of these differentials; a basis gives its canonical map to projective three-space.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;For the nonhyperelliptic curves here, this map embeds the curve: points and the curve’s geometry are faithfully represented.&amp;quot;,
+      &amp;quot;A linear combination of the four basis differentials corresponds to a plane in this projective space.&amp;quot;,
+      &amp;quot;Its zeros form a canonical divisor of degree 2g−2 = 6, counting contact multiplicities.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The canonical curve is the intersection of a quadric and a cubic. Restricting both equations to a line makes the incidence test an exact polynomial calculation.&amp;quot;
+  },
+  &amp;quot;jets&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Jets: retaining the first few coefficients 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;jet&amp;quot;,
+      &amp;quot;jets&amp;quot;,
+      &amp;quot;jet kernels&amp;quot;,
+      &amp;quot;jet-kernel&amp;quot;,
+      &amp;quot;vanishing sequence&amp;quot;,
+      &amp;quot;vanishes to order&amp;quot;,
+      &amp;quot;order-three&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Near a smooth point with local coordinate z, a differential looks like (a₀+a₁z+a₂z²+…) dz. Its first three coefficients form the jet used here.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Vanishing to order at least three means a₀=a₁=a₂=0.&amp;quot;,
+      &amp;quot;For a linear combination of four differentials, these are three linear equations in four unknown coefficients.&amp;quot;,
+      &amp;quot;A rank-three matrix leaves a one-dimensional solution space: one section up to multiplication by a nonzero scalar.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The checker verifies this rank at A and B on all seven curves. These are exact formal local expansions, not floating-point approximations.&amp;quot;
+  },
+  &amp;quot;osculation&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Osculating planes and common zeros 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;osculating&amp;quot;,
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;common zero&amp;quot;,
+      &amp;quot;common zeros&amp;quot;,
+      &amp;quot;common line&amp;quot;,
+      &amp;quot;homogeneous greatest common divisor&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A tangent line matches the first-order direction of a curve. An osculating plane follows more of its local bending: here its defining section vanishes to order three at the marked point.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Construct one plane at A and another at B; their intersection is a line.&amp;quot;,
+      &amp;quot;A point on the curve common to both planes must lie on that line.&amp;quot;,
+      &amp;quot;Restrict the curve’s equations to the projective line; a nonconstant homogeneous gcd records common points and their multiplicities.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The distinguished curve has a reduced common divisor of degree two; the six conjugate curves have none. Those two geometric points need not each be rational.&amp;quot;
+  },
+  &amp;quot;relativeosc101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;An incidence family over a parameter space 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;relative osculating&amp;quot;,
+      &amp;quot;incidence family&amp;quot;,
+      &amp;quot;incidence scheme&amp;quot;,
+      &amp;quot;common zero scheme&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A family over a parameter space keeps one geometric object above each parameter. An incidence family keeps, in addition, the points where a specified geometric condition holds.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Here each of the seven parameters carries a canonical curve with two marked points.&amp;quot;,
+      &amp;quot;The jet kernels define two plane sections on this family; imposing both equations defines the incidence scheme.&amp;quot;,
+      &amp;quot;Its image in the parameter space consists of parameters whose curves actually have common zeros.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;This family is constructed over the characteristic-zero Hurwitz scheme. Its image is a single reduced point; this is not an assertion about extending the family across the prime 23.&amp;quot;
+  },
+  &amp;quot;globalfixed101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Why an invariant singleton is fixed 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;Galois-invariant&amp;quot;,
+      &amp;quot;global fixedness&amp;quot;,
+      &amp;quot;globally fixed&amp;quot;,
+      &amp;quot;unordered pair&amp;quot;,
+      &amp;quot;invariant property&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Suppose a symmetry permutes a collection of objects and preserves a property. It must send every object with that property to another object with that property.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;If there is exactly one such object, every allowed symmetry fixes it.&amp;quot;,
+      &amp;quot;Here the symmetries are all global Galois automorphisms of the rational branch datum.&amp;quot;,
+      &amp;quot;Canonical jets and intersection are intrinsic; exchanging A and B does not change the condition.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The paper proves the property is unique by exact computation, and proves its invariance geometrically. These two different inputs give global fixedness.&amp;quot;
+  },
+  &amp;quot;jacobian101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Jacobian classes and differences of points 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;Jacobian&amp;quot;,
+      &amp;quot;difference variety&amp;quot;,
+      &amp;quot;[C−D]&amp;quot;,
+      &amp;quot;[A−B]&amp;quot;,
+      &amp;quot;Riemann–Roch&amp;quot;,
+      &amp;quot;linear equivalence&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A divisor is a formal sum of points with integer coefficients. In the Jacobian, degree-zero divisors are considered equivalent when their difference is the zero-and-pole divisor of a rational function.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;The class [A−B] measures a difference of points in this quotient group.&amp;quot;,
+      &amp;quot;Because a function has divisor 23(A−B), the class has order dividing 23; it is nonzero here, so its order is exactly 23.&amp;quot;,
+      &amp;quot;Not every class need be [C−D] for two points. The difference variety X−X consists precisely of classes that can be written this way.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Lemma 2.1 proves, with the verified jet hypotheses, that 3[A−B] lies in X−X exactly when the osculating incidence is nonempty. Riemann–Roch supplies the residual degree-two divisor for the converse.&amp;quot;
+  },
+  &amp;quot;pencil101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Pencils and a second map on the curve 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;pencil&amp;quot;,
+      &amp;quot;pencils&amp;quot;,
+      &amp;quot;base divisor&amp;quot;,
+      &amp;quot;four-sheeted&amp;quot;,
+      &amp;quot;S₄&amp;quot;,
+      &amp;quot;quartic discriminant&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A pencil is a two-dimensional space of sections, considered through their linear combinations. The ratio of two basis sections gives a map from the curve to a projective line after common zeros are cancelled.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Here both sections have degree six, with a common divisor of degree two, so the new map has degree four.&amp;quot;,
+      &amp;quot;Loops around branch values permute four sheets; a triple ramification gives a 3-cycle.&amp;quot;,
+      &amp;quot;The exact nonsquare discriminant rules out all-even monodromy, leaving S₄ rather than A₄.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;This osculating pencil is different from |K−A−B|, the earlier degree-four projection used for the minimal equation. Its S₄ Galois closure is regular, but S₄ realizations themselves are classical.&amp;quot;
+  },
+  &amp;quot;harmonic101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Branch coordinates and a harmonic position 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;harmonic&amp;quot;,
+      &amp;quot;cross-ratio&amp;quot;,
+      &amp;quot;branch normalization&amp;quot;,
+      &amp;quot;normalize branch values&amp;quot;,
+      &amp;quot;third branch value&amp;quot;,
+      &amp;quot;16/7&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Three distinct points on a projective line can be put at 0, ∞ and 1 by a coordinate change. A fourth point can then be compared consistently across the covers.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;The first stored map has branch values 0, ∞ and λ, so divide its target coordinate by λ.&amp;quot;,
+      &amp;quot;At 23, λ has residue 7. Since 7·10 = 1 modulo 23, the stored value 16 becomes 16·10 = 22 = −1.&amp;quot;,
+      &amp;quot;In this normalized coordinate, the configuration (0,∞;1,−1) has cross-ratio −1 and is called harmonic.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The other singular positions satisfy t²+1=0 and t²+t+1=0. They lie in quadratic residue fields, whereas −1 lies in F₂₃.&amp;quot;
+  },
+  &amp;quot;specialization101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Why common zeros need not lift 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;harmonic reduction&amp;quot;,
+      &amp;quot;specialization theorem&amp;quot;,
+      &amp;quot;flatness&amp;quot;,
+      &amp;quot;integral extension&amp;quot;,
+      &amp;quot;integral model across 23&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Reduction modulo a prime can make distinct equations coincide. A new common zero in the special fibre can therefore exist without any common zero in characteristic zero.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Over Q, the equations x=0 and x−23=0 cannot both hold.&amp;quot;,
+      &amp;quot;Modulo 23 they are the same equation, so x=0 is a common solution.&amp;quot;,
+      &amp;quot;Such an incidence lives only over the special prime. A lifting argument needs hypotheses ruling out this extra special-fibre contribution.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The open problem is to control the canonical jet kernels and osculating incidence in an integral model, then prove the needed lifting. The existing characteristic-zero relative incidence does not automatically do this.&amp;quot;
   }
 };
-  const courseEnrichment = {
+const courseEnrichment = {
   &amp;quot;hurwitz&amp;quot;: {
     &amp;quot;example&amp;quot;: &amp;quot;The algebra Q × Q(√2) has three geometric points: one rational point and a conjugate pair. It is a smaller model of the paper’s 1+6 decomposition.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Does seven geometric points mean seven rational points?&amp;quot;,
@@ -3018,6 +3534,7 @@ window.MathJax = {
     &amp;quot;question&amp;quot;: &amp;quot;Must every arithmetic function take the same numerical value on conjugate roots?&amp;quot;,
     &amp;quot;answer&amp;quot;: &amp;quot;No. The coordinate function on Q(√2) takes conjugate values. Constancy here concerns functions to a constant finite target such as {0,1}.&amp;quot;,
     &amp;quot;related&amp;quot;: [
+      &amp;quot;globalfixed101&amp;quot;,
       &amp;quot;hurwitz&amp;quot;,
       &amp;quot;idempotents&amp;quot;,
       &amp;quot;localglobal&amp;quot;
@@ -3254,6 +3771,7 @@ window.MathJax = {
     &amp;quot;question&amp;quot;: &amp;quot;Does this local Q₅ root produce a Q-rational point of Spec Q(∛2)?&amp;quot;,
     &amp;quot;answer&amp;quot;: &amp;quot;No. Such a point would give an embedding Q(∛2) into Q, contradicting irreducibility.&amp;quot;,
     &amp;quot;related&amp;quot;: [
+      &amp;quot;globalfixed101&amp;quot;,
       &amp;quot;henselian&amp;quot;,
       &amp;quot;galois&amp;quot;,
       &amp;quot;ramification&amp;quot;
@@ -3498,9 +4016,10 @@ window.MathJax = {
     &amp;quot;question&amp;quot;: &amp;quot;Does finding a common zero automatically invalidate the rational function?&amp;quot;,
     &amp;quot;answer&amp;quot;: &amp;quot;No. It invalidates an assertion that the two sections have no common zeros. The divisor calculation must include their common part.&amp;quot;,
     &amp;quot;related&amp;quot;: [
-      &amp;quot;covers&amp;quot;,
-      &amp;quot;certificates&amp;quot;,
-      &amp;quot;normalization&amp;quot;
+      &amp;quot;canonical&amp;quot;,
+      &amp;quot;pencil101&amp;quot;,
+      &amp;quot;jacobian101&amp;quot;,
+      &amp;quot;covers&amp;quot;
     ],
     &amp;quot;links&amp;quot;: [
       [
@@ -3514,38 +4033,40 @@ window.MathJax = {
     ]
   },
   &amp;quot;certificates&amp;quot;: {
-    &amp;quot;example&amp;quot;: &amp;quot;A checked factorization proves how a given polynomial factors. It does not prove that an unrelated geometric correspondence exists.&amp;quot;,
+    &amp;quot;example&amp;quot;: &amp;quot;A homogeneous gcd on each certified curve proves whether the osculating line meets it. An actual relative incidence is then defined from jet kernels; a further integral specialization construction is not supplied by that gcd.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Can many passing numerical or exact tests replace a missing construction?&amp;quot;,
-    &amp;quot;answer&amp;quot;: &amp;quot;No. They establish their stated inputs. A new relative object and its compatibility maps require a separate mathematical definition and proof.&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Computation can prove the stated properties of explicit objects, as it does for osculation here. Any proposed new object and compatibility map still need a definition and proof.&amp;quot;,
     &amp;quot;related&amp;quot;: [
-      &amp;quot;nielsen&amp;quot;,
-      &amp;quot;open&amp;quot;,
-      &amp;quot;divisors&amp;quot;
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;relativeosc101&amp;quot;,
+      &amp;quot;specialization101&amp;quot;,
+      &amp;quot;nielsen&amp;quot;
     ],
     &amp;quot;links&amp;quot;: [
       [
-        &amp;quot;Read the revised paper (PDF)&amp;quot;,
-        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf&amp;quot;
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
       ],
       [
-        &amp;quot;What changed in the correctness review&amp;quot;,
-        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/notes/CORRECTNESS_REPAIRS_2026_09_05.md&amp;quot;
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
       ],
       [
-        &amp;quot;Finite-field verification script&amp;quot;,
-        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_frobenius_selector.py&amp;quot;
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
       ]
     ]
   },
   &amp;quot;open&amp;quot;: {
-    &amp;quot;example&amp;quot;: &amp;quot;Knowing two thermometers show the same temperature after calibration is different from proving that their internal mechanisms respond identically under every relevant change. Here exact matching plays the calibration role; the desired relative construction would explain the transport.&amp;quot;,
+    &amp;quot;example&amp;quot;: &amp;quot;Two constructions can mark the same objects on a verified list without a map transporting one construction through a degeneration into the other. That transport is the missing theorem, not the equality of the marked components.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Is the outgoing dotted arrow from this node part of the established proof?&amp;quot;,
-    &amp;quot;answer&amp;quot;: &amp;quot;No. It states what a successful future construction would yield. Only the exact comparison route is presently proved.&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The dotted route is still open. The new characteristic-zero osculating proof is a different route and does not validate these older specialization proposals.&amp;quot;,
     &amp;quot;related&amp;quot;: [
       &amp;quot;incidence&amp;quot;,
       &amp;quot;nearby&amp;quot;,
       &amp;quot;coherence&amp;quot;,
-      &amp;quot;certificates&amp;quot;
+      &amp;quot;relativeosc101&amp;quot;,
+      &amp;quot;specialization101&amp;quot;
     ],
     &amp;quot;links&amp;quot;: [
       [
@@ -3557,11 +4078,226 @@ window.MathJax = {
         &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/notes/CORRECTNESS_REPAIRS_2026_09_05.md&amp;quot;
       ]
     ]
+  },
+  &amp;quot;canonical&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;A plane meeting the curve with multiplicities 3 at A, 1 at D, and 1 at each of two further points has total intersection degree 3+1+1+1 = 6.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does degree six mean every plane cuts the curve in six distinct points?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Tangency or higher-order contact can make several intersections coincide; the total six includes their multiplicities.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;jets&amp;quot;,
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;divisors&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;jets&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The function z³+2z⁴ has zero constant, linear and quadratic terms. By contrast z²+2z⁴ fails the order-three condition.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Why must the rank be checked rather than assumed?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;Special points can impose dependent conditions. If the rank drops, there need not be a unique osculating section of this kind.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;canonical&amp;quot;,
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;certificates&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;osculation&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The ordinary polynomials (x−1)(x−2) and (x−1)(x+3) have gcd x−1: precisely one common root. Homogeneous coordinates also allow a root at infinity.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does the fact that the two planes intersect already prove the exceptional property?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Their line must also meet the curve. The exact gcd calculation is what establishes this on one cover and excludes it on the other six.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;jets&amp;quot;,
+      &amp;quot;canonical&amp;quot;,
+      &amp;quot;relativeosc101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;relativeosc101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Imagine seven envelopes, each containing a curve. Record the common zeros in every envelope. Only one envelope contains anything, and it contains two geometric points.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Are the two incidence points the same as two points of the Hurwitz scheme?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. They lie on one curve above one Hurwitz point. The incidence fibre has length two, while its image in the parameter space has one point.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;hurwitz&amp;quot;,
+      &amp;quot;globalfixed101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;globalfixed101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;If seven keys are permuted while preserving their number of teeth, and exactly one key has five teeth, that key cannot be exchanged with a different key.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does this reasoning explain why there has to be a five-toothed key—or an exceptional incidence—in the first place?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Existence and uniqueness need their own proof. Here they come from the exact seven-cover test; an equation-free reason remains open.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;galois&amp;quot;,
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;localglobal&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;jacobian101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Linear equivalence 3A+D ∼ 3B+C rearranges to [C−D] = 3[A−B]. This is addition in a divisor-class group, not subtraction of coordinate numbers.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does the fact that 23[A−B]=0 imply 3[A−B]=0?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. A nonzero element of order 23 stays nonzero when multiplied by 3. The theorem instead says that this nonzero class is a difference of two additional points on just one curve.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;divisors&amp;quot;,
+      &amp;quot;osculation&amp;quot;,
+      &amp;quot;canonical&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;pencil101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Cancelling a common factor in a fraction changes neither the rational function nor its values where defined. Cancelling the common divisor of two sections is the curve-theoretic version.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does S₄ replace M₂₃ as the symmetry group of the original cover?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The same curve carries two different maps: the original degree-23 map has M₂₃ monodromy, and this auxiliary degree-four map has S₄ monodromy.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;covers&amp;quot;,
+      &amp;quot;divisors&amp;quot;,
+      &amp;quot;nielsen&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;harmonic101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Changing a ruler’s scale changes the number assigned to a point. The geometric comparison requires the same ruler convention: branch values 0, ∞ and 1.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does this target-coordinate normalization mean taking the normalization of a singular scheme?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Those are two uses of the word normalization. Here it is a change of coordinates on the target projective line; integral normalization means taking integral closure.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;finitefields&amp;quot;,
+      &amp;quot;normalization&amp;quot;,
+      &amp;quot;specialization101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: uniform branch normalization&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=14&amp;quot;
+      ],
+      [
+        &amp;quot;Exact normalization checker&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_degree_one_branch_normalization.py&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;specialization101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The common-zero ring Z[x]/(x,x−23) is Z/23: its generic fibre is empty, but its fibre at 23 is a point.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Can matching the local harmonic component and the global osculating component replace that lifting proof?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Matching proves they select the same component. It does not prove that the local property causes the generic incidence to exist.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;harmonic101&amp;quot;,
+      &amp;quot;relativeosc101&amp;quot;,
+      &amp;quot;certificates&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;Paper: osculating planes and their proof&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=5&amp;quot;
+      ],
+      [
+        &amp;quot;Statement, scope and reproduction&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/HURWITZ_OSCULATING.md&amp;quot;
+      ],
+      [
+        &amp;quot;Exact osculating certificate&amp;quot;,
+        &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
+      ]
+    ]
   }
 };
-  const edgeDetails = {
+const edgeDetails = {
   &amp;quot;problem&amp;gt;algebra&amp;quot;: &amp;quot;The known seven-class problem is the input to exact reconstruction; the fixed class itself is prior work.&amp;quot;,
-  &amp;quot;algebra&amp;gt;exactmaps&amp;quot;: &amp;quot;The maps over the two field factors and certified continuation identify all seven Nielsen classes.&amp;quot;,
   &amp;quot;algebra&amp;gt;idempotents&amp;quot;: &amp;quot;A product of two fields has primitive idempotents (1,0) and (0,1).&amp;quot;,
   &amp;quot;algebra&amp;gt;localmodel&amp;quot;: &amp;quot;Exact local arithmetic supplies the three factors and the pairs (eᵢ,fᵢ).&amp;quot;,
   &amp;quot;exactmaps&amp;gt;transporter&amp;quot;: &amp;quot;This is the certified branch-cycle identification needed to place the transporter parities on the global factors.&amp;quot;,
@@ -3585,7 +4321,7 @@ window.MathJax = {
   &amp;quot;idempotentlift&amp;gt;esing_e6&amp;quot;: &amp;quot;The explicit reduction and its unique henselian lift identify e_sing with the same global component indicator.&amp;quot;,
   &amp;quot;epsilon_e6&amp;gt;exactcomparison&amp;quot;: &amp;quot;One input to the equality is ε(Θ)=e₆, obtained through certified branch-cycle matching.&amp;quot;,
   &amp;quot;esing_e6&amp;gt;exactcomparison&amp;quot;: &amp;quot;The other input is e_sing=e₆ from the local calculation and global reconstruction.&amp;quot;,
-  &amp;quot;exactcomparison&amp;gt;target&amp;quot;: &amp;quot;The proved comparison uses exact matching; no independent relative specialization argument is asserted.&amp;quot;,
+  &amp;quot;exactcomparison&amp;gt;target&amp;quot;: &amp;quot;Certified component matching proves 1−e_osc=e_sing=ε(Θ). It does not give a theorem lifting osculation from the special fibre.&amp;quot;,
   &amp;quot;problem&amp;gt;fanoaffine&amp;quot;: &amp;quot;The degree-23 permutation representation gives seven fixed sheets and eight two-element orbits.&amp;quot;,
   &amp;quot;fanoaffine&amp;gt;oddlemma&amp;quot;: &amp;quot;The two cases for g−1 give odd total fixed-point count.&amp;quot;,
   &amp;quot;oddlemma&amp;gt;genericcorr&amp;quot;: &amp;quot;Unique transporters convert equality of incidence entries into a centralizer fixed-point count.&amp;quot;,
@@ -3604,13 +4340,35 @@ window.MathJax = {
   &amp;quot;shortcut&amp;gt;relativeopen&amp;quot;: &amp;quot;The missing construction must incorporate its own correct cohomological maps; ordinary specialization does not insert augmentation.&amp;quot;,
   &amp;quot;bocksteinzero&amp;gt;relativeopen&amp;quot;: &amp;quot;The vanishing obstruction excludes this proposed construction, not all possible refinements.&amp;quot;,
   &amp;quot;coherence&amp;gt;relativeopen&amp;quot;: &amp;quot;A genuine construction must resolve the symmetry problem instead of assuming a half-degree determinant is functorial.&amp;quot;,
-  &amp;quot;relativeopen&amp;gt;target&amp;quot;: &amp;quot;Research goal only. This is NOT a proved implication and is not needed for the exact component comparison already established.&amp;quot;
+  &amp;quot;relativeopen&amp;gt;target&amp;quot;: &amp;quot;Research goal only. This is NOT a proved implication and is not needed for the exact component comparison already established.&amp;quot;,
+  &amp;quot;problem&amp;gt;exactmaps&amp;quot;: &amp;quot;Exact curve and map checks, followed by certified branch-cycle identification, establish that the input list represents all seven allowed covers.&amp;quot;,
+  &amp;quot;frobenius&amp;gt;idempotentlift&amp;quot;: &amp;quot;For the certified pairs (e,f)=(1,1),(1,2),(2,2), the fixed residue component has rank one. Henselian lifting of the complementary idempotent, together with the global factor identification, gives e₆. The expanded route is visible under Every dependency.&amp;quot;,
+  &amp;quot;exactmaps&amp;gt;canonicaljets&amp;quot;: &amp;quot;The exact canonical models and ramification marks let the checker expand all four differentials and verify both rank-three jet matrices.&amp;quot;,
+  &amp;quot;canonicaljets&amp;gt;osculatingplanes&amp;quot;: &amp;quot;A rank-three map from a four-dimensional space has a one-dimensional kernel. The corresponding canonical section defines the order-three osculating plane.&amp;quot;,
+  &amp;quot;canonicaljets&amp;gt;functorial&amp;quot;: &amp;quot;Canonical differentials and restriction to the third-order marked subschemes commute with isomorphism and field extension. Swapping A and B leaves the common-zero condition unchanged.&amp;quot;,
+  &amp;quot;osculatingplanes&amp;gt;osctest&amp;quot;: &amp;quot;Restricting the homogeneous quadric and cubic to the line and computing their gcd tests the entire projective intersection, including infinity.&amp;quot;,
+  &amp;quot;osculatingplanes&amp;gt;relativeosc&amp;quot;: &amp;quot;The line-bundle jet kernels evaluate to two relative plane sections on the universal quotient curve over the finite characteristic-zero base. Their common zero scheme is proper and has finite fibres.&amp;quot;,
+  &amp;quot;osctest&amp;gt;relativeosc&amp;quot;: &amp;quot;The fibre lengths 2,0,0,0,0,0,0 identify the nonempty component of the finite incidence over the product-of-fields base.&amp;quot;,
+  &amp;quot;osctest&amp;gt;globalfixed&amp;quot;: &amp;quot;Exactly one of the seven geometric covers has nonempty osculating incidence. This is the uniqueness input; Galois invariance is the other input.&amp;quot;,
+  &amp;quot;functorial&amp;gt;globalfixed&amp;quot;: &amp;quot;An automorphism of the algebraic closure must preserve the intrinsic incidence property. Together with uniqueness this fixes the moduli point under the full global Galois group.&amp;quot;,
+  &amp;quot;globalfixed&amp;gt;descent&amp;quot;: &amp;quot;Trivial deck automorphisms give unique conjugacy isomorphisms satisfying the cocycle condition. This additional argument, not rationality of the moduli point alone, descends the cover.&amp;quot;,
+  &amp;quot;osctest&amp;gt;jacobian&amp;quot;: &amp;quot;Lemma 2.1 uses the verified jet hypotheses, exact order-23 class and Riemann–Roch to identify nonempty osculating incidence with the unique relation [C−D]=3[A−B].&amp;quot;,
+  &amp;quot;osctest&amp;gt;quartic&amp;quot;: &amp;quot;The canonical divisor has degree six. Its common degree-two part is the base divisor of the pencil, leaving degree four after cancellation.&amp;quot;,
+  &amp;quot;quartic&amp;gt;s4&amp;quot;: &amp;quot;The degree-four map is connected and has a branch 3-cycle. Exact elimination and its nonsquare discriminant distinguish S₄ from A₄.&amp;quot;,
+  &amp;quot;relativeosc&amp;gt;exactcomparison&amp;quot;: &amp;quot;The scheme-theoretic image is the degree-one component, so e_osc=e₁ and its complement is e₆. The other indicators are then compared on the same components.&amp;quot;,
+  &amp;quot;globalfixed&amp;gt;target&amp;quot;: &amp;quot;Exact uniqueness plus Galois invariance characterizes the known rational moduli point independently of defining it as a rational factor.&amp;quot;,
+  &amp;quot;s4&amp;gt;target&amp;quot;: &amp;quot;The S₄ pencil is an additional structure on the exceptional curve. It follows from the incidence; it is not an input proving that incidence exists.&amp;quot;,
+  &amp;quot;localmodel&amp;gt;harmonic&amp;quot;: &amp;quot;The local pointed models and the exact degree-one branch-value calculation give the uniformly normalized singular-position polynomial.&amp;quot;,
+  &amp;quot;singcoord&amp;gt;harmonic&amp;quot;: &amp;quot;Only on the degree-one component is a rescaling required: the third branch value has residue 7, and 16/7=−1 modulo 23.&amp;quot;,
+  &amp;quot;harmonic&amp;gt;exactcomparison&amp;quot;: &amp;quot;The harmonic position belongs to the degree-one component in the certified local model. Comparing components proves agreement, not a specialization mechanism.&amp;quot;,
+  &amp;quot;harmonic&amp;gt;specialization&amp;quot;: &amp;quot;A harmonic special-fibre position might constrain the canonical jets, but no theorem forcing the generic common-zero incidence has been proved.&amp;quot;,
+  &amp;quot;specialization&amp;gt;target&amp;quot;: &amp;quot;A successful integral construction and lifting theorem would explain the global incidence from the local configuration. It is not used in the current theorem.&amp;quot;
 };
   const aliasToCourse = new Map();
   Object.entries(courseTopics).forEach(([key,course])=&amp;gt;course.aliases.forEach(alias=&amp;gt;aliasToCourse.set(alias.toLowerCase(),key)));
   const coursePattern = new RegExp(`(${Array.from(aliasToCourse.keys()).sort((a,b)=&amp;gt;b.length-a.length).map(x=&amp;gt;x.replace(/[.*+?^${}()|[\]\\]/g,&amp;#x27;\\$&amp;amp;&amp;#x27;)).join(&amp;#x27;|&amp;#x27;)})`,&amp;#x27;gi&amp;#x27;);
   const courseWordCharacter = /[\p{L}\p{N}_]/u;
-  const coreOrder = [&amp;quot;problem&amp;quot;,&amp;quot;algebra&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;idempotents&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;epsilon_e6&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;residue&amp;quot;,&amp;quot;singcoord&amp;quot;,&amp;quot;frobenius&amp;quot;,&amp;quot;fixedlocus&amp;quot;,&amp;quot;localrank&amp;quot;,&amp;quot;quadext&amp;quot;,&amp;quot;split&amp;quot;,&amp;quot;explicitformula&amp;quot;,&amp;quot;idempotentlift&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;target&amp;quot;];
+  const coreOrder = [&amp;quot;problem&amp;quot;,&amp;quot;algebra&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osculatingplanes&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;descent&amp;quot;,&amp;quot;jacobian&amp;quot;,&amp;quot;quartic&amp;quot;,&amp;quot;s4&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;residue&amp;quot;,&amp;quot;singcoord&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;frobenius&amp;quot;,&amp;quot;fixedlocus&amp;quot;,&amp;quot;localrank&amp;quot;,&amp;quot;quadext&amp;quot;,&amp;quot;split&amp;quot;,&amp;quot;explicitformula&amp;quot;,&amp;quot;idempotents&amp;quot;,&amp;quot;idempotentlift&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;epsilon_e6&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;target&amp;quot;];
   let view = &amp;#x27;core&amp;#x27;;
   let reading = &amp;#x27;plain&amp;#x27;;
   let selected = &amp;#x27;problem&amp;#x27;;
@@ -3638,7 +4396,7 @@ window.MathJax = {
   function visibleSet() {
     if (view === &amp;#x27;full&amp;#x27;) return new Set(nodes.map(n=&amp;gt;n.id));
     if (view === &amp;#x27;stress&amp;#x27;) {
-      return new Set([&amp;quot;problem&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;target&amp;quot;]);
+      return new Set([&amp;quot;problem&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;target&amp;quot;]);
     }
     return new Set(nodes.filter(n=&amp;gt;n.core).map(n=&amp;gt;n.id));
   }
@@ -3832,7 +4590,7 @@ window.MathJax = {
       const side=22, gap=16;
       nodeW=Math.min(168,(width-side*2-(layers.length-1)*gap)/layers.length);
       const maxCount=d3.max(Array.from(byLayer.values()),a=&amp;gt;a.length);
-      height=Math.max(760,Math.min(1120,86+maxCount*(nodeH+14)));
+      height=Math.max(760,92+maxCount*(nodeH+26));
       layers.forEach((_,li)=&amp;gt;{ const arr=(byLayer.get(li)||[]).sort((a,b)=&amp;gt;a.order-b.order); const usable=height-92; arr.forEach((d,i)=&amp;gt;{d.x=side+nodeW/2+li*((width-side*2-nodeW)/(layers.length-1)); d.y=64+(i+0.5)*usable/Math.max(1,arr.length);}); });
     }
     svg.attr(&amp;#x27;viewBox&amp;#x27;,`0 0 ${width} ${height}`).attr(&amp;#x27;height&amp;#x27;,height);
@@ -3846,7 +4604,7 @@ window.MathJax = {
     if(narrow){
       layers.forEach((label,li)=&amp;gt;{ const arr=byLayer.get(li)||[]; if(!arr.length)return; const y=d3.min(arr,d=&amp;gt;d.y)-nodeH/2-18; layerG.append(&amp;#x27;text&amp;#x27;).attr(&amp;#x27;class&amp;#x27;,&amp;#x27;m23-layer-label&amp;#x27;).attr(&amp;#x27;x&amp;#x27;,16).attr(&amp;#x27;y&amp;#x27;,y).text(label); layerG.append(&amp;#x27;line&amp;#x27;).attr(&amp;#x27;class&amp;#x27;,&amp;#x27;m23-layer-rule&amp;#x27;).attr(&amp;#x27;x1&amp;#x27;,16).attr(&amp;#x27;x2&amp;#x27;,width-16).attr(&amp;#x27;y1&amp;#x27;,y+7).attr(&amp;#x27;y2&amp;#x27;,y+7); });
     } else {
-      const shortLayers = [&amp;#x27;Question&amp;#x27;,&amp;#x27;Global algebra&amp;#x27;,&amp;#x27;Local data&amp;#x27;,&amp;#x27;Identities&amp;#x27;,&amp;#x27;Criteria / limits&amp;#x27;,&amp;#x27;Identifications&amp;#x27;,&amp;#x27;Conclusion&amp;#x27;];
+      const shortLayers = [&amp;#x27;Question&amp;#x27;,&amp;#x27;Exact models&amp;#x27;,&amp;#x27;Jets / local data&amp;#x27;,&amp;#x27;Planes / symmetries&amp;#x27;,&amp;#x27;Incidence / criteria&amp;#x27;,&amp;#x27;Identifications&amp;#x27;,&amp;#x27;Consequences&amp;#x27;];
       layers.forEach((label,li)=&amp;gt;{ const arr=byLayer.get(li)||[]; if(!arr.length)return; const x=arr[0].x; layerG.append(&amp;#x27;text&amp;#x27;).attr(&amp;#x27;class&amp;#x27;,&amp;#x27;m23-layer-label&amp;#x27;).attr(&amp;#x27;text-anchor&amp;#x27;,&amp;#x27;middle&amp;#x27;).attr(&amp;#x27;x&amp;#x27;,x).attr(&amp;#x27;y&amp;#x27;,16).text(shortLayers[li]); layerG.append(&amp;#x27;line&amp;#x27;).attr(&amp;#x27;class&amp;#x27;,&amp;#x27;m23-layer-rule&amp;#x27;).attr(&amp;#x27;x1&amp;#x27;,x-nodeW/2).attr(&amp;#x27;x2&amp;#x27;,x+nodeW/2).attr(&amp;#x27;y1&amp;#x27;,24).attr(&amp;#x27;y2&amp;#x27;,24); });
     }
 
