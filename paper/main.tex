@@ -74,40 +74,45 @@ License (\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}).}
 \hypersetup{
   pdftitle={An M23 Hurwitz scheme: exact arithmetic and reduction at 23},
   pdfauthor={François Le Lay},
-  pdfsubject={Exact reconstruction, component idempotents, and reduction at 23 of a finite M23 Hurwitz scheme}
+  pdfsubject={Exact reconstruction, osculating planes, and reduction at 23 of a finite M23 Hurwitz scheme}
 }
 
 \subjclass[2020]{Primary 14H30; Secondary 12F12, 11G32, 11R32,
 14D22, 14F20, 20B25}
 \keywords{Mathieu group $M_{23}$, finite Hurwitz scheme, Galois-fixed
-point, characteristic-$23$ reduction, Fano plane, inverse Galois
+point, osculating plane, characteristic-$23$ reduction, Fano plane, inverse Galois
 problem}
 
 \begin{document}
 
 \begin{abstract}
-Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed a degree-$23$
-cover with regular Galois closure of group $M_{23}$ and identified a
-Galois-fixed class in its seven-element inner Nielsen class.  We reconstruct
-the associated finite \'etale Hurwitz scheme exactly.  Over
-$K_0=\QQ(\sqrt{-23})$, its coordinate algebra is $K_0\times L$, where
-$[L:K_0]=6$, and the relative Galois closure of $L/K_0$ has group $S_6$.
-Exact canonical models, degree-$23$ maps, and certified branch cycles
-realize all seven classes.  A finite-group invariant and an idempotent
-obtained from pointed reduction at $23$ both select the degree-six
-component; their equality follows from the certified branch-cycle
-matching.  We give a coordinate-independent local interpretation of this
-idempotent: it is the complement of the Frobenius-fixed locus on the
-reduced closed fibre, and it lifts to the splitting locus of an
-unramified quadratic cover of the normalized integral model.
-An independent comparison by relative cohomological correspondences
-remains open.  For the distinguished cover, we construct a minimal
-degree-$4$ projection and a primitive bidegree-$(23,4)$ equation.  The
-Fano plane and affine $\FF_2^3$-torsor in its branch fibre give a
-$2^4{:}\PSL_3(2)$ field tower.  Finally, every integer specialization
-$t\equiv2\pmod{319}$ has Galois group $M_{23}$; controlled ramification
-gives an infinite family for which every finite subfamily is linearly
-disjoint.  Exact data and verification scripts accompany the results.
+Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed a regular
+$M_{23}$ Galois cover from a seven-element inner Nielsen class.
+We give a geometric characterization of its distinguished point.
+On each genus-$4$ quotient curve, take the osculating planes at the
+two totally ramified points.  Their intersection meets the curve in
+two reduced points for exactly one of the seven covers and is disjoint
+from the other six.  This condition is preserved by Galois conjugation
+and by exchange of the marked points, so its uniqueness gives a
+model-based proof of the distinguished point's global Galois fixedness.
+Equivalently, only that curve has points $C,D$ with
+$[C-D]=3[A-B]$, where $A,B$ are the totally ramified points.
+Its osculating pencil defines a degree-$4$ map with geometric monodromy
+$S_4$.
+The incidence calculation is exact over the full Hurwitz algebra
+$K_0\times L$, where $K_0=\QQ(\sqrt{-23})$, $[L:K_0]=6$, and the
+relative Galois closure has group $S_6$.
+Exact equations and certified branch cycles identify all seven covers.
+We also determine their pointed reductions at $23$ and compare the
+resulting component idempotent with a finite-group invariant.
+A specialization theorem forcing the global osculating incidence
+remains open.
+For the distinguished cover we construct a separate minimal
+bidegree-$(23,4)$ equation, determine the Fano-plane and affine
+$\FF_2^3$-torsor arithmetic of its involution branch fibre, and give
+a congruence class of specializations with Galois group $M_{23}$ and
+controlled ramification.  Exact data and verification scripts accompany
+the results.
 \end{abstract}
 
 \maketitle
@@ -118,32 +123,100 @@ disjoint.  Exact data and verification scripts accompany the results.
 
 \section{Introduction}
 
-Seven covers with the same branch-cycle classes need not have the same
-arithmetic.  In the construction of Huang et al.\ \cite{HJLPPZ}, the inner
-Nielsen class for $(2A,23A,23B)$ in $M_{23}$ has seven elements.  One class
-is fixed by the arithmetic Galois action considered there and gives their
-cover over $\QQ$.  Its Galois closure over $\QQ(T)$ is regular: $\QQ$ is
-algebraically closed in that function field.  The existence and descent of
-this cover are therefore our starting point, not conclusions of the
-present paper.
+Huang, Jackson, Lee, Poonen, Pries, and Zhang \cite{HJLPPZ} constructed a
+regular $M_{23}$ Galois cover of $\PP^1_{\QQ}$.  Their branch-cycle
+classes $(2A,23A,23B)$ give seven inner Nielsen classes, rather than a
+rigid triple.  Nevertheless, one of the seven classes is fixed by the
+full arithmetic Galois action.  They describe this fixed point as
+miraculous, noting that they have no conceptual explanation
+\cite[Section~1.4]{HJLPPZ}.
 
-We study the arithmetic of the entire seven-point Hurwitz scheme and its
-reduction at $23$.  The exact reconstruction separates a degree-one
-component from a degree-six component.  A finite-group calculation and a
-pointed reduction calculation then define the same component idempotent.
-We prove this agreement by certified branch-cycle matching and give the
-local idempotent an interpretation in terms of Frobenius and an
-unramified quadratic extension.
+We study what distinguishes the source curve of that cover.
+The answer obtained here is a simple incidence in its canonical
+embedding.  At each of the two totally ramified points, take the
+osculating plane.  The two planes meet in a line.  On the distinguished
+curve this line is a secant; on the other six it misses the curve
+altogether.
 
-Put $K_0=\QQ(\sqrt{-23})$, over which the ordered classes $23A,23B$ are
-defined.  The fixed class of \cite{HJLPPZ} becomes the unique
-$K_0$-rational point of the inner Hurwitz scheme below.  Its further
-descent to a cover over $\QQ$ remains the result of \cite{HJLPPZ}.
+The construction uses the curve and the unordered pair of marked points.
+It therefore commutes with Galois conjugation.  Once the exceptional
+incidence has been verified on exactly one of the seven curves,
+Galois fixedness follows from uniqueness.  This supplies a geometric
+characterization and a computational proof of fixedness, not an
+equation-free proof that the branch-cycle data force the incidence.
+We keep this distinction throughout.
+
+\subsection{The global incidence}
+
+Let $\mathcal H$ be the finite inner Hurwitz scheme over $\QQ$ for the
+Galois-stable branch datum of \cite{HJLPPZ}: the branch points are
+$0,\sqrt{-23},-\sqrt{-23}$, with respective classes $2A,23A,23B$.
+Here \emph{inner} means that generating triples are considered up to
+simultaneous conjugation by $M_{23}$.  A point of $\mathcal H$ represents
+an $M_{23}$ Galois cover; quotienting by a point stabilizer in its natural
+degree-$23$ action gives a genus-$4$ curve $X$ and a degree-$23$ map.
+The latter map is not itself Galois.  We call its two totally ramified
+points $A,B$.
+
+Over $K_0=\QQ(\sqrt{-23})$, ordering these two branches and normalizing
+their values to $0,\infty$ identifies
+$\mathcal H_{K_0}$ with the scheme
+$\mathcal H_{\mathrm{in}}$ used in the computations below.
+The third branch value is then normalized to $1$.
+The seven geometric curves are nonhyperelliptic, so their canonical
+systems embed them as quadric--cubic complete intersections in $\PP^3$.
+
+\begin{theorem}[Osculating-plane characterization]
+\label{thm:osculating-summary}
+On each of the seven canonical curves, the canonical vanishing sequence
+at $A$ and at $B$ is $(0,1,2,3)$.  Let $H_A,H_B$ be their osculating
+planes, defined by the unique canonical sections vanishing to order at
+least three at the respective points.  Then
+\[
+ \operatorname{length}(X\cap H_A\cap H_B)=
+ \begin{cases}
+  2,&\text{on the distinguished cover of \cite{HJLPPZ}},\\
+  0,&\text{on each of the other six covers}.
+ \end{cases}
+\]
+The intersection of length two is reduced and avoids $A,B$.
+Consequently the distinguished point of $\mathcal H$ is fixed by
+$\Gal(\overline\QQ/\QQ)$.
+
+Equivalently, it is the unique cover for which
+\[
+ 3[A-B]\in X-X\subset\operatorname{Jac}(X),
+ \qquad X-X=\{[C-D]:C,D\in X(\overline\QQ)\}.
+\]
+On this cover the pair $(C,D)$ is unique, and $A,B,C,D$ are distinct.
+The osculating pencil, after removal of its base divisor, has degree
+$4$ and geometric monodromy $S_4$; on each other curve its degree is $6$.
+\end{theorem}
+
+The proof separates an elementary argument about genus-$4$ curves from
+an exact calculation on the seven models.  The incidence can also be
+formed relatively over the Hurwitz scheme: intersect the universal
+quotient curve with its two relative osculating planes.  The resulting
+finite scheme is supported over one geometric Hurwitz point.
+This is an actual relative incidence construction in characteristic
+zero.  It is different from the Fano--affine correspondences whose
+specialization is discussed later.
+
+The existence and descent of the regular $M_{23}$ cover remain due to
+\cite{HJLPPZ}.  Our incidence gives another route to its fixedness,
+using the reconstructed models to prove that the incidence locus has
+one-point support.  The descent step is standard here: the centralizer
+of the natural $M_{23}$ action is trivial, so the degree-$23$ cover has
+no automorphisms over its base and its descent isomorphisms are unique.
+We give the details in \cref{sec:osculating}.
+
+\subsection{Exact arithmetic and reduction}
+
+The global characterization is checked on the complete family, not just
+on the known rational model.
 
 \begin{theorem}[Exact arithmetic of the finite inner Hurwitz scheme]
 \label{thm:hurwitz-summary}
-Let $\mathcal H_{\mathrm{in}}$ be the reduced inner Hurwitz scheme of
-normalized three-point covers with branch-cycle classes $(2A,23A,23B)$.
 There is a degree-$6$ field extension $L/K_0$ and an isomorphism
 \[
  \mathcal H_{\mathrm{in}}\simeq\operatorname{Spec}(K_0\times L).
@@ -154,258 +227,437 @@ genus-$4$ curves equipped with degree-$23$ maps; its seven geometric fibres
 exhaust the seven Nielsen classes, and each map has monodromy $M_{23}$.
 \end{theorem}
 
-Thus the distinguished geometric point is the unique $K_0$-rational point
-of $\mathcal H_{\mathrm{in}}$; equivalently, it is the degree-one
-open-and-closed subscheme in the canonical $1+6$ decomposition.  There are
-then two separately defined ways to detect its complement.  The first
-uses the augmentation $\epsilon(\Theta)$ of a finite group-algebra element.
-The second evaluates a normalization parameter at a distinguished
-singular point of each pointed characteristic-$23$ reduction and gives an
-idempotent $e_{\mathrm{sing}}$.  Their comparison takes place in the
-exactly reconstructed coordinate algebra.
+The exact algebra lets us test the osculating incidence over two number
+fields.  Coprimality over $L$ excludes it simultaneously on all six
+conjugate curves.  Certified branch cycles establish that these curves
+exhaust the Nielsen class; they also identify the exceptional curve
+with the one in \cite{HJLPPZ}.
 
-\Needspace{9\baselineskip}
-\begin{theorem}[Agreement of the two component idempotents]
+Reduction at $23$ gives a second description of the same decomposition.
+The normalized integral Hurwitz model has three closed points, with
+ramification indices and residue degrees
+\[
+ (e,f)=(1,1),\quad(1,2),\quad(2,2).
+\]
+Its reduced closed fibre has algebra
+$\FF_{23}\times\FF_{23^2}\times\FF_{23^2}$.
+The complement of the $23$-power Frobenius fixed locus lifts to the
+degree-six component idempotent.  The pointed source reductions give
+an explicit singular-position coordinate for that idempotent.
+
+\begin{theorem}[Comparison of the component idempotents]
 \label{thm:connector}
-Let $e_{\mathrm{sing}}$ be the idempotent defined by the singular-point
-coordinate in \cref{prop:singular-position-idempotent}, and let
-$\epsilon(\Theta)$ be the
-augmentation of the group-algebra element $\Theta$ defined in
-\cref{comp:relative-transporter-descent}.  Then
+Let $e_{\mathrm{osc}}$ be the characteristic function of the nonempty
+osculating-incidence locus.  Let $e_{\mathrm{sing}}$ be the idempotent
+defined in \cref{prop:singular-position-idempotent}, and let
+$\epsilon(\Theta)$ be the finite-group augmentation defined in
+\cref{comp:relative-transporter-descent}.  In $A_{\mathrm H}=K_0\times L$,
 \[
- \epsilon(\Theta)=e_{\mathrm{sing}}
+ e_{\mathrm{osc}}=(1,0),\qquad
+ 1-e_{\mathrm{osc}}=e_{\mathrm{sing}}=\epsilon(\Theta)=(0,1).
 \]
-in the coordinate algebra of $\mathcal H_{\mathrm{in}}$.  Under the
-isomorphism $A_{\mathrm H}=K_0\times L$, both sides equal the primitive
-idempotent $e_6=(0,1)$.
 \end{theorem}
 
-Reduction at $23$ gives the second idempotent a simple local
-interpretation.  The normalized integral Hurwitz model has three closed
-points, with residue degrees $1,2,2$ and ramification indices $1,1,2$.
-The $23$-power Frobenius fixes precisely the residue-degree-one component.
-Its complement is also the locus on which the unramified quadratic
-extension splits.  These descriptions are independent of the chosen
-normalization coordinate.  \Cref{thm:frobenius-criterion} gives the general
-local statement, and \cref{cor:frobenius-hurwitz} applies it to this model.
+This equality is proved by the exact component calculations and
+branch-cycle identification.  It is not a theorem that specialization
+preserves the osculating incidence: a common zero of two plane sections
+may appear only in the closed fibre.  Nor does it construct a
+specialization of the finite Fano--affine incidence.
+A geometric argument forcing the global incidence from the reduction
+at $23$ is the principal remaining question.
 
-\smallskip
-The finite-group invariant has a complementary interpretation inside the
-distinguished cover.  Let
-$X\to\PP^1_T$ be the degree-$23$ cover constructed in \cite{HJLPPZ}.  Its
-splitting field over $\QQ(T)$ is regular with Galois group $M_{23}$, its
-source curve has genus $4$, and its branch points are
-\[
- 0,\qquad \sqrt{-23},\qquad -\sqrt{-23}.
-\]
-The inertia involution at $T=0$ has cycle shape $1^7 2^8$: seven sheets
-remain fixed and eight pairs collide.  These two sets support respectively
-a Fano plane and an affine $\FF_2^3$-torsor.  Their common odd fixed-point
-identity realizes the finite-group invariant as a finite incidence
-intersection.  Extending this interpretation to a relative
-specialization argument remains open; \cref{sec:connector} explains
-why the elementary nearby-cycle calculation is insufficient.
+\subsection{Arithmetic on the distinguished cover}
 
-The Fano plane contributes through this incidence calculation: it lies in
-the branch fibre of one cover, whereas the Hurwitz scheme parametrizes
-all seven covers.
+The later sections develop two consequences of having an explicit cover.
+First, we construct the degree-$4$ coordinate anticipated in
+\cite[Remark~3.4]{HJLPPZ}, giving a primitive bidegree-$(23,4)$ equation
+for the same function field.  This pencil is $|K_X-A-B|$.
+It is different from the osculating pencil, whose base divisor avoids
+$A,B$.
 
-\smallskip
-To make the arithmetic within the distinguished cover exact, we also carry
-out the minimal-coordinate construction anticipated by Huang et al.  Write
-$F(T,V)\in\ZZ[T,V]$ for their integral source equation.
+Second, the fibre above the involution branch point carries a seven-point
+Fano plane and an affine $\FF_2^3$-torsor.  We determine the associated
+$2^4{:}\PSL_3(2)$ field tower, its ramification, and its arithmetic flags.
+The minimal coordinate preserves both residue fields.
+As a separate application, every integer specialization
+$t\equiv2\pmod{319}$ has Galois group $M_{23}$; controlling new
+ramification primes gives an infinite family in which every finite
+subfamily is linearly disjoint.
 
-\begin{theorem}[Explicit realization of the minimal-degree projection]
-\label{thm:main}
-There are explicit polynomials $J_0,J_1\in\ZZ[T,V]$ and a primitive
-irreducible polynomial $P\in\ZZ[T,W]$ such that
-\[
- \deg_WP=23,\qquad \deg_TP=4,
-\]
-and, in $\QQ(X)$,
-\[
- W=\frac{J_0(T,V)}{J_1(T,V)},\qquad P(T,W)=0,
- \qquad \QQ(T,W)=\QQ(T,V).
-\]
-Consequently $P$ defines the same regular $M_{23}$-cover.  The projection
-$X\to\PP^1_W$ has degree $4$, and therefore explicitly realizes the minimum
-over $\QQ$ established in \cite[Remark~3.4]{HJLPPZ}.
-\end{theorem}
+The Fano plane lies in one branch fibre of the distinguished cover.
+It is not the parameter space $\mathcal H$.
+Likewise, the phrase \emph{fibre above the rational branch point} means
+the fibre above $0\in\PP^1(\QQ)$, not that its points are rational.
+We reserve \emph{closed fibre} for a model over a local base.
 
-The coordinate change is regular across the structured branch fibre and
-preserves both of its residue fields.
-
-\Needspace{20\baselineskip}
-\begin{theorem}[Transport of the fibre above $T=0$]
-\label{thm:branch-fibre-transport}
-There are primitive irreducible polynomials
-$\widetilde H_7,\widetilde R_8\in\ZZ[W]$ of degrees $7$ and $8$ such that
-\[
-\begin{aligned}
- F(0,V)&=23^4H_7(V)R_8(V)^2,\\
- P(0,W)&=-23^3\widetilde H_7(W)\widetilde R_8(W)^2.
-\end{aligned}
-\]
-Moreover
-\[
- \gcd\bigl(J_1(0,V),H_7(V)R_8(V)\bigr)=1,
-\]
-and substitution $W=J_0(0,V)/J_1(0,V)$ induces isomorphisms
-\[
-\begin{aligned}
- \QQ[W]/(\widetilde H_7)&\xrightarrow{\ \sim\ }\QQ[V]/(H_7),\\
- \QQ[W]/(\widetilde R_8)&\xrightarrow{\ \sim\ }\QQ[V]/(R_8).
-\end{aligned}
-\]
-These isomorphisms give Galois-equivariant bijections between the respective
-sets of geometric roots.
-\end{theorem}
-
-Finally, the minimal equation has a separate global arithmetic application.
-
-\begin{theorem}[Uniform specialization]\label{thm:specialization}
-For every integer
-\[
- t\equiv2\pmod{319},
-\]
-the primitive part of $P(t,W)$ has degree $23$, and its splitting field over
-$\QQ$ has Galois group $M_{23}$ in its natural degree-$23$ action.
-\end{theorem}
-
-Here and throughout, the phrase \emph{fibre above the rational branch
-point} means the fibre of $X\to\PP^1_T$ above $0\in\PP^1(\QQ)$; it does not
-assert that its points are $\QQ$-rational.  This is a characteristic-zero
-branch fibre.  We reserve \emph{closed fibre} for a model over a local base
-and use \emph{reduction} for passage modulo a prime.
-
-The main argument is organized as follows:
-\[
- \text{degree-$7$ Hurwitz algebra}
- \longrightarrow
- \text{seven exact maps and certified branch cycles}
- \longrightarrow
- \epsilon(\Theta)=e_{\mathrm{sing}}.
-\]
-The pointed reduction at $23$ independently constructs
-$e_{\mathrm{sing}}$.  \Cref{sec:mechanism} first compares the two idempotents
-and explains the scope of their comparison.  The exact computations are
-followed by the local Frobenius criterion and the remaining obstacle to
-an independent geometric comparison.  The minimal
-projection and branch-fibre arithmetic are supporting results on the
-distinguished cover, and the specialization theorem is an independent
-application.
-
-\subsection{Prior work and contributions}
+\subsection{Prior work and organization}
 \label{sec:prior-work}
 
-The regular $M_{23}$-cover, its source equation and branch cycles, the
-numerical computation of the seven complex covers, and the identification of
-the Galois-fixed Nielsen class are due to Huang et al.\ \cite{HJLPPZ}.  They
-also prove that the source curve has $\QQ$-gonality $4$ and observe that a
-degree-$4$ coordinate could replace their degree-$8$ coordinate, without
-computing such a function.  The branch-fibre and Hurwitz-scheme calculations
-in this paper begin from their cover and its accompanying data
-\cite{M23data}.
+The regular realization, its source equation and branch cycles, the
+numerical computation of the seven complex covers, and the identification
+of the Galois-fixed class are due to Huang et al.\ \cite{HJLPPZ}.
+Their data \cite{M23data} are our starting point.
+The seven-element Nielsen calculation goes back to H\"afner
+\cite{BraidOrbits}.  The numerical method is that of
+Klug--Musty--Schiavone--Voight \cite{KMSV}, implemented in the
+Belyi-map database of Musty--Schiavone--Sijsling--Voight \cite{BelyiDB}.
 
-The braid-orbit calculation behind the seven-element Nielsen class goes back
-to H\"afner \cite{BraidOrbits}.  The numerical three-point-cover method used
-by Huang et al. is that of Klug--Musty--Schiavone--Voight \cite{KMSV},
-implemented in the Belyi-map database of
-Musty--Schiavone--Sijsling--Voight \cite{BelyiDB}.  The point--line Gassmann
-pair and the flag description of transvections in $\PSL_3(2)$ are standard.
-Likewise, the abstract solvability of the split embedding problem with
-abelian kernel is not at issue here \cite{LegrandEmbedding}; our calculation
-identifies the fields cut out by this particular branch fibre.  Huang et al.
-already obtain abstractly an infinite mutually independent family of
-$M_{23}$-extensions \cite[Corollary~1.4(d)]{HJLPPZ}, and general
-Hilbert--Grunwald methods provide arithmetic progressions with prescribed
-specialization behavior \cite{DebesGhazi,Legrand}.
+Our main additions are the exact seven-cover arithmetic, the osculating
+incidence that characterizes the distinguished point, and the explicit
+pointed reductions at $23$.  The curve-theoretic argument uses ordinary
+canonical linear series and Riemann--Roch; the particular $2$ versus $0$
+incidence is an exact calculation on this family.
+The auxiliary $S_4$ map is of interest as a pencil intrinsic to this
+cover, not as a new realization of $S_4$.
 
-Relative to this prior work, the central contributions are the exact
-$K_0\times L$ Hurwitz algebra, its $S_6$ Galois closure and seven exact maps,
-the characteristic-$23$ idempotent defined by the distinguished singularity,
-and its exact
-identification with the augmentation of $\Theta$.  We additionally
-interpret the local idempotent by Frobenius and unramified quadratic
-splitting, using standard facts about henselian rings and finite fields.
-This interpretation does not remove the branch-cycle identification from
-the comparison with $\Theta$.  Supporting
-results give the explicit minimal-degree equation and ruling field, the
-arithmetic and obstruction theory of the distinguished branch fibre, and the
-congruence class modulo $319$ in which every specialization has group
-$M_{23}$, together with controlled ramification.  The
-detailed attribution, limitations, and data provenance are recorded in
-\cref{sec:scope}.
+The point--line Gassmann pair and the abstract incidence geometry of
+$\PSL_3(2)$ are standard.  The contribution here is their arithmetic
+realization in this branch fibre.  The abstract solvability of the
+split embedding problem with abelian kernel is also known
+\cite{LegrandEmbedding}.  Huang et al.\ already obtain an infinite
+mutually independent family of $M_{23}$-extensions
+\cite[Corollary~1.4(d)]{HJLPPZ}, while general Hilbert--Grunwald
+methods give progressions with prescribed specialization behavior
+\cite{DebesGhazi,Legrand}.  Our specialization result specifies one
+all-members progression and controls new ramification inside it.
 
-\section{The two component idempotents}
+\Cref{sec:osculating} presents the geometric criterion and its proof.
+\Cref{sec:hurwitz-scheme} supplies the exact equations and their
+seven-cover identification.
+\Cref{sec:reduction} studies reduction and compares the three
+idempotents, including the limitations of a cohomological approach.
+The remaining sections treat the minimal equation, branch-fibre
+arithmetic, specializations, open questions, and certificates.
+
+\section{Osculating planes and the distinguished point}
+\label{sec:osculating}
 \label{sec:mechanism}
 
-There are two primitive idempotents in
+We first work with a single smooth nonhyperelliptic genus-$4$ curve $X$
+over an algebraically closed field of characteristic zero.
+Let $A\ne B$ be points at which the canonical vanishing sequence is
+$(0,1,2,3)$.  In particular,
 \[
- A_{\mathrm H}=K_0\times L:
- \qquad e_1=(1,0),\qquad e_6=(0,1).
+ h^0(K_X-3A)=h^0(K_X-3B)=1,\qquad
+ h^0(K_X-4A)=h^0(K_X-4B)=0.
 \]
-The component comparison concerns two separately defined functions on the
-seven geometric points.  The first is the augmentation
-$\epsilon(\Theta)$ of a group-algebra element in
-$\FF_2[2^3{:}\PSL_3(2)]$.  Its certified values are $0$ on the distinguished
-Nielsen class and $1$ on the other six.  The second comes from the
-normalization of the integral Hurwitz scheme at the prime above $23$.
-Evaluation at the distinguished singular point has polynomial
+Let $h_A,h_B$ be generators of the two one-dimensional spaces, regarded
+as sections of $K_X$.  Their zero divisors are the sections by the
+osculating planes $H_A,H_B$.
+
+In our seven-cover family $h_A(B)$ and $h_B(A)$ are nonzero.
+Assume these two nonvanishing conditions for the moment.
+The sections are then independent, and their planes meet in a line
+$\ell$.  Put
 \[
- (u-16)(u^2+1)(u^2+u+1),
+ E_{\mathrm{osc}}=
+ \gcd\bigl(\operatorname{div}(h_A),\operatorname{div}(h_B)\bigr),
+ \qquad b_{\mathrm{osc}}=\deg E_{\mathrm{osc}}.
 \]
-and the function taking the values $(0,1,1)$ on these three closed points is
-$e_{\mathrm{sing}}$.
+On the smooth curve this effective divisor is exactly the
+scheme-theoretic intersection $X\cap\ell$.
+The pencil $\langle h_A,h_B\rangle$ has base divisor $E_{\mathrm{osc}}$;
+after its removal, it defines a map of degree $6-b_{\mathrm{osc}}$.
 
-The exact reconstruction identifies the seven maps with the seven Nielsen
-classes.  It follows that both functions are $e_6$, which proves
-\cref{thm:connector}.  The proof combines exact algebra with computational
-certificates.  Its dependence on the branch-cycle matching is precise:
-that matching places the finite-group values on the two factors of
-$K_0\times L$.
+\subsection{A relation in the Jacobian}
 
-The local idempotent has a coordinate-independent description.
-Let $R$ be the completion of the ring of integers of $K_0$ at its prime
-above $23$,
-and normalize $R$ in $A_{\mathrm H}\otimes_{K_0}\operatorname{Frac}R$.
-Its reduced closed fibre has coordinate algebra
+The covering function has divisor $23A-23B$.
+Thus $\xi=[A-B]\in\operatorname{Jac}(X)$ has order $23$:
+it is not zero, since a function with divisor $A-B$ would give a
+degree-one map from a genus-$4$ curve to $\PP^1$.
+
+\begin{lemma}[Osculation and a difference of points]
+\label{lem:osculating-difference}
+Under the preceding hypotheses, suppose $3[A-B]\ne0$.
+Then $b_{\mathrm{osc}}\leq2$, and
 \[
- B\simeq\FF_{23}\times\FF_{23^2}\times\FF_{23^2}.
+ b_{\mathrm{osc}}=2
+ \quad\Longleftrightarrow\quad
+ 3[A-B]=[C-D]\text{ for some }C,D\in X.
 \]
-The scheme-theoretic fixed locus of $23$-power Frobenius is just the
-first factor.  Its complementary idempotent lifts uniquely to $e_6$.
-Equivalently, the unramified quadratic extension of $R$ splits on
-precisely the other two components.  We prove these assertions, including
-their general local form, in \cref{sec:frobenius-criterion}.
+When these conditions hold, $C,D$ are uniquely determined and
+\[
+ \begin{aligned}
+ \operatorname{div}(h_A)&=3A+D+E_{\mathrm{osc}},\\
+ \operatorname{div}(h_B)&=3B+C+E_{\mathrm{osc}}.
+ \end{aligned}
+\]
+In particular $A,B,C,D$ are distinct.
+\end{lemma}
 
-Thus the singular-position calculation detects residue-field arithmetic,
-not merely the geometric type of the source singularity.  The two
-$E_8$ reductions have different residue degrees and are distinguished by
-Frobenius.  This is a local interpretation of the idempotent already
-computed, not a new proof of its agreement with the finite-group
-invariant.
+\begin{proof}
+Write $\operatorname{div}(h_A)=3A+R_A$ and
+$\operatorname{div}(h_B)=3B+R_B$, where $\deg R_A=\deg R_B=3$.
+The common divisor avoids $A,B$, so its degree is at most three.
+If its degree were three, we would have $R_A=R_B$, giving
+$3[A-B]=0$.  Hence $b_{\mathrm{osc}}\leq2$.
 
-For that stronger comparison, the Fano--affine odd fixed-point identity
-provides a finite incidence formula for $\epsilon(\Theta)$.
-However, in a finite pinching model the nearby-cycle stalk retains one
-basis vector per generic sheet, and its pairing is
-$\sum_e\alpha_e\beta_e$, not
-$(\sum_e\alpha_e)(\sum_e\beta_e)$.  The integral quadratic identities
-recorded in \cref{sec:connector} do not construct a relative
-correspondence or a determinant line carrying the required extra data.
-A specialization proof identifying the two invariants without the
-certified branch-cycle matching remains an open question.
+If $b_{\mathrm{osc}}=2$, the residual divisors
+$R_A-E_{\mathrm{osc}}$ and $R_B-E_{\mathrm{osc}}$ have degree one;
+call them $D,C$.  Subtracting the canonical divisors gives
+$[C-D]=3[A-B]$.  Exact order-three contact excludes $D=A$ and $C=B$;
+nonvanishing at the opposite mark excludes $D=B$ and $C=A$.
+Finally $C=D$ would contradict $3[A-B]\ne0$.
 
-\section{Exact Hurwitz arithmetic and the component comparison}
+Conversely, suppose $3A+D\sim3B+C$.  These are distinct effective
+divisors of degree four, so their common line bundle $\mathcal L$
+has $h^0(\mathcal L)\geq2$.  Riemann--Roch gives
+\[
+ h^0(K_X\otimes\mathcal L^{-1})=h^0(\mathcal L)-1\geq1.
+\]
+Choose an effective divisor $E'$ of degree two in
+$|K_X\otimes\mathcal L^{-1}|$.
+Then $3A+D+E'$ and $3B+C+E'$ are canonical divisors.
+Uniqueness of $h_A,h_B$ forces $E'$ to be common to their zero
+divisors.  Thus $b_{\mathrm{osc}}\geq2$, and the preceding bound gives
+$E'=E_{\mathrm{osc}}$.  Subtraction now also proves uniqueness of
+$C,D$.
+\end{proof}
+
+There is an equivalent test using a line bundle of degree six.
+For a nontrivial degree-zero class $\eta$, Riemann--Roch gives
+$h^0(K_X+\eta)=3$, and a point $C$ is a base point of this linear
+system precisely when
+\[
+ h^0(K_X+\eta-C)=2+h^0(C-\eta)=3.
+\]
+This is equivalent to $\eta=[C-D]$ for a point $D$.
+Taking $\eta=3\xi$ gives the criterion in
+\cref{lem:osculating-difference}.  The osculating-plane test is
+computationally smaller: it needs only canonical jets through order
+three and a polynomial gcd on a line.
+
+\subsection{The exact incidence calculation}
+
+The input consists of the canonical quadric $q$, the cubic $c$, and
+the two marked points on each coefficient component of the exact
+Hurwitz algebra.  The stored data call these marks $b,c$; here
+$A=b$ and $B=c$.  Their smoothness and their identification with all
+seven covers are established in \cref{sec:hurwitz-scheme}.
+The following calculation uses no reduction modulo $23$.
+
+\begin{computation}[Osculating incidence on all seven models]
+\label{comp:osculating}
+Over $K_0$ on the degree-one component and over $L$ on the sextic
+component, exact canonical jets at both marks have ranks $3$ through
+order two and $4$ through order three.  Their one-dimensional kernels
+through order two define $h_A,h_B$, and
+$h_A(B)h_B(A)\ne0$.
+Restricting the canonical equations to $\ell=H_A\cap H_B$ gives
+binary forms $q_\ell,c_\ell$ with
+\[
+\begin{array}{c|c|c|c}
+ \text{coefficient component}&
+ \deg\gcd(q_\ell,c_\ell)&
+ \deg\text{ osculating map}&
+ 3[A-B]\in X-X\\
+ \hline
+ K_0&2&4&\text{yes}\\
+ L&0&6&\text{no}.
+\end{array}
+\]
+In the first row $q_\ell$ is squarefree and divides $c_\ell$.
+In the second row the two binary forms are coprime.
+\end{computation}
+
+\begin{proof}[Exact certificate]
+Choose an affine chart containing a marked point and a local parameter
+$t$.  An invertible $2\times2$ Jacobian minor of $(q,c)$ solves the
+other two coordinates successively modulo $t^4$.
+The coefficients of $1,t,t^2$ in the four canonical coordinates
+give a $3\times4$ matrix.  Its kernel gives the osculating form.
+Appending the coefficient of $t^3$ gives an invertible matrix,
+proving both the vanishing sequence and exact order-three contact.
+The two resulting linear forms give a basis for their common
+two-dimensional kernel in the coordinate vector space, hence a
+homogeneous parametrization of $\ell$.
+
+Substitute that parametrization into $q,c$ and compute their
+homogeneous gcd over the coefficient field.
+In both cases $q_\ell$ is a nonzero quadratic, so the common zero
+scheme on $\PP^1$ has length equal to the gcd degree.
+This computation includes points at infinity.
+The nonzero discriminant in the degree-one case proves reducedness.
+Coprimality over $L$ is preserved under every embedding of $L$,
+so it excludes incidence on all six geometric conjugates.
+
+For a compact record of the first row, put $s=\sqrt{-23}$.
+In the stored canonical coordinates,
+\[
+ \begin{aligned}
+ h_A={}&x_3,\\
+ h_B={}&x_0+\frac{387s-51}{1508}x_1
+            +\frac{4851s-9547}{19604}x_2
+            +\frac{30411308s-56608155}{53582633}x_3.
+ \end{aligned}
+\]
+On their intersection line the common zero scheme is given, up to
+a nonzero scalar, by
+\[
+ x_1^2+\frac{387s+1457}{1508}x_1x_2
+       -\frac{217389s+189591}{568516}x_2^2=0.
+\]
+Its discriminant is nonzero.
+The certificate
+\path{verification/verify_hurwitz_osculating.py}
+recomputes both rows, checks the residual points of
+\cref{lem:osculating-difference}, and repeats the incidence calculation
+after an invertible projective change of coordinates.
+The input hashes are recorded in \cref{sec:certificates}.
+\end{proof}
+
+\subsection{The relative incidence and Galois fixedness}
+
+The preceding construction is algebraic in families.
+For the reconstructed universal quotient curve
+$f:\mathcal X\to\mathcal H_{\mathrm{in}}$, let
+$\mathcal V=f_*\omega_{\mathcal X/\mathcal H_{\mathrm{in}}}$.
+It has rank four.  Restriction to the length-three subschemes $3A$ and $3B$ gives maps
+\[
+ \mathcal V\longrightarrow f_*(\omega|_{3A}),\qquad
+ \mathcal V\longrightarrow f_*(\omega|_{3B}).
+\]
+Both targets have rank three.  The ranks in \cref{comp:osculating}
+show that the kernels are line bundles and that their formation
+commutes with field extension.  Their evaluation on $\mathcal X$
+defines the two relative osculating plane sections.
+
+\begin{proposition}[Relative osculating incidence]
+\label{prop:relative-osculating}
+Let $\mathcal Z\subset\mathcal X$ be the common zero scheme of those
+two sections.  Then $\mathcal Z\to\mathcal H_{\mathrm{in}}$ is finite.
+It is reduced of degree two over the degree-one component and empty
+over the sextic component.  Its scheme-theoretic image is the
+degree-one open-and-closed subscheme.
+
+The construction is unchanged by exchange of $A,B$ and descends
+to the original rational branch datum.  Its image over $\mathcal H$
+is a single $\QQ$-rational point.
+\end{proposition}
+
+\begin{proof}
+The construction commutes with isomorphisms of marked curves and with
+field extension, since it uses the canonical bundle, restriction to
+$3A,3B$, and their kernel subspaces.
+The map $\mathcal Z\to\mathcal H_{\mathrm{in}}$ is proper with finite
+geometric fibres, hence finite.
+\Cref{comp:osculating} gives its fibre lengths and reducedness.
+Because the base is a product of fields, its scheme-theoretic image
+is exactly the component on which the fibre is nonempty.
+
+The Galois action on the original rational branch datum preserves
+the unordered pair of totally ramified points.  It therefore
+preserves $\mathcal Z$ and its image: swapping the marks merely
+exchanges the two defining ideals.
+The corresponding construction over $\mathcal H$ can be made
+after the extension $K_0/\QQ$ and descended, or formed directly
+from the universal quotient curve using the unordered pair.
+Its image has exactly one geometric point.
+A reduced finite scheme in characteristic zero with one geometric
+point is $\operatorname{Spec}\QQ$.
+\end{proof}
+
+For completeness, this fixed point also descends as a cover.
+A deck automorphism of a connected degree-$23$ cover acts on a
+geometric unramified fibre by a permutation centralizing its
+monodromy.  The natural $M_{23}$ action is $2$-transitive and its
+centralizer in $S_{23}$ is trivial: a point stabilizer fixes no
+other letter, so a commuting permutation fixes one letter and
+then every letter.
+Thus isomorphisms of the cover with its Galois conjugates are
+unique.  They satisfy the cocycle condition and give effective
+descent to $\QQ$.
+
+Its arithmetic monodromy normalizes the geometric $M_{23}$.
+The identity $N_{S_{23}}(M_{23})=M_{23}$, also checked in
+\cref{prop:arithmetic-reflection}, implies that arithmetic and
+geometric monodromy agree.  Hence its Galois closure is regular
+over $\QQ$.  This recovers the known conclusion of \cite{HJLPPZ}
+from the new incidence computation; it does not claim a new
+regular realization.
+
+\subsection{A second degree-four pencil}
+
+On the exceptional curve write $E=E_{\mathrm{osc}}$.
+The ratio $h_B/h_A$ has divisor
+\[
+ 3B+C-3A-D.
+\]
+It gives a degree-$4$ map with ramification index three at both $A,B$.
+The pencil is intrinsic to $(X,\{A,B\})$, so on the descended
+$\QQ$-curve it is a Galois-stable two-dimensional subspace of
+$H^0(X,K_X)$.  Linear descent gives a two-dimensional
+$\QQ$-space and hence a map to $\PP^1_{\QQ}$.
+
+\begin{proposition}[Monodromy of the osculating pencil]
+\label{prop:osculating-s4}
+The geometric monodromy of this degree-$4$ map is $S_4$.
+Its Galois closure over its rational target is therefore regular.
+The pencil is distinct from $|K_X-A-B|$.
+\end{proposition}
+
+\begin{proof}
+In the stored coordinates use the affine chart $x_3=1$ and set
+$w=h_B/h_A$.  The equation $h_B=w$ eliminates $x_0$.
+Eliminating $x_1$ between the resulting quadric and cubic gives
+a primitive quartic in $x_2$ over $K_0[w]$.
+A linear subresultant recovers $x_1$, with coefficient invertible
+modulo the quartic; substitution annihilates both original equations.
+Thus the quartic represents the actual function field of $X$ over
+$K_0(w)$, not an extra resultant component.
+
+The discriminant has squarefree factors whose
+(degree, multiplicity) pairs are
+\[
+ (10,1),\qquad(5,2).
+\]
+In particular it is not a square even after extending the constants
+to $\overline\QQ$.  These elimination, subresultant, and discriminant
+identities are recomputed by the option
+\texttt{--quartic-monodromy} of the osculating certificate.
+
+The geometric monodromy is transitive of degree four and contains
+a $3$-cycle from the ramification at $A$.
+It is therefore $A_4$ or $S_4$.
+The nonsquare discriminant excludes $A_4$.
+After descent to $\QQ$ the arithmetic group cannot be larger than
+$S_4$, so its equality with the geometric group proves regularity.
+
+Finally $E$ and $A+B$ are distinct effective degree-two divisors:
+the former avoids both marked points.
+If they were linearly equivalent, their moving linear system
+would give a degree at most two map to $\PP^1$, contrary to
+nonhyperellipticity.  Thus $K_X-E$ and $K_X-A-B$ are distinct,
+as are the two pencils.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:osculating-summary}]
+The jet and incidence assertions are \cref{comp:osculating};
+their application to all seven covers uses
+\cref{cor:hurwitz-identification}.
+\Cref{lem:osculating-difference} proves the Jacobian criterion
+and uniqueness of the residual points.
+\Cref{prop:relative-osculating} proves global Galois fixedness.
+The degree of the pencil is $6-\deg E_{\mathrm{osc}}$, and
+\cref{prop:osculating-s4} gives its exceptional monodromy.
+\end{proof}
+
+The remaining existence issue is now concrete.  We have certified that
+the relative incidence has nonempty fibre on exactly one cover.
+We have not shown, without these equations, that the branch datum
+forces this to happen.  An intersection-theoretic or specialization
+argument establishing that fact would strengthen the characterization
+into a more structural explanation.
+
+\section{Exact reconstruction of the seven covers}
 \label{sec:hurwitz-scheme}
 
 \subsection{Coordinate algebra and canonical models}
 
-We now turn to the seven-cover moduli problem itself.  The section has three
-tasks: reconstruct and identify the finite Hurwitz scheme, construct its
-component idempotents independently from finite-group and characteristic-$23$
-data, and compare them in the exact coordinate algebra.  The normalized canonical
+This section supplies the complete set of exact models used in the
+osculating calculation.  Numerical reconstruction discovers the
+coefficients; exact function-field identities and certified branch cycles
+identify the resulting covers.  The normalized canonical
 quadric has the normalization-invariant coefficient
 \[
  J=\frac{q_{13}}{A^2},
@@ -747,6 +999,16 @@ give the identification with $\mathcal H_{\mathrm{in}}$ in
 \cref{prop:hurwitz-galois-closure} proves the $S_6$ assertion.
 \end{proof}
 
+\section{Reduction at \texorpdfstring{$23$}{23} and comparison of the components}
+\label{sec:reduction}
+
+The osculating incidence is a global construction in characteristic zero.
+Here we describe how the same distinguished component appears in the
+pointed reduction at $23$ and in finite-group calculations.
+The exact algebra and branch-cycle certificates will compare their
+values.  A direct specialization between the underlying geometric
+constructions is not assumed.
+
 \subsection{Local structure at \texorpdfstring{$23$}{23}}
 
 The prime above $23$ gives a particularly small local realization of this
@@ -827,7 +1089,11 @@ The Milnor and Tjurina numbers are respectively $8$, and $2+6$.  In each
 row the total delta invariant is $4$, so the geometric normalization is
 $\PP^1$.
 
-Let $N,D$ be the reduced quintic map sections.  Their common base scheme
+For the sextic component let $N,D$ denote the reduced numerator and
+normalized denominator.  For the degree-one component use the stored
+numerator and denominator, whose third branch value has not yet been
+scaled to one.  Write $v=N/D$ for these stored ratios.
+Their common base scheme
 has length $7$, avoids the singular points, and
 \[
  \ord_b(N)=\ord_c(D)=23,
@@ -840,9 +1106,11 @@ Consequently, on the normalization,
 There is a unique coordinate $t$ on the normalization with $b=0$,
 $c=\infty$, and
 \[
- \overline\beta=t^{23}
+ v=t^{23}
 \]
-at all three closed points.
+at all three closed points.  This $t$ is the coordinate for the
+stored ratio $v$, not yet for a uniformly normalized Belyi map
+on the degree-one component.
 \end{computation}
 
 \begin{proof}
@@ -866,7 +1134,9 @@ These pointed closed fibres contain more arithmetic information than their
 ADE types alone.  If $P$ is one of the three closed points, let $\tau_P$ be
 the unique singularity in the $E_8$ cases and the uniquely characterized
 $A_6$ singularity in the third case.  Both are unibranch.  We may therefore
-evaluate the normalization coordinate at the point above $\tau_P$.
+evaluate the stored-ratio normalization coordinate at the point above
+$\tau_P$.  We distinguish it from the uniformly branch-normalized
+coordinate in \cref{prop:harmonic-position} below.
 
 \Needspace{.43\textheight}
 \begin{proposition}[Idempotent defined by the normalized singularity coordinate]
@@ -923,6 +1193,58 @@ lift uniquely through nilpotent thickenings and complete local rings.
 The two quadratic factors are precisely the two local factors of $L$, so
 the lift is $e_6$.
 \end{proof}
+
+\begin{proposition}[Uniform branch normalization and the harmonic point]
+\label{prop:harmonic-position}
+On the degree-one canonical model, the third branch value $\lambda$
+of the stored ratio $v=N/D$ is a unit at $23$, with residue $7$.
+On this component put $\beta=v/\lambda$; on the other two components
+put $\beta=v$, since their stored maps are already normalized.
+Let $t_{\mathrm n}$ be the normalization coordinate with
+$\overline\beta=t_{\mathrm n}^{23}$.
+The distinguished singular positions in this coordinate have polynomial
+\[
+ (t_{\mathrm n}+1)(t_{\mathrm n}^2+1)
+                  (t_{\mathrm n}^2+t_{\mathrm n}+1).
+\]
+Thus the degree-one point is characterized by $t_{\mathrm n}=-1$.
+Relative to the three normalization points $0,\infty,1$,
+its singular point is their harmonic conjugate:
+the ordered cross-ratio $(0,\infty;1,-1)$ is $-1$.
+\end{proposition}
+
+\begin{proof}
+On the affine canonical model, form the critical ideal of $N/D$
+by adjoining the determinant of the two equation-gradient rows
+and the row $D\,dN-N\,dD$.
+Saturate away from $ND=0$.
+In this nonempty finite critical algebra, exact reduction gives
+$N=\lambda D$ for a scalar $\lambda\in K_0$.
+Since the third branch value is the only branch value other than
+zero and infinity, this determines it.
+The certificate
+\path{verification/verify_hurwitz_degree_one_branch_normalization.py}
+recomputes this scalar and checks that its valuation is zero and
+its residue is $7$.
+
+Inverse Frobenius in $\FF_{23}$ fixes $7$, so
+$t_{\mathrm n}=t/7$ on the degree-one reduction.
+Its old singular position $16$ becomes $16/7=-1$.
+The other two stored maps require no scaling, giving the displayed
+polynomial.  The marked points reduce to $0,\infty$; the unique
+point of the normalization over the third branch value has
+$t_{\mathrm n}=1$.  This proves the cross-ratio interpretation.
+\end{proof}
+
+The polynomial in \cref{prop:singular-position-idempotent} is retained
+to agree with the stored-ratio certificate.
+The normalized polynomial above describes the same residue algebra
+in another primitive coordinate.  Neither the component idempotent
+nor the residue degrees change.
+This local harmonic condition and the global osculating incidence
+select the same component by exact calculation.
+We have not proved that the harmonic condition forces the
+characteristic-zero incidence.
 
 Thus the characteristic-$23$ models themselves construct the morphism to
 the constant two-point scheme that cuts out the degree-six component; no
@@ -1065,11 +1387,13 @@ This interpretation uses the certified $1+6$ decomposition and the exact
 branch-cycle identification of its seven geometric points.
 
 \begin{proof}[Proof of \cref{thm:connector}]
+By \cref{prop:relative-osculating}, the nonempty osculating-incidence
+locus has characteristic function $e_{\mathrm{osc}}=e_1$.
 By \cref{prop:singular-position-idempotent}, evaluation at the distinguished
-singularity defines $e_{\mathrm{sing}}=e_6$.  By
-\cref{prop:relative-transporter-descent}, the augmentation is
-$\epsilon(\Theta)=e_6$.  Hence
-$\epsilon(\Theta)=e_{\mathrm{sing}}$ in $A_{\mathrm H}$.
+singularity defines $e_{\mathrm{sing}}=e_6$.
+By \cref{prop:relative-transporter-descent}, the augmentation is
+$\epsilon(\Theta)=e_6$.  Thus
+$1-e_{\mathrm{osc}}=e_{\mathrm{sing}}=\epsilon(\Theta)$ in $A_{\mathrm H}$.
 \end{proof}
 
 \subsection{Frobenius and unramified extensions}
@@ -1212,10 +1536,12 @@ realizations.
 \subsection{Finite incidence and the unresolved geometric comparison}
 \label{sec:connector}
 
-We retain the following finite identities because they identify the input
-that a proof independent of branch-cycle matching would have to transport.
-They do not construct relative correspondences on a semistable
-$M_{23}$-cover.
+The relative osculating incidence of \cref{prop:relative-osculating}
+is already constructed in characteristic zero.
+The separate question here concerns specialization of the
+Fano--affine finite incidences below.
+These identities specify the finite data, but do not extend them
+to relative correspondences on a semistable $M_{23}$-cover.
 Fix the natural degree-$23$ permutation representation
 $M_{23}\subset S_{23}$.  Let $x\in2A(\M)$, let $H_x=\Fix(x)$, and let $A_x$
 be the set of its eight two-element sheet orbits.  Thus $H_x$, with its
@@ -1407,11 +1733,36 @@ arithmetic of its branch fibre.
 \section{The minimal-degree projection}
 \label{sec:adjoints}
 
-This section makes the distinguished cover explicit in the smallest
-$\QQ$-defined source coordinate.  Its role in the main argument is
-supporting rather than selective: the coordinate transports the Fano and
-affine residue data exactly, but it does not distinguish one point of the
-seven-cover Hurwitz scheme.
+Let $F(T,V)\in\ZZ[T,V]$ be the integral source equation of
+\cite{HJLPPZ}, in its original target coordinate $T$ with branch
+values $0,\sqrt{-23},-\sqrt{-23}$.
+
+\begin{theorem}[Explicit realization of the minimal-degree projection]
+\label{thm:main}
+There are explicit polynomials $J_0,J_1\in\ZZ[T,V]$ and a primitive
+irreducible polynomial $P\in\ZZ[T,W]$ such that
+\[
+ \deg_WP=23,\qquad \deg_TP=4,
+\]
+and, in $\QQ(X)$,
+\[
+ W=\frac{J_0(T,V)}{J_1(T,V)},\qquad P(T,W)=0,
+ \qquad \QQ(T,W)=\QQ(T,V).
+\]
+Consequently $P$ defines the same regular $M_{23}$-cover.  The projection
+$X\to\PP^1_W$ has degree $4$, and therefore explicitly realizes the minimum
+over $\QQ$ established in \cite[Remark~3.4]{HJLPPZ}.
+\end{theorem}
+
+
+
+This section constructs the earlier pencil $|K_X-A-B|$ explicitly.
+Unlike the osculating pencil, it is obtained by imposing simple
+vanishing at the two marked points.
+It gives a convenient minimal-degree plane equation and transports
+the Fano and affine residue fields exactly.
+The polynomial $P$ and the sections $J_0,J_1$ in the theorem refer
+only to this pencil, not to the auxiliary $S_4$ map.
 
 Set $D=T^2+23$.  The coefficient of $V^{23}$ in $F$ is $D^4$, so
 \[
@@ -1668,6 +2019,33 @@ problem.
 \subsection{Transport to the minimal-degree coordinate}
 \label{sec:coordinate-transport}
 
+\begin{theorem}[Transport of the fibre above $T=0$]
+\label{thm:branch-fibre-transport}
+There are primitive irreducible polynomials
+$\widetilde H_7,\widetilde R_8\in\ZZ[W]$ of degrees $7$ and $8$ such that
+\[
+\begin{aligned}
+ F(0,V)&=23^4H_7(V)R_8(V)^2,\\
+ P(0,W)&=-23^3\widetilde H_7(W)\widetilde R_8(W)^2.
+\end{aligned}
+\]
+Moreover
+\[
+ \gcd\bigl(J_1(0,V),H_7(V)R_8(V)\bigr)=1,
+\]
+and substitution $W=J_0(0,V)/J_1(0,V)$ induces isomorphisms
+\[
+\begin{aligned}
+ \QQ[W]/(\widetilde H_7)&\xrightarrow{\ \sim\ }\QQ[V]/(H_7),\\
+ \QQ[W]/(\widetilde R_8)&\xrightarrow{\ \sim\ }\QQ[V]/(R_8).
+\end{aligned}
+\]
+These isomorphisms give Galois-equivariant bijections between the respective
+sets of geometric roots.
+\end{theorem}
+
+
+
 The factors in the source coordinate are
 \[
 \begin{aligned}
@@ -1785,8 +2163,9 @@ whose $\langle y\rangle$-translation orbits are the seven Nielsen classes.
 We call the class containing $x$ the \emph{distinguished class}; it is
 Nielsen class $6$ in the enumeration used below.  This is an internal label
 for the class specified by the displayed permutation $x$.  The exact Hurwitz
-algebra calculation in \cref{sec:hurwitz-scheme} later identifies
-it intrinsically as the unique degree-one component over $K_0$.
+algebra calculation in \cref{sec:hurwitz-scheme} identifies it as the
+degree-one component over $K_0$; \cref{thm:osculating-summary}
+characterizes it by osculating incidence.
 
 Put $K_0=\QQ(\sqrt{-23})$.  Let $\mathcal H_{\mathrm{in}}$ denote the
 reduced zero-dimensional inner Hurwitz scheme over $K_0$ for normalized
@@ -2498,6 +2877,17 @@ minimal equation.
 \section{Arithmetic specializations}
 \label{sec:unramified-specializations}
 
+\begin{theorem}[Uniform specialization]\label{thm:specialization}
+For every integer
+\[
+ t\equiv2\pmod{319},
+\]
+the primitive part of $P(t,W)$ has degree $23$, and its splitting field over
+$\QQ$ has Galois group $M_{23}$ in its natural degree-$23$ action.
+\end{theorem}
+
+
+
 At $T=0$ the specialized polynomial is necessarily reducible and
 non-squarefree: it records the decomposition and inertia groups at a branch
 point, not the generic monodromy.  Away from the branch locus the same
@@ -2663,30 +3053,53 @@ the full generic group.
 \section{Open questions}
 \label{sec:open}
 
-The principal open question is to prove
-$\epsilon(\Theta)=e_{\mathrm{sing}}$ by specialization, independently of
-the certified branch-cycle matching.  This requires a relative geometric
-realization of the two finite incidence correspondences, retaining the
-separate integral multiplicities $\mathcal C$ and $T_D$, and a proof that
-the resulting special invariant is the Frobenius or quadratic-splitting
-idempotent of \cref{cor:frobenius-hurwitz}.  A functorial quadratic or
-hermitian construction is a possible approach, not an object constructed
-in this paper.  Ordinary nearby-cycle duality and the finite identities in
-\cref{sec:connector} do not establish that step.
-Approaches via bad reduction of three-point covers \cite{Wewers} or
-logarithmic nearby cycles \cite{Nakayama} would still have to specify
-the relative objects and prove the compatibility of their multiplicities.
+The osculating criterion narrows the fixed-point question to an explicit
+geometric existence problem.
 
-The local component criterion applies to any finite normal algebra over
-a local field's ring of integers.  A separate question is when a
-group-theoretic invariant of other Nielsen classes can be proved to
-detect its residue degrees without first matching every exact cover to
-a branch-cycle triple.
+\subsection*{1. Existence of the osculating incidence}
+Can one show, without reconstructing all seven maps, that
+\[
+ \mathcal Z=\mathcal X\cap H_A\cap H_B
+\]
+is nonempty and supported over one geometric Hurwitz point?
+Equivalently, why does $3[A-B]$ lie on the difference variety $X-X$
+for exactly one member of this Nielsen class?
+The present proof establishes this by exact equations.
+A global intersection calculation would give a different source
+of the required existence and uniqueness.
 
-A separate arithmetic classification problem is to classify the
-$2^4{:}\PSL_3(2)$-extensions of $\QQ$ unramified outside $\{2,3,23\}$ with
-the constituent fields and discriminants of \cref{thm:ramification}; in
-particular, decide whether $M$ is unique.
+\subsection*{2. Relation with reduction at $23$}
+Can the harmonic position in \cref{prop:harmonic-position} force
+the osculating incidence in characteristic zero?
+The equality of their component idempotents is already proved,
+but not by specialization of $\mathcal Z$.
+One would need to control the extensions of the canonical jet kernels
+and their common zero scheme through the degeneration.
+A closed-fibre common zero need not lift; proving an appropriate
+flatness or lifting statement is essential.
+The bad-reduction theory of three-point covers \cite{Wewers} provides
+a framework, not this missing implication.
+
+\subsection*{3. Finite incidence and other Nielsen classes}
+Can the finite Fano--affine incidence be extended relatively so that
+its specialization computes $e_{\mathrm{sing}}$?
+The individual multiplicities and a compatible identification of
+the sheets must be retained.
+The calculation in \cref{sec:connector} explains why ordinary
+nearby-cycle duality \cite{LuZheng}, or logarithmic nearby cycles
+alone \cite{Nakayama}, do not identify the two prescribed invariants.
+
+More generally, for other Nielsen classes with two totally ramified
+points, which canonical jet conditions or torsion-difference
+conditions cut out Galois-stable components?
+The genus-$4$ lemma here is elementary; finding an incidence whose
+support has the required size is the substantive part of such an
+application.  The local Frobenius criterion alone cannot replace it.
+
+\subsection*{4. Arithmetic of the branch-fibre tower}
+Classify the $2^4{:}\PSL_3(2)$-extensions of $\QQ$ unramified outside
+$\{2,3,23\}$ with the constituent fields and discriminants of
+\cref{thm:ramification}.  In particular, is the extension $M$ unique?
 
 \section{Exact data and certificates}
 \label{sec:certificates}
@@ -2695,8 +3108,12 @@ The repository accompanying this paper is
 \begin{center}
 \url{https://github.com/research-reflexivity/frontier-math-m23-cover-investigation}.
 \end{center}
-It contains canonical JSON tables for $F$, $P$, and the pencil
-$(J_0,J_1)$.  The convention for the minimal-degree equation is
+It contains canonical JSON tables for the seven curves and marked
+points, the degree-$23$ maps, and the separate minimal equation
+$P$ with its pencil $(J_0,J_1)$.
+The osculating calculation uses the canonical models and marked
+points directly; it does not use the large minimal equation.
+The convention for the minimal-degree equation is
 \[
  \texttt{coefficients\_T\_then\_W[i][j]}=[T^iW^j]P.
 \]
@@ -2721,6 +3138,12 @@ The principal input fingerprints are
 \texttt{fdf571e4f47effc527e1726bdd99472be2c5e3390e45133fb3d7a3aab592619d}\par\vspace{3pt}
 \path{data/canonical_quadric_Q.json}\par
 \texttt{352b978369353a1cb57a1a3f54edd6b7c024896edf78c38c1601a06f395ac943}\par\vspace{3pt}
+\path{data/hurwitz_algebra_candidate.json}\par
+\texttt{10052c4ccace3cbeae0af7a307f01b6fc38c0b07404e99dd457c698fba07538a}\par\vspace{3pt}
+\path{data/hurwitz_canonical_models_candidate.json}\par
+\texttt{f1594e9e85f3b19927938be1fa391afdb8f4ccc5a3db3ea41a2b2ab426a8e2c4}\par\vspace{3pt}
+\path{data/hurwitz_marked_points_candidate.json}\par
+\texttt{129fb6c72262ddd14b18dd034d94f662cdf36de7e0eb432a725dcfc1283f0185}\par\vspace{3pt}
 \path{data/hurwitz_degree23_branch_candidate.json}\par
 \texttt{cfbce099e3fa867b7c5ba29aa73f02f11d386cf60b00a506d1166d4c65639f62}\par\vspace{3pt}
 \path{data/hurwitz_degree23_maps_candidate.json}\par
@@ -2747,6 +3170,19 @@ opt-in target \texttt{make verify-hurwitz-connector-a6} reconstructs the
 formal annulus associated with the ramified $A_6$ calculation.  This local
 calculation does not construct a semistable Galois closure or the missing
 relative incidence correspondences.
+The target \texttt{make verify-hurwitz-osculating} recomputes the
+canonical jets and homogeneous gcds over both coefficient fields,
+the residual-point divisor identity, and the quartic discriminant.
+It then repeats the incidence calculation after an invertible
+projective coordinate change.
+This is a fresh exact computation, not a check of a stored
+$2$ versus $0$ result.
+The target \texttt{make verify-hurwitz-degree-one-normalization}
+recomputes the third branch scaling whose residue changes the
+stored singular coordinate $16$ to the normalized value $-1$.
+The new osculating and branch-normalization checks use SageMath;
+the existing Magma records do not certify these new results.
+
 The target \texttt{make verify-hurwitz-frobenius-selector} checks the
 local decomposition and the finite-field identities in
 \cref{cor:frobenius-hurwitz}.
@@ -2780,6 +3216,10 @@ Result & Certificate & Engine\\
 Result & Certificate & Engine\\
 \midrule
 \endhead
+Global osculating incidence, residual points, and $S_4$ pencil &
+\path{verify_hurwitz_osculating.py} & SageMath\\
+Degree-one third branch scaling &
+\path{verify_hurwitz_degree_one_branch_normalization.py} & SageMath\\
 Newton-polygon valuations, nodes, adjoint pencil &
 \path{verify_boundary_valuations.gp}, \path{verify_nodes_mod31.sing},
 \path{verify_adjoint_mod31.py} & PARI, Singular, Python\\
@@ -2879,48 +3319,53 @@ Nielsen class are due to Huang, Jackson, Lee, Poonen, Pries, and Zhang
 \cite{HJLPPZ}.  Their accompanying repository supplies the defining data
 used here \cite{M23data}.
 
-The contributions of the present paper fall into four groups.
+The contributions of the present paper fall into five groups.
 \begin{enumerate}
-\item We reconstruct the coordinate algebra of the inner Hurwitz scheme,
-  its seven canonical curves and degree-$23$ maps, their complete passports,
-  and their branch cycles, and determine the $S_6$ Galois action on the
-  degree-six component.
-\item We determine the local decomposition and pointed reductions of that
-  scheme at $23$, construct the idempotent defined by the singular-point
-  coordinate directly from those reductions, determine the descent behavior of the
-  finite-group invariants built from transporter elements, and compare their component idempotents in
-  the exact reconstructed algebra.  We interpret the local idempotent as
-  the complement of a Frobenius-fixed locus and as an unramified
-  quadratic-splitting locus.  We prove the local component criterion
-  underlying this interpretation and specify why the finite incidence
-  identities do not yet give a comparison by specialization.
-\item On the distinguished cover, we explicitly construct the degree-$4$
-  function $W$ whose existence and minimality were established in
-  \cite[Remark~3.4]{HJLPPZ}, its bidegree-$(23,4)$ equation, and exact
-  certificates that it defines the same function field.  We determine the
-  arithmetic of the fibre over $T=0$, including its Fano incidence, affine
-  torsor, field tower, ramification, and obstruction theory, and transport
-  this structure to the minimal coordinate.
-\item We prove the explicit uniform specialization theorem and controlled
-  ramification inside its progression, and construct within that progression
-  an infinite mutually independent family.  The abstract existence of such
-  families is already \cite[Corollary~1.4(d)]{HJLPPZ}.
+\item We reconstruct the finite inner Hurwitz scheme, its seven
+  canonical curves and degree-$23$ maps, and their certified branch
+  cycles, and determine the $S_6$ Galois action on the sextic component.
+\item We construct the relative osculating incidence and prove by exact
+  calculation that it has nonempty fibre on exactly one cover.
+  Its functoriality gives a global Galois-fixedness argument.
+  We prove its equivalent torsion-difference criterion and determine
+  the $S_4$ monodromy of the associated degree-$4$ pencil.
+\item We determine the local decomposition and pointed reductions at
+  $23$, including the uniformly normalized harmonic position.
+  We compare the component idempotents obtained from osculating
+  incidence, singular position, and finite-group augmentation.
+  The local idempotent also describes a Frobenius-fixed complement
+  and an unramified quadratic-splitting locus.
+\item On the distinguished cover, we explicitly construct the
+  separate degree-$4$ coordinate anticipated in
+  \cite[Remark~3.4]{HJLPPZ}, its bidegree-$(23,4)$ equation,
+  and its branch-fibre arithmetic: the Fano plane, affine torsor,
+  field tower, ramification, and flags.
+\item We prove the uniform specialization theorem and controlled
+  ramification inside its progression, and choose an infinite
+  mutually independent family there.
+  The abstract existence of such families is already
+  \cite[Corollary~1.4(d)]{HJLPPZ}.
 \end{enumerate}
 
-We do not reprove that the fixed Nielsen class is rational; that is a
-theorem of \cite{HJLPPZ}.  The idempotent defined by the singular-point
-coordinate gives a characteristic-$23$ criterion on the specified pointed
-models separating the degree-one and
-degree-six components of the reconstructed algebra.  The comparison theorem
-proves its agreement with the augmentation of $\Theta$ by using the
-exact branch-cycle identification of all seven reconstructed maps.  The
-Frobenius interpretation in \cref{cor:frobenius-hurwitz} is independent of
-the singular-position coordinate, but it does not remove the matching from
-the comparison with $\Theta$.  No relative quadratic determinant line or
-second specialization proof is asserted.  In particular, the elementary
-nearby-cycle stalk retains the individual sheets, and the unrestricted
-coefficient Bockstein calculation does not recover the integral quadratic
-invariant.
+The global incidence argument does not define the distinguished point
+by its known rationality.  It defines a Galois-invariant geometric
+condition and uses exact models to verify that exactly one point
+satisfies it.  Its existence proof is therefore computational.
+We do not claim that the branch-cycle classes alone force that
+incidence, or that its existence follows from a local rank-one
+factor or from the harmonic reduction.
+
+The relative scheme $\mathcal Z$ is a characteristic-zero
+construction on the universal quotient curve.
+It is not the previously proposed relative Fano--affine
+correspondence, and it does not supply the latter's specialization.
+The component comparison still uses the exact model and
+branch-cycle identifications.
+No relative quadratic determinant line or second specialization
+proof is asserted.
+The elementary nearby-cycle stalk retains the individual sheets;
+the unrestricted coefficient Bockstein does not recover the
+specified integral quadratic invariant.
 
 The third branch fibre of the six conjugate maps is verified exactly in
 characteristic zero and independently in all twelve residue embeddings of

@@ -10,6 +10,7 @@
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
 	verify-hurwitz-local-23 verify-hurwitz-connector \
 	verify-hurwitz-connector-a6 verify-hurwitz-frobenius-selector \
+	verify-hurwitz-osculating verify-hurwitz-degree-one-normalization \
 	certify-hurwitz-branch-cycles certify-degree-one-branch-cycles \
 	hurwitz-monodromy-resultant \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry \
@@ -121,6 +122,16 @@ verify-hurwitz-local-23:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_pointed_23.py
 
+verify-hurwitz-osculating:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		verification/verify_hurwitz_osculating.py --residual-points --quartic-monodromy
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		verification/verify_hurwitz_osculating.py --change-coordinates
+
+verify-hurwitz-degree-one-normalization:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
+		verification/verify_hurwitz_degree_one_branch_normalization.py
+
 verify-hurwitz-frobenius-selector: verify-hurwitz-local-23
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_frobenius_selector.py
@@ -191,6 +202,7 @@ verify-all: verify-optimal verify-bridge verify-fano verify-hurwitz-candidate \
 	verify-hurwitz-monodromy-eliminant verify-hurwitz-branch-cycles \
 	verify-hurwitz-relative-transporter verify-hurwitz-galois-closure \
 	verify-hurwitz-local-23 verify-hurwitz-frobenius-selector verify-hurwitz-connector \
+	verify-hurwitz-osculating verify-hurwitz-degree-one-normalization \
 	verify-hurwitz-tail-record verify-hurwitz-tail-geometry verify-magma-record
 
 verify-optimal:

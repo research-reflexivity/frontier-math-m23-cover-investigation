@@ -2,36 +2,53 @@
 
 This repository accompanies the paper *An M23 Hurwitz scheme:
 exact arithmetic and reduction at 23*.
-Huang, Jackson, Lee, Poonen, Pries, and Zhang construct a degree-23 cover
-with regular Galois closure of group `M23` from a seven-element Nielsen class and identify one
-class fixed by the relevant arithmetic Galois action.  The central results
-here are:
+Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed the regular
+M23 cover and identified its Galois-fixed Nielsen class. This paper
+studies the full seven-cover family and gives a geometric
+characterization of the distinguished member.
 
-- the finite étale inner Hurwitz scheme of degree `7`, its degree-`1` and
-  degree-`6` connected components, and exact maps representing all seven
-  Nielsen classes;
-- the `S6` Galois action on the six-point component;
-- a characteristic-`23` idempotent defined by a singular-point coordinate
-  and its equality with the relative-transporter augmentation, proved by the
-  exact identification of all seven maps with the seven Nielsen classes.
+At the two totally ramified points of each canonical genus-four curve,
+take the osculating planes. Their intersection line meets the
+distinguished curve in two reduced points and misses each of the
+other six curves. The condition uses the curve and the unordered pair
+of marked points, so it is preserved by global Galois conjugation.
+Its uniqueness therefore gives a model-based proof of fixedness.
 
-The paper proves a local component criterion using Frobenius and unramified
-extensions.  On the normalized integral Hurwitz model at 23, the
-unramified quadratic extension splits exactly on the degree-six component;
-the complementary component is the unique Frobenius-fixed component of
-the reduced closed fibre.  This gives a coordinate-independent local
-interpretation.  Its agreement with the transporter augmentation still
-uses the certified branch-cycle matching.
+The central results are:
 
-The earlier proposed relative quadratic-orientation construction is not a
-proved second comparison.  Its finite identities remain useful, but the
-relative correspondences and their specialization have not been constructed.
-See [the repair record](notes/CORRECTNESS_REPAIRS_2026_09_05.md).
+- the exact finite Hurwitz algebra K0 x L, where
+  K0 = Q(sqrt(-23)) and [L:K0] = 6, with certified maps representing
+  all seven Nielsen classes and relative Galois closure S6;
+- a relative osculating-incidence scheme supported over the distinguished
+  point, checked exactly over both coefficient fields;
+- the equivalent relation [C-D] = 3[A-B], with a unique additional
+  pair of points on that curve and no such pair on the other six;
+- an intrinsic degree-four osculating pencil with geometric monodromy
+  S4, distinct from the earlier pencil |K-A-B|;
+- the pointed reductions at 23 and the exact comparison of their
+  component idempotent with the global incidence and finite-group
+  augmentation.
 
-Here “Galois-fixed” refers to the class identified by Huang et al.  After the
-ordered `23A,23B` data are defined over `K0 = Q(sqrt(-23))`, it is the unique
-`K0`-rational point of the inner Hurwitz scheme; the descent of the associated
-cover to `Q` is their theorem.
+See [the osculating calculation](HURWITZ_OSCULATING.md) for the
+short geometric argument, exact inputs, and reproduction commands.
+The exceptional incidence is established from exact models; an
+equation-free argument forcing its existence from the branch datum,
+or from the harmonic reduction at 23, remains open.
+
+The local component criterion uses Frobenius and unramified extensions.
+On the normalized integral Hurwitz model, the unramified quadratic
+extension splits exactly on the degree-six component. Its complement
+is the Frobenius-fixed component of the reduced closed fibre.
+Comparing with the finite-group augmentation still uses certified
+branch-cycle matching.
+
+The relative osculating incidence is a characteristic-zero construction.
+It is **not** the earlier proposed Fano--affine specialization or quadratic
+orientation construction. That separate comparison remains unproved;
+see [the repair record](notes/CORRECTNESS_REPAIRS_2026_09_05.md).
+The regular realization and its original descent remain due to
+Huang et al.; the present incidence supplies an additional,
+computationally established route to the known fixedness.
 
 Two supporting calculations describe the distinguished cover itself: an
 explicit minimal-degree `(23,4)` equation and the Fano-plane and affine-cube
@@ -148,10 +165,14 @@ normalized local integral model of the Hurwitz scheme has residue degrees
 `1+2+2`.  Reduction of the exact pointed maps gives an `E8` source for the degree-one
 point and the unramified-degree-two point, and an `A2+A6` source for the
 ramified-degree-four point.  Each normalization is `P1`, and every reduced
-pointed map is the Frobenius map `t -> t^23`.  The distinguished singular
-positions have resolvent
-`(u-16)*(u^2+1)*(u^2+u+1)` and directly produce the Boolean idempotent
-separating the degree-one and sextic components.  Exact branch-cycle
+pointed map is the Frobenius map `t -> t^23`.  In the stored-ratio normalization, the distinguished singular
+positions have resolvent `(u-16)*(u^2+1)*(u^2+u+1)` and give the
+component idempotent. The degree-one stored map has third branch
+value congruent to 7. Scaling that value to one changes its singular
+coordinate from 16 to `16/7 = -1`, while the other two coordinates
+stay unchanged. The uniform branch-normalized resolvent is therefore
+`(t+1)*(t^2+1)*(t^2+t+1)`: the distinguished point is the harmonic
+position `t=-1` relative to `0, infinity, 1`.  Exact branch-cycle
 identification shows that this idempotent and the relative-transporter
 augmentation both equal the sextic-component idempotent.  The accompanying
 older connector notes record a proposed relative orientation construction,
@@ -183,6 +204,9 @@ summary files in `verification/`.
 ```text
 make verify-all
 make paper
+# focused new exact checks (also included in verify-all)
+make verify-hurwitz-osculating
+make verify-hurwitz-degree-one-normalization
 # optional long exact third-fibre recomputation
 make verify-hurwitz-third-fiber-exact
 # optional licensed rerun

@@ -77,6 +77,7 @@ data/specialization_t2_Z.json
 HURWITZ_SCHEME_COMPUTATION.md
 HURWITZ_GALOIS_CLOSURE.md
 HURWITZ_LOCAL_23.md
+HURWITZ_OSCULATING.md
 HURWITZ_RELATIVE_TRANSPORTER_INVARIANTS.md
 HURWITZ_BRANCH_CYCLES.md
 HURWITZ_TAIL_BOUND.md
@@ -185,6 +186,8 @@ verification/verify_hurwitz_algebra_candidate.py
 verification/verify_hurwitz_relative_transporter.py
 verification/verify_hurwitz_canonical_models_candidate.py
 verification/verify_hurwitz_marked_points_candidate.py
+verification/verify_hurwitz_osculating.py
+verification/verify_hurwitz_degree_one_branch_normalization.py
 verification/verify_hurwitz_degree23_branch_candidate.py
 verification/verify_hurwitz_degree23_maps_candidate.py
 verification/verify_hurwitz_degree23_branch.m
