@@ -129,7 +129,7 @@ const queue=[...topo].filter(([,v])=>v===0).map(([k])=>k);
 let visited=0;
 while(queue.length){const id=queue.shift();visited++;for(const e of data.edges.filter(e=>e.source===id)){topo.set(e.target,topo.get(e.target)-1);if(topo.get(e.target)===0)queue.push(e.target);}}
 assert.equal(visited,ids.size,'Dependency graph must be acyclic');
-assert.match(html, /An M<sub>23<\/sub> Hurwitz scheme: exact arithmetic and reduction at 23/);
+assert.match(html, /Arithmetic and geometry of an M<sub>23<\/sub> Hurwitz scheme/);
 assert.match(html, /An explicit characteristic-23 construction produces a lift with osculating incidence/);
 assert.match(html, /Arrows show inputs: several may be needed together/);
 assert.match(html, /Last revision: 09\/07\/2026/);
