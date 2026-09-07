@@ -1,7 +1,7 @@
-# An M23 Hurwitz scheme: exact arithmetic and reduction at 23
+# Arithmetic and geometry of an M23 Hurwitz scheme
 
-This repository accompanies the paper *An M23 Hurwitz scheme:
-exact arithmetic and reduction at 23*.
+This repository accompanies the paper *Arithmetic and geometry of an
+M23 Hurwitz scheme*.
 Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed the regular
 M23 cover and identified its Galois-fixed Nielsen class. This paper
 studies the full seven-cover family and gives a geometric
