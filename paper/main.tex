@@ -88,31 +88,30 @@ problem}
 \begin{abstract}
 Huang, Jackson, Lee, Poonen, Pries, and Zhang constructed a regular
 $M_{23}$ Galois cover from a seven-element inner Nielsen class.
-We give a geometric characterization of its distinguished point.
-On each genus-$4$ quotient curve, take the osculating planes at the
-two totally ramified points.  Their intersection meets the curve in
-two reduced points for exactly one of the seven covers and is disjoint
-from the other six.  This condition is preserved by Galois conjugation
-and by exchange of the marked points, so its uniqueness gives a
-model-based proof of the distinguished point's global Galois fixedness.
-Equivalently, only that curve has points $C,D$ with
-$[C-D]=3[A-B]$, where $A,B$ are the totally ramified points.
-Its osculating pencil defines a degree-$4$ map with geometric monodromy
-$S_4$.
-The incidence calculation is exact over the full Hurwitz algebra
-$K_0\times L$, where $K_0=\QQ(\sqrt{-23})$, $[L:K_0]=6$, and the
-relative Galois closure has group $S_6$.
-Exact equations and certified branch cycles identify all seven covers.
-We also determine their pointed reductions at $23$ and compare the
-resulting component idempotent with a finite-group invariant.
-A specialization theorem forcing the global osculating incidence
-remains open.
-For the distinguished cover we construct a separate minimal
-bidegree-$(23,4)$ equation, determine the Fano-plane and affine
-$\FF_2^3$-torsor arithmetic of its involution branch fibre, and give
-a congruence class of specializations with Galois group $M_{23}$ and
-controlled ramification.  Exact data and verification scripts accompany
-the results.
+We characterize its distinguished point by canonical geometry.
+On each genus-$4$ quotient curve, the osculating planes at the two
+totally ramified points meet in a line.  This line meets exactly one
+of the seven curves in two reduced points and misses the other six.
+The condition is invariant under Galois conjugation and exchange of
+the marks, so uniqueness gives a global Galois-fixedness argument.
+We also construct a lift with this incidence from explicit
+characteristic-$23$ tail covers and a logarithmic deformation datum.
+Marked tame descent and the effective ramification divisor determine
+its canonical reduction.  Comparing the two tail actions on the same
+$23$ sheets selects the required deformation; Hensel uniqueness and
+an independently verified exact model prove incidence in
+characteristic zero.  This computer-assisted construction uses more
+than the harmonic position of the reduced marked points.
+The exact Hurwitz algebra is $K_0\times L$, where
+$K_0=\QQ(\sqrt{-23})$, $[L:K_0]=6$, and the relative Galois closure
+has group $S_6$.  Exact equations and certified branch cycles identify
+all seven covers.  We determine their pointed reductions at $23$
+and compare the component idempotent with a finite-group invariant.
+For the distinguished cover, we construct a minimal bidegree-$(23,4)$
+equation, determine the Fano-plane and affine $\FF_2^3$-torsor
+arithmetic of its involution branch fibre, and give a congruence class
+of $M_{23}$ specializations with controlled ramification.
+Exact data and verification scripts accompany the results.
 \end{abstract}
 
 \maketitle
@@ -138,13 +137,27 @@ osculating plane.  The two planes meet in a line.  On the distinguished
 curve this line is a secant; on the other six it misses the curve
 altogether.
 
-The construction uses the curve and the unordered pair of marked points.
+This incidence uses the curve and the unordered pair of marked points.
 It therefore commutes with Galois conjugation.  Once the exceptional
 incidence has been verified on exactly one of the seven curves,
 Galois fixedness follows from uniqueness.  This supplies a geometric
-characterization and a computational proof of fixedness, not an
-equation-free proof that the branch-cycle data force the incidence.
-We keep this distinction throughout.
+characterization and a computational proof of fixedness.
+
+There is also a local route to existence.  We construct a special
+$M_{23}$-map in characteristic $23$ and follow a lift into canonical
+coordinates.  The essential information is not just the harmonic
+position of four directions.  The two marked sections determine a
+tame descent character; the effective ramification divisor determines
+a logarithmic differential; and the two tails must carry the same
+permutation representation of $M_{23}$.  Together these facts select
+a local deformation.  Exact reconstruction and uniqueness then give
+the incidence, rather than merely a common zero after reduction.
+
+These arguments have different jobs.  The local construction produces
+an example with the incidence without reading the seven generic models.
+The global calculation proves that its support in the Hurwitz scheme
+is a single point.  It is this last uniqueness, not local rationality,
+that gives global Galois fixedness.
 
 \subsection{The global incidence}
 
@@ -263,8 +276,33 @@ branch-cycle identification.  It is not a theorem that specialization
 preserves the osculating incidence: a common zero of two plane sections
 may appear only in the closed fibre.  Nor does it construct a
 specialization of the finite Fano--affine incidence.
-A geometric argument forcing the global incidence from the reduction
-at $23$ is the principal remaining question.
+The following construction supplies a different input to the incidence
+argument.  Its characteristic-$23$ equations and finite calculations
+are given in \cref{sec:harmonic-construction}; no characteristic-zero
+cover is assumed in constructing its special map.
+
+\begin{theorem}[A harmonic construction of the incidence]
+\label{thm:harmonic-construction-summary}
+The two explicit tail covers in \cref{eq:harmonic-tail-inputs}, together
+with the logarithmic datum in \cref{eq:harmonic-deformation-datum},
+define a special $M_{23}$-map for the branch classes $(2A,23A,23B)$.
+After ordering the two wild branches, it has a lift over
+$\operatorname{Frac}(W(\overline{\FF}_{23}))(\sqrt{-23})$ whose marked
+degree-$23$ quotient lies in the canonical neighbourhood
+\cref{eq:harmonic-neighbourhood}.
+Its osculating planes meet the generic curve in two reduced points.
+The lift is identified with the small exact model of
+\cref{thm:harmonic-local-incidence}, and hence, by a separate exact
+comparison, with the distinguished cover of \cite{HJLPPZ}.
+\end{theorem}
+
+This is a computer-assisted existence theorem for a specified special
+map.  The tail Galois groups and the finite jet calculations are
+explicit inputs; the canonical model and its required jets are
+conclusions.  The theorem neither classifies all stable reductions
+with this passport nor constructs a Fano--affine specialization
+correspondence.  In particular, it does not make the characteristic-zero
+component comparison a formal consequence of nearby-cycle duality.
 
 \subsection{Arithmetic on the distinguished cover}
 
@@ -304,9 +342,13 @@ Belyi-map database of Musty--Schiavone--Sijsling--Voight \cite{BelyiDB}.
 
 Our main additions are the exact seven-cover arithmetic, the osculating
 incidence that characterizes the distinguished point, and the explicit
-pointed reductions at $23$.  The curve-theoretic argument uses ordinary
+relation with reduction at $23$.  The curve-theoretic argument uses ordinary
 canonical linear series and Riemann--Roch; the particular $2$ versus $0$
-incidence is an exact calculation on this family.
+incidence is an exact calculation on this family.  The local existence
+argument uses Wewers's lifting theorem for special $G$-maps
+\cite{Wewers}.  Its additional work is to derive the marked canonical
+model and compare the two tail actions in one sheet representation,
+then close the argument by exact algebra and Hensel uniqueness.
 The auxiliary $S_4$ map is of interest as a pencil intrinsic to this
 cover, not as a new realization of $S_4$.
 
@@ -324,8 +366,12 @@ all-members progression and controls new ramification inside it.
 \Cref{sec:osculating} presents the geometric criterion and its proof.
 \Cref{sec:hurwitz-scheme} supplies the exact equations and their
 seven-cover identification.
-\Cref{sec:reduction} studies reduction and compares the three
-idempotents, including the limitations of a cohomological approach.
+\Cref{sec:reduction} determines the pointed reductions.
+\Cref{sec:harmonic-construction} constructs the harmonic lift and
+proves its incidence; the local algebra is stated separately so that
+its hypotheses and its role in the construction remain visible.
+\Cref{sec:finite-comparison} compares the finite invariants and explains
+the limitations of the separate cohomological approach.
 The remaining sections treat the minimal equation, branch-fibre
 arithmetic, specializations, open questions, and certificates.
 
@@ -999,7 +1045,7 @@ give the identification with $\mathcal H_{\mathrm{in}}$ in
 \cref{prop:hurwitz-galois-closure} proves the $S_6$ assertion.
 \end{proof}
 
-\section{Reduction at \texorpdfstring{$23$}{23} and comparison of the components}
+\section{Reduction at \texorpdfstring{$23$}{23}}
 \label{sec:reduction}
 
 The osculating incidence is a global construction in characteristic zero.
@@ -1243,8 +1289,10 @@ in another primitive coordinate.  Neither the component idempotent
 nor the residue degrees change.
 This local harmonic condition and the global osculating incidence
 select the same component by exact calculation.
-We have not proved that the harmonic condition forces the
-characteristic-zero incidence.
+Harmonic position alone does not specify a mixed-characteristic
+deformation.  In \cref{sec:harmonic-construction} we instead construct
+a special map with this position, derive its canonical deformation,
+and prove incidence on its lift.
 
 Thus the characteristic-$23$ models themselves construct the morphism to
 the constant two-point scheme that cuts out the degree-six component; no
@@ -1262,6 +1310,16 @@ insufficient: the degree-one and unramified quadratic reductions both have
 geometric type $E_8$.  A successful geometric proof must retain the
 arithmetic singular position together with compatible incidence and gluing
 data.
+
+\input{harmonic-construction}
+
+\section{Finite invariants and the component comparison}
+\label{sec:finite-comparison}
+
+We return to the exact seven-point algebra.  The invariants in this
+section give a further description of its two components.  Their
+comparison uses the certified identification of the seven covers;
+it is not needed to construct the harmonic lift.
 
 \subsection{Descent of finite invariants}
 
@@ -3050,35 +3108,40 @@ questions.  The branch fibre reveals the centralizer and residue arithmetic
 after a $2A$ collision; the progression gives smooth arithmetic fibres with
 the full generic group.
 
+\Needspace{9\baselineskip}
 \section{Open questions}
 \label{sec:open}
 
 The osculating criterion narrows the fixed-point question to an explicit
 geometric existence problem.
 
-\subsection*{1. Existence of the osculating incidence}
-Can one show, without reconstructing all seven maps, that
+\subsection*{1. Global uniqueness without the seven-model calculation}
+Can a global intersection argument show that
 \[
  \mathcal Z=\mathcal X\cap H_A\cap H_B
 \]
-is nonempty and supported over one geometric Hurwitz point?
-Equivalently, why does $3[A-B]$ lie on the difference variety $X-X$
-for exactly one member of this Nielsen class?
-The present proof establishes this by exact equations.
-A global intersection calculation would give a different source
-of the required existence and uniqueness.
+is supported over exactly one geometric Hurwitz point, without testing
+all seven models?  The local construction in
+\cref{thm:harmonic-construction-summary} supplies existence.
+The exclusion on the other six, and therefore global uniqueness,
+still comes from exact equations.  An intersection-theoretic or
+moduli-theoretic proof of this uniqueness would strengthen the
+explanation of the fixed point.
 
-\subsection*{2. Relation with reduction at $23$}
-Can the harmonic position in \cref{prop:harmonic-position} force
-the osculating incidence in characteristic zero?
-The equality of their component idempotents is already proved,
-but not by specialization of $\mathcal Z$.
-One would need to control the extensions of the canonical jet kernels
-and their common zero scheme through the degeneration.
-A closed-fibre common zero need not lift; proving an appropriate
-flatness or lifting statement is essential.
-The bad-reduction theory of three-point covers \cite{Wewers} provides
-a framework, not this missing implication.
+\subsection*{2. Intrinsic construction and classification of the reductions}
+Can the explicit tail covers and the finite jet computations in
+\cref{sec:harmonic-construction} be replaced by an intrinsic
+construction from the branch datum?  We derive the canonical model
+and marked jets for the special map constructed there; they are no
+longer additional hypotheses in that application.
+We do not classify all special $M_{23}$-maps with the passport, or
+show that a harmonic cross-ratio by itself forces the same lift.
+A classification would explain which reductions can occur on the
+six-point component as well as why the constructed harmonic example
+is exceptional.  A direct incidence relation in the deformation ring
+would also be preferable to recognizing an exact model and invoking
+uniqueness, provided it retains the effective critical divisor and
+the common sheet representation.
 
 \subsection*{3. Finite incidence and other Nielsen classes}
 Can the finite Fano--affine incidence be extended relatively so that
@@ -3155,7 +3218,7 @@ The single command
 \par\vspace{4pt}
 {\centering\texttt{make verify-all}\par}
 \par\vspace{4pt}
-runs the complete open-source suite.  The optional target
+runs the default open-source suite.  The optional target
 \texttt{make verify-magma} repeats the minimal-model identity,
 irreducibility, canonical-quadric, and unpointed $23$-inertia obstruction checks
 in Magma, together with the twelve-embedding Hurwitz critical-fibre and
@@ -3183,6 +3246,46 @@ stored singular coordinate $16$ to the normalized value $-1$.
 The new osculating and branch-normalization checks use SageMath;
 the existing Magma records do not certify these new results.
 
+For \cref{thm:harmonic-local-incidence}, the target
+\texttt{make verify-harmonic-reconstruction} checks the small exact
+model, smoothness, quintic sections, the full three-point passport,
+explicit descent to $\QQ$, and the marked comparison modulo $\pi^{33}$.
+It then verifies an exact isomorphism with the earlier certified map,
+transferring its $M_{23}$ monodromy certificate without a new Arb run.
+The separate, longer target \texttt{make audit-harmonic-hensel}
+repeats all $78$ residual identity tests, the unit-Jacobian calculation,
+and an off-locus check which confirms that a residual incidence
+identity must not be treated as an exact identity.
+These are opt-in targets, separate from \texttt{verify-all}.
+The file \path{HARMONIC_RECONSTRUCTION.md} records their dependencies
+and the precise limits of the geometric conclusion.
+
+The construction in \cref{sec:harmonic-construction} has additional
+inputs.  The tail function-field Galois computations are
+\begin{center}
+\begin{minipage}{\textwidth}
+\centering\small
+\path{notes/compute_rational_e8_tail_function_field_galois.m}\\
+\path{notes/compute_q0_tail_function_field_galois.m}.
+\end{minipage}
+\end{center}
+Their separate summary records report successful Magma executions
+for the equations in \cref{eq:harmonic-tail-inputs}.
+The open-source target \texttt{make audit-harmonic-construction}
+checks the deformation datum, tail ramification, direct symmetry
+calculations, coefficient valuations, first and higher jets, and
+the common-sheet Witt-design test.  It checks the stored Magma input
+hashes, but does not rerun those two function-field computations.
+The node lemma, marked descent, and effective-divisor argument are
+written proofs, not conclusions of the polynomial tests.
+
+The opt-in target \texttt{make verify-harmonic-magma} prepares and
+runs an independent Magma check of the exact model, base divisors,
+cross-products, and critical algebra.  At this revision that new
+Magma check is prepared but unrun; it is not covered by the older
+Magma records.  Neither generating its input nor verifying its
+checksum is counted as a successful Magma execution.
+
 The target \texttt{make verify-hurwitz-frobenius-selector} checks the
 local decomposition and the finite-field identities in
 \cref{cor:frobenius-hurwitz}.
@@ -3198,8 +3301,8 @@ input hashes.  Replaying the interval continuation requires the separate
 targets \texttt{certify-hurwitz-branch-cycles} and
 \texttt{certify-degree-one-branch-cycles}; a successful summary check is
 not a replay of all interval inequalities.  Finally, finite group audits
-do not certify the relative geometric construction left open in
-\cref{sec:open}.
+do not certify the written geometric arguments or construct the
+Fano--affine specialization left open in \cref{sec:open}.
 
 The main targets are:
 
@@ -3312,12 +3415,13 @@ in $L_0$.
 \section{Scope, provenance, and disclosure}
 \label{sec:scope}
 
-The starting cover is not constructed in this paper.  The regular
-$M_{23}$ realization, its source equation, branch cycles, and the
+The starting regular $M_{23}$ realization, its source equation, branch cycles, and the
 numerical computation of the seven complex covers and their Galois-fixed
 Nielsen class are due to Huang, Jackson, Lee, Poonen, Pries, and Zhang
 \cite{HJLPPZ}.  Their accompanying repository supplies the defining data
-used here \cite{M23data}.
+used here \cite{M23data}.  The local reconstruction in
+\cref{sec:harmonic-reconstruction} recovers the same cover; it is
+not a claim to a new regular realization.
 
 The contributions of the present paper fall into five groups.
 \begin{enumerate}
@@ -3335,6 +3439,11 @@ The contributions of the present paper fall into five groups.
   incidence, singular position, and finite-group augmentation.
   The local idempotent also describes a Frobenius-fixed complement
   and an unramified quadratic-splitting locus.
+  We construct a harmonic special $M_{23}$-map from explicit tail
+  covers, derive the canonical model and required marked jets of
+  its lift, and prove incidence by Hensel uniqueness and an
+  independently verified small exact model.  A separate exact
+  isomorphism identifies that model with the certified cover.
 \item On the distinguished cover, we explicitly construct the
   separate degree-$4$ coordinate anticipated in
   \cite[Remark~3.4]{HJLPPZ}, its bidegree-$(23,4)$ equation,
@@ -3350,10 +3459,25 @@ The contributions of the present paper fall into five groups.
 The global incidence argument does not define the distinguished point
 by its known rationality.  It defines a Galois-invariant geometric
 condition and uses exact models to verify that exactly one point
-satisfies it.  Its existence proof is therefore computational.
-We do not claim that the branch-cycle classes alone force that
-incidence, or that its existence follows from a local rank-one
-factor or from the harmonic reduction.
+satisfies it.  The local construction gives a separate existence
+argument, starting with characteristic-$23$ equations rather than
+the seven generic models.  It is also computer-assisted: the
+function-field groups, the finite jet equations, and the small exact
+model are verified algebraic inputs.  The passage between them uses
+the written lifting, descent, canonical-lattice, effective-divisor,
+and node arguments of \cref{sec:harmonic-construction}.
+Those geometric arguments require mathematical review beyond the
+successful execution of the algebraic checks.
+
+For this constructed special map the model and marked jets are
+derived, not assumed.  We do not claim an equation-free deduction
+from the branch classes, a classification of all special maps with
+this passport, or a general implication from harmonic reduction
+to incidence.  Global fixedness uses the intrinsic incidence and
+its single-point support; a local rank-one factor alone would not
+give that conclusion.  The explicit rational descent of the small
+model is an additional exact check, not the premise defining the
+incidence locus.
 
 The relative scheme $\mathcal Z$ is a characteristic-zero
 construction on the universal quotient curve.
@@ -3361,8 +3485,8 @@ It is not the previously proposed relative Fano--affine
 correspondence, and it does not supply the latter's specialization.
 The component comparison still uses the exact model and
 branch-cycle identifications.
-No relative quadratic determinant line or second specialization
-proof is asserted.
+No relative quadratic determinant line or Fano--affine
+specialization proof is asserted.
 The elementary nearby-cycle stalk retains the individual sheets;
 the unrestricted coefficient Bockstein does not recover the
 specified integral quadratic invariant.
@@ -3375,8 +3499,10 @@ elimination and branch-cycle certificates identify the covers.
 
 The discovery and drafting process used substantial AI assistance.
 The computational evidence and the scope of each verification are described
-in \cref{sec:certificates}; these checks do not certify the unresolved
-relative geometric construction.
+in \cref{sec:certificates}.  The new generic-model Magma check remains
+unrun; the older tail function-field records are identified separately.
+None of these records certifies the written geometric reasoning or
+supplies the unresolved Fano--affine relative construction.
 
 \subsection*{Acknowledgements}
 
@@ -3384,6 +3510,7 @@ This work analyzes the construction of Huang, Jackson, Lee, Poonen, Pries,
 and Zhang and depends on their making the defining data publicly available
 in the repository cited as \cite{M23data}.
 
+\renewcommand{\bibliofont}{\small}
 \begin{thebibliography}{99}
 
 \bibitem{HJLPPZ}
@@ -3484,7 +3611,7 @@ Bull. Soc. Math. France \textbf{131} (2003), no.~4, 553--585,
 
 \bibitem{Stacks}
 The Stacks Project Authors,
-\emph{The Stacks Project}, Tags 04GK and 09XD,
+\emph{The Stacks Project}, Tags 04GK, 09XD, and 0E6N,
 \url{https://stacks.math.columbia.edu}.
 
 \bibitem{KnudsenMumford}
@@ -3505,6 +3632,14 @@ S.~Wewers,
 \emph{Three point covers with bad reduction},
 J. Amer. Math. Soc. \textbf{16} (2003), no.~4, 991--1032,
 \url{https://doi.org/10.1090/S0894-0347-03-00435-1}.
+
+\bibitem{BPR}
+M.~Baker, S.~Payne, and J.~Rabinoff,
+\emph{On the structure of nonarchimedean analytic curves},
+in \emph{Tropical and Non-Archimedean Geometry},
+Contemp. Math. \textbf{605}, Amer. Math. Soc., Providence, RI, 2013,
+93--121; expanded version arXiv:1404.0279,
+\url{https://doi.org/10.1090/conm/605/12113}.
 
 \bibitem{LuZheng}
 Q.~Lu and W.~Zheng,

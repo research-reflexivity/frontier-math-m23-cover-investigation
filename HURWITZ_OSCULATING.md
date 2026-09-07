@@ -1,9 +1,12 @@
 # Osculating planes on the seven exact covers
 
 This is the global geometric characterization proved in Section 2 of
-the paper. Its existence and uniqueness are established by exact
-computation on the seven already certified models. A theorem forcing
-this incidence from the branch datum, without those equations, remains open.
+the paper. The exact computation on the seven already certified models
+establishes existence and global uniqueness. Section 5 additionally
+constructs a lift with this incidence from an explicit characteristic-23
+special map, without reading the seven generic models. A construction
+intrinsic to the branch datum alone, and a proof of global uniqueness
+without the seven-model exclusion, remain open.
 
 ## Statement and reason for Galois invariance
 
@@ -100,8 +103,11 @@ are already normalized. The uniform singular-position polynomial is
     (t+1)(t^2+1)(t^2+t+1).
 
 The harmonic position -1 and the global osculating incidence select
-the same component. No theorem lifting the incidence from that
-harmonic reduction is claimed.
+the same component. Theorem 1.4 now constructs a special map with this
+marked position and proves incidence on its lift. It uses explicit tail
+covers, marked descent, the effective ramification divisor, same-sheet
+compatibility, and exact local uniqueness; harmonic position alone is
+not sufficient. See [the construction and audit](HARMONIC_RECONSTRUCTION.md).
 
 ## Verification record, 6 September 2026
 

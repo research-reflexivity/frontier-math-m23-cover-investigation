@@ -21,6 +21,7 @@ SAGE ?= sage
 SINGULAR ?= Singular
 MAGMA ?= magma
 DOT_SAGE ?= /private/tmp/m23-cover-investigation-sage
+HARMONIC_WORKERS ?= 8
 HURWITZ_CLASS ?= 6
 HURWITZ_TARGET ?= 2
 HURWITZ_PRECISION ?= 256
@@ -131,6 +132,43 @@ verify-hurwitz-osculating:
 verify-hurwitz-degree-one-normalization:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_degree_one_branch_normalization.py
+
+.PHONY: verify-harmonic-reconstruction audit-harmonic-hensel audit-harmonic-construction prepare-harmonic-magma verify-harmonic-magma
+
+# Opt-in: do not imply that older recorded Magma checks cover these results.
+audit-harmonic-construction:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_harmonic_special_map_inputs.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -gap -q notes/audit_tail_pointing_group_facts.g
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_tame_e8_canonical_descent.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/investigate_harmonic_combined_jet_ideal.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/investigate_harmonic_third_order_compatibility.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/investigate_harmonic_second_incidence_order.py \
+		--solve-parameter --workers $(HARMONIC_WORKERS)
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_two_cyclic_witt_designs.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/investigate_tail_witt_design_alignment.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/audit_harmonic_branch_value_normalization.py
+
+verify-harmonic-reconstruction:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_harmonic_recognized_model.py \
+		--ramification --descent --frame notes/harmonic_intrinsic_frame_residues.json \
+		--checkpoint notes/harmonic_local_recognition_checkpoint.json \
+		--output notes/harmonic_independent_exact_model_certificate.json
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python verification/verify_harmonic_model_identification.py \
+		--output verification/harmonic_model_identification_summary.json
+
+audit-harmonic-hensel:
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/investigate_harmonic_first_order_hurwitz_constraints.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_harmonic_universal_canonical_ring.py
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_harmonic_fixed_hensel_system.py \
+		--workers $(HARMONIC_WORKERS) --audit-quadratic --check-off-locus
+	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python notes/certify_harmonic_finite_complete_system.py \
+		--workers $(HARMONIC_WORKERS) --audit-quadratic
+
+prepare-harmonic-magma:
+	python3 scripts/export_harmonic_magma.py --output verification/verify_harmonic_model_generated.m
+
+verify-harmonic-magma: prepare-harmonic-magma
+	$(MAGMA) -b verification/verify_harmonic_model_generated.m
 
 verify-hurwitz-frobenius-selector: verify-hurwitz-local-23
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \

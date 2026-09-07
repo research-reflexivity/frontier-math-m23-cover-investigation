@@ -1,0 +1,18 @@
+{
+  "engine": "Magma",
+  "magma_version": "2.29-9",
+  "runner": "University of Sydney Magma Calculator",
+  "input": "notes/compute_rational_e8_tail_function_field_galois.m",
+  "input_sha256": "5149bfa476e90127c83a42dd8de26b34223bb8f170ea057e8ef550ab2283a61c",
+  "seed": 1988953760,
+  "total_time_seconds": 10.160,
+  "total_memory_mb": 32.09,
+  "splitting_prime": "z^3 + 5*z^2 + z + 9",
+  "group_degree": 23,
+  "group_order": 10200960,
+  "transitive": true,
+  "primitive": true,
+  "transitivity": 4,
+  "simple": true,
+  "expected_output": "PASS rational E8 tail function-field Galois group is M23"
+}

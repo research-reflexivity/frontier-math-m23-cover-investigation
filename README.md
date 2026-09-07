@@ -27,13 +27,36 @@ The central results are:
   S4, distinct from the earlier pencil |K-A-B|;
 - the pointed reductions at 23 and the exact comparison of their
   component idempotent with the global incidence and finite-group
-  augmentation.
+  augmentation;
+- a harmonic special M23-map built from two explicit characteristic-23
+  tail covers, with the marked canonical model and required jets of
+  its lift derived from tame descent, effective ramification, and a
+  common identification of the sheets;
+- independent exact reconstruction and Hensel uniqueness proving
+  incidence on that lift, with its identification as the known
+  cover checked by an exact isomorphism of maps.
 
 See [the osculating calculation](HURWITZ_OSCULATING.md) for the
 short geometric argument, exact inputs, and reproduction commands.
-The exceptional incidence is established from exact models; an
-equation-free argument forcing its existence from the branch datum,
-or from the harmonic reduction at 23, remains open.
+The local construction supplies existence without reading the seven
+generic models. The exact seven-model calculation supplies global
+uniqueness of the incidence locus. These are different steps: a unique
+local lift alone does not establish global rationality.
+For the constructed special map, the local model and jets are now
+derived, not additional premises. The characteristic-23 tail groups,
+finite jet equations, and exact model remain computational inputs.
+This is not an equation-free construction from permutations alone,
+nor a claim that harmonic position determines every such deformation.
+
+See [the local reconstruction and audit](HARMONIC_RECONSTRUCTION.md).
+`make verify-harmonic-reconstruction` reruns the exact model, map,
+descent, local comparison and M23 identification. The longer
+`make audit-harmonic-hensel` audits all 78 residual identity tests.
+`make audit-harmonic-construction` runs the additional special-map,
+canonical-lattice, jet, and common-sheet design checks. It does not
+mechanically verify the written geometric arguments or rerun Magma.
+The independent Magma check is prepared but **not yet run**; these
+opt-in targets are separate from `verify-all`.
 
 The local component criterion uses Frobenius and unramified extensions.
 On the normalized integral Hurwitz model, the unramified quadratic

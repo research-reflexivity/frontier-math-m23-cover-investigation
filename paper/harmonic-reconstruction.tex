@@ -1,0 +1,315 @@
+\subsection{Exact reconstruction in a specified harmonic neighbourhood}
+\label{sec:harmonic-reconstruction}
+
+We isolate the local theorem used to complete the construction.
+Its low-order coefficients are explicit hypotheses, derived for our
+special map in the preceding subsections.  The proof has two independent
+parts: necessary equations have at most one solution, and a small exact
+model supplies a solution.  This separation is what permits an
+all-orders conclusion without extrapolating from finite precision.
+
+Let $\mathcal O$ be the ring of integers of
+$K_{0,23}=\QQ_{23}(\pi)$, where $\pi^2=-23$.
+In canonical coordinates $[H:U:V:W]$ put
+\[
+ q_0=HW-U^2-UV-V^2,\qquad c_0=UW^2-V^3.
+\]
+The normalization of their common zero curve in characteristic $23$
+has, on $W=1$, the parametrization
+\[
+ (H,U,V)=(z^6+z^4+z^2,z^3,z).
+\]
+The two marks are $z=1,-1$; the critical cluster is at $z=0$.
+In these coordinates the normalized reduced map is
+$(1-z^{23})/(1+z^{23})$.  Thus
+$t_{\mathrm n}=(1-z)/(1+z)$ relates this description to
+\cref{prop:harmonic-position}; the singular point $z=\infty$
+has $t_{\mathrm n}=-1$.
+
+Write
+\[
+ (m_0,\ldots,m_8)
+ =(H^3,H^2U,HU^2,U^3,H^2V,HUV,U^2V,HV^2,UV^2)
+\]
+and set
+\begin{align*}
+ C_1&=H^3-5HU^2-7HUV+11HV^2,\\
+ C_2&=6H^2U+5U^3+3H^2V+4U^2V+3UV^2,\\
+ C_3&=-H^3-10HU^2+6HUV+2HV^2.
+\end{align*}
+The neighbourhood considered below consists of equations and marks
+of the form
+\begin{equation}\label{eq:harmonic-neighbourhood}
+\begin{aligned}
+ q&=q_0,\\
+ c&=c_0+\pi C_1+\pi^2C_2+\pi^3C_3
+       +\pi^3 u_0UV^2+\pi^4\sum_{i=0}^{7}u_{i+1}m_i,\\
+ z_A&=1+\pi+9\pi^2+\pi^3u_9,\\
+ z_B&=-1+\pi-9\pi^2+\pi^3u_{10},
+ \qquad u_i\in\mathcal O.
+\end{aligned}
+\end{equation}
+The remaining coordinates of the marks are determined on the smooth
+central chart by $q=c=0$.
+
+\begin{theorem}[Incidence in the specified local neighbourhood]
+\label{thm:harmonic-local-incidence}
+Suppose a smooth genus-$4$ curve and a degree-$23$ three-point map
+admit the canonical equations and ordered totally ramified marks in
+\cref{eq:harmonic-neighbourhood}.  Suppose its remaining ramification
+consists of eight simple points in the formal neighbourhood of $z=0$,
+and that the integral differential
+\[
+ \eta=\frac{1}{23}\frac{d\beta}{\beta}
+ \quad\hbox{has reduction}\quad
+ \overline\eta=\frac{2z^8}{z^2-1}\,dz,
+ \qquad \operatorname{div}(\beta)=23A-23B.
+\]
+Then the marked canonical curve is unique up to the coordinate
+normalizations just specified.  It is isomorphic over $K_{0,23}$
+to the exact model below.  Its two osculating planes meet the curve
+in two distinct geometric points.
+
+The same conclusion holds over an unramified complete extension of
+$\mathcal O$ with the same congruences.  The exact model has a
+degree-$23$ map with geometric monodromy $M_{23}$ and represents the
+distinguished member of the seven-cover family.
+\end{theorem}
+
+\paragraph{An intrinsic choice of coordinates.}
+For $i=0,1,2,3$, the spaces
+\[
+ H^0(X,\omega_X(-iA-(3-i)B))
+\]
+are one-dimensional in this neighbourhood, and their generators form
+a basis.  This follows from rank-three jet minors and a nonzero
+basis determinant on the closed fibre.  Use these generators as
+coordinates $x_0,x_1,x_2,x_3$.  The marks become
+$[1:0:0:0]$ and $[0:0:0:1]$, with vanishing sequences
+$(0,1,2,3)$ and $(3,2,1,0)$.
+The quadric consequently has the form
+\[
+ ax_0x_3+bx_0x_2+dx_1x_2+ex_1^2+fx_1x_3+gx_2^2.
+\]
+Here $a,b,d,e$ are units.  Substituting $x_i=d_i y_i$ and multiplying
+the equation by $\kappa$, with
+\[
+ d_0=1,\qquad d_1=b/d,\qquad
+ \kappa=(ed_1^2)^{-1},\qquad
+ d_2=(\kappa b)^{-1},\qquad d_3=(\kappa a)^{-1},
+\]
+sets the first four displayed coefficients to one.
+This normalization is unique and requires no extension of the field.
+Reduce the cubic modulo the monic quadric in lexicographic order
+$x_0>x_1>x_2>x_3$, and set its $x_0^2x_3$ coefficient to one.
+These operations remove the scalar choices in the four generators.
+
+\paragraph{The exact model.}
+In these normalized coordinates the quadric is
+\begin{equation}\label{eq:small-harmonic-quadric}
+ q_*=x_0x_2+x_0x_3+x_1^2+x_1x_2
+             -\frac{127}{229}x_1x_3+\frac{12192}{52441}x_2^2.
+\end{equation}
+The cubic $c_*$ has the following nonzero coefficients; all others
+vanish.
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Monomial & Coefficient in $c_*$\\
+\midrule
+$x_0^2x_3$ & $1$\\
+$x_0x_1x_3$ & $(69+41\pi)/916$\\
+$x_0x_3^2$ & $-(288+3552\pi)/52441$\\
+$x_1^3$ & $-(5+\pi)/458$\\
+$x_1^2x_2$ & $-(3061+569\pi)/209764$\\
+$x_1^2x_3$ & $-(8649+1515\pi)/104882$\\
+$x_1x_2^2$ & $-(298479+49803\pi)/48035956$\\
+$x_1x_2x_3$ & $-(1041970+181274\pi)/12008989$\\
+$x_1x_3^2$ & $(2318419+389759\pi)/48035956$\\
+$x_2^3$ & $-(2350008+338328\pi)/2750058481$\\
+$x_2^2x_3$ & $-(55642056+9354216\pi)/2750058481$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proof}[Proof of \cref{thm:harmonic-local-incidence}]
+We separate local uniqueness, exact existence, and identification of
+the cover.  In particular, recognizing coefficients from a local
+approximation is not used as a proof of their exact values.
+
+\emph{Local uniqueness.}
+The nine cubic directions $m_i$ give a formal slice for canonical
+curves with quadric $q_0$: the six infinitesimal orthogonal-coordinate
+directions, cubic scaling, the four multiples of $q_0$, and these
+nine directions span the twenty-dimensional cubic space.
+The determinant is $10$ in $\FF_{23}$ for the certificate's basis.
+The formal inverse-function theorem therefore justifies this slice.
+
+Choose bases $S_A,S_B$ of the four-dimensional kernels of the
+order-$23$ quintic jet maps.  Fixed unit minors make their
+coefficients analytic functions of the eleven parameters $u_i$.
+An invertible minor of fifteen cross-product equations determines
+a multiplier matrix $M$, with one entry fixed to remove its scalar.
+It defines a local ratio $N/D$, normalized to value one at $z=0$,
+even off the locus where all global cross-products vanish.
+On a genuine cover this is its function $\beta$, up to scalar.
+No global map is inferred merely from solving those fifteen rows.
+
+Let $R(z)$ be the degree-eight Weierstrass factor of $\eta$, with
+$R\equiv z^8\pmod\pi$.  Reduce $N-D$ and $D$ modulo $R^2$, obtaining
+$P,Q$, and put
+\[
+ E=P-\frac{P(0)}{Q(0)}Q,\qquad E_j=[z^j]E.
+\]
+Here $Q(0)$ is a unit.  Retaining $R^2$ retains the effective
+ramification multiplicities.  For a three-point map $E=0$,
+because its eight simple critical points have one common value.
+Let $C_j$ denote the central-series coefficient of $z^j$ in the
+negative of the first remaining cross-product
+$S_{A,0}(MS_B)_1-S_{A,1}(MS_B)_0$, using the fixed bases in the
+certificate.  Eleven necessary equations are
+\begin{equation}\label{eq:harmonic-hensel-equations}
+ F=\left(\frac{E_{15}}{\pi^3},
+       \frac{E_9}{\pi^4},\ldots,\frac{E_{14}}{\pi^4},
+       \frac{C_7}{\pi^5},\ldots,\frac{C_{10}}{\pi^5}\right)=0.
+\end{equation}
+These are integral restricted power series on the stated neighbourhood.
+The exact residual calculation gives
+\[
+ \overline F=J\overline u+b,\qquad
+ \det J=16\in\FF_{23}^{\times},\qquad
+ -J^{-1}b=(0,0,-7,0,-1,-2,0,10,0,-7,-7).
+\]
+The full matrix, fixed jet bases, and normalizations are retained in
+the local certificate and its accompanying derivation.
+
+This calculation is an identity test, not a sample of possible covers.
+The parameters first enter at orders $\pi^3,\pi^4$.
+The first variation of the normalized ratio vanishes modulo $\pi$;
+its variable contribution begins at order $\pi^4$.
+After division by $23=-\pi^2$, the coefficients of $R$ first vary
+at order $\pi^2$.  Modulo the precisions needed in
+\cref{eq:harmonic-hensel-equations}, all expressions have parameter
+degree at most two.  Values at zero, the positive and negative
+coordinate vectors, and the sums of two distinct coordinate vectors
+therefore determine them.  The $78$ evaluations verify integrality
+of the divisions and the displayed affine reduction.
+The computation also verifies that the two unavailable final digits
+of the Weierstrass factor do not affect these divided reductions.
+
+Consequently $F(u)=\widetilde J u+\widetilde b+\pi G(u)$, with
+$G$ integral and restricted and $\widetilde J$ invertible over
+$\mathcal O$.  The map
+$u\mapsto-\widetilde J^{-1}\widetilde b
+          -\pi\widetilde J^{-1}G(u)$
+is a strict contraction on $\mathcal O^{11}$.
+It has a unique fixed point, also after the stated base extensions.
+Every cover in the theorem satisfies these necessary equations.
+We do not need to assert that the selected equations alone imply
+all the other map equations.
+
+\emph{Exact existence.}
+The pair $(q_*,c_*)$ was recovered from the local lift in the
+intrinsic coordinates above, without using the previously stored
+generic models.  The following independent tests are over $K_0$.
+The Jacobian-minor ideal is the unit ideal on all four affine
+projective charts, so the curve is a smooth genus-$4$ complete
+intersection.  Its marked vanishing sequences are as stated.
+The order-$23$ quintic jet kernels each have dimension four.
+Their common base divisors are exactly $23A$ and $23B$: saturation
+excludes other base points, and a section has order exactly $23$
+at each mark.
+
+In the degree-ten canonical ring, of dimension $57$, an exact
+rank-$15$ multiplier calculation and all six cross-product
+identities give a function with divisor $23A-23B$.
+Away from its zero and pole, a critical ideal in the chart $x_1=1$
+has an eight-dimensional reduced quotient algebra, and $N=uD$
+in that algebra for one nonzero scalar $u$.
+Reducedness is certified by a squarefree degree-eight characteristic
+polynomial of a multiplication operator.
+Riemann--Hurwitz gives total ramification $52$; the two marked
+points contribute $44$, and the eight distinct critical points
+exhaust the remainder.  Thus each is simple, there are no further
+critical points in another chart, and the map has the required
+three-point passport.
+
+An integral projective change with unit determinant identifies
+this exact marked model with the stated local slice modulo
+$\pi^{33}$.  Correcting the quadric and cubic by the formal slice
+construction preserves the lower-order congruences in
+\cref{eq:harmonic-neighbourhood}.  The normalized map is determined
+by its divisor; its divided differential and critical cluster are
+therefore those used to form the necessary equations above.
+The exact map belongs to the required neighbourhood and hence,
+by uniqueness, is the local lift to all orders.
+
+\emph{Incidence and identification.}
+The two osculating planes on this exact model are $x_3=0$ and
+$x_0=0$.  On their common line the identity
+\begin{align*}
+ c_*(0,x_1,x_2,0)
+ &=\left(x_1^2+x_1x_2+\frac{12192}{52441}x_2^2\right)\\
+ &\hspace{5mm}\cdot
+ \left(-\frac{5+\pi}{458}x_1
+             -\frac{771+111\pi}{209764}x_2\right)
+\end{align*}
+has first factor equal to $q_*|_{x_0=x_3=0}$.
+Its discriminant is $3673/52441\ne0$.  This proves the claimed
+two reduced points, exactly rather than to finite precision.
+
+Finally, a separate comparison certificate constructs an invertible
+projective matrix between this model and the degree-one model of
+\cref{sec:hurwitz-scheme}.  It sends the ordered marks to the
+ordered marks and verifies equality of the two rational functions
+up to a nonzero target scalar by exact reduction in the canonical
+ring.  The existing certified branch cycles consequently give
+geometric monodromy $M_{23}$ for this map.  This is an exact
+isomorphism argument, not an inference from the passport and not
+a new numerical continuation calculation.
+\end{proof}
+
+\Needspace{8\baselineskip}
+\begin{remark}[An explicit descent of the reconstructed map]
+The exact model also admits a direct descent, independently of
+the exclusion of incidence on the other six covers.
+Put $a=-127/229$, $b=12192/52441$, and define
+\[
+ T(x_0,x_1,x_2,x_3)=(abx_3,bx_2,x_1,x_0/a).
+\]
+If $\sigma(\pi)=-\pi$, exact substitution gives
+\[
+ T^2=bI,\qquad q_*(Tx)=bq_*(x),\qquad
+ \sigma(c_*)(Tx)\equiv\mu c_*(x)\pmod{q_*},
+\]
+where $\mu=-(52130760+33951768\pi)/1525141603$ and
+$\mu\sigma(\mu)=b^3$.
+Thus $R=(b/\mu)T$ satisfies $R\sigma(R)=I$.
+Solving $v=R\sigma(v)$ gives a four-dimensional $\QQ$-space
+and an invertible change of coordinates in which the curve
+equations are rational; the certificate checks these equations
+directly.
+
+For the map $f$ normalized to have third branch value $1$, one also
+has $f(x)\sigma(f)(Tx)=1$ in the function field.
+Consequently $t=(f-1)/(\pi(f+1))$ is fixed by the descent and
+defines a map over $\QQ$.  Its branch locus is $t=0$ and
+$23t^2+1=0$.  Rescaling by $T_{\mathrm{base}}=23t$ gives the
+branch locus $0,\pm\sqrt{-23}$ used in the paper.
+This recovers the known rational cover in different equations.
+\end{remark}
+
+\begin{remark}[Why uniqueness is enough]
+The eleven equations are necessary for a cover in this neighbourhood.
+We do not assert that their ideal is the entire map ideal.  Nor do
+the displayed low-order incidence cancellations prove an exact
+incidence relation on their own: an off-locus audit detects a higher
+defect in the constant residual multiplier.
+What closes the proof is that the constructed lift and the
+independently verified exact model both satisfy the necessary system,
+which has at most one solution.  Their identification transfers the
+exact incidence calculation to the lift.  The earlier coefficient
+checks place the model in the neighbourhood; uniqueness, not the
+number of matching digits, supplies equality to all orders.
+\end{remark}

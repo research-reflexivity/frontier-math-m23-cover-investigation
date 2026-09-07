@@ -1,0 +1,712 @@
+\section{Constructing the harmonic lift}
+\label{sec:harmonic-construction}
+
+We now start in characteristic $23$, rather than reduce a known generic
+equation.  The purpose is to produce a cover with the osculating
+incidence.  The construction has three stages: lift a special $M_{23}$-map,
+derive its marked canonical neighbourhood, and identify the lift by
+exact local uniqueness.  The first two stages are developed here; the
+last is the local reconstruction theorem below.
+
+Throughout this section put
+\[
+ k=\overline{\FF}_{23},\qquad K^{\mathrm{ur}}=\operatorname{Frac}(W(k)),
+ \qquad K=K^{\mathrm{ur}}(\pi),\qquad \pi^2=-23,
+\]
+and let $\mathcal O$ be the valuation ring of $K$, with $v(\pi)=1$.
+Write $G=M_{23}$, let $M=M_{22}$ be a point stabilizer, and choose
+$P\simeq C_{23}$ and $D=N_G(P)=P{:}H$, where $H=M\cap D\simeq C_{11}$.
+The letter $D$ in this section denotes this normalizer, not a residual
+point in the divisor relation of \cref{thm:osculating-summary}.
+
+\subsection{The special map and its lift}
+
+A \emph{tail} is a component meeting the rest of a semistable target
+in one point.  A primitive tail contains a specialization of an
+original tame branch point; a new tail contains none.  The associated
+covers below are separable degree-$23$ maps; their normal closures,
+not the quotient maps themselves, are $G$-covers.
+
+\begin{computation}[Two characteristic-$23$ tail covers]
+\label{comp:harmonic-tail-groups}
+Over $\FF_{23}$ consider
+\begin{equation}
+ \begin{aligned}
+  D_7:&\quad T=X^{23}+7X^9+18X^2,\\
+  D_{15}:&\quad w^3=19(X^5+17),\qquad T=(X^6+2X)w.
+ \end{aligned}
+\label{eq:harmonic-tail-inputs}
+\end{equation}
+Their normal closures have geometric Galois group $M_{23}$.
+At infinity the inertia groups are $23{:}11$, with lower jumps $7$
+and $15$, respectively.  The first source has genus zero and finite
+branch fibre $2^8 1^7$; the second has genus four and is \'etale over
+the affine target.
+\end{computation}
+
+Here the group assertion is a function-field computation, recorded
+separately for the two equations in \cref{sec:certificates}.
+The arithmetic groups over $\FF_{23}(T)$ are $M_{23}$.  Their geometric
+subgroups are normal and contain nontrivial inertia, so simplicity
+gives the same geometric groups.  The remaining assertions can be
+checked directly.  For the first map,
+\[
+ T=(X^8+17X)^2(X^7+12),\qquad T'=17(X^8+17X),
+\]
+with squarefree, coprime factors.  Its different at infinity has
+degree $44-8=36$.  For the second, put $H_1=X^6+2X$ and $Q_1=X^5+17$.
+The identity $3H_1'Q_1+H_1Q_1'=10$ proves \'etaleness away from
+$w=0$; there $w$ is a parameter and $H_1$ a unit.
+The pole orders of $X,w,T$ are $3,5,23$, and the different has degree
+$52$.  The wild inertia is $23{:}m$ with $m\mid11$.
+If $m=1$, the quotient different would be divisible by $22$.
+Thus $m=11$, and the formula $22+2h$ for that different gives the
+stated jumps.
+
+On $Z_0=\PP^1_a$ set
+\begin{equation}
+ \omega=-\frac{a^6}{a^{22}-1}\,da,
+ \qquad x=\frac{2a^{11}}{a^{11}-1}.
+\label{eq:harmonic-deformation-datum}
+\end{equation}
+The residue at $c\in\FF_{23}^{\times}$ is $c^7$.  Consequently
+$\omega=d\log\prod_c(a-c)^{[c^7]}$, where the brackets choose
+integer representatives between $1$ and $22$.
+If $\chi:H\to\FF_{23}^{\times}$ is conjugation on $P$, let $H$ act
+on $a$ through $\chi^8$.  Since $7\cdot8\equiv1\pmod{11}$,
+$h^*\omega=\chi(h)\omega$.
+The ramification data $(m,h)$ at $x=0,1,\infty,2$ are
+\[
+ (11,7),\quad(1,0),\quad(1,0),\quad(11,15).
+\]
+There are exactly three ratios $h/m<1$, none equal to $1$, and all
+are less than $2$.
+
+Choose a wild point of each normal closure, identify its inertia with
+$D$, and its tame complement with $H$.  Attach these two full $G$-tails
+to the induced central curve $\operatorname{Ind}_D^G(Y_0)$, where
+$Y_0\to Z_0$ is purely inseparable of degree $23$.
+The matched inertia groups and conductors, together with generation
+of $G$ by the connected tail groups, verify the special
+$G$-deformation datum conditions of \cite[Definition~2.13]{Wewers}.
+This constructs a connected special $G$-map, to which
+\cite[Theorem~4.5]{Wewers} applies.
+
+It is useful to retain the inseparable map explicitly.  If $a=b^{23}$
+on $Y_0$ and $z=b^{11}$ on $N=Y_0/H$, then
+\begin{equation}
+ x=\frac{2z^{23}}{z^{23}-1},\qquad
+ \overline\beta=\frac{1}{1-x}
+              =\frac{1-z^{23}}{1+z^{23}}.
+\label{eq:harmonic-central-map}
+\end{equation}
+The primitive attachment, new attachment, and two wild marks are
+$e=0,q=\infty,A=1,B=-1$.  Their harmonic position is therefore part
+of the constructed special map.  Replacing $a=b^{23}$ by $a=b$ would
+give the wrong quotient map.
+
+The residues in the two pole orbits $a^{11}=1,-1$ have opposite
+quadratic characters.  They give the opposite classes $23A,23B$ in
+the lift.  A common change of wild generator rescales both classes
+together; taking inverses preserves square class.  The tame tail
+supplies the class $2A$.
+
+\begin{proposition}[Descent of the marked lift]
+\label{prop:harmonic-marked-descent}
+After ordering the two wild branches, the constructed special map
+has one isomorphism class of lifts over $\overline K$, and this class
+has a $G$-cover representative over $K$.  Its degree-$23$ quotient
+has two individually $K$-rational totally ramified points $A,B$.
+\end{proposition}
+
+\begin{proof}
+We compute the automorphisms of this particular special map directly.
+On $D_7$, a pointed source automorphism is $X\mapsto aX+b$.
+It preserves the eight critical points, whose sum is zero, so $b=0$.
+Comparison of coefficients gives $a^{14}=a^{21}=1$, or $a^7=1$.
+All seven scalings preserve the map up to target scaling.
+
+On the smooth completion of $Y^3=X^5+\lambda$, $\lambda\ne0$, let
+$q$ be infinity.  Since $L(3q)=\langle1,X\rangle$ and
+$L(5q)=\langle1,X,Y\rangle$, a pointed automorphism has the form
+\[
+ X\longmapsto aX+b,\qquad Y\longmapsto cY+dX+e.
+\]
+The $Y^2$ and $X^4$ coefficients force $d=e=b=0$, and then
+$a^5=c^3=1$.  These fifteen automorphisms preserve
+$Y(X^6+15\lambda X)$ up to scaling.  Their action on the parameter
+$Y/X^2$ at $q$ is faithful.
+
+The group facts $\Out(G)=1$, $N_G(M)=M$, and $N_G(D)=D$ identify
+these quotient symmetries with the pointed $G$-equivariant tail
+symmetries.  Indeed, a quotient symmetry lifts to the normal closure;
+correct its action on $G$ by an inner automorphism.  The correcting
+element normalizes $M$, so does not change the quotient symmetry.
+The point with stabilizer $D$ is unique in its orbit, hence is fixed.
+
+A $G$-equivariant automorphism of the special map preserves the chosen
+central component, and its restriction there over the original target
+lies in $H$.  Such an element fixes both attaching points.  Each
+pointed tail symmetry fixes all their $G$-translates.  Thus these
+choices glue independently, and restriction to the normalization
+recovers them.  The special-map automorphism group has order
+\[
+ |H|\cdot7\cdot15=1155.
+\]
+No matching of derivatives is required to glue automorphisms of the
+nodal special fibre $xy=0$.  This argument does not use a general
+automorphism-count formula for special $G$-maps.
+
+By \cite[Proposition~4.4 and Theorem~4.5]{Wewers}, the lifts with
+identified special fibre form one tame inertia orbit of size
+$22\cdot7\cdot15=2310$.  Forgetting that identification divides by
+the group just computed, freely: a stabilizer would give a generic
+$G$-equivariant automorphism over the target, belonging to $Z(G)=1$.
+There are two unframed classes, exchanged by the quadratic cyclotomic
+action.  Fixing the ordering of $23A,23B$ leaves one class over $K$.
+The $G$-equivariant isomorphisms with its conjugates are unique, so
+satisfy the descent cocycle condition.  They descend the cover, not
+merely its moduli point.  Taking the $M$-quotient gives the source
+over $K$.  Each totally ramified fibre contains one geometric point,
+which is consequently $K$-rational.
+\end{proof}
+
+\subsection{The marked distance determines the tame character}
+
+The next lemma explains why the abstract good-reduction curve is not
+the only information needed.  Distances are logarithmic annulus
+lengths, measured with $v(\pi)=1$.  Equivalently, in a smooth residue
+disk the distance to the disk separating two sections is the
+valuation of their parameter difference.
+
+\begin{lemma}[Marked distance and tame descent]
+\label{lem:marked-distance}
+Let $K'$ be a complete discretely valued field with algebraically
+closed residue field of characteristic $p$.  Let $C/K'$ be a smooth
+proper curve of genus at least two with potentially good reduction
+over a tame extension.  Suppose that distinct $K'$-points $A,B$
+reduce to $q$ on the good geometric special fibre $D'$, and that
+$\Aut(D',q)$ is cyclic of order $n>1$, prime to $p$, with faithful
+tangent character.  If the marked separating vertex has distance
+$1/n$ from the good-reduction vertex, then the minimal good-reduction
+extension has degree $n$.  Writing it as $K'(\rho)$ with
+$\rho^n=\pi$, the action $\tau(\rho)=\zeta\rho$ has tangent
+character $\zeta$ at $q$.
+\end{lemma}
+
+\begin{proof}
+Over a finite tame Galois extension with good reduction, the descent
+action extends by uniqueness of the stable model.  Its kernel
+$\Delta$ on $D'$ can be removed without losing smoothness.
+At any special point the completed ring is $R'[[u]]$.
+Averaging $u$ over $\Delta$ gives an invariant parameter $u_0$
+with the same reduction.  Thus the invariant ring is
+$R'^{\Delta}[[u_0]]$, by coefficientwise invariance.  The quotient
+of the proper projective model exists and is smooth by these local
+descriptions.  Minimality therefore makes the residual action
+faithful; its order $m$ divides $n$.
+
+For an integral parameter $\xi$ at $q$, the marked distance says
+$v(\xi(A)-\xi(B))=1/n$.  Both values lie in the degree-$m$
+good-reduction field, whose value group is $\frac1m\ZZ$.
+Hence $n\mid m$, so $m=n$.
+This difference valuation is unchanged by an integral parameter
+change: the quotient of the two differences is its unit linear
+coefficient plus terms in the maximal ideal.
+
+Tameness and the algebraically closed residue field give
+$K'(\rho)$ as stated.  First linearize a special parameter and then
+lift it using the character projector
+$n^{-1}\sum_j\zeta^{-ej}\tau^j$.  This projector is linear over
+the base valuation ring, not over the extension ring; its reduction
+is still a parameter.  We obtain $\tau(\xi)=\zeta^e\xi$ exactly.
+Since the sections are rational, their values belong to
+$\rho^e\mathcal O_{K'}$, for $0\le e<n$.  The nonzero difference
+has valuation $e/n$ plus an integer.  Equality to $1/n$ forces $e=1$.
+\end{proof}
+
+In our application $23\nmid|M|$, so the quotient of the semistable
+$G$-model by $M$ commutes with reduction.  Since $D$ is transitive
+on the $23$ letters, the quotient has one central component and one
+node at each attachment.  Its three components form a chain
+\[
+ D_7\;\text{(rational)}\quad--\quad
+ N\;\text{(marked rational)}\quad--\quad D_{15}\;\text{(genus four)}.
+\]
+Forgetting the map and markings contracts the rational tree and
+gives good reduction $D_{15}$.
+The target annulus depths are $23/(2h)$ in $v_{23}$ units.
+Each source annulus maps with degree $23$; its length is the target
+length divided by $23$ \cite[Corollary~2.6]{BPR}.
+In our valuation the two source lengths are therefore $1/7$ and
+$1/15$.  Dividing by $253$, the order of the inertia in the Galois
+closure, would be incorrect for this quotient map.
+
+The pointed automorphism calculation above and
+\cref{lem:marked-distance} give the good-reduction field
+$K(\rho)$, $\rho^{15}=\pi$.  On $Y^3=X^5+\lambda$ its descent
+action is
+\begin{equation}
+ \tau(X)=\zeta^{-3}X,\qquad \tau(Y)=\zeta^{-5}Y.
+\label{eq:harmonic-good-character}
+\end{equation}
+Indeed this is the unique pointed automorphism whose character on
+$Y/X^2$ is $\zeta$.  The hypotheses of the lemma are essential:
+neither an unmarked good-reduction curve nor a wild extension would
+justify this argument.
+
+\subsection{A canonical model from differentials}
+
+\begin{lemma}[The descended canonical lattice]
+\label{lem:harmonic-canonical-lattice}
+The marked quotient of \cref{prop:harmonic-marked-descent} has a flat
+canonical complete-intersection model over $\mathcal O$ with regular
+total space.  Its closed fibre is rational with one cusp of value
+semigroup $\langle3,5\rangle$.  In suitable closed coordinates it is
+\[
+ HW-U^2-\alpha UV-\beta V^2=0,\qquad UW^2-V^3=0.
+\]
+Its affine normalization is
+$(H,U,V)=(z^6+\alpha z^4+\beta z^2,z^3,z)$.
+\end{lemma}
+
+\begin{proof}
+On the good special fibre the canonical forms
+\[
+ h=\frac{dX}{Y^2},\quad u=Xh,\quad v=Yh,\quad w=X^2h
+\]
+have vanishing orders $6,3,1,0$ at infinity and characters $7,4,2,1$
+modulo $15$.  The relative dualizing sheaf is invertible and commutes
+with base change \cite[Tag~0E6N]{Stacks}.
+Lift these forms by cohomology and base change, and
+apply the tame character projectors.  Their reductions form a basis,
+so their lifts do too.  Multiplication in degrees two and three gives
+equivariant canonical equations $q_g,c_g$ of characters $8,6$ reducing to
+\[
+ hw-u^2=0,\qquad uw^2-v^3+\lambda h^3=0.
+\]
+Surjectivity of these multiplication maps and the canonical Hilbert
+function identify the relative ideal with this quadric and cubic.
+Only canonical forms have been lifted.  Lifting $X,Y$ themselves
+with their special pole orders would impose extra Weierstrass
+conditions on the generic curve.
+
+Set $(H,U,V,W)=(h,\rho^3u,\rho^5v,\rho^6w)$.
+All four coordinates have character $7$; dividing them all by
+$\rho^7$ gives an invariant generic basis.  Thus the embedding is
+into $\PP^3_K$, with no unexamined twist of the projective space.
+Its equations are
+\begin{equation}
+ \begin{aligned}
+ q&=\rho^6q_g(H,\rho^{-3}U,\rho^{-5}V,\rho^{-6}W),\\
+ c&=\rho^{15}c_g(H,\rho^{-3}U,\rho^{-5}V,\rho^{-6}W).
+ \end{aligned}
+\label{eq:harmonic-canonical-lattice}
+\end{equation}
+For a monomial of weight $r$, using weights $(0,3,5,6)$, the
+good-model coefficient has $\rho$-order congruent to $r-6$ for $q$
+and $r-15$ for $c$.  If $n_q,n_c$ are their least nonnegative
+residues, then $n_q+6-r$ and $n_c+15-r$ are nonnegative for all ten
+quadratic and twenty cubic monomials.  This proves integrality of
+every coefficient.  The possible closed equations are precisely
+\[
+ \begin{aligned}
+ HW-U^2+aUV+bUW+cV^2+dVW+eW^2&=0,\\
+ UW^2-V^3+fV^2W+gVW^2+hW^3&=0.
+ \end{aligned}
+\]
+On $W=1$ put $V=z$ and solve for the monic cubic $U$ and monic
+sextic $H$.  Translate $z$ to remove the quadratic term of $U$;
+linear changes remove its linear and constant terms and the cubic,
+linear and constant terms of $H$.  The degree-five term of $H$
+vanishes with the same translation.  This gives the asserted form.
+
+The affine chart is $\mathbb A^1$.  At infinity the coordinate orders
+are $3,5,6$, and the arithmetic genus of the complete intersection is
+four.  Thus the unique singularity has $\delta=4$ and semigroup
+$\langle3,5\rangle$, whose gaps are $1,2,4,7$.
+The closed equations form a regular sequence, giving flatness of
+the relative intersection; adjunction gives $\omega=\mathcal O(1)$.
+Finally the $H^3$ coefficient of $c$ is $\pi$ times a unit reducing
+to $\lambda$.  At the cusp, on $H=1$, the linear parts of the two
+equations in the total local ring are $W+a_0\pi$ and $\lambda\pi$.
+They are independent.  The total surface is regular there, and is
+relatively smooth at every other closed point.
+\end{proof}
+
+In the good model's disk at $q$, the lifted ratio $\xi=v/w$ is an
+integral parameter of character one.  The weighted coordinates give
+$z=\xi/\rho=V/W$; their other affine ratios are integral power
+series on the disk $|\xi|\le|\rho|$ and reduce to the cubic and sextic
+above.  This is the marked central disk: $\xi(A)\in\rho\mathcal O$,
+and the separating radius is $|\rho|$ by
+\cref{lem:marked-distance}.  Thus its reduction is $N$ of
+\cref{eq:harmonic-central-map}, not an unrelated rational curve.
+
+\begin{proposition}[The effective divisor fixes the closed equations]
+\label{prop:harmonic-effective-differential}
+Choose the harmonic coordinate on $N$ with $e=0,q=\infty,A=1,B=-1$.
+The closure $R_8$ of the eight simple ramification points is finite
+flat of degree eight, with closed divisor $8e$ on the canonical
+model.  The divided logarithmic differential is integral and satisfies
+\begin{equation}
+ \overline\eta=\overline{\frac{d\log\beta}{23}}
+       =\frac{2z^8}{z^2-1}\,dz.
+\label{eq:harmonic-effective-differential}
+\end{equation}
+The closed equations can consequently be taken to be
+$q_0=HW-U^2-UV-V^2$ and $c_0=UW^2-V^3$ in this marked coordinate.
+\end{proposition}
+
+\begin{proof}
+After a finite extension splitting the ramification points, all eight
+lie in the primitive disk and have $z$ of positive valuation.
+The integral canonical ratios just constructed reduce at those
+points to their values at $e$.  Properness and the valuative criterion
+therefore locate all their centers on the canonical model at $e$.
+This argument does not assume a contraction morphism from the
+semistable model to the canonical model.
+
+Their schematic closure is proper with finite fibres, hence finite.
+It is torsion-free over $\mathcal O$, hence flat of degree eight.
+Near $e$ the surface is smooth, so this is an effective Cartier
+divisor with closed equation $z^8$.  Retaining this multiplicity is
+essential in the next step.
+
+On the regular surface, $\operatorname{div}(\beta)=23A-23B$:
+there is no vertical contribution because the central reduction is
+nonconstant.  Normality makes $\beta$ a unit away from these disjoint
+sections and extends it to a morphism to $\PP^1$.  In particular
+there is no hidden base point at the cusp.
+
+Take a primitive integral multiple $s$ of $d\log\beta$ in
+$\omega(A+B)$.  Its restriction to $R_8$ is generically zero and
+therefore zero, since the latter scheme is flat.  Its closed-fibre
+restriction is nonzero: otherwise the multiplication-by-$\pi$ exact
+sequence would contradict primitivity.  On the normalization,
+\[
+ \nu^*\omega(A+B)=\omega_{\PP^1}(8q+A+B)
+\]
+has degree eight.  Its section already vanishes at $8e$, so it has
+no further zero, and has nonzero residues at both marks.  The
+residues of $d\log\beta$ are $23,-23$.  Thus the primitive scaling
+divides by exactly $23$, up to a unit.  Normalizing the residue at
+$A$ to one gives \cref{eq:harmonic-effective-differential}.
+
+It remains to normalize the canonical equations without moving the
+four directions.  Subtract $d\log((z-1)/(z+1))$ from the displayed
+differential.  This leaves the dualizing differential
+\[
+ 2(z^6+z^4+z^2+1)\,dz.
+\]
+The subtracted differential is regular at $q$ on the normalization,
+so belongs to the dualizing sheaf there.  The canonical section $W$
+has no affine zero and is a constant multiple of $dz$.
+Using the canonical degrees $0,1,3,6$, write the two monic higher
+polynomials as $z^3+u_0z^2$ and
+$z^6+v_5z^5+v_4z^4+v_2z^2$ after removing lower basis terms.
+The quadric gives $v_5=2u_0$; the displayed differential then gives
+$u_0=v_5=0$ and $v_4=v_2=1$.  This proves the stated equations in
+the harmonic coordinate, without simultaneously postulating an
+unjustified polynomial and marked-point normalization.
+\end{proof}
+
+\subsection{Comparing the two tails on the same sheets}
+
+The first necessary deformation equations have two solutions.
+Only one is compatible with the common $G$-action.  To compare them,
+one must transport the same wild generator through both nodes.
+The following elementary calculation makes that transport precise.
+
+\begin{lemma}[A leading coefficient at a node]
+\label{lem:harmonic-node-coefficient}
+Let $S$ be a complete discrete valuation ring with uniformizer $t$,
+let $\alpha\in S$ have valuation $e>0$, and put
+$\mathcal A=S[[a,y]]/(ay-\alpha)$.
+Write $v_C,v_D$ for the vertical valuations of the branches $y=0$
+and $a=0$, normalized by $v_C(t)=v_D(t)=1$.
+Suppose $h\ge2$, $F\in\mathcal A[1/t]$, and
+\[
+ v_C(F)\ge he,\qquad v_D(F)\ge e,\qquad
+ (F/\alpha^h)|_C=c a^{1-h}+O(a^{2-h}).
+\]
+Then $(F/\alpha)|_D=c y^{h-1}+O(y^h)$.
+In particular, if $\sigma$ preserves the node and its branches and
+$F=\sigma(a)-a$ satisfies the central condition, then
+\[
+ \sigma(y)-y=-c y^{h+1}+O(y^{h+2}).
+\]
+\end{lemma}
+
+\begin{proof}
+The normal form in $a,y$, with a bounded $t$-denominator, gives a
+Laurent expansion $F=\sum f_na^n$ after substituting $y=\alpha/a$.
+The two valuation bounds say coefficientwise
+$v(f_n)\ge he$ and $v(f_n)+en\ge e$.
+There is no cancellation between distinct powers at either branch;
+only finitely many negative powers occur at a fixed $t$-order.
+The $n$th contribution to $F/\alpha$ on $D$ is
+$f_n\alpha^{n-1}y^{-n}$.  It vanishes for $n>1-h$ and has
+coefficient $c$ for $n=1-h$.  Lower indices give higher powers.
+For an automorphism, the second valuation bound follows from
+$v_D(\sigma(a))=v_D(a)=e$, and
+\[
+ \sigma(y)-y=-(F/\alpha)y\sigma(y)
+\]
+gives the final assertion.
+\end{proof}
+
+We verify that the coordinates used here are actual node parameters.
+The primitive quotient disk has $z$-radius $|\pi|^{1/7}$.
+It is Galois invariant and contains a point over a tame extension:
+lift a smooth point of its component.  Averaging the conjugates of
+its coordinate gives a $K$-rational center in the same disk.
+That center reduces to $0$, hence lies in $\pi\mathcal O$ and is
+strictly inside the radius in question.  The disk is therefore
+centered at $0$.  The primitive open annulus is
+$|\pi|^{1/7}<|z|<1$.  The new open annulus is
+$|\rho|<|\xi|<1$, with coordinate $1/z=\rho/\xi$.
+Neither coordinate has a horizontal zero or pole in its annulus.
+
+On a chosen $G$-node the quotient to the degree-$23$ source is by
+$H=C_{11}$.  Tame averaging gives an eigenparameter $x$, with the
+opposite parameter of inverse character.  The invariant node has
+parameters $x^{11},y^{11}$.  The pullback of $z$, or of $1/z$, has
+the same vertical divisor as $x^{11}$ and no horizontal divisor
+through the node.  Their ratio is a unit in the normal completed
+ring; an eleventh root of that unit exists by Hensel's lemma.
+We may consequently choose actual parameters $a_7,a_{15}$ with
+\[
+ a_7^{11}=z,\qquad a_{15}^{11}=1/z.
+\]
+These coordinates persist in the formal projective slice used below:
+a change $I+\pi M_0$, conjugated by the weights $(0,3,5,6)$, changes
+the good coordinates only in $\rho$-orders at least $9$.
+
+Choose $r_c^{11}=\pi$, $s^7=\pi$, and $\rho^{15}=\pi$ compatibly,
+and set
+\[
+ \alpha_7=s^2r_c^{-3},\qquad \alpha_{15}=\rho^{-4}r_c^3.
+\]
+Then $\alpha_7^{11}=s$, $\alpha_{15}^{11}=\rho$, and
+$\alpha_h^h=r_c$.  Rescale the opposite node parameter to obtain
+$a_hy_h=\alpha_h$.  This fixes the smoothing units, not just their
+valuations.  The central residues of $a_7,a_{15}$ can be chosen
+reciprocal.
+
+At the generic point of $N$, the identities
+$d\beta=23\beta\eta$ and \cref{eq:harmonic-central-map,eq:harmonic-effective-differential}
+give the leading inverse-branch equation
+\[
+ (\delta z)^{22}=\pi^2z^8(1-z^2)^{22}.
+\]
+The coefficients of Taylor degrees $1$ through $22$ are divisible
+by $23$; the degree-$23$ coefficient reduces to
+$-2/(1+z^{23})^2$.  After scaling, the residual equation is a unit
+times $v^{23}-v$, so its simple roots label the same $P$ by
+$i\in\FF_{23}$.  Its action has leading term
+\[
+ \sigma_i(z)-z=r_cz^{4/11}(1-z^2)i
+       +\text{terms of larger central valuation}.
+\]
+In the two node coordinates this becomes
+\[
+ \left.\frac{\sigma_i(a_7)-a_7}{r_c}\right|_C
+   =\frac{i}{11}a_7^{-6}(1-a_7^{22}),\qquad
+ \left.\frac{\sigma_i(a_{15})-a_{15}}{r_c}\right|_C
+   =\frac{i}{11}a_{15}^{-14}(1-a_{15}^{22}).
+\]
+Apply \cref{lem:harmonic-node-coefficient} to the regular functions
+$\sigma_i(a_h)-a_h$.  It gives
+\[
+ \sigma_i(y_h)-y_h=-\frac{i}{11}y_h^{h+1}+O(y_h^{h+2}).
+\]
+On the primitive tail $X=y_7^{-11}$, so
+$\sigma_i(X)-X=i y_7^{-4}+\cdots$.
+On the new tail put $\xi_{\rm tail}=y_{15}^{-11}=X^2/Y$.
+Here
+\[
+ X=y_{15}^{-33}V_\lambda,\qquad
+ V_\lambda^5(V_\lambda-1)=\lambda y_{15}^{165},\quad V_\lambda(0)=1,
+\]
+so $\sigma_i(X)-X=3i y_{15}^{-18}+\cdots$.
+Thus the Laurent root labels are $i$ and $3i$ for the same wild
+element.  This conclusion uses two vertical valuations of an actual
+node function; it is not obtained by exchanging limits in a central
+expansion.  Eleventh-root ambiguities multiply labels by squares
+in $\FF_{23}^{\times}$ and cannot exchange just one of the designs
+in the next calculation.
+
+\begin{computation}[The compatible first jet]
+\label{comp:harmonic-first-jet}
+Trivialize the smooth quadric formally and use the nine-dimensional
+cubic slice specified in \cref{sec:harmonic-reconstruction}.
+The first necessary function and logarithmic-differential equations
+have exactly two geometric solutions:
+\[
+ c=c_0\pm\pi C_1\pmod{\pi^2},\qquad
+ z_A=1+\pi\pmod{\pi^2},\quad z_B=-1+\pi\pmod{\pi^2},
+\]
+where $C_1=H^3-5HU^2-7HUV+11HV^2$ and the sign of $\pi$ is fixed
+by the first effective-fibre differential normalization
+$\eta_1=(z+15z^3+12z^5)\,dz\pmod{z^7}$.
+In the common labels above, only the positive solution is compatible
+with the two full $M_{23}$-tails.
+\end{computation}
+
+Here is the finite test, including why its conclusion is exact.
+In the slice the residue, regularity, and differential conditions are
+a rank-$18$ linear system on $26$ coefficients (the nine cubic
+coefficients, two marked motions, and fifteen numerator coefficients).
+On its eight-dimensional solution space, the next function equations
+have a degree-two residual ideal.  Its reduced Gr\"obner basis is
+triangular with one equation $(t+1)(t+2)=0$ and seven linear
+equations.  Thus the two solutions above exhaust the geometric
+solutions, not just the $\FF_{23}$-rational ones.
+
+With the fixed translation subgroup $P$ in $S_{23}$ there are two
+containing conjugates of $M_{23}$: their number is
+$|N_{S_{23}}(P)|/|N_{M_{23}}(P)|=22/11=2$.
+They preserve the two cyclic Witt designs $\mathcal B_0,\mathcal B_1$
+on $\FF_{23}$, each with $253$ blocks and parameters $S(4,7,23)$.
+For reproducibility, $\mathcal B_0$ is given by the weight-seven
+words of the binary cyclic Golay code with generator
+$x^{11}+x^9+x^7+x^6+x^5+x+1$; $\mathcal B_1$ is its image under
+$i\mapsto-i$.  Exact permutation calculations verify their
+automorphism groups, their intersection $23{:}11$, and generation
+of $A_{23}$ by the two groups.
+
+The first-jet equations give the primitive map
+$X^{23}+5X^9+6X^2$ and the two candidate new-tail maps
+\[
+ Y^3=X^5+\varepsilon,\qquad
+ T=2Y(X^6+15\varepsilon X),\qquad \varepsilon=1,-1.
+\]
+These tails have the independently verified $M_{23}$ groups of
+\cref{comp:harmonic-tail-groups}, after scaling over $k$.
+For a design $\mathcal B$ form
+$I_{\mathcal B}=\sum_{B\in\mathcal B}\prod_{i\in B}X_i$.
+If the tail group preserves $\mathcal B$, this is a rational
+function of the target, integral on its affine line.  Its pole bound
+at infinity is $7/23$ on the primitive tail and $21/23$ on the new
+tail, both less than one.  It must therefore be constant.
+
+The exact Laurent calculation excludes $\mathcal B_1$ for the
+primitive tail and for $\varepsilon=1$, and excludes
+$\mathcal B_0$ for $\varepsilon=-1$.  In the stored scaled series,
+the first nonzero remainders are respectively $15t^{1771}$,
+$5t^{759}$, and $5t^{759}$; the scaling and root equations are
+included in the checker.  The computation solves and checks all
+$23$ local roots to precision exceeding these exponents.
+A nonzero coefficient disproves constancy.  Conversely, no finite
+zero expansion is used to prove constancy: the known $M_{23}$ group
+and the exact two-design count identify the remaining design.
+
+Both connected tails in one $G$-cover must act as the same subgroup
+on $G/M$.  The negative candidate cannot do so, whereas the positive
+one agrees with the primitive tail.  This proves the selection in
+\cref{comp:harmonic-first-jet}.  In particular, the common sheet
+representation supplies information not contained in the two
+abstract group names or in the ramification conductors.
+
+\subsection{From necessary jets to exact incidence}
+
+The remaining local input is finite algebra.  It is convenient to
+state exactly what is calculated before invoking the all-orders
+theorem.
+
+\begin{computation}[The required marked neighbourhood]
+\label{comp:harmonic-required-jets}
+For the positive first jet, the necessary map and effective
+critical-fibre equations give
+\[
+ \begin{aligned}
+ c&=c_0+\pi C_1+\pi^2C_2+\pi^3(C_3+v_0UV^2)\pmod{\pi^4},\\
+ z_A&=1+\pi+9\pi^2\pmod{\pi^3},\\
+ z_B&=-1+\pi-9\pi^2\pmod{\pi^3},
+ \end{aligned}
+\]
+where $v_0$ remains an integral parameter and
+\[
+ \begin{aligned}
+ C_2&=6H^2U+5U^3+3H^2V+4U^2V+3UV^2,\\
+ C_3&=-H^3-10HU^2+6HUV+2HV^2.
+ \end{aligned}
+\]
+No osculating-incidence equation is imposed in obtaining these jets.
+\end{computation}
+
+The calculation uses truncated canonical-ring multiplication, the
+two marked quintic-section systems, and the square of the effective
+degree-eight ramification factor.  All first-order equation and
+marked-point directions are tested: the first variation of the
+normalized function is zero.  This ensures that an omitted higher
+curve coefficient does not enter an earlier necessary equation.
+The first-jet ideal is computed with its degree-two identities;
+the next step leaves the $UV^2$ coefficient of $C_2$ free, and the
+effective square-fibre equations fix it to $3$.  They leave exactly
+the displayed $v_0$ direction at the following order.
+The scripts and independent residual-system audit are specified in
+\cref{sec:certificates}.
+
+One normalization requires care.  Let $b$ denote the computational
+map normalized by $b(0)=1$, and $u$ its actual third branch value.
+Locally
+\[
+ b-u=R^2F,\qquad \overline R=z^8,\qquad
+ \overline F=z^7\cdot\text{a unit}.
+\]
+The vanishing first variation gives $u=1\pmod{\pi^2}$.
+The coefficient of $z^{15}$ at order $\pi$ then gives
+$R(0)\in\pi^2\mathcal O$.  Since $F(0)\in\pi\mathcal O$,
+\begin{equation}
+ u-1=-R(0)^2F(0)\in\pi^5\mathcal O.
+\label{eq:harmonic-branch-scalar}
+\end{equation}
+Thus replacing $b-u$ by $b-1$ is legitimate in the earlier calculations
+modulo $\pi^5$, and constant scaling never changes $d\log b$.
+At all orders, however, $u$ must be eliminated, not set to one.
+The fixed Hensel system below does exactly this.  A finite-residue
+check finds valuation exactly five for $u-1$ in the reconstructed
+lift, so the distinction is genuine.
+
+We have now derived every hypothesis of
+\cref{thm:harmonic-local-incidence} for the lift of the constructed
+special map.  The integral canonical equations come from
+\cref{lem:harmonic-canonical-lattice}; the effective cluster and
+differential from \cref{prop:harmonic-effective-differential}; and
+the required jets from the common-sheet comparison and
+\cref{comp:harmonic-required-jets}.
+The remaining theorem identifies any such lift with an independently
+verified exact model.  Its proof uses necessary equations and
+uniqueness, not a claim that those equations generate the entire
+Hurwitz ideal.  Together these results prove
+\cref{thm:harmonic-construction-summary}.
+
+\input{harmonic-reconstruction}
+
+\subsection{What the construction explains}
+
+The special map supplies the harmonic configuration, but the
+characteristic-zero incidence needs more.  The marked distance fixes
+the descent action on the good curve.  Its canonical lattice and
+effective ramification divisor fix the closed canonical geometry.
+The common Mathieu action excludes the other first jet.  Finally,
+unit-Jacobian uniqueness and exact existence identify the entire
+lift.  Each step retains information which the preceding, coarser
+description would lose.
+
+There are also two distinct uniqueness statements.  Local uniqueness
+identifies a lift in this neighbourhood; it does not assert that
+all covers with the passport enter this neighbourhood.  Global
+uniqueness of the incidence locus is proved on all seven exact
+models in \cref{comp:osculating}.  Its intrinsic definition then
+gives Galois fixedness by \cref{prop:relative-osculating}.
+
+Accordingly, the construction explains the exceptional incidence for
+an explicit harmonic special $M_{23}$-map.  It remains computational
+at the tail-group, jet, and exact-model stages.  It is not a
+permutations-only existence argument, nor a general theorem that
+harmonic reduction forces rationality.  The finite Fano--affine
+comparison considered next is a further question, not an unstated
+ingredient of this proof.

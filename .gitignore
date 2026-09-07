@@ -13,6 +13,7 @@ verification/*_summary.json
 !verification/hurwitz_degree23_third_fiber_sage_summary.json
 !verification/hurwitz_tail_summary.json
 !verification/hurwitz_branch_cycle_summary.json
+!verification/harmonic_model_identification_summary.json
 results/
 tmp/
 output/
