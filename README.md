@@ -55,8 +55,11 @@ descent, local comparison and M23 identification. The longer
 `make audit-harmonic-construction` runs the additional special-map,
 canonical-lattice, jet, and common-sheet design checks. It does not
 mechanically verify the written geometric arguments or rerun Magma.
-The independent Magma check is prepared but **not yet run**; these
-opt-in targets are separate from `verify-all`.
+The independent Magma check **passed on 7 September 2026**, using
+Magma 2.29-10, as did all 16 public Magma inputs. The
+[rerun report](MAGMA_RERUN_2026_09_07.md) links the exact inputs,
+responses and scope. These opt-in execution targets remain separate
+from `verify-all`; the default suite checks the retained records locally.
 
 The local component criterion uses Frobenius and unramified extensions.
 On the normalized integral Hurwitz model, the unramified quadratic
@@ -224,6 +227,15 @@ connector runs are recorded in the corresponding Fano--affine, pinched-tag,
 wild-orientation, pointed-Bockstein, and logarithmic-quadratic-line Magma
 summary files in `verification/`.
 
+The 7 September 2026 rerun retains all requests and raw calculator responses
+under `verification/magma_runs/2026-09-07/`; its index is
+`verification/calculator_2026_09_07_magma_summary.json`. All 16 current inputs
+have successful executions. Earlier version-2.29-9 records are not overwritten.
+`make verify-magma-calculator-records` reparses these responses and verifies
+their hashes, input bytes and completion messages, without contacting Sydney.
+See [the rerun report](MAGMA_RERUN_2026_09_07.md) for the retained timeout,
+explicit-seed retry, and the boundaries of the new harmonic certificate.
+
 ```text
 make verify-all
 make paper
@@ -234,6 +246,10 @@ make verify-hurwitz-degree-one-normalization
 make verify-hurwitz-third-fiber-exact
 # optional licensed rerun
 make verify-magma
+# opt-in: transmit the listed public inputs to the Sydney calculator
+make run-magma-calculator
+# offline: validate the saved execution records against current inputs
+make verify-magma-calculator-records
 ```
 
 `make verify-all` also checks the exact Hurwitz map/passport records and that

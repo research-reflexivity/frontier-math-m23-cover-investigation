@@ -133,7 +133,7 @@ verify-hurwitz-degree-one-normalization:
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
 		verification/verify_hurwitz_degree_one_branch_normalization.py
 
-.PHONY: verify-harmonic-reconstruction audit-harmonic-hensel audit-harmonic-construction prepare-harmonic-magma verify-harmonic-magma
+.PHONY: verify-harmonic-reconstruction audit-harmonic-hensel audit-harmonic-construction prepare-harmonic-magma verify-harmonic-magma verify-magma-calculator-records run-magma-calculator
 
 # Opt-in: do not imply that older recorded Magma checks cover these results.
 audit-harmonic-construction:
@@ -169,6 +169,17 @@ prepare-harmonic-magma:
 
 verify-harmonic-magma: prepare-harmonic-magma
 	$(MAGMA) -b verification/verify_harmonic_model_generated.m
+
+# Offline provenance audit. This never transmits a file or executes Magma.
+verify-magma-calculator-records:
+	python3 verification/test_magma_calculator_parser.py
+	python3 verification/verify_magma_calculator_runs.py
+
+# Explicit opt-in: sends the public input scripts to the Sydney calculator.
+# Network execution is deliberately NOT a dependency of verify-all.
+run-magma-calculator:
+	python3 scripts/run_magma_calculator.py --suite all
+
 
 verify-hurwitz-frobenius-selector: verify-hurwitz-local-23
 	DOT_SAGE=$(DOT_SAGE) $(SAGE) -python \
@@ -289,7 +300,7 @@ verify-fano: | results
 reconstruct-canonical-quadric:
 	python3 scripts/reconstruct_canonical_quadric_Q.py
 
-verify-magma-record:
+verify-magma-record: verify-magma-calculator-records
 	python3 scripts/emit_magma_certificate.py --check
 	python3 scripts/emit_canonical_quadric_magma_certificate.py --check
 	python3 scripts/emit_hurwitz_degree23_magma_certificate.py --check

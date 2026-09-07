@@ -1,0 +1,47 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:42:30.632274+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "verification/certify_gauss_prolongation_obstruction.m",
+  "input_bytes": 4462,
+  "input_sha256": "cde5fcebd15b3dc06f1c029736797e93daa483492775849a84f362db6605d361",
+  "input_source": "// Exact Magma obstruction to selecting a Gauss-point pair from the\n// rational 2A inertia x and a chosen orientation-reversing comparison r alone.\n//\n// At p=23 the completed Galois closure has decomposition group D=23:11,\n// so its prolongations form the 40320-point homogeneous space G/D.  For\n// every comparison-fixed Nielsen class this certificate checks that\n// A=C_G(x) meet C_G(r) is a 2-group of order 32.  Coprimality with the\n// odd-order point stabilizer D makes the A-action on G/D free.  Quotienting\n// by the central involution r leaves 1260 A/<r>-orbits of unordered pairs,\n// not a canonical pair.\n\nprocedure Must(flag, message)\n    if not flag then\n        print \"CERTIFICATE_FAILURE: \" cat message;\n        quit;\n    end if;\nend procedure;\n\nS := Sym(23);\ngeneratorA := S!(1,2)(3,4)(7,8)(9,10)(13,14)(15,16)(19,20)(21,22);\ngeneratorB := S!(1,16,11,3)(2,9,21,12)(4,5,8,23)(6,22,14,18)\n                 (13,20)(15,17);\nG := sub<S | generatorA, generatorB>;\ny := S!(1,2,11,10,16,9,6,3,23,19,20,14,21,17,4,8,22,5,18,15,\n          13,7,12);\nrepresentatives := [\n    S!(4,16)(5,10)(6,21)(8,19)(9,18)(11,23)(13,14)(17,22),\n    S!(4,19)(5,9)(6,17)(8,16)(10,18)(11,14)(13,23)(21,22),\n    S!(4,6)(5,9)(7,21)(8,15)(11,19)(12,18)(13,20)(14,17),\n    S!(3,17)(5,11)(7,18)(8,16)(9,21)(12,19)(14,22)(15,23),\n    S!(3,11)(5,17)(6,20)(7,18)(8,19)(10,13)(12,16)(14,22),\n    S!(3,21)(4,16)(9,22)(10,15)(11,20)(12,19)(13,18)(14,17),\n    S!(3,8)(5,12)(6,15)(9,10)(11,16)(13,21)(17,19)(20,23)\n];\n\nMust(#G eq 10200960 and IsSimple(G),\n     \"the supplied generators do not give simple M23\");\nP := sub<G | y>;\nD := Normalizer(G, P);\ngaussPointCount := #G div #D;\nreflectionPairCount := gaussPointCount div 2;\nMust(#P eq 23 and #D eq 253 and gaussPointCount eq 40320 and\n     reflectionPairCount eq 20160,\n     \"the characteristic-23 Gauss homogeneous space changed\");\n\nfixedIds := [];\nanchorOrders := [];\npairGaugeOrbitCounts := [];\nfixedXs := [ G | ];\nfixedRs := [ G | ];\n\nprint \"id\\tdecomposition_order\\tgauss_points\\tanchor_gauge_order\" cat\n      \"\\treflection_pairs\\tpair_gauge_orbits\";\nfor id in [1..7] do\n    x := representatives[id];\n    z := (x*y)^-1;\n    reflections := [ reflection : reflection in Centralizer(G, x) |\n        Order(reflection) eq 2 and y^reflection eq z^-1 and\n        z^reflection eq y^-1 ];\n    if #reflections eq 1 then\n        Append(~fixedIds, id);\n        r := reflections[1];\n        Append(~fixedXs, x);\n        Append(~fixedRs, r);\n        anchorGauge := Centralizer(G, x) meet Centralizer(G, r);\n        anchorOrder := #anchorGauge;\n        Must(r in anchorGauge and anchorOrder eq 32,\n             \"the (x,r)-anchor gauge is not the expected 2-group\");\n\n        // A point stabilizer in G/D is conjugate to odd-order D.  Its\n        // intersection with the 2-group anchorGauge is therefore trivial,\n        // so the action is free.  A pair stabilizer is exactly <r>.\n        pairGaugeOrbitCount := reflectionPairCount div (anchorOrder div 2);\n        Append(~anchorOrders, anchorOrder);\n        Append(~pairGaugeOrbitCounts, pairGaugeOrbitCount);\n        printf \"%o\\t%o\\t%o\\t%o\\t%o\\t%o\\n\", id, #D, gaussPointCount,\n               anchorOrder, reflectionPairCount, pairGaugeOrbitCount;\n    else\n        Must(#reflections eq 0, \"branch reflection is not unique\");\n    end if;\nend for;\n\nMust(fixedIds eq [3,6,7] and anchorOrders eq [32,32,32] and\n     pairGaugeOrbitCounts eq [1260,1260,1260],\n     \"the Gauss-pair obstruction profile changed\");\n\n// The three ordered anchors (x,r) lie in one simultaneous-conjugacy orbit.\n// Map x first, then adjust inside its centralizer to map r as well.\nfor index in [2..3] do\n    xConjugate, transporter := IsConjugate(G, fixedXs[1], fixedXs[index]);\n    Must(xConjugate, \"the 2A anchors are not conjugate\");\n    rConjugate, adjustment := IsConjugate(\n        Centralizer(G, fixedXs[index]), fixedRs[1]^transporter, fixedRs[index]\n    );\n    Must(rConjugate,\n         \"the three (x,r) anchors are not simultaneously conjugate\");\nend for;\n\nprint \"fixed_ids=3,6,7\";\nprint \"D=23:11_has_odd_order\";\nprint \"A=C_M23(x)_intersection_C_M23(r)_has_order_32\";\nprint \"A_acts_freely_on_M23/D_by_coprime_stabilizers\";\nprint \"A/<r>_acts_freely_on_the_20160_reflection_pairs\";\nprint \"1260_pair_orbits_remain_for_every_fixed_class\";\nprint \"all_three_(x,r)_anchors_are_M23_conjugate\";\nprint \"additional_local_global_comparison_data_is_necessary\";\nprint \"PASS_GAUSS_PROLONGATION_OBSTRUCTION_MAGMA_CERTIFICATE\";\n",
+  "expected_markers": [
+    "PASS_GAUSS_PROLONGATION_OBSTRUCTION_MAGMA_CERTIFICATE"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>1085600540</seed><version>2.29-10</version><time>0.050</time><memory>32.09MB</memory></headers><results><line>id      decomposition_order     gauss_points    anchor_gauge_order</line><line>reflection_pairs        pair_gauge_orbits</line><line>3       253     40320   32      20160   1260</line><line>6       253     40320   32      20160   1260</line><line>7       253     40320   32      20160   1260</line><line>fixed_ids=3,6,7</line><line>D=23:11_has_odd_order</line><line>A=C_M23(x)_intersection_C_M23(r)_has_order_32</line><line>A_acts_freely_on_M23/D_by_coprime_stabilizers</line><line>A/&lt;r&gt;_acts_freely_on_the_20160_reflection_pairs</line><line>1260_pair_orbits_remain_for_every_fixed_class</line><line>all_three_(x,r)_anchors_are_M23_conjugate</line><line>additional_local_global_comparison_data_is_necessary</line><line>PASS_GAUSS_PROLONGATION_OBSTRUCTION_MAGMA_CERTIFICATE</line><line></line></results></calculator>\n",
+  "response_sha256": "5f2b40c01ab0c55aa0d24330af4b1684ffc903c64f400b9b37204e5f59ee8ed5",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "1085600540",
+    "version": "2.29-10",
+    "time": "0.050",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "id      decomposition_order     gauss_points    anchor_gauge_order",
+    "reflection_pairs        pair_gauge_orbits",
+    "3       253     40320   32      20160   1260",
+    "6       253     40320   32      20160   1260",
+    "7       253     40320   32      20160   1260",
+    "fixed_ids=3,6,7",
+    "D=23:11_has_odd_order",
+    "A=C_M23(x)_intersection_C_M23(r)_has_order_32",
+    "A_acts_freely_on_M23/D_by_coprime_stabilizers",
+    "A/<r>_acts_freely_on_the_20160_reflection_pairs",
+    "1260_pair_orbits_remain_for_every_fixed_class",
+    "all_three_(x,r)_anchors_are_M23_conjugate",
+    "additional_local_global_comparison_data_is_necessary",
+    "PASS_GAUSS_PROLONGATION_OBSTRUCTION_MAGMA_CERTIFICATE",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 1.251,
+  "completed_at": "2026-09-07T15:42:31.883730+00:00"
+}

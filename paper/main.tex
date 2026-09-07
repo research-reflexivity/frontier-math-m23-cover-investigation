@@ -3224,7 +3224,8 @@ in Magma, together with the twelve-embedding Hurwitz critical-fibre and
 sextic Galois-closure checks.
 The recorded environment uses SageMath 10.9 \cite{SageMath}, GAP 4.14.0
 \cite{GAP}, Singular 4.4.1 \cite{Singular}, and PARI/GP 2.17.4
-\cite{PARI}; the independent Magma records use version 2.29-9
+\cite{PARI}.  The earlier independent Magma records use version 2.29-9;
+the complete public-input rerun of 7 September 2026 uses version 2.29-10
 \cite{Magma}.
 The opt-in target \texttt{make verify-hurwitz-third-fiber-exact} recomputes
 the longer characteristic-zero resultant certificate.  The similarly
@@ -3280,10 +3281,18 @@ written proofs, not conclusions of the polynomial tests.
 
 The opt-in target \texttt{make verify-harmonic-magma} prepares and
 runs an independent Magma check of the exact model, base divisors,
-cross-products, and critical algebra.  At this revision that new
-Magma check is prepared but unrun; it is not covered by the older
-Magma records.  Neither generating its input nor verifying its
-checksum is counted as a successful Magma execution.
+cross-products, and critical algebra.  This check completed successfully
+on 7 September 2026 in Magma 2.29-10, including smoothness, the two-point
+incidence and the full passport.  All sixteen public Magma inputs have
+successful executions in the same rerun, including both tail
+function-field calculations.  The directory
+\path{verification/magma_runs/2026-09-07/} retains the exact submitted
+inputs and calculator responses, including unsuccessful attempts.
+The target \texttt{make verify-magma-calculator-records} checks their
+provenance against the current scripts; it does not rerun Magma.
+Neither input generation nor checksum agreement is counted as an
+execution, and these arithmetic checks do not certify the local
+analytic or written geometric arguments.
 
 The target \texttt{make verify-hurwitz-frobenius-selector} checks the
 local decomposition and the finite-field identities in
@@ -3498,8 +3507,9 @@ elimination and branch-cycle certificates identify the covers.
 
 The discovery and drafting process used substantial AI assistance.
 The computational evidence and the scope of each verification are described
-in \cref{sec:certificates}.  The new generic-model Magma check remains
-unrun; the older tail function-field records are identified separately.
+in \cref{sec:certificates}.  The generic-model Magma check and both
+tail function-field calculations have successful executions in the
+7 September 2026 rerun; the earlier records are retained separately.
 None of these records certifies the written geometric reasoning or
 supplies the unresolved Fano--affine relative construction.
 

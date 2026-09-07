@@ -1,0 +1,39 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:43:22.117750+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "notes/audit_log_quadratic_orientation_line.m",
+  "input_bytes": 2113,
+  "input_sha256": "78720aec5e359f5e653977566e54c12d179391ecfdf75ea2ad60a9ec95f998d0",
+  "input_source": "/* Exact Magma audit for the effective logarithmic orientation line. */\n\nQHalfRank := func< r | ((r div 2) mod 2) >;\n\ntraceSize := 253;\nbranchPlus := 1078;\nbranchMinus := 112;\npacketSize := 3542;\nfullClassSize := 3795;\n\nassert QHalfRank(0) eq 0;\nassert QHalfRank(2*traceSize) eq 1;\nassert QHalfRank(branchPlus-branchMinus) eq 1;\nassert QHalfRank(packetSize) eq 1;\nassert QHalfRank(packetSize-2*fullClassSize) eq 0;\n\n/* Terminal pair (C,T^n): containment for q=0, disjointness for q=1. */\nassert QHalfRank(fullClassSize-traceSize) eq 1;\nassert QHalfRank(fullClassSize+traceSize) eq 0;\n\n/* The two fibre formulae are equivalent precisely when epsilon=q. */\nfor epsilon in [0,1] do\n    for qReturn in [0,1] do\n        generic := (1+epsilon) mod 2;\n        special := (1+qReturn) mod 2;\n        assert (generic eq special) eq (epsilon eq qReturn);\n    end for;\nend for;\n\n/* Small exact audit of the divided normalization telescope. */\nfor a0 in [0..4] do\n    for a1 in [0..4] do\n        for a2 in [0..4] do\n            if IsEven(a1-a0) and IsEven(a2-a1) then\n                localSum := (((a1-a0) div 2)+((a2-a1) div 2)) mod 2;\n                endpoint := ((a2-a0) div 2) mod 2;\n                assert localSum eq endpoint;\n            end if;\n        end for;\n    end for;\nend for;\n\n/* Exhaustive polarization on an eight-element tag set. */\nU := {1..8};\nevenSubsets := [ S : S in Subsets(U) | (#S mod 2) eq 0 ];\nfor S in evenSubsets do\n    for T in evenSubsets do\n        symDiff := (S diff T) join (T diff S);\n        lhs := QHalfRank(#symDiff);\n        rhs := (QHalfRank(#S)+QHalfRank(#T)+(#(S meet T) mod 2)) mod 2;\n        assert lhs eq rhs;\n    end for;\nend for;\n\n/* Branch exchange and a subdivision identity complex. */\nassert QHalfRank(branchPlus-branchMinus)\n       eq QHalfRank(branchMinus-branchPlus);\nfor r in [0..11] do\n    assert QHalfRank(r-r) eq 0;\nend for;\n\nprint \"log_quadratic_orientation_line_magma_audit=PASS\";\nprint \"finite_anomaly=1\";\nprint \"packet_return_polarization_cross_term=0,0\";\nprint \"terminal_full_trace_orientation=square:1,nonsquare:0\";\nprint \"normalization_telescope_audit=PASS\";\n",
+  "expected_markers": [
+    "log_quadratic_orientation_line_magma_audit=PASS",
+    "normalization_telescope_audit=PASS"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>150776729</seed><version>2.29-10</version><time>0.120</time><memory>32.09MB</memory></headers><results><line>log_quadratic_orientation_line_magma_audit=PASS</line><line>finite_anomaly=1</line><line>packet_return_polarization_cross_term=0,0</line><line>terminal_full_trace_orientation=square:1,nonsquare:0</line><line>normalization_telescope_audit=PASS</line><line></line></results></calculator>\n",
+  "response_sha256": "45165c5ff4cef27d474b22bcf850baa4373de65bb4f088dcd5214852721e6416",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "150776729",
+    "version": "2.29-10",
+    "time": "0.120",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "log_quadratic_orientation_line_magma_audit=PASS",
+    "finite_anomaly=1",
+    "packet_return_polarization_cross_term=0,0",
+    "terminal_full_trace_orientation=square:1,nonsquare:0",
+    "normalization_telescope_audit=PASS",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 1.34,
+  "completed_at": "2026-09-07T15:43:23.458179+00:00"
+}

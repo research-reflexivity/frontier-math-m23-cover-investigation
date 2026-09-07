@@ -1,0 +1,49 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:43:19.765907+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "notes/audit_pointed_relative_bockstein.m",
+  "input_bytes": 5250,
+  "input_sha256": "dc6d6e07bd1891728de8d2c7b0413f68c6f07395013271cc47bddcb63eac9a28",
+  "input_source": "/* Independent Magma audit of the pointed relative Bockstein linear algebra. */\n\ngroupOrder := 10200960;\nonePointStabilizer := groupOrder div 23;\ntwoPointStabilizer := groupOrder div (23*22);\nassert onePointStabilizer eq 443520;\nassert twoPointStabilizer eq 20160;\nassert onePointStabilizer mod 4 eq 0;\nassert twoPointStabilizer mod 4 eq 0;\n\nfull := <120,1035>;\ntrace := <8,69>;\npacket := <full[1]-trace[1],full[2]-trace[2]>;\nassert packet eq <112,966>;\nassert <full[1] mod 4,full[2] mod 4> eq <0,3>;\nassert <trace[1] mod 4,trace[2] mod 4> eq <0,1>;\nassert <packet[1] mod 4,packet[2] mod 4> eq <0,2>;\n\nalternativePacket := <packet[1]-2*full[1],packet[2]-2*full[2]>;\nassert alternativePacket eq <-128,-1104>;\nassert alternativePacket[1] mod 4 eq 0;\nassert alternativePacket[2] mod 4 eq 0;\n\n/* Nakayama's rank-one horizontal log-nearby stalk is free over the\n   coefficient ring in degrees zero and one.  Reduction Z/4 -> F_2 is\n   surjective in both degrees, so the coefficient connecting maps vanish. */\nZ4 := Integers(4);\nF2 := GF(2);\nreductionImageH0 := {Integers()!entry mod 2 : entry in Z4};\nreductionImageH1 := {Integers()!entry mod 2 : entry in Z4};\nassert reductionImageH0 eq {0,1};\nassert reductionImageH1 eq {0,1};\n\nrelativeComparisonMod4 := 3;\nrelativeFirstLayer := ((relativeComparisonMod4-1) div 2) mod 2;\nassert relativeFirstLayer eq 1;\n\ndiagonalBranch := 1078;\ntranspositionBranch := 112;\nassert diagonalBranch mod 2 eq 0;\nassert transpositionBranch mod 2 eq 0;\ndividedDefect := ((diagonalBranch-transpositionBranch) div 2) mod 2;\nassert dividedDefect eq 1;\nassert <diagonalBranch mod 4,transpositionBranch mod 4> eq <2,0>;\n\nfunction QuadraticHalfWeight(vector)\n    weight := &+vector;\n    assert weight mod 2 eq 0;\n    return (weight div 2) mod 2;\nend function;\n\nfor bitCount in [2..9] do\n    evenVectors := [];\n    for mask in [0..2^bitCount-1] do\n        vector := [Integers()!((mask div 2^(index-1)) mod 2)\n            : index in [1..bitCount]];\n        if (&+vector) mod 2 eq 0 then\n            Append(~evenVectors,vector);\n        end if;\n    end for;\n    for left in evenVectors do\n        for right in evenVectors do\n            total := [(left[index]+right[index]) mod 2\n                : index in [1..bitCount]];\n            dot := (&+[left[index]*right[index]\n                : index in [1..bitCount]]) mod 2;\n            assert QuadraticHalfWeight(total) eq\n                (QuadraticHalfWeight(left)+QuadraticHalfWeight(right)+dot) mod 2;\n        end for;\n    end for;\nend for;\n\npacketSize := 3795-253;\nassert packetSize eq 3542;\nassert (23*packetSize div 2) mod 2 eq 1;\nassert (diagonalBranch div 2) mod 2 eq 1;\nassert (transpositionBranch div 2) mod 2 eq 0;\nassert ((98*253) div 2) mod 2 eq 1;\n\nfor overlapSize in [0..253] do\n    relativeHalfDistance := ((2*253-2*overlapSize) div 2) mod 2;\n    assert relativeHalfDistance eq (1+overlapSize) mod 2;\nend for;\nassert ((2*253-2*253) div 2) mod 2 eq 0;\nassert ((2*253-2*0) div 2) mod 2 eq 1;\n\nfullClassSize := 3795;\ntraceSize := 253;\nsquareFullTraceHalfDistance := ((fullClassSize-traceSize) div 2) mod 2;\nnonsquareFullTraceHalfDistance := ((fullClassSize+traceSize) div 2) mod 2;\nassert squareFullTraceHalfDistance eq 1;\nassert nonsquareFullTraceHalfDistance eq 0;\n\nF := GF(2);\n\nfunction PathCoboundary(edgeCount,isRelative)\n    if isRelative then\n        vertices := [2..edgeCount];\n    else\n        vertices := [1..edgeCount+1];\n    end if;\n    entries := [];\n    for edge in [1..edgeCount] do\n        for vertex in vertices do\n            value := 0;\n            if vertex eq edge then\n                value +:= 1;\n            end if;\n            if vertex eq edge+1 then\n                value +:= 1;\n            end if;\n            Append(~entries,F!value);\n        end for;\n    end for;\n    return Matrix(F,edgeCount,#vertices,entries);\nend function;\n\nfor edgeCount in [1..16] do\n    absolute := PathCoboundary(edgeCount,false);\n    relative := PathCoboundary(edgeCount,true);\n    assert Rank(absolute) eq edgeCount;\n    assert Rank(relative) eq edgeCount-1;\n    assert Nrows(relative)-Rank(relative) eq 1;\n    for column in [1..Ncols(relative)] do\n        assert &+[Integers()!relative[row,column]\n            : row in [1..Nrows(relative)]] mod 2 eq 0;\n    end for;\nend for;\n\nfor returnBit in [0,1] do\n    finiteValue := 1;\n    wildValue := returnBit;\n    relativeValue := (finiteValue+wildValue) mod 2;\n    assert relativeValue eq (1+returnBit) mod 2;\nend for;\n\nprint \"rho_rho_adjoint_entries_mod_4=0\";\nprint \"canonical_sheet_lifts=full:-I,trace:+I\";\nprint \"packet_sheet_operator=2I_mod_4\";\nprint \"ordinary_mapping_cone_bockstein=zero_by_alternative_lift\";\nprint \"horizontal_log_nearby_coefficient_bockstein=zero\";\nprint \"specialization_unit_divided_defect=1\";\nprint \"half_weight_quadratic_refines_tagged_dot_product=true\";\nprint \"packet_global_half_weight=1\";\nprint \"returned_half_conductor_values=1,0\";\nprint \"relative_trace_half_distance=1+overlap_parity\";\nprint \"returned_trace_half_distance=return_bit\";\nprint \"full_class_returned_trace_half_distance=1+return_bit\";\nprint \"unpointed_path_H1_dimension=0\";\nprint \"two_endpoint_relative_path_H1_dimension=1\";\nprint \"relative_endpoint_formula=finite_value+wild_value\";\nprint \"PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT\";\n",
+  "expected_markers": [
+    "PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>1921434098</seed><version>2.29-10</version><time>1.159</time><memory>32.09MB</memory></headers><results><line>rho_rho_adjoint_entries_mod_4=0</line><line>canonical_sheet_lifts=full:-I,trace:+I</line><line>packet_sheet_operator=2I_mod_4</line><line>ordinary_mapping_cone_bockstein=zero_by_alternative_lift</line><line>horizontal_log_nearby_coefficient_bockstein=zero</line><line>specialization_unit_divided_defect=1</line><line>half_weight_quadratic_refines_tagged_dot_product=true</line><line>packet_global_half_weight=1</line><line>returned_half_conductor_values=1,0</line><line>relative_trace_half_distance=1+overlap_parity</line><line>returned_trace_half_distance=return_bit</line><line>full_class_returned_trace_half_distance=1+return_bit</line><line>unpointed_path_H1_dimension=0</line><line>two_endpoint_relative_path_H1_dimension=1</line><line>relative_endpoint_formula=finite_value+wild_value</line><line>PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT</line><line></line></results></calculator>\n",
+  "response_sha256": "f9aa3513f12d9293b9a013d743d434d570e5500248e4b7bd8d6b5e638724f3e8",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "1921434098",
+    "version": "2.29-10",
+    "time": "1.159",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "rho_rho_adjoint_entries_mod_4=0",
+    "canonical_sheet_lifts=full:-I,trace:+I",
+    "packet_sheet_operator=2I_mod_4",
+    "ordinary_mapping_cone_bockstein=zero_by_alternative_lift",
+    "horizontal_log_nearby_coefficient_bockstein=zero",
+    "specialization_unit_divided_defect=1",
+    "half_weight_quadratic_refines_tagged_dot_product=true",
+    "packet_global_half_weight=1",
+    "returned_half_conductor_values=1,0",
+    "relative_trace_half_distance=1+overlap_parity",
+    "returned_trace_half_distance=return_bit",
+    "full_class_returned_trace_half_distance=1+return_bit",
+    "unpointed_path_H1_dimension=0",
+    "two_endpoint_relative_path_H1_dimension=1",
+    "relative_endpoint_formula=finite_value+wild_value",
+    "PASS_POINTED_RELATIVE_BOCKSTEIN_AUDIT",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 2.351,
+  "completed_at": "2026-09-07T15:43:22.116984+00:00"
+}

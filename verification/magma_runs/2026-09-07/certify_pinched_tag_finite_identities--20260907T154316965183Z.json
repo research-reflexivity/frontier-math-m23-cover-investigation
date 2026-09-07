@@ -1,0 +1,45 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:43:16.965183+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "notes/certify_pinched_tag_finite_identities.m",
+  "input_bytes": 2957,
+  "input_sha256": "10ada36b9203675240f84c202553d8814469edc2eb7babe809085d565d97b24f",
+  "input_source": "/* Independent finite identities for the candidate Bockstein connector.\n   This is not a certificate of a nearby-cycle comparison. */\n\nF := GF(2);\n\nfunction Dot(alpha,beta)\n    return &+[F | F!(alpha[i]*beta[i]) : i in [1..#alpha]];\nend function;\n\nfunction Bucket(alpha,beta)\n    return F!(&+alpha)*F!(&+beta);\nend function;\n\nfunction OffDiagonal(alpha,beta)\n    return &+[F | F!(alpha[i]*beta[j]) : i,j in [1..#alpha] | i ne j];\nend function;\n\nfor size in [1..6] do\n    vectors := CartesianPower({0,1},size);\n    for alphaTuple in vectors do\n        alpha := [Integers()!x : x in alphaTuple];\n        for betaTuple in vectors do\n            beta := [Integers()!x : x in betaTuple];\n            assert Bucket(alpha,beta) eq Dot(alpha,beta)+OffDiagonal(alpha,beta);\n        end for;\n    end for;\nend for;\n\ndiagonalBranch := 77^2;\ntranspositionBranch := 8^2;\nnodeDifference := diagonalBranch-transpositionBranch;\nassert [diagonalBranch,transpositionBranch,nodeDifference] eq [5929,64,5865];\nassert nodeDifference mod 2 eq 1;\nconductorPairingDegree := 23*diagonalBranch+253*transpositionBranch;\nassert conductorPairingDegree eq 152559;\n\nsingletonPairing := 23*11^2;\ntwoSetPairing := 253;\nuntaggedTotal := 7*singletonPairing+8*twoSetPairing;\nassert [singletonPairing,twoSetPairing,untaggedTotal] eq [2783,253,21505];\nassert untaggedTotal mod 2 eq 1;\n\nassert Dot([1,0],[0,1]) eq 0;\nassert Bucket([1,0],[0,1]) eq 1;\n\nbocksteinPlus := 1078;\nbocksteinMinus := 112;\nassert (bocksteinPlus-bocksteinMinus) mod 2 eq 0;\nassert ((bocksteinPlus-bocksteinMinus) div 2) mod 2 eq 1;\n\nsquareNormalized := [1,1,0];\nnonsquareNormalized := [0,1,1];\nsquareNode := [(77-8) mod 2,nodeDifference mod 2,\n               (nodeDifference-(77-8)) mod 2];\nnonsquareNode := [0,nodeDifference mod 2,nodeDifference mod 2];\nassert squareNode eq squareNormalized;\nassert nonsquareNode eq nonsquareNormalized;\n\nfor length in [1..12] do\n    for valueTuple in CartesianPower({0,1},length+1) do\n        values := [Integers()!x : x in valueTuple];\n        boundarySum := &+[(values[i]+values[i+1]) mod 2 : i in [1..length]];\n        assert boundarySum mod 2 eq (values[1]+values[#values]) mod 2;\n    end for;\nend for;\n\nreturnBits := [0,1,1];\nwildTerms := [(1+q) mod 2 : q in returnBits];\nspecialTraces := [(wild+1) mod 2 : wild in wildTerms];\nassert specialTraces eq returnBits;\n\nprint \"finite_bucket_identity_checked_for_fiber_sizes=1..6\";\nprint \"two_label_counterexample=tagged_0_untagged_1\";\nprint \"bockstein=(1078-112)/2=483=1_mod_2\";\nprint \"untagged_total=7*(23*11^2)+8*253=21505\";\nprint \"node_coefficients=[5929,64],difference=5865=1_mod_2\";\nprint \"conductor_bucket_distribution=23x77_and_253x8\";\nprint \"conductor_pairing_degree=152559\";\nprint \"square_fields_tagged_untagged_offdiag=[1,1,0]\";\nprint \"nonsquare_fields_tagged_untagged_offdiag=[0,1,1]\";\nprint \"tree_telescope_checked_through_12_edges=true\";\nprint \"special_trace_table=[0,1,1]\";\nprint \"PASS_PINCHED_TAG_FINITE_IDENTITIES\";\n\nquit;\n",
+  "expected_markers": [
+    "PASS_PINCHED_TAG_FINITE_IDENTITIES"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>1954596848</seed><version>2.29-10</version><time>0.360</time><memory>32.09MB</memory></headers><results><line>finite_bucket_identity_checked_for_fiber_sizes=1..6</line><line>two_label_counterexample=tagged_0_untagged_1</line><line>bockstein=(1078-112)/2=483=1_mod_2</line><line>untagged_total=7*(23*11^2)+8*253=21505</line><line>node_coefficients=[5929,64],difference=5865=1_mod_2</line><line>conductor_bucket_distribution=23x77_and_253x8</line><line>conductor_pairing_degree=152559</line><line>square_fields_tagged_untagged_offdiag=[1,1,0]</line><line>nonsquare_fields_tagged_untagged_offdiag=[0,1,1]</line><line>tree_telescope_checked_through_12_edges=true</line><line>special_trace_table=[0,1,1]</line><line>PASS_PINCHED_TAG_FINITE_IDENTITIES</line><line></line></results></calculator>\n",
+  "response_sha256": "dc0207c83de1db432c475e8bdf496fa6421b9b31363359c10da91edfb509db87",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "1954596848",
+    "version": "2.29-10",
+    "time": "0.360",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "finite_bucket_identity_checked_for_fiber_sizes=1..6",
+    "two_label_counterexample=tagged_0_untagged_1",
+    "bockstein=(1078-112)/2=483=1_mod_2",
+    "untagged_total=7*(23*11^2)+8*253=21505",
+    "node_coefficients=[5929,64],difference=5865=1_mod_2",
+    "conductor_bucket_distribution=23x77_and_253x8",
+    "conductor_pairing_degree=152559",
+    "square_fields_tagged_untagged_offdiag=[1,1,0]",
+    "nonsquare_fields_tagged_untagged_offdiag=[0,1,1]",
+    "tree_telescope_checked_through_12_edges=true",
+    "special_trace_table=[0,1,1]",
+    "PASS_PINCHED_TAG_FINITE_IDENTITIES",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 1.564,
+  "completed_at": "2026-09-07T15:43:18.528824+00:00"
+}

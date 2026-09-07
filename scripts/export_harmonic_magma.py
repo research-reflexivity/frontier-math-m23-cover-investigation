@@ -125,7 +125,8 @@ print "SCOPE: exact curve, incidence, function and passport; no local Hensel aud
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", required=True)
+    parser.add_argument("--output", default=str(ROOT / "verification/verify_harmonic_model_generated.m"))
+    parser.add_argument("--check", action="store_true", help="Check deterministic output without rewriting it")
     args = parser.parse_args()
     path = ROOT / "notes/harmonic_independent_exact_model_certificate.json"
     raw = path.read_bytes()
@@ -141,8 +142,13 @@ def main():
     pieces.append("u := " + scalar(data["third_branch_value"]) + ";\n")
     pieces.append(CHECKS)
     output = Path(args.output)
+    if args.check:
+        if output.read_text() != "".join(pieces):
+            raise SystemExit("Generated harmonic Magma input is stale")
+        print("PASS harmonic Magma input matches the current exact witnesses; no Magma execution performed")
+        return
     output.write_text("".join(pieces))
-    print(f"Prepared {output} ({output.stat().st_size} bytes); MAGMA_NOT_RUN")
+    print(f"Prepared {output} ({output.stat().st_size} bytes); GENERATION_ONLY_NOT_AN_EXECUTION")
 
 
 if __name__ == "__main__":

@@ -39,9 +39,10 @@ make audit-harmonic-construction HARMONIC_WORKERS=8
 ```
 
 This target does not certify the written geometric arguments. It checks
-the existing tail-Magma input hashes, not new Magma executions. The
-generic-model Magma input described below remains unrun. The separate
-Fano–affine relative specialization question remains open.
+the existing tail-Magma input hashes, not new Magma executions. A separate
+calculator rerun on 7 September 2026 successfully executed the generic-model
+input and both tail scripts, as recorded below. The separate Fano–affine
+relative specialization question remains open.
 
 ### Checks rerun for the 7 September rewrite
 
@@ -152,7 +153,7 @@ Its historical cautions about exact incidence are superseded by
 and the manuscript's conditional local theorem. They are retained as
 a record of what finite precision did and did not establish.
 
-## Independent Magma check: prepared, not run
+## Independent Magma check: successfully executed on 7 September 2026
 
 ```sh
 make prepare-harmonic-magma
@@ -167,13 +168,25 @@ basepoint saturation, an independent multiplier kernel, all six
 cross-products, and a radical eight-point critical algebra with one
 critical value. It does not audit the analytic Hensel argument.
 
-**Execution status: NOT RUN.** No local Magma executable was available.
-The [Sydney calculator](https://magma.maths.usyd.edu.au/calc/) reported
-that it was temporarily disabled for electrical work when checked on
-6 September 2026. The input is therefore still untested in Magma;
-no success record has been fabricated and the old Magma records do
-not cover it. Running this input is the outstanding independent
-software check.
+**Execution status: PASS, Magma 2.29-10.** The restored
+[Sydney calculator](https://magma.maths.usyd.edu.au/calc/) executed the
+unchanged 39,831-byte input successfully on 7 September 2026 in 4.009 seconds.
+It checked smoothness, the two-point incidence, marked jets and base divisors,
+the independent multiplier kernel and cross-products, the degree-23 function,
+and the eight distinct equal critical values giving the full passport.
+
+The [complete rerun report](MAGMA_RERUN_2026_09_07.md) records successful runs
+for all 16 public inputs, including both tail function-field Galois groups.
+Exact requests and raw responses are retained under
+`verification/magma_runs/2026-09-07/`. The first conductor-seven tail attempt
+timed out; the unchanged assertions passed after resetting to the previously
+recorded random seed. The older records are preserved, not relabeled as new runs.
+
+`make verify-magma-calculator-records` checks the saved evidence locally.
+This independent software check is no longer outstanding. It does not
+verify the analytic Hensel argument, the written geometric construction,
+explicit Q-descent or the pi^33 comparison; those have their separate
+SageMath checks and mathematical arguments. No new Arb continuation was run.
 
 ## Historical record: what the 6 September manuscript audit left open
 
@@ -268,9 +281,10 @@ steps; the two cyclic Witt designs and their tail alignment; the full
 `audit-harmonic-hensel` target; and the independent exact model checker
 with ramification, rational descent and frame comparison through pi^33.
 All passed. The exact model checker was run without `--output`, so
-it did not overwrite the existing certificate. Stored tail-Magma input
-hashes were checked, but Magma was not rerun and the new generic-map
-Magma input is still unrun.
+it did not overwrite the existing certificate. At the time of this historical
+continuation, only stored tail-Magma input hashes were checked and the new
+generic-map input had not been run. The successful 7 September calculator
+executions are recorded in the current-status section above.
 
 The assembled geometric proof remains a private candidate for independent
 review. Its hypotheses are now explicit mathematical/computational

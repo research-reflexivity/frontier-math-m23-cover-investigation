@@ -1,0 +1,38 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:43:13.749730+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "verification/verify_hurwitz_galois_closure.m",
+  "input_bytes": 1513,
+  "input_sha256": "cf2b555a9be8e768720eb73da7b8c02b458bfb5c0a91fe7b36b7ccb76e8ea46c",
+  "input_source": "// Independent Magma certificate for the sextic Hurwitz Galois closure.\n\nQ<x> := PolynomialRing(Rationals());\ng := x^6 - 6*x^5 + 14*x^4 - 2*x^3 - 27*x^2 + 44*x - 44;\nf := x^12 - 6*x^11 + 20*x^10 - 32*x^9 + 44*x^8 - 22*x^7\n     + 6*x^6 - 22*x^5 + 44*x^4 - 32*x^3 + 20*x^2 - 6*x + 1;\n\nassert IsIrreducible(g);\nassert Discriminant(g) eq 2^22*11*23^4;\n\nE<y> := NumberField(g);\nOE := MaximalOrder(E);\nassert Discriminant(OE) eq 2^4*11*23^4;\n\nA<a> := NumberField(f);\nOA := MaximalOrder(A);\nassert Discriminant(OA) eq 2^8*11^2*23^8;\nassert MinimalPolynomial(a + 1/a) eq g;\n\ns := (-289*a^11 + 1647*a^10 - 5291*a^9 + 7715*a^8\n      - 10615*a^7 + 3621*a^6 - 1155*a^5 + 6609*a^4\n      - 10613*a^3 + 6621*a^2 - 4713*a + 887)/128;\nassert s^2 eq -23;\nassert Degree(MinimalPolynomial((a + 1/a) + s)) eq 12;\n\nfunction FactorDegreesMod(poly, p)\n    F := GF(p);\n    R<z> := PolynomialRing(F);\n    fac := Factorization(R!poly);\n    degrees := &cat[[Degree(item[1]) : i in [1..item[2]]] : item in fac];\n    Sort(~degrees);\n    return degrees;\nend function;\n\nassert FactorDegreesMod(g, 3) eq [6];\nassert FactorDegreesMod(g, 139) eq [1,5];\nassert FactorDegreesMod(g, 2671) eq [1,1,1,1,2];\n\nG, roots, galois_data := GaloisGroup(g);\nassert #G eq 720;\nnumber, degree := TransitiveGroupIdentification(G);\nassert degree eq 6;\nassert number eq 16;\n\nprint \"PASS_MAGMA_HURWITZ_TRACE_SEXTIC_GALOIS_GROUP_S6\";\nprint \"PASS_MAGMA_HURWITZ_ABSOLUTE_FIELD_IS_TRACE_FIELD_TIMES_Q_SQRT_MINUS_23\";\nprint \"PASS_HURWITZ_GALOIS_CLOSURE_MAGMA_CERTIFICATE\";\n",
+  "expected_markers": [
+    "PASS_MAGMA_HURWITZ_TRACE_SEXTIC_GALOIS_GROUP_S6",
+    "PASS_MAGMA_HURWITZ_ABSOLUTE_FIELD_IS_TRACE_FIELD_TIMES_Q_SQRT_MINUS_23",
+    "PASS_HURWITZ_GALOIS_CLOSURE_MAGMA_CERTIFICATE"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>1988281841</seed><version>2.29-10</version><time>0.100</time><memory>32.09MB</memory></headers><results><line>PASS_MAGMA_HURWITZ_TRACE_SEXTIC_GALOIS_GROUP_S6</line><line>PASS_MAGMA_HURWITZ_ABSOLUTE_FIELD_IS_TRACE_FIELD_TIMES_Q_SQRT_MINUS_23</line><line>PASS_HURWITZ_GALOIS_CLOSURE_MAGMA_CERTIFICATE</line><line></line></results></calculator>\n",
+  "response_sha256": "e558aee9e7ebb7eb0283bf46bfb75954a33ac8fed1a1a4a92a0b6371751ca340",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "1988281841",
+    "version": "2.29-10",
+    "time": "0.100",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "PASS_MAGMA_HURWITZ_TRACE_SEXTIC_GALOIS_GROUP_S6",
+    "PASS_MAGMA_HURWITZ_ABSOLUTE_FIELD_IS_TRACE_FIELD_TIMES_Q_SQRT_MINUS_23",
+    "PASS_HURWITZ_GALOIS_CLOSURE_MAGMA_CERTIFICATE",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 0.988,
+  "completed_at": "2026-09-07T15:43:14.737781+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:43:14.738214+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "verification/verify_hurwitz_local_23.m",
+  "input_bytes": 1507,
+  "input_sha256": "0d6d2f0d2a78c66bd18196983f56915a01ffd41e31d4f34b94a33ffbd1045212",
+  "input_source": "// Independent Magma certificate for the local Hurwitz algebra at 23.\n\nQ<x> := PolynomialRing(Rationals());\ng := x^6 - 6*x^5 + 14*x^4 - 2*x^3 - 27*x^2 + 44*x - 44;\nf := x^12 - 6*x^11 + 20*x^10 - 32*x^9 + 44*x^8 - 22*x^7\n     + 6*x^6 - 22*x^5 + 44*x^4 - 32*x^3 + 20*x^2 - 6*x + 1;\n\nF23 := GF(23);\nR23<y> := PolynomialRing(F23);\nassert R23!g eq (y - 5)^2*(y + 1)^4;\n\nE<a> := NumberField(g);\nOE := MaximalOrder(E);\ndecomposition_E := Factorization(23*OE);\ndata_E := [ <item[2], Valuation(Integers()!Norm(item[1]), 23)>\n            : item in decomposition_E ];\nSort(~data_E);\nassert data_E eq [ <2,1>, <4,1> ];\n\nL<b> := NumberField(f);\nOL := MaximalOrder(L);\ndecomposition_L := Factorization(23*OL);\ndata_L := [ <item[2], Valuation(Integers()!Norm(item[1]), 23)>\n            : item in decomposition_L ];\nSort(~data_L);\nassert data_L eq [ <2,2>, <4,2> ];\n\nassert not IsSquare(F23!(-1));\nassert not IsSquare(F23!5);\nassert not IsSquare(F23!15);\nassert F23!15/(F23!5) eq (F23!7)^2;\n\nS6 := SymmetricGroup(6);\ninertia := S6!(3,4)(5,6);\nfrobenius := S6!(1,2)(3,5)(4,6);\nD := sub<S6 | inertia, frobenius>;\nassert #D eq 4 and IsAbelian(D);\norbit_sizes := [ #orbit : orbit in Orbits(D) ];\nSort(~orbit_sizes);\nassert orbit_sizes eq [2,4];\nassert Order(inertia) eq 2 and #Support(inertia) eq 4;\nassert Order(frobenius) eq 2 and #Support(frobenius) eq 6;\n\nprint \"PASS_MAGMA_HURWITZ_LOCAL_PRIME_DATA_1_PLUS_2_PLUS_4\";\nprint \"PASS_MAGMA_HURWITZ_LOCAL_DECOMPOSITION_GROUP_V4\";\nprint \"PASS_HURWITZ_LOCAL_23_MAGMA_CERTIFICATE\";\n",
+  "expected_markers": [
+    "PASS_MAGMA_HURWITZ_LOCAL_PRIME_DATA_1_PLUS_2_PLUS_4",
+    "PASS_MAGMA_HURWITZ_LOCAL_DECOMPOSITION_GROUP_V4",
+    "PASS_HURWITZ_LOCAL_23_MAGMA_CERTIFICATE"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>49717644</seed><version>2.29-10</version><time>0.030</time><memory>32.09MB</memory></headers><results><line>PASS_MAGMA_HURWITZ_LOCAL_PRIME_DATA_1_PLUS_2_PLUS_4</line><line>PASS_MAGMA_HURWITZ_LOCAL_DECOMPOSITION_GROUP_V4</line><line>PASS_HURWITZ_LOCAL_23_MAGMA_CERTIFICATE</line><line></line></results></calculator>\n",
+  "response_sha256": "9f4e45ff9c7a946e40a1404e90495255467772a68f113c1f3c4b21fac705c85a",
+  "status": "PASS",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "49717644",
+    "version": "2.29-10",
+    "time": "0.030",
+    "memory": "32.09MB"
+  },
+  "lines": [
+    "PASS_MAGMA_HURWITZ_LOCAL_PRIME_DATA_1_PLUS_2_PLUS_4",
+    "PASS_MAGMA_HURWITZ_LOCAL_DECOMPOSITION_GROUP_V4",
+    "PASS_HURWITZ_LOCAL_23_MAGMA_CERTIFICATE",
+    ""
+  ],
+  "warnings": [],
+  "errors": [],
+  "missing_markers": [],
+  "elapsed_wall_seconds": 0.929,
+  "completed_at": "2026-09-07T15:43:15.666846+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "m23.magma-calculator-run.v1",
+  "started_at": "2026-09-07T15:41:01.996006+00:00",
+  "endpoint": "https://magma.maths.usyd.edu.au/xml/calculator.xml",
+  "input_path": "notes/compute_q0_tail_function_field_galois.m",
+  "input_bytes": 772,
+  "input_sha256": "19ae7bb16bf3d24c6539f561ccd2b09cafdabfb17c47fc4dcc3fc4a9f75373b8",
+  "input_source": "/* Standalone group check for the primitive conductor-seven tail.\n   No characteristic-zero M23 cover or Hurwitz polynomial is an input. */\nF23 := GF(23);\nK<t> := FunctionField(F23);\nR<X> := PolynomialRing(K);\nf := X^23 + 7*X^9 + 18*X^2 - t;\nassert Degree(f) eq 23;\nassert Derivative(f) ne 0;\nassert IsIrreducible(f);\nSetVerbose(\"GaloisGroup\", 1);\ntime G, roots, data := GaloisGroup(f : ProofEffort := 10, ShortOK := false);\nprint \"group_order=\", #G;\nprint \"group_degree=\", Degree(G);\nprint \"group_generators=\", Generators(G);\nprint \"splitting_prime=\", data`Prime;\nprint \"transitivity=\", Transitivity(G);\nprint \"simple=\", IsSimple(G);\nassert Degree(G) eq 23;\nassert #G eq 10200960;\nassert Transitivity(G) eq 4;\nassert IsSimple(G);\nprint \"PASS_Q0_TAIL_FUNCTION_FIELD_M23\";\n",
+  "expected_markers": [
+    "PASS_Q0_TAIL_FUNCTION_FIELD_M23"
+  ],
+  "scope": "Execution of this exact arithmetic input; no certification of the written geometric or analytic arguments.",
+  "http_status": 200,
+  "response_xml": "<?xml version=\"1.0\"?>\n<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>3977858790</seed><version>2.29-10</version><warning>The computation exceeded the time limit and so was terminated prematurely.</warning></headers><results><line>GaloisStartingGroup: No subfields by shape test.</line><line>Starting group has order 12926008369442488320000</line><line></line><line></line><line>18&gt;, &lt;3, 9&gt;, &lt;5, 4&gt;, &lt;7, 3&gt;, &lt;11, 2&gt;, &lt;13, 1&gt;, &lt;17, 1&gt;, &lt;19, 1&gt;, &lt;23, 1&gt; ]</line><line>Have to consider  2 subgroups (classes of them) initially</line><line>2 subgroup class(es) remain after pretests and list of rejected groups</line><line></line><line>7&gt;, &lt;5, 3&gt;, &lt;7, 2&gt;, &lt;11, 1&gt;, &lt;13, 1&gt;, &lt;17, 1&gt;, &lt;19, 1&gt; ] (TGI: 23T5) with invariant of type SetOrbit</line><line>use short cosets</line><line>Time: 0.840</line><line></line><line></line><line>7&gt;, &lt;5, 3&gt;, &lt;7, 2&gt;, &lt;11, 1&gt;, &lt;13, 1&gt;, &lt;17, 1&gt;, &lt;19, 1&gt; ] (TGI: 23T5) with invariant of type SetOrbit</line><line>use short cosets</line><line>Time: 0.610</line><line></line><line>No descent is (so far) identified</line><line>But there are 2  possiblilies (through use of short cosets)</line><line>and we KNOW there is a descent possible</line><line>Sorry, short cosets weren't conclusive trying some transformations</line></results></calculator>\n",
+  "response_sha256": "8c6f6bdbe1bef37ef507723d2e9c2777a1744b38175454ed70688e0a03ada9c3",
+  "status": "INCOMPLETE_OR_FAILED",
+  "headers": {
+    "max_time": "60",
+    "max_input": "50000",
+    "seed": "3977858790",
+    "version": "2.29-10",
+    "warning": "The computation exceeded the time limit and so was terminated prematurely."
+  },
+  "lines": [
+    "GaloisStartingGroup: No subfields by shape test.",
+    "Starting group has order 12926008369442488320000",
+    "",
+    "",
+    "18>, <3, 9>, <5, 4>, <7, 3>, <11, 2>, <13, 1>, <17, 1>, <19, 1>, <23, 1> ]",
+    "Have to consider  2 subgroups (classes of them) initially",
+    "2 subgroup class(es) remain after pretests and list of rejected groups",
+    "",
+    "7>, <5, 3>, <7, 2>, <11, 1>, <13, 1>, <17, 1>, <19, 1> ] (TGI: 23T5) with invariant of type SetOrbit",
+    "use short cosets",
+    "Time: 0.840",
+    "",
+    "",
+    "7>, <5, 3>, <7, 2>, <11, 1>, <13, 1>, <17, 1>, <19, 1> ] (TGI: 23T5) with invariant of type SetOrbit",
+    "use short cosets",
+    "Time: 0.610",
+    "",
+    "No descent is (so far) identified",
+    "But there are 2  possiblilies (through use of short cosets)",
+    "and we KNOW there is a descent possible",
+    "Sorry, short cosets weren't conclusive trying some transformations"
+  ],
+  "warnings": [
+    "The computation exceeded the time limit and so was terminated prematurely."
+  ],
+  "errors": [],
+  "missing_markers": [
+    "PASS_Q0_TAIL_FUNCTION_FIELD_M23"
+  ],
+  "elapsed_wall_seconds": 60.89,
+  "completed_at": "2026-09-07T15:42:02.886598+00:00"
+}
