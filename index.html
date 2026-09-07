@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="description" content="An interactive guide to the osculating-plane characterization of the known Galois-fixed M23 cover, its exact arithmetic, and reduction at 23. The proposed specialization theorem remains open.">
+<meta name="description" content="Explore the M23 manuscript: explicit harmonic lifting at 23, exact local uniqueness, global osculating incidence, and the separate open Fano–affine comparison.">
 <meta name="theme-color" content="#10141c">
+<meta name="paper-sha256" content="467685ee09935c03ae432b9a835005827a2153b727c361d3bc6dac259fe0ad74">
 <link rel="canonical" href="https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/">
 <title>An M23 Hurwitz scheme: exact arithmetic and reduction at 23 — interactive argument map</title>
 <style>
@@ -164,8 +165,8 @@
     <div class="app-context-copy">
       <p class="app-kicker">Interactive argument map</p>
       <h1 id="app-title">An M<sub>23</sub> Hurwitz scheme: exact arithmetic and reduction at 23</h1>
-      <p class="app-author"><span>François Le Lay</span><span class="app-revision">Last revision: 09/06/2026</span></p>
-      <p class="app-description">Follow the geometric characterization of the known Galois-fixed cover: exactly one of the seven curves has nonempty osculating incidence. Explore the exact checks, the Galois-invariance argument, and the auxiliary S<sub>4</sub> map. The local harmonic configuration at 23 selects the same component, but a theorem lifting that configuration to global osculation remains open. Select a node for its justification, limits, and elementary 101 lessons.</p>
+      <p class="app-author"><span>François Le Lay</span><span class="app-revision">Last revision: 09/07/2026</span></p>
+      <p class="app-description">An explicit characteristic-23 construction produces a lift with osculating incidence. A separate exact check on all seven covers, together with Galois invariance, characterizes the known fixed cover. Follow the local construction, its necessary checks, and the remaining open questions. Arrows show inputs: several may be needed together. Select a node for its justification, limits, and 101 lessons.</p>
     </div>
     <nav class="app-links" aria-label="Paper resources">
       <a class="app-link app-link-primary" href="m23-cover-investigation.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
@@ -1193,7 +1194,7 @@ html&amp;gt;body{padding:0}&amp;lt;/style&amp;gt;
 
       &amp;lt;div id=&amp;quot;m23-graph-wrap&amp;quot; tabindex=&amp;quot;0&amp;quot; role=&amp;quot;region&amp;quot; aria-label=&amp;quot;Scrollable argument graph; scroll to explore all nodes&amp;quot;&amp;gt;
         &amp;lt;svg id=&amp;quot;m23-graph&amp;quot; role=&amp;quot;img&amp;quot; aria-label=&amp;quot;Causal graph for the M23 fixed-point comparison&amp;quot; aria-describedby=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;
-          &amp;lt;desc id=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;A dependency map for the global osculating characterization of the known Galois-fixed cover. Exact canonical jets and incidence tests combine with Galois invariance. Local harmonic reduction and finite parity select the same identified component. Dotted arrows mark open specialization steps or non-implications, not proved implications.&amp;lt;/desc&amp;gt;
+          &amp;lt;desc id=&amp;quot;m23-graph-desc&amp;quot;&amp;gt;Dependencies in the manuscript: an explicit characteristic-23 construction gives incidence on a lift; the exact seven-cover test and Galois invariance give global fixedness. An arrow supplies an input, not necessarily a sufficient condition on its own. Dotted routes mark open extensions and invalid shortcuts.&amp;lt;/desc&amp;gt;
         &amp;lt;/svg&amp;gt;
       &amp;lt;/div&amp;gt;
     &amp;lt;/section&amp;gt;
@@ -1661,6 +1662,7 @@ window.MathJax = {
   &amp;quot;Global fixedness and comparison&amp;quot;,
   &amp;quot;Consequences and scope&amp;quot;
 ];
+
 const nodes = [
   {
     &amp;quot;id&amp;quot;: &amp;quot;problem&amp;quot;,
@@ -1672,9 +1674,9 @@ const nodes = [
     &amp;quot;title&amp;quot;: &amp;quot;Why this one of seven?&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;|\\mathcal H(\\overline{\\mathbf Q})|=7&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Huang, Jackson, Lee, Poonen, Pries, and Zhang found seven covers and identified one Galois-fixed class. The question here is what intrinsic geometry distinguishes that class.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;The new route tests the two osculating planes on every canonical curve. Exactly one cover has a nonempty intersection with their common line.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Prior work supplies the branch-cycle problem and the known cover. Sections 2 and 3 supply the geometric characterization and the exact seven-cover verification.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;The fixed point and its rational cover were already known. The new characterization is proved using exact models; a theorem forcing the incidence from the branch datum remains open.&amp;quot;
+    &amp;quot;why&amp;quot;: &amp;quot;There are now two tasks with different inputs: construct a lift having the incidence from explicit characteristic-23 data, then prove that this incidence occurs on only one of the seven covers.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorems 1.1 and 1.4; Sections 2, 3 and 5. Prior work already supplies the known regular M₂₃ realization.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This is a computer-assisted explanation for a specified special map, not a construction from permutations alone. Global uniqueness still uses the exact seven-cover check.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;algebra&amp;quot;,
@@ -1799,7 +1801,7 @@ const nodes = [
     &amp;quot;formal&amp;quot;: &amp;quot;F:a\\longmapsto a^{23}&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Frobenius raises elements to the 23rd power. It is the identity on F₂₃ and is the nontrivial field automorphism on F₂₃².&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;The scheme-theoretic fixed locus keeps the residue-degree-one component and removes the two quadratic components.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 4.7: for residue field Fq, a factor Fqᶠ contributes to the fixed locus of q-power Frobenius exactly when f = 1.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 6.3: for residue field Fq, a factor Fqᶠ contributes to the fixed locus of q-power Frobenius exactly when f = 1.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;The invariant subalgebra is different: every finite-field factor has fixed elements. We need the fixed locus of the scheme, not the ring of fixed elements.&amp;quot;
   },
   {
@@ -1808,7 +1810,7 @@ const nodes = [
     &amp;quot;order&amp;quot;: 0,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
     &amp;quot;core&amp;quot;: false,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 4.7&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 6.3&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;The Frobenius fixed locus&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\operatorname{Spec}\\bigl(B/(b^{23}-b:b\\in B)\\bigr)&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Impose the equations b²³ − b = 0 for every element b of B. The resulting quotient is F₂₃, the first factor alone.&amp;quot;,
@@ -1827,7 +1829,7 @@ const nodes = [
     &amp;quot;formal&amp;quot;: &amp;quot;A\\longrightarrow A[z]/(z^2+1)&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Since −1 is not a square in F₂₃, R[z]/(z² + 1) is the unramified quadratic extension of R. Pull it back to the normalized integral algebra A.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;This supplies an actual finite étale double cover of the local integral scheme, not just a table of matching values.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;The discriminant −4 is a unit. Corollary 4.8 constructs this cover explicitly.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;The discriminant −4 is a unit. Corollary 6.4 constructs this cover explicitly.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;This cover is a local arithmetic construction. It is not the still-missing relative quadratic refinement of the finite incidence correspondences.&amp;quot;
   },
   {
@@ -1836,7 +1838,7 @@ const nodes = [
     &amp;quot;order&amp;quot;: 1,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
     &amp;quot;core&amp;quot;: false,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 4.7&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Theorem 6.3&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;Where the quadratic cover splits&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;\\text{split}\\iff 2\\mid f_i&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;On a local factor of residue degree fᵢ, the pulled-back unramified quadratic cover splits into two copies exactly when fᵢ is even.&amp;quot;,
@@ -1855,7 +1857,7 @@ const nodes = [
     &amp;quot;formal&amp;quot;: &amp;quot;\\operatorname{rank}_R Z=\\sum_{f_i=1}e_i=1&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;Lift the Frobenius fixed locus to an open-and-closed part of the normalized integral scheme. Its rank is the sum of eᵢ over factors with fᵢ = 1.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;Here there is one such factor and its ramification degree is one. It is exactly the R factor, not a ramified thickening of higher rank.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 4.7, applied to the certified ramification and residue degrees.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 6.3, applied to the certified ramification and residue degrees.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;One residue-degree-one factor is not enough for rank one if its ramification degree exceeds one. Nor does local rank one alone imply a global rational point.&amp;quot;
   },
   {
@@ -1892,13 +1894,13 @@ const nodes = [
     &amp;quot;order&amp;quot;: 1,
     &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
     &amp;quot;core&amp;quot;: true,
-    &amp;quot;status&amp;quot;: &amp;quot;established — Corollary 4.8&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;established — Corollary 6.4&amp;quot;,
     &amp;quot;title&amp;quot;: &amp;quot;The local indicator is e₆&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;e_{\\mathrm{sing}}=e_6&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;After the unique lift and the global component identification, the characteristic-23 singular-position indicator is e₆.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;The Frobenius and quadratic-splitting constructions give a coordinate-free local interpretation of this indicator.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Corollary 4.8 and the explicit polynomial check, using the global K₀ × L decomposition.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;This is a local-to-global component identification using the exact global algebra. It does not prove that the harmonic position lifts to an osculating incidence.&amp;quot;
+    &amp;quot;evidence&amp;quot;: &amp;quot;Corollary 6.4 and the explicit polynomial check, using the global K₀ × L decomposition.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This component identification is not itself a lifting argument. Section 5 separately constructs a lift with incidence, using tail equations, marked descent and exact local uniqueness.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;exactcomparison&amp;quot;,
@@ -1911,8 +1913,8 @@ const nodes = [
     &amp;quot;formal&amp;quot;: &amp;quot;1-e_{\\rm osc}=e_{\\rm sing}=\\epsilon(\\Theta)&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;The global osculating indicator is e₁ = (1,0). Its complement is e₆ = (0,1), also selected by the local singular-position indicator and the finite transporter parity.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;This places the intrinsic global geometry, reduction at 23, and finite branch-cycle data on the same exactly identified components.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.3 and Section 4. Certified models and branch-cycle matching compare the labels; the osculating theorem supplies the new geometric characterization.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;Equality on the identified components is proved. A theorem transporting osculating incidence through reduction at 23 is not proved; the finite-parity specialization is also still open.&amp;quot;
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.3 and Section 6. Certified models and branch-cycle matching compare the component labels; Sections 2 and 5 have separate geometric roles.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The equality of these indicators is established by exact matching. The harmonic construction does not supply the still-missing relative Fano–affine cohomological comparison.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;target&amp;quot;,
@@ -1921,12 +1923,12 @@ const nodes = [
     &amp;quot;group&amp;quot;: &amp;quot;result&amp;quot;,
     &amp;quot;core&amp;quot;: true,
     &amp;quot;status&amp;quot;: &amp;quot;established result; remaining question explicit&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;A global characterization, with limits&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Local construction, global uniqueness&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;e_{\\rm osc}=e_1,\\quad1-e_{\\rm osc}=e_6&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;Exactly one of the seven covers has nonempty osculating incidence. Because that property is Galois-invariant, its moduli point is globally fixed. Its component agrees with the harmonic reduction and the complement of the finite parity.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;This gives an intrinsic geometric description of the known exceptional cover, not just a rational factor in a polynomial. The related Jacobian criterion and degree-four S₄ pencil make the description more concrete.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.1 and Section 2 prove the global characterization with exact computation. Theorem 1.3 compares the component indicators.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;Still open: explain why this incidence must occur without reconstructing the seven models, or prove that the harmonic reduction forces it. No unproved specialization arrow is part of the global fixedness argument.&amp;quot;
+    &amp;quot;plain&amp;quot;: &amp;quot;The explicit characteristic-23 construction produces a cover with osculating incidence. The exact seven-cover calculation proves that only one cover has it. Galois invariance then forces that moduli point to be globally fixed.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Existence, uniqueness and invariance do different jobs. Together they characterize the known exceptional cover. Exact matching also compares its component with the local indicator and finite parity.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 1.4 and Section 5 construct the lift; Exact computation 2.2 proves global uniqueness; Proposition 2.3 supplies invariance. Theorem 1.3 compares the component indicators.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Open: prove global uniqueness without the seven-model test; make the construction intrinsic to the branch datum; construct the separate Fano–affine specialization. The app explains the manuscript, not a formal machine-checked proof.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;fanoaffine&amp;quot;,
@@ -2115,7 +2117,7 @@ const nodes = [
     &amp;quot;formal&amp;quot;: &amp;quot;\\text{relative incidences + quadratic data}\\;?&amp;quot;,
     &amp;quot;plain&amp;quot;: &amp;quot;The split finite Fano–affine incidences are constructed. Extending those particular cohomological correspondences over a relative model, with suitable quadratic data retaining C and T_D, remains open.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;This is a separate proposed explanation of the finite parity and the characteristic-23 indicator. It is not the relative osculating incidence, which is now constructed in characteristic zero.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Section 4.4 supplies the finite pairing and audits the failed specialization shortcuts; Section 8 distinguishes this question from the new osculating approach.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 6.3 supplies the finite pairing and audits the failed specialization shortcuts. Section 10 keeps this question separate from the harmonic construction.&amp;quot;,
     &amp;quot;breaks&amp;quot;: &amp;quot;The new relative osculating construction does not repair the older Fano–affine, Bockstein, or half-degree determinant proposals. This dotted route remains a research goal.&amp;quot;,
     &amp;quot;gate&amp;quot;: true,
     &amp;quot;badge&amp;quot;: &amp;quot;open&amp;quot;
@@ -2272,7 +2274,7 @@ const nodes = [
     &amp;quot;plain&amp;quot;: &amp;quot;Normalize the three branch values to 0, ∞ and 1 on every component. On the degree-one component the stored singular value becomes 16/7 = −1 in F₂₃. The other two singular positions satisfy the displayed quadratics.&amp;quot;,
     &amp;quot;why&amp;quot;: &amp;quot;The position −1 is harmonic relative to 0, ∞ and 1: with the paper’s cross-ratio convention, (0,∞;1,−1) = −1. This distinguishes the same component locally.&amp;quot;,
     &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 4.4 and verify_hurwitz_degree_one_branch_normalization.py. The exact third branch value is a unit with residue 7; the other two maps are already normalized.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;Harmonic position is a proved local description. It is not yet a reason that the global osculating planes have common points. “Normalize branch values” here means a target-coordinate change, not integral closure.&amp;quot;
+    &amp;quot;breaks&amp;quot;: &amp;quot;The cross-ratio alone does not force generic incidence or global rationality. Section 5 uses a specified special map with tail actions, markings and an effective divisor; these are additional inputs.&amp;quot;
   },
   {
     &amp;quot;id&amp;quot;: &amp;quot;specialization&amp;quot;,
@@ -2280,17 +2282,256 @@ const nodes = [
     &amp;quot;order&amp;quot;: 4,
     &amp;quot;group&amp;quot;: &amp;quot;bridge&amp;quot;,
     &amp;quot;core&amp;quot;: true,
-    &amp;quot;status&amp;quot;: &amp;quot;open — Section 8&amp;quot;,
-    &amp;quot;title&amp;quot;: &amp;quot;Does harmonic reduction force incidence?&amp;quot;,
+    &amp;quot;status&amp;quot;: &amp;quot;open — intrinsic extension of the construction&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;How intrinsic can the construction become?&amp;quot;,
     &amp;quot;formal&amp;quot;: &amp;quot;t=-1\\ \\stackrel{?}{\\Longrightarrow}\\ E_{\\rm osc}\\ne0&amp;quot;,
-    &amp;quot;plain&amp;quot;: &amp;quot;We know the harmonic reduction and the global osculating incidence select the same component. The missing theorem would explain why the local configuration forces that global incidence.&amp;quot;,
-    &amp;quot;why&amp;quot;: &amp;quot;Two sections can acquire a common zero only after reduction. One must control the canonical jet kernels and the intersection in an integral model, and prove a suitable lifting or flatness statement.&amp;quot;,
-    &amp;quot;evidence&amp;quot;: &amp;quot;Section 8 separates this new specialization question from the older finite-parity comparison. Exact component matching alone is not such a lifting theorem.&amp;quot;,
-    &amp;quot;breaks&amp;quot;: &amp;quot;No implication from the harmonic position to the generic incidence is asserted. For example, x and x−23 have no common zero in characteristic zero but coincide modulo 23.&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Section 5 now constructs the incidence for its explicit special map. The broader question is to replace its tail equations, finite jet calculations and exact model by a construction intrinsic to the branch datum, and to understand all seven reductions.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The marked local model and jets are derived in this constructed case; they are not left as separate hypotheses in that application. This is more specific than a universal theorem that a harmonic cross-ratio forces incidence.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 5.7 and Open questions, Section 10. The local theorem is Theorem 5.9; its application is assembled in Theorem 1.4.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;A harmonic cross-ratio alone is insufficient. Equations x = 0 and x − 23 = 0 coincide modulo 23 but have no common solution in characteristic zero. The explicit lifting and uniqueness argument supplies additional information.&amp;quot;,
     &amp;quot;gate&amp;quot;: true,
     &amp;quot;badge&amp;quot;: &amp;quot;open&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;tails&amp;quot;,
+    &amp;quot;layer&amp;quot;: 1,
+    &amp;quot;order&amp;quot;: -8,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;established — explicit data and recorded group computations&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Two explicit tail covers&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;h=7,15;\\quad G=M_{23}&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Start with two maps over F₂₃: one on a rational curve and one on a genus-four curve. Their normal closures have group M₂₃, and their wild ramification jumps at infinity are 7 and 15.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;These tail covers provide actual algebraic pieces to attach. A tail is an end component of a semistable target, meeting the rest at one point.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 5.1. Polynomial identities verify the branch data; two recorded Magma function-field computations supply the group assertions.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The degree-23 quotient maps are not themselves Galois maps. Their passports alone would not establish M₂₃. The older Magma records are distinguished from the new, prepared but unrun generic-model Magma check.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;deformationdatum&amp;quot;,
+    &amp;quot;layer&amp;quot;: 1,
+    &amp;quot;order&amp;quot;: -7,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved construction with explicit checks&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;A logarithmic deformation datum&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\omega=-\\frac{a^6}{a^{22}-1}\\,da&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;This differential on a central projective line records compatible residues and how the tame group acts. Together with the two tail covers, it supplies the special data required by the lifting theorem.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Matching branch permutations is not enough to glue a degeneration. The logarithmic differential carries local ramification information used by the lifting theorem.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 5.1: residues c⁷, the C₁₁ character, and the four (m,h) pairs are checked against Wewers’s special deformation datum conditions.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The special-map conditions must all hold. Merely writing a differential or checking a cardinality does not establish liftability.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;specialmap&amp;quot;,
+    &amp;quot;layer&amp;quot;: 2,
+    &amp;quot;order&amp;quot;: -8,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — application of the lifting theorem&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Attach and lift the special map&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\overline\\beta=\\frac{1-z^{23}}{1+z^{23}}&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Attach the two full Galois tail covers to the induced central curve. The marked positions are 0, ∞, 1 and −1. Wewers’s lifting theorem supplies a characteristic-zero cover.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This builds the harmonic configuration before consulting the seven generic equations. The inseparable relation a = b²³ is essential to the displayed central quotient map.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 5.1 applies Wewers, Definition 2.13 and Theorem 4.5, to the explicit special map.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Do not replace the Frobenius map a = b²³ by a = b. The theorem applies to the whole special map and its verified hypotheses, not to the cross-ratio alone.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;markeddescent&amp;quot;,
+    &amp;quot;layer&amp;quot;: 2,
+    &amp;quot;order&amp;quot;: -7,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — local marked descent&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Descend the ordered marked lift&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;2310/(11\\cdot7\\cdot15)=2&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The special map has 1155 automorphisms. The lifting theorem gives 2310 lifts with identified special fibre, hence two after forgetting that identification. Ordering the opposite wild classes singles out one over K = Frac(W(F₂₃-bar))(√−23).&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Unique Galois-equivariant isomorphisms satisfy the descent cocycle condition. This gives a cover over K and two individually K-rational totally ramified points.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 5.2: direct special-map automorphism count, tame inertia action, and trivial centre of M₂₃.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This is local descent, not descent to Q. No equality of derivatives is required for automorphisms to glue on the nodal special fibre xy = 0.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;markeddistance&amp;quot;,
+    &amp;quot;layer&amp;quot;: 2,
+    &amp;quot;order&amp;quot;: -6,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — marked-distance lemma&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Marked distance fixes tame descent&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;v(\\xi(A)-\\xi(B))=1/15&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The two marked points approach the good-reduction component at distance 1/15, measured with v(π) = 1. Their rationality and the faithful tangent action of the cyclic group of order 15 force the good-reduction extension and its tangent character.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;An abstract good-reduction curve would forget how the marked points approach it. Their distance supplies the missing information needed to descend the canonical coordinates.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Lemma 5.3 and its application: tame potential good reduction, algebraically closed residue field, cyclic pointed automorphism group and faithful tangent character.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;All those hypotheses matter. Annulus length is divided by the degree 23 of the quotient map, not by the order 253 of the full inertia group.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;canonicaldescent&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -8,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — canonical lattice and valuation checks&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Descend canonical differentials&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;(H,U,V,W)=(h,\\rho^3u,\\rho^5v,\\rho^6w)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Use four canonical differential forms on the genus-four good-reduction curve. Their tame characters determine powers of ρ that put them into one common character; removing that common factor gives invariant coordinates.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;A canonical model places the curve in projective three-space using differential forms. The descended lattice also controls which equations remain integral.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Lemma 5.4: ρ¹⁵ = π; a coefficient-valuation check gives a flat canonical complete intersection and a closed rational curve with a (3,5) cusp.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Lift differentials, not the functions X and Y while assuming their pole orders stay unchanged. The abstract special curve alone does not fix this marked integral model.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;effectivedivisor&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -7,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — effective divisor argument&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Keep all eight ramification points&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\mathcal R_8\\longrightarrow8e&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Close the eight simple ramification points inside the integral model. They specialize to the primitive attachment e, retaining total multiplicity eight. Their effective divisor constrains the logarithmic differential.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Eight points arriving at one place are not the same data as one unweighted point. The multiplicity uses up the available degree of the reduced differential.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 5.5: valuative extension, the effective Cartier divisor, normality and a degree-eight zero-divisor argument.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Keeping only the support {e} loses the needed information. The proof does not assume a contraction morphism from the stable model to the canonical model.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;closedmodel&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -6,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — closed canonical equations&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;The divisor fixes the closed equations&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\overline\\eta=\\frac{2z^8}{z^2-1}\\,dz&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The primitive integral differential is η = (1/23)dβ/β. Its reduction has eight zeros at e = 0 and poles at the two marks. In the descended coordinates this determines the closed quadric and cubic.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The model is derived from the constructed lift and its effective ramification, rather than guessed from a reduction of the known cover.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Proposition 5.5: q₀ = HW − U² − UV − V² and c₀ = UW² − V³. Nonzero marked residues justify the exact division by 23.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Knowing these equations modulo π still does not prove incidence in characteristic zero. Higher deformation terms can change an intersection.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;nodecoefficient&amp;quot;,
+    &amp;quot;layer&amp;quot;: 3,
+    &amp;quot;order&amp;quot;: -5,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — normal-node coefficient lemma&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Compare coefficients across a node&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;ay=\\alpha&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;Near each node, use a normal annulus model ay = α. Vertical valuation bounds determine how the leading term of a wild automorphism in coordinate a becomes a leading term in coordinate y.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This transports the action of the same wild generator from the central component to each tail. It is the geometric input behind a compatible sheet labeling.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Lemma 5.6 and Section 5.4. The two actual annuli and their tame quotient coordinates are specified before comparing coefficients.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;A Laurent expansion valid at one generic point cannot simply be substituted at the other end of an annulus. Both vertical valuation bounds are needed.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;sheetlabels&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -8,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved calculation — using the node lemma&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Label both tails on the same sheets&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;i\\longmapsto i,\\ 3i\\quad(i\\in\\mathbf F_{23})&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The central inverse-branch calculation and the node lemma identify the root labels on the two tails as i and 3i for one common generator of C₂₃.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;Two separate tail computations must describe the same 23 sheets before their group actions can be compared.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 5.4: the equation v²³ − v has the simple labels i in F₂₃; tame root-of-unity ambiguities preserve the relevant design.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Choosing an unrelated relabeling for each tail could fake compatibility. The node calculation is what makes this a same-sheet comparison.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;twojets&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -7,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;established — exact first-jet calculation&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;The first-order equations leave two choices&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;c=c_0\\pm\\pi C_1+O(\\pi^2)&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The first-order canonical and map equations leave exactly two geometric possibilities. Both have the required branch passport and marked-point motion.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The equations do not silently choose the desired deformation. A separate compatibility test must decide which first jet belongs to the constructed global cover.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 5.7: a rank calculation followed by a triangular Gröbner-basis calculation proves exactly two solutions over the algebraic closure.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Checking a few F₂₃ points would not prove that these are all geometric solutions. The passport alone cannot choose the sign.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;wittchoice&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -6,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;established — group compatibility and exact computation&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Witt designs choose the compatible jet&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;S(4,7,23):\\quad\\mathcal B_0,\\mathcal B_1&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;There are two M₂₃ subgroups containing the fixed 23-cycle in S₂₃, distinguished by two cyclic Witt designs. On the common sheets, the primitive tail and positive first jet preserve the same design; the negative jet gives the other.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;A Witt design records special seven-element subsets of the 23 labels. It detects a mismatch that the branch passport cannot see.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 5.7: two-design count, known tail groups and a nonzero coefficient of a block-sum resolvent exclude the incompatible design.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;A vanishing finite prefix would not prove a resolvent constant. The argument uses a nonzero coefficient to exclude one design, then the independent M₂₃ and two-design facts to identify the other.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;higherjets&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -5,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;established — necessary jet calculations&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Derive the required marked jets&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;c=c_0+\\pi C_1+\\pi^2C_2+\\pi^3(C_3+vUV^2)\\bmod\\pi^4&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;With the positive first jet selected, necessary map and effective critical-fibre equations determine the higher congruences used in the local theorem. One displayed cubic parameter remains free at this stage.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;A jet is a finite initial part of a power-series deformation. These jets place the constructed lift inside a precise neighbourhood where uniqueness can be proved.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 5.8: the cubic through π³ and both marked coordinates through π² are obtained from the ramification equations.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Incidence is not imposed as an extra equation to manufacture the result. Finite-order cancellations alone would still be insufficient.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;branchvalue&amp;quot;,
+    &amp;quot;layer&amp;quot;: 4,
+    &amp;quot;order&amp;quot;: -4,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved bound with exact normalization audit&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Do not fix the branch value too early&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;u-1\\in\\pi^5\\mathcal O&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The computational normalization b(0) = 1 differs from setting the actual third branch value u equal to 1. Effective factorization b − u = R²F bounds their difference by π⁵.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This justifies the finite-order calculations only to the stated precision. The all-orders equations eliminate u instead of treating the two normalizations as identical.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Exact computation 5.8 and the branch-value normalization audit: R(0) lies in π²O and F(0) lies in πO.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Substituting u = 1 at every order would add an unjustified constraint. The local uniqueness system removes u algebraically.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;henselsystem&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -8,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — Hensel argument with exact algebraic checks&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Eleven necessary equations have at most one lift&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;\\det J\\equiv16\\pmod{23}&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;After the permitted normalizations, eleven integral equations in eleven unknowns have an affine reduction with invertible Jacobian. Hensel’s lemma gives at most one complete solution in the specified neighbourhood.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This is a uniqueness test. Any two genuine covers satisfying these necessary equations and congruences must agree, even without describing the entire moduli ideal.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorem 5.9: exact residual identity checks and determinant 16. A separate finite canonical system has determinant 11 and the same residual root.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;The eleven equations are not claimed to generate the whole Hurwitz ideal. Their necessity, integrality and uniqueness in the complete neighbourhood are what the argument uses.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;exactwitness&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -7,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;established — independently checked exact equations&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Verify an independent exact model&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;q_*=c_*=0\\quad\\text{over }\\mathbf Q(\\sqrt{-23})&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;A small exact quadric and cubic, together with a degree-23 map, are checked independently. Smoothness, the full branch fibre and the required congruences are verified; the common osculating line meets this curve in two reduced points.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;The model supplies an actual solution with exact incidence, not just an approximate solution suggested by many matching digits.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Section 5.6 and the exact reconstruction certificate: all four projective charts, map identities, ramification and the intrinsic frame. The incidence quadratic has nonzero discriminant 3673/52441.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;Recognition is discovery, not proof. The passport alone does not certify M₂₃: an exact map isomorphism transfers the previously certified branch cycles. The new generic-model Magma script is prepared, not claimed as run.&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;liftincidence&amp;quot;,
+    &amp;quot;layer&amp;quot;: 5,
+    &amp;quot;order&amp;quot;: -6,
+    &amp;quot;group&amp;quot;: &amp;quot;special&amp;quot;,
+    &amp;quot;core&amp;quot;: true,
+    &amp;quot;status&amp;quot;: &amp;quot;proved — local uniqueness plus an exact model&amp;quot;,
+    &amp;quot;title&amp;quot;: &amp;quot;Uniqueness gives incidence on the lift&amp;quot;,
+    &amp;quot;formal&amp;quot;: &amp;quot;X_{\\mathrm{lift}}\\simeq X_*;\\quad\\operatorname{length}Z=2&amp;quot;,
+    &amp;quot;plain&amp;quot;: &amp;quot;The constructed lift and the independently verified model satisfy the same necessary system in the same neighbourhood. Hensel uniqueness identifies them to all orders, so the exact incidence calculation applies to the lift.&amp;quot;,
+    &amp;quot;why&amp;quot;: &amp;quot;This is the step from a finite amount of local information to an exact characteristic-zero conclusion. Uniqueness, not the count of matching digits, closes it.&amp;quot;,
+    &amp;quot;evidence&amp;quot;: &amp;quot;Theorems 1.4 and 5.9, and the closing discussion of Section 5. The model’s exact map isomorphism identifies it with the distinguished certified cover.&amp;quot;,
+    &amp;quot;breaks&amp;quot;: &amp;quot;This proves existence for the constructed special map. It does not prove uniqueness among all seven covers; Exact computation 2.2 still supplies that global input.&amp;quot;
   }
 ];
+
 const edges = [
   {
     &amp;quot;id&amp;quot;: &amp;quot;e0&amp;quot;,
@@ -2743,18 +2984,166 @@ const edges = [
   {
     &amp;quot;source&amp;quot;: &amp;quot;harmonic&amp;quot;,
     &amp;quot;target&amp;quot;: &amp;quot;specialization&amp;quot;,
-    &amp;quot;label&amp;quot;: &amp;quot;suggests a lifting question&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;alone does not determine a lift&amp;quot;,
     &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;,
     &amp;quot;id&amp;quot;: &amp;quot;e64&amp;quot;
   },
   {
     &amp;quot;source&amp;quot;: &amp;quot;specialization&amp;quot;,
     &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
-    &amp;quot;label&amp;quot;: &amp;quot;would explain the incidence from reduction&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;would make the construction intrinsic&amp;quot;,
     &amp;quot;kind&amp;quot;: &amp;quot;gate&amp;quot;,
     &amp;quot;id&amp;quot;: &amp;quot;e65&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h66&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;problem&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;tails&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;chooses explicit characteristic-23 pieces&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h67&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;tails&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;specialmap&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the two full Galois tails&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h68&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;deformationdatum&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;specialmap&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;verifies the special datum for lifting&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h69&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;specialmap&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;markeddescent&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;uses the automorphisms of this special map&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h70&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;markeddescent&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;markeddistance&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies individually rational marks&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h71&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;markeddistance&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;canonicaldescent&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;determines the tame character&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h72&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;canonicaldescent&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;effectivedivisor&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;provides the integral canonical model&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h73&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;effectivedivisor&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;closedmodel&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;uses the full zero multiplicity&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h74&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;closedmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;nodecoefficient&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the central differential&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h75&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;nodecoefficient&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;sheetlabels&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;transports one generator across both nodes&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h76&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;closedmodel&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;twojets&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;computes the necessary first-order equations&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h77&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;sheetlabels&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;wittchoice&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;makes the two design tests comparable&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h78&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;twojets&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;wittchoice&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies both candidates to test&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h79&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;tails&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;wittchoice&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies the independently checked M₂₃ groups&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h80&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;wittchoice&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;higherjets&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;selects the positive first jet&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h81&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;effectivedivisor&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;branchvalue&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;bounds the branch normalization error&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h82&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;higherjets&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;henselsystem&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;places the lift in the specified neighbourhood&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h83&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;branchvalue&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;henselsystem&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;justifies finite precision; eliminates u exactly&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h84&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;henselsystem&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;liftincidence&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies at-most-one complete solution&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h85&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;exactwitness&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;liftincidence&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;supplies a genuine solution and exact incidence&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;compute&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: &amp;quot;h86&amp;quot;,
+    &amp;quot;source&amp;quot;: &amp;quot;liftincidence&amp;quot;,
+    &amp;quot;target&amp;quot;: &amp;quot;target&amp;quot;,
+    &amp;quot;label&amp;quot;: &amp;quot;constructs existence; not global uniqueness&amp;quot;,
+    &amp;quot;kind&amp;quot;: &amp;quot;proof&amp;quot;
   }
 ];
+
 const formalTex = Object.fromEntries(nodes.map(n=&amp;gt;[n.id,n.formal]));
 const nodeById = new Map(nodes.map(n=&amp;gt;[n.id,n]));
 const edgeById = new Map(edges.map(e=&amp;gt;[e.id,e]));
@@ -2772,6 +3161,7 @@ const edgeKinds = {
     &amp;quot;meaning&amp;quot;: &amp;quot;This dotted arrow is NOT a proved implication. It marks an unresolved construction, a limitation, or an excluded shortcut.&amp;quot;
   }
 };
+
 const courseTopics = {
   &amp;quot;hurwitz&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;A parameter space for covers 101&amp;quot;,
@@ -3290,7 +3680,7 @@ const courseTopics = {
       &amp;quot;Rigorous interval continuation can certify the permutations obtained by following roots.&amp;quot;,
       &amp;quot;Rechecking a stored result is distinct from rerunning its full expensive producer.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The new exact checks prove the jets, common-zero lengths, residual relation and S₄ monodromy on the certified models. They do not prove an integral lifting theorem from the harmonic reduction.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;Section 5 distinguishes geometric arguments from finite algebraic checks. Tail groups use recorded Magma computations; exact model identification transfers existing certified branch cycles. The additional generic-model Magma input is prepared but not reported as run.&amp;quot;
   },
   &amp;quot;open&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;The separate Fano–affine specialization question 101&amp;quot;,
@@ -3448,7 +3838,7 @@ const courseTopics = {
       &amp;quot;At 23, λ has residue 7. Since 7·10 = 1 modulo 23, the stored value 16 becomes 16·10 = 22 = −1.&amp;quot;,
       &amp;quot;In this normalized coordinate, the configuration (0,∞;1,−1) has cross-ratio −1 and is called harmonic.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The other singular positions satisfy t²+1=0 and t²+t+1=0. They lie in quadratic residue fields, whereas −1 lies in F₂₃.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;The cross-ratio distinguishes the same component in the computed reductions. Section 5 additionally constructs a special map with this marked position and proves incidence on its lift using substantially more data.&amp;quot;
   },
   &amp;quot;specialization101&amp;quot;: {
     &amp;quot;title&amp;quot;: &amp;quot;Why common zeros need not lift 101&amp;quot;,
@@ -3465,9 +3855,180 @@ const courseTopics = {
       &amp;quot;Modulo 23 they are the same equation, so x=0 is a common solution.&amp;quot;,
       &amp;quot;Such an incidence lives only over the special prime. A lifting argument needs hypotheses ruling out this extra special-fibre contribution.&amp;quot;
     ],
-    &amp;quot;context&amp;quot;: &amp;quot;The open problem is to control the canonical jet kernels and osculating incidence in an integral model, then prove the needed lifting. The existing characteristic-zero relative incidence does not automatically do this.&amp;quot;
+    &amp;quot;context&amp;quot;: &amp;quot;Section 5 supplies a specific computer-assisted lifting argument using tail maps, marked descent, effective ramification and local uniqueness. This goes beyond matching components, but is not a universal harmonic-position theorem.&amp;quot;
+  },
+  &amp;quot;tails101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Tail covers and lifting 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;tail covers&amp;quot;,
+      &amp;quot;tail cover&amp;quot;,
+      &amp;quot;tail&amp;quot;,
+      &amp;quot;special map&amp;quot;,
+      &amp;quot;logarithmic deformation datum&amp;quot;,
+      &amp;quot;deformation datum&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;When a family of curves degenerates, its limiting picture can have several pieces. A tail is a piece attached to the rest at just one point.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;A map on each piece is extra information beyond the drawing of how pieces meet.&amp;quot;,
+      &amp;quot;A logarithmic differential and ramification data specify compatibility at the attachments.&amp;quot;,
+      &amp;quot;A lifting theorem, after all its hypotheses are checked, turns the special map into a characteristic-zero cover.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Here two explicit characteristic-23 tail covers and a central differential are the inputs. The full normal closures have group M₂₃.&amp;quot;
+  },
+  &amp;quot;markeddescent101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Marked descent 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;marked descent&amp;quot;,
+      &amp;quot;descent cocycle&amp;quot;,
+      &amp;quot;cocycle&amp;quot;,
+      &amp;quot;locally defined cover&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Equations may initially need a larger number field. Descent asks whether the same geometric object can be described over a smaller one.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;An isomorphism with each conjugate is necessary.&amp;quot;,
+      &amp;quot;Those isomorphisms must agree when conjugations are composed: this is the cocycle condition.&amp;quot;,
+      &amp;quot;If the relevant isomorphisms are unique, their compositions agree automatically.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The ordered lift descends to the specified complete local field K. This is separate from the later global descent to Q.&amp;quot;
+  },
+  &amp;quot;distance101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Valuation and marked distance 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;marked distance&amp;quot;,
+      &amp;quot;separating distance&amp;quot;,
+      &amp;quot;tangent character&amp;quot;,
+      &amp;quot;valuation&amp;quot;,
+      &amp;quot;annulus length&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A valuation measures divisibility rather than ordinary size. A large valuation means a small difference in the p-adic sense.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;If two points have parameter difference divisible by π, they have the same reduction.&amp;quot;,
+      &amp;quot;The valuation of that difference measures how long they stay together before the special fibre separates them.&amp;quot;,
+      &amp;quot;Here that distance, rationality of the marks and a faithful cyclic action determine the tame extension and tangent character.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Lemma 5.3 applies with n = 15. It has explicit hypotheses; distance alone is not a universal descent theorem.&amp;quot;
+  },
+  &amp;quot;canonicaldescent101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Descending differential coordinates 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;canonical differentials&amp;quot;,
+      &amp;quot;descended lattice&amp;quot;,
+      &amp;quot;canonical lattice&amp;quot;,
+      &amp;quot;differential forms&amp;quot;,
+      &amp;quot;tame character&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Differentials are expressions such as f(x) dx that transform consistently when a coordinate is changed. A genus-four curve has four independent global regular differentials.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Their values give the canonical projective coordinates.&amp;quot;,
+      &amp;quot;A tame symmetry can multiply different differentials by different roots of unity.&amp;quot;,
+      &amp;quot;Multiplying by suitable powers of a ramified parameter aligns the characters and produces coordinates that descend.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Lemma 5.4 uses the characters of the differentials and exact coefficient valuations, not an assumption that low-pole-order functions lift unchanged.&amp;quot;
+  },
+  &amp;quot;effective101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Effective ramification and multiplicity 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;effective divisor&amp;quot;,
+      &amp;quot;effective ramification&amp;quot;,
+      &amp;quot;eight ramification points&amp;quot;,
+      &amp;quot;zero multiplicity&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A divisor records points with integer counts. “Effective” means all these counts are nonnegative.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;The expression 8e means eight units of multiplicity at e, not eight distinct points.&amp;quot;,
+      &amp;quot;Points can collide in reduction while their total multiplicity is retained.&amp;quot;,
+      &amp;quot;If a section can have only eight zeros in total, eight prescribed zeros leave no room for more.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Proposition 5.5 uses the effective degree-eight ramification divisor to determine the reduced logarithmic differential and canonical equations.&amp;quot;
+  },
+  &amp;quot;node101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Passing through a node 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;normal annulus&amp;quot;,
+      &amp;quot;node lemma&amp;quot;,
+      &amp;quot;normal-node&amp;quot;,
+      &amp;quot;node&amp;quot;,
+      &amp;quot;Laurent expansion&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;The equation ay = α describes a neck between two coordinate charts. If α becomes zero, its special fibre consists of the axes meeting at a node.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;Away from zero, one can write y = α/a on the annulus where both coordinates make sense.&amp;quot;,
+      &amp;quot;A Laurent series valid in one region need not remain a valid expansion at the other end.&amp;quot;,
+      &amp;quot;Valuation bounds along both components justify which leading coefficient can be transported.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Lemma 5.6 transports the wild action through the actual nodes and makes the two tail calculations refer to a common generator.&amp;quot;
+  },
+  &amp;quot;witt101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Same sheets and Witt designs 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;Witt design&amp;quot;,
+      &amp;quot;Witt designs&amp;quot;,
+      &amp;quot;same-sheet&amp;quot;,
+      &amp;quot;same sheets&amp;quot;,
+      &amp;quot;block-sum resolvent&amp;quot;,
+      &amp;quot;design&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A combinatorial design is a collection of special subsets of a finite set. Here the set has 23 labels and each special subset has seven labels.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;In S(4,7,23), every four-element subset belongs to exactly one distinguished seven-element subset.&amp;quot;,
+      &amp;quot;The relevant M₂₃ actions preserve one of two cyclic designs on these same labels.&amp;quot;,
+      &amp;quot;The compatible first jet must preserve the design of the primitive tail after the geometric sheet identification.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Exact computation 5.7 excludes the wrong design using a nonzero resolvent coefficient. Independent group information and the two-design count finish the choice.&amp;quot;
+  },
+  &amp;quot;jets101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Necessary jets versus exact equations 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;first jet&amp;quot;,
+      &amp;quot;first jets&amp;quot;,
+      &amp;quot;higher jets&amp;quot;,
+      &amp;quot;marked jets&amp;quot;,
+      &amp;quot;jet calculations&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;A jet is the beginning of a power series, with all terms above a chosen order discarded.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;For c = c₀ + πc₁ + π²c₂ + ⋯, the first jet retains c₀ and c₁.&amp;quot;,
+      &amp;quot;Necessary equations constrain these coefficients for every genuine cover.&amp;quot;,
+      &amp;quot;Matching finitely many coefficients only puts two objects in the same small neighbourhood; it does not make them equal.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The first equations leave two signs. Same-sheet Witt compatibility selects one, and further necessary equations give the neighbourhood used by Theorem 5.9.&amp;quot;
+  },
+  &amp;quot;branchvalue101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Normalizing a value without changing the problem 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;branch normalization&amp;quot;,
+      &amp;quot;third branch value&amp;quot;,
+      &amp;quot;normalization error&amp;quot;,
+      &amp;quot;b(0) = 1&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Rescaling a map can make one chosen value equal to 1. The chosen value must be specified: a value at a coordinate origin need not be the actual branch value.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;The calculation b(0) = 1 is a convenient coordinate normalization.&amp;quot;,
+      &amp;quot;The true third branch value u is shown to differ from 1 by a multiple of π⁵.&amp;quot;,
+      &amp;quot;For the complete equations, u is eliminated exactly rather than silently replaced by 1.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;The effective factorization b − u = R²F yields the valuation bound used in Exact computation 5.8.&amp;quot;
+  },
+  &amp;quot;hensel101&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Hensel uniqueness and an exact model 101&amp;quot;,
+    &amp;quot;aliases&amp;quot;: [
+      &amp;quot;Hensel uniqueness&amp;quot;,
+      &amp;quot;Hensel’s lemma&amp;quot;,
+      &amp;quot;eleven equations&amp;quot;,
+      &amp;quot;necessary system&amp;quot;,
+      &amp;quot;Jacobian matrix&amp;quot;,
+      &amp;quot;complete solution&amp;quot;
+    ],
+    &amp;quot;idea&amp;quot;: &amp;quot;Hensel’s lemma is a p-adic analogue of correcting an approximate root by Newton’s method. An invertible derivative prevents nearby roots from splitting into alternatives.&amp;quot;,
+    &amp;quot;points&amp;quot;: [
+      &amp;quot;In several variables, the derivative is a Jacobian matrix.&amp;quot;,
+      &amp;quot;A determinant not divisible by the residue prime makes this matrix invertible.&amp;quot;,
+      &amp;quot;If two genuine objects satisfy the same necessary equations in the same uniqueness neighbourhood, they are the same normalized object.&amp;quot;
+    ],
+    &amp;quot;context&amp;quot;: &amp;quot;Theorem 5.9 uses determinant 16 modulo 23. The independently verified exact model supplies a genuine solution and an exact incidence calculation.&amp;quot;
   }
 };
+
 const courseEnrichment = {
   &amp;quot;hurwitz&amp;quot;: {
     &amp;quot;example&amp;quot;: &amp;quot;The algebra Q × Q(√2) has three geometric points: one rational point and a conjugate pair. It is a smaller model of the paper’s 1+6 decomposition.&amp;quot;,
@@ -4033,7 +4594,7 @@ const courseEnrichment = {
     ]
   },
   &amp;quot;certificates&amp;quot;: {
-    &amp;quot;example&amp;quot;: &amp;quot;A homogeneous gcd on each certified curve proves whether the osculating line meets it. An actual relative incidence is then defined from jet kernels; a further integral specialization construction is not supplied by that gcd.&amp;quot;,
+    &amp;quot;example&amp;quot;: &amp;quot;The all-seven gcd calculation proves global incidence uniqueness. The separate local construction uses necessary equations, Hensel uniqueness and an independently verified exact model. No certificate substitutes for checking the geometric hypotheses of the lifting and descent lemmas.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Can many passing numerical or exact tests replace a missing construction?&amp;quot;,
     &amp;quot;answer&amp;quot;: &amp;quot;No. Computation can prove the stated properties of explicit objects, as it does for osculation here. Any proposed new object and compatibility map still need a definition and proof.&amp;quot;,
     &amp;quot;related&amp;quot;: [
@@ -4060,7 +4621,7 @@ const courseEnrichment = {
   &amp;quot;open&amp;quot;: {
     &amp;quot;example&amp;quot;: &amp;quot;Two constructions can mark the same objects on a verified list without a map transporting one construction through a degeneration into the other. That transport is the missing theorem, not the equality of the marked components.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Is the outgoing dotted arrow from this node part of the established proof?&amp;quot;,
-    &amp;quot;answer&amp;quot;: &amp;quot;No. The dotted route is still open. The new characteristic-zero osculating proof is a different route and does not validate these older specialization proposals.&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The relative Fano–affine cohomological route remains open. Section 5 proves incidence for a specified harmonic lift by a different construction; it does not validate that cohomological route.&amp;quot;,
     &amp;quot;related&amp;quot;: [
       &amp;quot;incidence&amp;quot;,
       &amp;quot;nearby&amp;quot;,
@@ -4178,7 +4739,7 @@ const courseEnrichment = {
   &amp;quot;globalfixed101&amp;quot;: {
     &amp;quot;example&amp;quot;: &amp;quot;If seven keys are permuted while preserving their number of teeth, and exactly one key has five teeth, that key cannot be exchanged with a different key.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Does this reasoning explain why there has to be a five-toothed key—or an exceptional incidence—in the first place?&amp;quot;,
-    &amp;quot;answer&amp;quot;: &amp;quot;No. Existence and uniqueness need their own proof. Here they come from the exact seven-cover test; an equation-free reason remains open.&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The uniqueness-and-invariance principle does not prove existence. Section 5 now constructs a lift with the incidence; the exact seven-cover test still supplies global uniqueness. Replacing that exclusion test by a global geometric argument remains open.&amp;quot;,
     &amp;quot;related&amp;quot;: [
       &amp;quot;galois&amp;quot;,
       &amp;quot;osculation&amp;quot;,
@@ -4252,14 +4813,14 @@ const courseEnrichment = {
     &amp;quot;question&amp;quot;: &amp;quot;Does this target-coordinate normalization mean taking the normalization of a singular scheme?&amp;quot;,
     &amp;quot;answer&amp;quot;: &amp;quot;No. Those are two uses of the word normalization. Here it is a change of coordinates on the target projective line; integral normalization means taking integral closure.&amp;quot;,
     &amp;quot;related&amp;quot;: [
-      &amp;quot;finitefields&amp;quot;,
-      &amp;quot;normalization&amp;quot;,
-      &amp;quot;specialization101&amp;quot;
+      &amp;quot;tails101&amp;quot;,
+      &amp;quot;specialization101&amp;quot;,
+      &amp;quot;localglobal&amp;quot;
     ],
     &amp;quot;links&amp;quot;: [
       [
         &amp;quot;Paper: uniform branch normalization&amp;quot;,
-        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=14&amp;quot;
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=15&amp;quot;
       ],
       [
         &amp;quot;Exact normalization checker&amp;quot;,
@@ -4274,11 +4835,12 @@ const courseEnrichment = {
   &amp;quot;specialization101&amp;quot;: {
     &amp;quot;example&amp;quot;: &amp;quot;The common-zero ring Z[x]/(x,x−23) is Z/23: its generic fibre is empty, but its fibre at 23 is a point.&amp;quot;,
     &amp;quot;question&amp;quot;: &amp;quot;Can matching the local harmonic component and the global osculating component replace that lifting proof?&amp;quot;,
-    &amp;quot;answer&amp;quot;: &amp;quot;No. Matching proves they select the same component. It does not prove that the local property causes the generic incidence to exist.&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Component matching alone is not a lifting proof. The manuscript now supplies additional special-map, descent, jet and Hensel arguments for its explicit construction; a broader intrinsic theorem remains open.&amp;quot;,
     &amp;quot;related&amp;quot;: [
       &amp;quot;harmonic101&amp;quot;,
-      &amp;quot;relativeosc101&amp;quot;,
-      &amp;quot;certificates&amp;quot;
+      &amp;quot;tails101&amp;quot;,
+      &amp;quot;hensel101&amp;quot;,
+      &amp;quot;open&amp;quot;
     ],
     &amp;quot;links&amp;quot;: [
       [
@@ -4294,8 +4856,169 @@ const courseEnrichment = {
         &amp;quot;https://github.com/research-reflexivity/frontier-math-m23-cover-investigation/blob/main/verification/verify_hurwitz_osculating.py&amp;quot;
       ]
     ]
+  },
+  &amp;quot;tails101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Think of two functions defined on overlapping intervals: to obtain one global function, they must agree on the overlap. Attaching covers needs a more elaborate algebraic version of compatibility.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does drawing the four harmonic marked points automatically give a characteristic-zero cover?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The tail maps, inertia, differential and the hypotheses of the lifting theorem are additional requirements.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;ramification&amp;quot;,
+      &amp;quot;covers&amp;quot;,
+      &amp;quot;harmonic101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=16&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;markeddescent101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;An object and its mirror image might be isomorphic, but a consistent rule for identifying repeated mirrors is still needed. Uniqueness removes the freedom that could cause inconsistency.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does a cover over a 23-adic field automatically have equations over Q?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. Local and global fields have different Galois groups. Global uniqueness plus invariance, or an explicit global descent calculation, is needed.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;galois&amp;quot;,
+      &amp;quot;localglobal&amp;quot;,
+      &amp;quot;covers&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=17&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;distance101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;If v(π) = 1 and ρ¹⁵ = π, then v(ρ) = 1/15. A parameter difference of that valuation cannot lie in a field whose valuation group is only the integers.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;What is missing if we know only the shape of the good-reduction curve?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;We have not specified the marked points’ approach to that curve. Their distance and tangent action determine further descent information.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;markeddescent101&amp;quot;,
+      &amp;quot;ramification&amp;quot;,
+      &amp;quot;canonical&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=18&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;canonicaldescent101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;If a symmetry sends ρ to ζρ and u to ζ⁻³u, then ρ³u is invariant. The paper uses this elementary cancellation in a four-dimensional space of forms.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Why not just copy X and Y from the reduced curve into characteristic zero?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;Their pole behaviour need not lift as assumed. The canonical differential space has the functorial structure used by the argument.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;canonical&amp;quot;,
+      &amp;quot;distance101&amp;quot;,
+      &amp;quot;divisors&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=19&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;effective101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The zeros of (x − a)(x − b) become a double zero when a and b both reduce to 0. Replacing the polynomial by the set {0} discards the multiplicity two.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Would retaining only the attachment point e suffice?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The count eight is what exhausts the available degree and forces the differential’s zero divisor.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;multiplicity&amp;quot;,
+      &amp;quot;divisors&amp;quot;,
+      &amp;quot;ramification&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=20&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;node101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The ordinary series 1 + x + x² + ⋯ represents 1/(1 − x) only in its region of convergence. A formal algebraic substitution is not a licence to ignore the region where the expansion is valid.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Can an arbitrary Laurent series at one end be evaluated term by term at the other end?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The proof supplies a normal local ring and two vertical valuation bounds precisely to justify the leading-term comparison.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;distance101&amp;quot;,
+      &amp;quot;ramification&amp;quot;,
+      &amp;quot;tails101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=21&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;witt101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;Two maps of the same town are comparable only after matching the street names. Separately renaming every street on one map could hide an actual disagreement.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does a long zero prefix of a resolvent prove it is constant?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. A later coefficient could be nonzero. Here one nonzero coefficient excludes a candidate; independent facts prove the remaining candidate is the correct one.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;node101&amp;quot;,
+      &amp;quot;nielsen&amp;quot;,
+      &amp;quot;certificates&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=22&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;jets101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;The series 1 + π and 1 + π + π¹⁰⁰ match to many orders but differ. An all-orders uniqueness theorem, not more matching digits alone, can identify them.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Does verifying incidence modulo π⁴ prove incidence over the fraction field?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. The final proof uses an independently exact model and uniqueness in a complete neighbourhood.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;jets&amp;quot;,
+      &amp;quot;witt101&amp;quot;,
+      &amp;quot;hensel101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=23&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;branchvalue101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;If R(0) = π²r and F(0) = πf, then R(0)²F(0) = π⁵r²f. This is why the two values agree to that precision, not necessarily beyond it.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Can agreement modulo π⁵ justify replacing u by 1 forever?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. It justifies the specified truncation. The all-orders system removes u algebraically.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;effective101&amp;quot;,
+      &amp;quot;jets101&amp;quot;,
+      &amp;quot;hensel101&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=23&amp;quot;
+      ]
+    ]
+  },
+  &amp;quot;hensel101&amp;quot;: {
+    &amp;quot;example&amp;quot;: &amp;quot;For F(x) = x² − 2 modulo 7, x = 3 is a root and F′(3) = 6 is invertible. Hensel’s lemma gives a unique 7-adic root reducing to 3; it does not say there are no roots reducing to something else.&amp;quot;,
+    &amp;quot;question&amp;quot;: &amp;quot;Must the eleven equations describe every conceivable cover, with no extraneous solutions?&amp;quot;,
+    &amp;quot;answer&amp;quot;: &amp;quot;No. They must be necessary for both objects and have at most one solution in this neighbourhood. The exact model verifies existence; uniqueness identifies it with the constructed lift.&amp;quot;,
+    &amp;quot;related&amp;quot;: [
+      &amp;quot;henselian&amp;quot;,
+      &amp;quot;jets101&amp;quot;,
+      &amp;quot;certificates&amp;quot;
+    ],
+    &amp;quot;links&amp;quot;: [
+      [
+        &amp;quot;The paper — this step&amp;quot;,
+        &amp;quot;https://research-reflexivity.github.io/frontier-math-m23-cover-investigation/m23-cover-investigation.pdf#page=25&amp;quot;
+      ]
+    ]
   }
 };
+
 const edgeDetails = {
   &amp;quot;problem&amp;gt;algebra&amp;quot;: &amp;quot;The known seven-class problem is the input to exact reconstruction; the fixed class itself is prior work.&amp;quot;,
   &amp;quot;algebra&amp;gt;idempotents&amp;quot;: &amp;quot;A product of two fields has primitive idempotents (1,0) and (0,1).&amp;quot;,
@@ -4361,14 +5084,36 @@ const edgeDetails = {
   &amp;quot;localmodel&amp;gt;harmonic&amp;quot;: &amp;quot;The local pointed models and the exact degree-one branch-value calculation give the uniformly normalized singular-position polynomial.&amp;quot;,
   &amp;quot;singcoord&amp;gt;harmonic&amp;quot;: &amp;quot;Only on the degree-one component is a rescaling required: the third branch value has residue 7, and 16/7=−1 modulo 23.&amp;quot;,
   &amp;quot;harmonic&amp;gt;exactcomparison&amp;quot;: &amp;quot;The harmonic position belongs to the degree-one component in the certified local model. Comparing components proves agreement, not a specialization mechanism.&amp;quot;,
-  &amp;quot;harmonic&amp;gt;specialization&amp;quot;: &amp;quot;A harmonic special-fibre position might constrain the canonical jets, but no theorem forcing the generic common-zero incidence has been proved.&amp;quot;,
-  &amp;quot;specialization&amp;gt;target&amp;quot;: &amp;quot;A successful integral construction and lifting theorem would explain the global incidence from the local configuration. It is not used in the current theorem.&amp;quot;
+  &amp;quot;harmonic&amp;gt;specialization&amp;quot;: &amp;quot;Harmonic position is only one part of the constructed special map. The generalization asks for intrinsic data and a broader classification, not a bare cross-ratio implication.&amp;quot;,
+  &amp;quot;specialization&amp;gt;target&amp;quot;: &amp;quot;This remains an open strengthening. It is not an input to Theorem 1.4 for the explicit special map.&amp;quot;,
+  &amp;quot;problem&amp;gt;tails&amp;quot;: &amp;quot;This construction starts with the given branch classes but additionally supplies explicit tail equations and independently checked groups. It is not a permutations-only recipe. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;tails&amp;gt;specialmap&amp;quot;: &amp;quot;Take normal closures and match their inertia and conductors with the central datum. The logarithmic datum is a separate required input. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;deformationdatum&amp;gt;specialmap&amp;quot;: &amp;quot;The residues, character and signature are checked against the hypotheses of the special-map lifting theorem. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;specialmap&amp;gt;markeddescent&amp;quot;: &amp;quot;The inertia orbit of identified lifts and the direct automorphism count yield the ordered locally defined cover. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;markeddescent&amp;gt;markeddistance&amp;quot;: &amp;quot;Rational marks, the computed separating distance and the cyclic faithful tangent action together meet the marked-distance lemma hypotheses. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;markeddistance&amp;gt;canonicaldescent&amp;quot;: &amp;quot;The tangent character fixes the weights used to descend canonical differentials. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;canonicaldescent&amp;gt;effectivedivisor&amp;quot;: &amp;quot;On this model, valuative extension and the original eight ramification points give the effective degree-eight divisor. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;effectivedivisor&amp;gt;closedmodel&amp;quot;: &amp;quot;Eight zeros exhaust the degree of the reduced logarithmic differential; nonzero marked residues fix its normalization. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;closedmodel&amp;gt;nodecoefficient&amp;quot;: &amp;quot;Together with the actual semistable annuli and tame quotient coordinates, the differential supplies the leading-term calculation. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;nodecoefficient&amp;gt;sheetlabels&amp;quot;: &amp;quot;The normal-node lemma makes the two tail root labels refer to the same wild group element. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;closedmodel&amp;gt;twojets&amp;quot;: &amp;quot;The canonical and map equations give two geometric first jets, not an already selected sign. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;sheetlabels&amp;gt;wittchoice&amp;quot;: &amp;quot;The designs must live on the same labeled sheets. Independent tail relabelings would not suffice. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;twojets&amp;gt;wittchoice&amp;quot;: &amp;quot;A nonzero resolvent coefficient excludes one design; the known M₂₃ groups and the two-design count identify the compatible candidate. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;tails&amp;gt;wittchoice&amp;quot;: &amp;quot;The exclusion argument needs the tail group assertions independently of its finite Laurent expansion. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;wittchoice&amp;gt;higherjets&amp;quot;: &amp;quot;Necessary map and effective critical-fibre equations then determine the displayed higher marked congruences. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;effectivedivisor&amp;gt;branchvalue&amp;quot;: &amp;quot;The effective square factor R², the remaining factor F and their valuations give u − 1 in π⁵O. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;higherjets&amp;gt;henselsystem&amp;quot;: &amp;quot;The necessary congruences identify the residual root of the integral eleven-equation system. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;branchvalue&amp;gt;henselsystem&amp;quot;: &amp;quot;The congruence permits finite-order normalization. The complete equations eliminate the actual third branch value instead of silently setting it to 1. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;henselsystem&amp;gt;liftincidence&amp;quot;: &amp;quot;Both the constructed lift and the checked exact model satisfy the necessary system with the same residual root. Invertibility of the Jacobian makes them equal in this normalized neighbourhood. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;exactwitness&amp;gt;liftincidence&amp;quot;: &amp;quot;Smoothness, the map and the frame congruences are exact checks. They put this model into the uniqueness neighbourhood and give two reduced intersection points. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;,
+  &amp;quot;liftincidence&amp;gt;target&amp;quot;: &amp;quot;This supplies a lift with exceptional incidence. The exact seven-cover exclusion and Galois invariance supply the separate global characterization. An arrow supplies a stated input; when a node has several inputs, the source alone need not imply the target.&amp;quot;
 };
-  const aliasToCourse = new Map();
+
+const aliasToCourse = new Map();
   Object.entries(courseTopics).forEach(([key,course])=&amp;gt;course.aliases.forEach(alias=&amp;gt;aliasToCourse.set(alias.toLowerCase(),key)));
   const coursePattern = new RegExp(`(${Array.from(aliasToCourse.keys()).sort((a,b)=&amp;gt;b.length-a.length).map(x=&amp;gt;x.replace(/[.*+?^${}()|[\]\\]/g,&amp;#x27;\\$&amp;amp;&amp;#x27;)).join(&amp;#x27;|&amp;#x27;)})`,&amp;#x27;gi&amp;#x27;);
   const courseWordCharacter = /[\p{L}\p{N}_]/u;
-  const coreOrder = [&amp;quot;problem&amp;quot;,&amp;quot;algebra&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osculatingplanes&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;descent&amp;quot;,&amp;quot;jacobian&amp;quot;,&amp;quot;quartic&amp;quot;,&amp;quot;s4&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;residue&amp;quot;,&amp;quot;singcoord&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;frobenius&amp;quot;,&amp;quot;fixedlocus&amp;quot;,&amp;quot;localrank&amp;quot;,&amp;quot;quadext&amp;quot;,&amp;quot;split&amp;quot;,&amp;quot;explicitformula&amp;quot;,&amp;quot;idempotents&amp;quot;,&amp;quot;idempotentlift&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;epsilon_e6&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;target&amp;quot;];
+  const coreOrder = [&amp;quot;problem&amp;quot;,&amp;quot;tails&amp;quot;,&amp;quot;deformationdatum&amp;quot;,&amp;quot;specialmap&amp;quot;,&amp;quot;markeddescent&amp;quot;,&amp;quot;markeddistance&amp;quot;,&amp;quot;canonicaldescent&amp;quot;,&amp;quot;effectivedivisor&amp;quot;,&amp;quot;closedmodel&amp;quot;,&amp;quot;nodecoefficient&amp;quot;,&amp;quot;sheetlabels&amp;quot;,&amp;quot;twojets&amp;quot;,&amp;quot;wittchoice&amp;quot;,&amp;quot;higherjets&amp;quot;,&amp;quot;branchvalue&amp;quot;,&amp;quot;henselsystem&amp;quot;,&amp;quot;exactwitness&amp;quot;,&amp;quot;liftincidence&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osculatingplanes&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;descent&amp;quot;,&amp;quot;jacobian&amp;quot;,&amp;quot;quartic&amp;quot;,&amp;quot;s4&amp;quot;,&amp;quot;algebra&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;residue&amp;quot;,&amp;quot;singcoord&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;frobenius&amp;quot;,&amp;quot;fixedlocus&amp;quot;,&amp;quot;localrank&amp;quot;,&amp;quot;quadext&amp;quot;,&amp;quot;split&amp;quot;,&amp;quot;explicitformula&amp;quot;,&amp;quot;idempotents&amp;quot;,&amp;quot;idempotentlift&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;epsilon_e6&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;target&amp;quot;];
   let view = &amp;#x27;core&amp;#x27;;
   let reading = &amp;#x27;plain&amp;#x27;;
   let selected = &amp;#x27;problem&amp;#x27;;
@@ -4396,7 +5141,7 @@ const edgeDetails = {
   function visibleSet() {
     if (view === &amp;#x27;full&amp;#x27;) return new Set(nodes.map(n=&amp;gt;n.id));
     if (view === &amp;#x27;stress&amp;#x27;) {
-      return new Set([&amp;quot;problem&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;target&amp;quot;]);
+      return new Set([&amp;quot;problem&amp;quot;,&amp;quot;exactmaps&amp;quot;,&amp;quot;canonicaljets&amp;quot;,&amp;quot;osctest&amp;quot;,&amp;quot;functorial&amp;quot;,&amp;quot;globalfixed&amp;quot;,&amp;quot;relativeosc&amp;quot;,&amp;quot;harmonic&amp;quot;,&amp;quot;specialization&amp;quot;,&amp;quot;transporter&amp;quot;,&amp;quot;localmodel&amp;quot;,&amp;quot;esing_e6&amp;quot;,&amp;quot;fanoaffine&amp;quot;,&amp;quot;oddlemma&amp;quot;,&amp;quot;genericcorr&amp;quot;,&amp;quot;effectivecycles&amp;quot;,&amp;quot;quadraticq&amp;quot;,&amp;quot;genericparity&amp;quot;,&amp;quot;pinch&amp;quot;,&amp;quot;nearby&amp;quot;,&amp;quot;shortcut&amp;quot;,&amp;quot;bocksteinzero&amp;quot;,&amp;quot;coherence&amp;quot;,&amp;quot;localglobal&amp;quot;,&amp;quot;relativeopen&amp;quot;,&amp;quot;exactcomparison&amp;quot;,&amp;quot;target&amp;quot;,&amp;quot;tails&amp;quot;,&amp;quot;deformationdatum&amp;quot;,&amp;quot;specialmap&amp;quot;,&amp;quot;markeddescent&amp;quot;,&amp;quot;markeddistance&amp;quot;,&amp;quot;canonicaldescent&amp;quot;,&amp;quot;effectivedivisor&amp;quot;,&amp;quot;closedmodel&amp;quot;,&amp;quot;nodecoefficient&amp;quot;,&amp;quot;sheetlabels&amp;quot;,&amp;quot;twojets&amp;quot;,&amp;quot;wittchoice&amp;quot;,&amp;quot;higherjets&amp;quot;,&amp;quot;branchvalue&amp;quot;,&amp;quot;henselsystem&amp;quot;,&amp;quot;exactwitness&amp;quot;,&amp;quot;liftincidence&amp;quot;]);
     }
     return new Set(nodes.filter(n=&amp;gt;n.core).map(n=&amp;gt;n.id));
   }
@@ -4423,8 +5168,9 @@ const edgeDetails = {
   }
 
   function curve(a,b,narrow,nodeW,nodeH) {
-    if (narrow) {
-      const sx=a.x, sy=a.y+nodeH/2, tx=b.x, ty=b.y-nodeH/2;
+    if (narrow || Math.abs(a.x-b.x)&amp;lt;1) {
+      const sign=b.y&amp;gt;=a.y?1:-1;
+      const sx=a.x, sy=a.y+sign*nodeH/2, tx=b.x, ty=b.y-sign*nodeH/2;
       const mid=(sy+ty)/2;
       return `M${sx},${sy} C${sx},${mid} ${tx},${mid} ${tx},${ty}`;
     }
