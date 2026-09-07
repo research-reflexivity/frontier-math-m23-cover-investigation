@@ -1271,6 +1271,9 @@ html&amp;gt;body{padding:0}&amp;lt;/style&amp;gt;
     box-sizing: border-box;
     position: relative;
     --m23-pane-height: clamp(500px, calc(100vh - 180px), 820px);
+    --m23-sidebar-gap: 0.75rem;
+    --m23-detail-height: calc((var(--m23-pane-height) - var(--m23-sidebar-gap)) / 2);
+    --m23-course-height: calc(var(--m23-pane-height) - var(--m23-sidebar-gap));
   }
   #m23-hinge-map h2 { margin-bottom: 0.75rem; }
   #m23-hinge-map .m23-graph-note { max-width: 74rem; margin: -0.25rem 0 0.8rem; }
@@ -1532,9 +1535,9 @@ html&amp;gt;body{padding:0}&amp;lt;/style&amp;gt;
     position: sticky;
     top: 1rem;
     display: grid;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 0.75rem;
-    height: var(--m23-pane-height);
+    grid-template-rows: minmax(0, var(--m23-detail-height)) minmax(0, var(--m23-course-height));
+    gap: var(--m23-sidebar-gap);
+    height: auto;
     min-width: 0;
   }
   #m23-hinge-map .m23-sidebar-panel {
@@ -5340,8 +5343,6 @@ const aliasToCourse = new Map();
       layers.forEach((_,li)=&amp;gt;{ const arr=(byLayer.get(li)||[]).sort((a,b)=&amp;gt;a.order-b.order); const usable=height-92; arr.forEach((d,i)=&amp;gt;{d.x=side+nodeW/2+li*((width-side*2-nodeW)/(layers.length-1)); d.y=64+(i+0.5)*usable/Math.max(1,arr.length);}); });
     }
     svg.attr(&amp;#x27;viewBox&amp;#x27;,`0 0 ${width} ${height}`).attr(&amp;#x27;height&amp;#x27;,height);
-    const sidebar=root.querySelector(&amp;#x27;.m23-sidebar&amp;#x27;);
-    sidebar.style.height=window.matchMedia(&amp;#x27;(max-width: 700px)&amp;#x27;).matches?&amp;#x27;&amp;#x27;:&amp;#x27;var(--m23-pane-height)&amp;#x27;;
     svg.selectAll(&amp;#x27;*:not(title):not(desc)&amp;#x27;).remove();
     const defs=svg.append(&amp;#x27;defs&amp;#x27;);
     defs.append(&amp;#x27;marker&amp;#x27;).attr(&amp;#x27;id&amp;#x27;,&amp;#x27;m23-arrow&amp;#x27;).attr(&amp;#x27;viewBox&amp;#x27;,&amp;#x27;0 -5 10 10&amp;#x27;).attr(&amp;#x27;refX&amp;#x27;,8).attr(&amp;#x27;refY&amp;#x27;,0).attr(&amp;#x27;markerWidth&amp;#x27;,5).attr(&amp;#x27;markerHeight&amp;#x27;,5).attr(&amp;#x27;orient&amp;#x27;,&amp;#x27;auto&amp;#x27;).append(&amp;#x27;path&amp;#x27;).attr(&amp;#x27;d&amp;#x27;,&amp;#x27;M0,-5L10,0L0,5&amp;#x27;).attr(&amp;#x27;fill&amp;#x27;,&amp;#x27;context-stroke&amp;#x27;);

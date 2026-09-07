@@ -27,6 +27,12 @@ for (const layer of layers) {
   }
 }
 const inner=layers.at(-1), start=inner.indexOf('const layers ='), end=inner.indexOf('const aliasToCourse =');
+// Keep the old node-detail height and double the former half-height lesson.
+assert.match(inner,/--m23-detail-height: calc\(\(var\(--m23-pane-height\) - var\(--m23-sidebar-gap\)\) \/ 2\)/);
+assert.match(inner,/--m23-course-height: calc\(var\(--m23-pane-height\) - var\(--m23-sidebar-gap\)\)/);
+assert.match(inner,/grid-template-rows: minmax\(0, var\(--m23-detail-height\)\) minmax\(0, var\(--m23-course-height\)\)/);
+assert.doesNotMatch(inner,/sidebar\.style\.height/,'Drawing the graph must not restore the old sidebar height');
+assert.match(inner,/grid-template-rows: auto auto/,'Small screens retain naturally expanding lessons');
 assert(start>=0 && end>start);
 const data=vm.runInNewContext(inner.slice(start,end)+'\n({layers,nodes,edges,courseTopics,courseEnrichment,edgeDetails,formalTex,nodeById,edgeById,edgeKinds})', {}, {timeout:1000});
 const ids=new Set(data.nodes.map(n=>n.id));
